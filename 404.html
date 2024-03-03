@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ERROR 404 | DAJ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+    <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRWEyYlt2FGfrp3LkQfvPyIRw4SjH1wojJZUbfm0UIxcv_a_WfdMAhADPMz-OKRyKge6K1htUx8TyQeYYliGGukkknJa3NWeJkOC_C6hwym3p3kq3iKt19mER-MS7BciVUX4oo99TWGV9rDD8etsUd5NQkyRtabtPYh1lCYns1A70dBgU1vPZCvqGyHkpG/s1600/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #000000;
+            font-size: small;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(245, 245, 245, 0.09);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(94, 54, 130, 0.60);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(143deg, #1795A6 43.13%, #01B3B1 100%);
+        }
+
+        #content {
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.80);
+            background: rgba(217, 217, 217, 0.90);
+            box-shadow: 0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset;
+            padding: 30px;
+
+        }
+
+        .theme-checkbox {
+            --toggle-size: 12px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 4.25em;
+            height: 2.125em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 0;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 99em;
+            position: relative;
+            cursor: pointer;
+            font-size: var(--toggle-size);
+        }
+
+        .theme-checkbox::before {
+            content: "";
+            width: 1.25em;
+            height: 1.25em;
+            position: absolute;
+            top: 0.438em;
+            left: 0.438em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 100%;
+            border-radius: 50%;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+        }
+
+        .theme-checkbox:checked::before {
+            left: calc(120% - 2.25em - 0.538em);
+            background-position: 0;
+        }
+
+        .theme-checkbox:checked {
+            background-position: 100%;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Tres columnas con igual ancho */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            /* Distribuye el espacio entre las columnas */
+        }
+
+        .menuFooter {
+            flex: 1;
+            /* Cada columna ocupa una fracción igual del espacio disponible */
+            color: #000000;
+            padding: 15px;
+            box-sizing: border-box;
+            /* Incluye el padding en el ancho total */
+        }
+
+        .menuFooter {
+            text-align: right;
+        }
+
+        .menuFooter ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menuFooter li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .menuFooter a {
+            text-decoration: none;
+            color: #8d0e43;
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.80);
+            background: rgba(217, 217, 217, 0.90);
+            box-shadow: 0px 0px 11.3px 2px rgba(29, 29, 29, 0.25) inset;
+            padding: 6px;
+
+        }
+
+    </style>
+
+    <!-- HTML ----- WEB DE AGUSTHEKING -->
+</head>
+
+<body>
+
+    <div id="content">
+        <div id="header">
+
+            <input type="checkbox" class="theme-checkbox">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-left:20px;">
+                <div>
+                    <div style="flex-shrink: 0; margin-left: 20px; display: flex; align-items: center;">
+                        <img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"
+                            alt="Logo" style="max-width: 100px; max-height: 100px;">
+                        <h1 id="blog-title" style=" font-size:60px;">ELEMENTS CSS DAJ</h1>
+
+
+
+                    </div>
+
+                    <h1 style="font-size: 100px; text-align: center; margin-top: 20px;">404</h1>
+                    <h1 style="text-align: center;">Page Not Found</h1>
+                    <p style="text-align: center;">Sorry, the page you are looking for is not available.</p>
+                    <p style="text-align: center;">Possible solutions:</p>
+                    <ul style="text-align: center;">
+                        <li>Check the URL to make sure it is correctly spelled.</li>
+                        <li>Return to the <a href="/">homepage</a> of our site.</li>
+                        <li>Contact the site administrator to report this issue.</li>
+                    </ul>
+                    <p style="font-size: 20px; text-align: center;">Thank you for using ElementsCssDAJ.</p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+  
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener todos los checkboxes y los contenedores .post
+            var checkboxes = document.querySelectorAll('.theme-checkbox');
+            var postContainers = document.querySelectorAll('#content');
+
+            // Agregar un evento de cambio a cada checkbox
+            checkboxes.forEach(function(checkbox, index) {
+                checkbox.addEventListener('change', function() {
+                    // Verificar si el checkbox está marcado
+                    if (checkbox.checked) {
+                        // Cambiar el fondo a negro, el color del texto a blanco y el borde a negro para el contenedor correspondiente
+                        postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
+                        postContainers[index].style.color = '#fff';
+                        postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
+                        postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
+
+                        // Ajustar el color de todos los elementos de texto dentro del contenedor
+                        var textElements = postContainers[index].querySelectorAll('p, h1, h2, ul, li');
+                        textElements.forEach(function(element) {
+                            element.style.color = '#fff';
+                        });
+                    } else {
+                        // Restaurar el fondo original, el color del texto original y el borde original para el contenedor correspondiente
+                        postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
+                        postContainers[index].style.color = 'white';
+                        postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
+                        postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
+
+                        // Ajustar el color de todos los elementos de texto dentro del contenedor
+                        var textElements = postContainers[index].querySelectorAll('p, h1, h2, ul, li');
+                        textElements.forEach(function(element) {
+                            element.style.color = 'black';
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</html>
