@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Elements Css DAJ</title>
+    <link rel="icon" href="DAJ.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3M2000LGC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z3M2000LGC');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5787732906544843" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <meta name="google-site-verification" content="3H9bV_u7lHmxJDhZ7tciNH1n8a87yr2VFYxlKEag-Zw" />
+
+    <meta name="description" content="Web HTML and CSS elements, Free for you to use on your website">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        html{
+            height: 300%;
+        }
+        body {
+            background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+            margin: 0;
+            padding: 20px 10px;
+            text-align: center;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+            color: #333;
+            font-size: small;
+            overflow-x: hidden;
+        }
+        
+        .post-title {
+            font-size: 17px;
+            color: black;
+            float: left;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(245, 245, 245, 0.09);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(94, 54, 130, 0.60);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: linear-gradient(143deg, #1795A6 43.13%, #01B3B1 100%);
+        }
+        
+        #ad {
+            background-color: rgba(44, 39, 39, 0.425);
+            height: 160px;
+            margin: 10px;
+            margin-top: 50px;
+            padding: 20px 10px;
+            text-align: center;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+            color: #333;
+            font-size: small;
+            border-radius: 20px;
+        }
+        
+        .theme-checkbox {
+            float: right;
+            --toggle-size: 12px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 4.25em;
+            height: 2.125em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 0;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 99em;
+            position: relative;
+            cursor: pointer;
+            font-size: var(--toggle-size);
+        }
+        
+        .theme-checkbox::before {
+            content: "";
+            width: 1.25em;
+            height: 1.25em;
+            position: absolute;
+            top: 0.438em;
+            left: 0.438em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 100%;
+            border-radius: 50%;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+        }
+        
+        .theme-checkbox:checked::before {
+            left: calc(100% - 2.25em - 0.438em);
+            background-position: 0;
+        }
+        
+        .theme-checkbox:checked {
+            background-position: 100%;
+        }
+        /* Page Structure */
+        
+        #content {
+            width: 100%;
+            height: 1900px;
+            margin: 0 auto;
+        }
+        
+        #main {
+            width: 100%;
+            margin: 20px;
+        }
+        
+        #main2 {
+            float: left;
+            width: 100%;
+            margin: 20px;
+            padding: 10px 0 0;
+        }
+        
+        #main3 {
+            float: left;
+            padding: 0;
+        }
+        
+        #sidebar {
+            width: 240px;
+            float: right;
+            margin: 15px 0 0;
+            font-size: 97%;
+            line-height: 1.5em;
+        }
+        /* Links */
+        
+        a:link {
+            color: rgb(255, 255, 255);
+        }
+        
+
+        a:hover {
+            color: rgb(117, 12, 61);
+        }
+        
+        a img {
+            border-width: 0;
+        }
+        /* Blog Header */
+        
+        #header {
+            width: 99%;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(245, 245, 245, 0.09);
+            backdrop-filter: blur(26.149999618530273px);
+            margin-left: 10px;
+        }
+        
+        #header div {}
+        
+        #blog-title {
+            color: #ececec;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-stroke: 3px #ffffff;
+            font-size: 150px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150px;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+            font-size: 140px;
+        }
+        
+        #blog-title a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        #description {
+            margin: 0;
+            padding: 5px 30px 10px;
+            font-size: 94%;
+            line-height: 1.5em;
+        }
+        /* Posts */
+        
+        .post {
+            width: 350px;
+            height: 430px;
+            float: left;
+            margin: 20px;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.80);
+            background: rgba(217, 217, 217, 0.90);
+            box-shadow: 0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset;
+            padding: 30px;
+            position: relative;
+        }
+        /* Sidebar Boxes */
+        
+        .box {
+            background: #fff url("https://resources.blogblog.com/blogblog/data/rounders/corners_side_top.gif") no-repeat left top;
+            margin: 0 0 15px;
+            padding: 10px 0 0;
+            color: #666;
+        }
+        
+        .box2 {
+            background: url("https://resources.blogblog.com/blogblog/data/rounders/corners_side_bot.gif") no-repeat left bottom;
+            padding: 0 13px 8px;
+        }
+        
+        .sidebar-title {
+            margin: 0;
+            padding: 0 0 .2em;
+            border-bottom: 1px dotted #9b9;
+            font-size: 115%;
+            line-height: 1.5em;
+            color: #333;
+        }
+        
+        .box ul {
+            margin: .5em 0 1.25em;
+            padding: 0 0px;
+            list-style: none;
+        }
+        
+        .box ul li {
+            background: url("https://resources.blogblog.com/blogblog/data/rounders/icon_arrow_sm.gif") no-repeat 2px .25em;
+            margin: 0;
+            padding: 0 0 3px 16px;
+            margin-bottom: 3px;
+            border-bottom: 1px dotted #eee;
+            line-height: 1.4em;
+        }
+        
+        .box p {
+            margin: 0 0 .6em;
+        }
+        
+        #footer {
+            display: none;
+            clear: both;
+            position: fixed;
+            bottom: 0;
+            width: 98%;
+            margin: 0 auto;
+            border-radius: 30px 30px 0px 0px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(245, 245, 245, 0.30);
+            backdrop-filter: blur(26.149999618530273px);
+            padding: 15px 0 15px;
+        }
+        
+        @media all {
+            #footer div {}
+            #footer div div {}
+        }
+        
+        @media handheld {
+            #footer div {}
+            #footer div div {}
+        }
+        
+        #footer hr {
+            display: none;
+        }
+        
+        #footer p {
+            margin: 0;
+        }
+        
+        #footer a {
+            color: #fff;
+        }
+        /* Feeds */
+        
+        #blogfeeds {}
+        
+        #postfeeds {
+            padding: 0 15px 0;
+        }
+        /* Etiquetas */
+        
+        .hover-container:hover .button9 img {
+            transform: translateX(-40px) scale(0.9);
+        }
+        
+        .hover-container:hover .button9::before {
+            opacity: 1;
+            transform: translateY(30px);
+        }
+        /* BOTON - Cambios para apariencia predeterminada */
+        
+        .theme-checkbox {
+            --toggle-size: 12px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 4.25em;
+            height: 2.125em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 0;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 99em;
+            position: relative;
+            cursor: pointer;
+            font-size: var(--toggle-size);
+        }
+        
+        .theme-checkbox::before {
+            content: "";
+            width: 1.25em;
+            height: 1.25em;
+            position: absolute;
+            top: 0.438em;
+            left: 0.438em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 100%;
+            border-radius: 50%;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+        }
+        /* BOTON - Cambios al hacer clic */
+        
+        .theme-checkbox:checked::before {
+            left: calc(120% - 2.25em - 0.438em);
+            background-position: 0;
+        }
+        
+        .theme-checkbox:checked {
+            background-position: 100%;
+        }
+        /* BOTON - SHOW CODE  */
+        
+        .btn-showcode {
+            --clr-font-main: hsla(0 0% 20% / 100);
+            --btn-bg-1: hsla(194 100% 69% / 1);
+            --btn-bg-2: hsla(217 100% 56% / 1);
+            --btn-bg-color: hsla(360 100% 100% / 1);
+            --radii: 0.5em;
+            cursor: pointer;
+            padding: 0.9em 1.4em;
+            min-width: 120px;
+            min-height: 44px;
+            font-size: var(--size, 1rem);
+            font-family: "Segoe UI", system-ui, sans-serif;
+            font-weight: 500;
+            transition: 0.8s;
+            background-size: 280% auto;
+            background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+            border: none;
+            border-radius: var(--radii);
+            color: var(--btn-bg-color);
+            box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+        }
+        
+        .btn-showcode:hover {
+            background-position: right top;
+        }
+        
+        .btn-showcode:is(:focus,
+         :focus-visible,
+         :active) {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .btn-showcode {
+                transition: linear;
+            }
+        }
+        /* BBARRA DE BUSQUEDA Y TAGS */
+        
+        #search-and-tags-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 20px;
+        }
+        
+        #search-box {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        #tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 50px;
+        }
+        
+        .tag-button {
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.80);
+            background: rgba(217, 217, 217, 0.90);
+            box-shadow: 0px 0px 11.3px 2px rgba(29, 29, 29, 0.25) inset;
+            cursor: pointer;
+        }
+        
+        #search-box {
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.80);
+            background: rgba(217, 217, 217, 0.90);
+            box-shadow: 0px 0px 11.3px 2px rgba(29, 29, 29, 0.25) inset;
+        }
+        /* FOOTER */
+        
+        .columna1footer {
+            float: left;
+            width: 50%;
+            color: #000000;
+        }
+        
+        .columna2footer {
+            float: right;
+            width: 50%;
+            color: #000000;
+        }
+        
+        .columna1footer a,
+        .columna2footer a {
+            color: #7a1246;
+            /* Cambia este color al que desees */
+            text-decoration: none;
+            /* Opcional: quita la subrayado predeterminado */
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Tres columnas con igual ancho */
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            /* Distribuye el espacio entre las columnas */
+        }
+        
+        .columna1footer,
+        .columna2footer,
+        .menuFooter {
+            flex: 1;
+            /* Cada columna ocupa una fracción igual del espacio disponible */
+            color: #000000;
+            padding: 15px;
+            box-sizing: border-box;
+            /* Incluye el padding en el ancho total */
+        }
+        
+        .menuFooter {
+            text-align: right;
+        }
+        
+        .menuFooter ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .menuFooter li {
+            display: inline;
+            margin-right: 10px;
+        }
+        
+        .menuFooter a {
+            text-decoration: none;
+            color: #8d0e43;
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.80);
+            background: rgba(217, 217, 217, 0.90);
+            box-shadow: 0px 0px 11.3px 2px rgba(29, 29, 29, 0.25) inset;
+            padding: 6px;
+            /* Cambia este color al que desees */
+        }
+        
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            position: relative;
+            left: 5%;
+            align-items: center;
+            /* Centra verticalmente el contenido */
+        }
+        
+        .tags-container::before {
+            content: "Tags: ";
+            margin-right: 4px;
+            color: rgba(142, 142, 142, 1);
+            font-weight: bold;
+        }
+        
+        .tag {
+            margin: 5px;
+            padding: 4px 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(85, 85, 85, 1);
+            background: rgba(42, 42, 42, 1);
+            color: rgba(142, 142, 142, 1);
+        }
+        
+        .show-code-btn {
+            position: relative;
+            left: 20%;
+            /* Ajusta esta distancia según sea necesario */
+            /* Coloca el botón en el centro horizontalmente */
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            border: 1px solid rgba(85, 85, 85, 1);
+            border-radius: 30px;
+            background-color: rgba(42, 42, 42, 1);
+            color: white;
+            cursor: pointer;
+        }
+        
+        .show-code-btn:hover {
+            background-color: rgb(53, 52, 52);
+        }
+
+        nav {
+            background-color: #22222200;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            
+        }
+        
+        nav img {
+            width: 40px;
+            height: auto;
+        }
+        
+        nav ul {
+            margin: 10px;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+       
+            /* Alinea verticalmente los elementos */
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Estilos para el campo de búsqueda */
+        
+        nav input[type="text"] {
+            margin-left: auto;
+            margin-right: 2%;
+            /* Alinear a la derecha */
+            padding: 5px;
+            width: 150px;
+            /* Ancho del campo de búsqueda */
+            border-radius: 5px;
+            background: rgba(240, 240, 240, 0.9);
+            border-radius: 17px;
+            border-style: solid;
+            border-color: rgba(216, 216, 216, 0.76);
+            border-width: 3px;
+            box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
+        }
+        /* Estilos para los botones */
+        
+        nav button {
+            margin-left: 20px;
+            /* Añadir margen a los botones */
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #333;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        nav button:last-child {
+            margin-right: 0;
+        }
+    </style>
+
+    <!-- HTML ----- WEB DE AGUSTHEKING -->
+</head>
+
+<body>
+    <div id="ad">
+        Div
+    </div>
+
+    <div id="content">
+        <nav>
+            <!-- Logo de la web -->
+            <img src="../DAJ.png" alt="Logo de la web" width="100" height="100">
+    
+            <!-- Enlaces -->
+            <ul>
+                <li><a href="https://elementscss.000webhostapp.com/">Home</a></li>
+                <li><a href="https://elementscss.000webhostapp.com/">Elementos CSS</a></li>
+                <li><a href="https://elementscss.000webhostapp.com/tutorials/menututorials.html">Tutorials</a></li>
+                <li><a href="https://elementscss.000webhostapp.com/Aboutme.html">About DAJ</a></li>
+    
+            </ul>
+            <span style="margin-left: auto; padding: 5px;">
+    
+        </nav>
+        <div id="header">
+            
+            <!-- Your header content goes here -->
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-left:20px;">
+                <div>
+                    <h1 id="blog-title">Elements Css Free</h1>
+                </div>
+
+                <div style="flex-shrink: 0; margin-left: 20px; display: flex; align-items: center;">
+                    <!-- Add your logo/image here -->
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim9XUno9EVVr29zcw0wvf9i-cYBSTsTHqe-2wgDemXhXARVQd-OVsU6VuTtDVmMc4vePOnBGp8aa_mKrdgQ4VaJXC2mmrtkRUmvKk-Cg-VgxNfbJEgiCCO3GaDMwBk1-5FwXdyJu1EkObSK6FemFmUZdbDPMyXQSuYKAB5UNIww8pBbdLHVhYto-2C7xDw/s686/DAJ.png"
+                        alt="Logo" style="max-width: 300px; max-height: 300px; vertical-align: middle;">
+                </div>
+            </div>
+            <!-- End header content -->
+        </div>
+
+        <div id="main">
+            <div id="main2">
+                <!-- Add search bar and tags container -->
+                <div id="search-and-tags-container">
+                    <input type="text" id="search-box" placeholder="Search...">
+                    <button class="tag-button" data-tag="button">...</button>
+                    <div id="tags">
+                        <button class="tag-button" data-tag="button">Button</button>
+                        <button class="tag-button" data-tag="checkboxes">Checkboxes</button>
+                        <button class="tag-button" data-tag="toggle">Toggle Switches</button>
+                        <button class="tag-button" data-tag="cards">cards</button>
+                        <button class="tag-button" data-tag="loaders">loaders</button>
+                        <button class="tag-button" data-tag="inputs">inputs</button>
+                        <button class="tag-button" data-tag="form">form</button>
+                        <!-- Add more tags as needed -->
+                    </div>
+
+                </div>
+
+                <div id="main3">
+                    <!-- -----------POSTS---------- -->
+
+                    <!-- Posts DIV CON POST dentro Botones etc...-->
+                    <div class="main3" id="elements">
+                        <!-- Post 1 TWITCH -->
+                        <div class="post" data-tags="button">
+                            <input type="checkbox" class="theme-checkbox">
+                            <h3 class="post-title">Boton Twitch</h3>
+                            <style>
+                                .elemento9 {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-top: 35%;
+                                    margin-bottom: 49%
+                                }
+                                
+                                                    /* Colors */
+                                :root {
+                                --bttwitch-bg-primary: rgb(184.24, 23.67, 210.37);
+                                --bttwitch-bg-secondary: rgb(98.82, 58.13, 214.62);
+                                --bttwitch-bg-tertiary: rgb(149.07, 72.39, 209.31);
+                                --bttwitch-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+                                }
+                                                
+                                /* Botton styles */
+                                    .button9 {
+                                    width: 170px;
+                                    height: 60px;
+                                    border-radius: 10px;
+                                    border: none;
+                                    font-weight: 600;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    box-shadow: var(--bttwitch-box-shadow);
+                                    cursor: pointer;
+                                    transition-duration: .3s;
+                                    overflow: hidden;
+                                    position: relative;
+                                    }
+                                                    
+                                    .button9 img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: scale-down;
+                                    transition: transform 0.3s;
+                                    }
+                                                    
+                                    .button9:hover img {
+                                    transform: translateX(-40px) scale(0.9);
+                                    }
+                                                    
+                                    /* Button colors */
+                                    .button9 {
+                                    background: linear-gradient(140deg, var(--bttwitch-bg-primary) 0%, var(--bttwitch-bg-secondary) 53.5%, var(--bttwitch-bg-tertiary) 100%);
+                                    }
+                                                    
+                                    /* Nametag */
+                                    .button9::before {
+                                    position: absolute;
+                                    top: -20px;
+                                    content: "@Namehere";
+                                    color: white;
+                                    transition-duration: .3s;
+                                    font-size: 12px; /* Reduce the size of the text Depending on the size of the name */
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    white-space: nowrap; 
+                                }
+
+                                .button9:hover::before {
+                                    white-space: pre-wrap; 
+                                    opacity: 1;
+                                    transform: translateY(30px);
+                                }
+                            </style>
+                           <div class="elemento9">
+                            <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" class="button9">
+                                <img src="https://i.imgur.com/ZhlLjXl.png" alt="Twitch" style="width:100%;height:100%">
+                            </a>
+                        </div>
+                        
+                            <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
+                            <div class="tags-container">
+                                <div class="tag">Boton</div>
+                                <div class="tag">Social</div>
+                                <div class="tag">css</div>
+                                <div class="tag">html</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Post 2 Animación interior ONDAS -->
+                    <div class="post" data-tags="button">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">Boton Animacion Interior</h3>
+                        <style>
+                            .elemento8 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 35%;
+                                margin-bottom: 49%;
+                            }
+                            
+                            .button8 {
+                                --color: #00A97F;
+                                padding: 0.8em 1.7em;
+                                background-color: transparent;
+                                border-radius: .3em;
+                                position: relative;
+                                overflow: hidden;
+                                cursor: pointer;
+                                transition: .5s;
+                                font-weight: 400;
+                                font-size: 17px;
+                                border: 1px solid;
+                                font-family: inherit;
+                                text-transform: uppercase;
+                                color: var(--color);
+                                z-index: 1;
+                            }
+                            
+                            .button8::before,
+                            .button8::after {
+                                content: '';
+                                display: block;
+                                width: 50px;
+                                height: 50px;
+                                transform: translate(-50%, -50%);
+                                position: absolute;
+                                border-radius: 50%;
+                                z-index: -1;
+                                background-color: var(--color);
+                                transition: 1s ease;
+                            }
+                            
+                            .button8::before {
+                                top: -1em;
+                                left: -1em;
+                            }
+                            
+                            .button8::after {
+                                left: calc(100% + 1em);
+                                top: calc(100% + 1em);
+                            }
+                            
+                            .button8:hover::before,
+                            .button8:hover::after {
+                                height: 410px;
+                                width: 410px;
+                            }
+                            
+                            .button8:hover {
+                                color: rgb(10, 25, 30);
+                            }
+                            
+                            .button8:active {
+                                filter: brightness(.8);
+                            }
+                        </style>
+
+                        <div class="elemento8">
+                            <button class="button8"> Button
+                                </button>
+                        </div>
+                        <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                            <button class="show-code-btn">Show Code { }</button>
+                        </a>
+                        <!-- Tags  -->
+                        <div class="tags-container">
+                            <div class="tag">Boton</div>
+                            <div class="tag">animation</div>
+                            <div class="tag">css</div>
+                            <div class="tag">html</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Post 3 DELETE -->
+                    <div class="post" data-tags="button">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">Boton Delete</h3>
+
+                        <style>
+                            .elemento1 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 35%;
+                                margin-bottom: 49%;
+                            }
+                            
+                            .button1 {
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                background-color: rgb(20, 20, 20);
+                                border: none;
+                                font-weight: 600;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+                                cursor: pointer;
+                                transition-duration: .3s;
+                                overflow: hidden;
+                                position: relative;
+                            }
+                            
+                            .svgIcon1 {
+                                width: 12px;
+                                transition-duration: .3s;
+                            }
+                            
+                            .svgIcon1 path {
+                                fill: white;
+                            }
+                            
+                            .button1:hover {
+                                width: 140px;
+                                border-radius: 50px;
+                                transition-duration: .3s;
+                                background-color: rgb(255, 69, 69);
+                                align-items: center;
+                            }
+                            
+                            .button1:hover .svgIcon1 {
+                                width: 50px;
+                                transition-duration: .3s;
+                                transform: translateY(60%);
+                            }
+                            
+                            .button1::before {
+                                position: absolute;
+                                top: -20px;
+                                content: "Delete";
+                                color: white;
+                                transition-duration: .3s;
+                                font-size: 2px;
+                            }
+                            
+                            .button1:hover::before {
+                                font-size: 13px;
+                                opacity: 1;
+                                transform: translateY(30px);
+                                transition-duration: .3s;
+                            }
+                        </style>
+
+                        <div class="elemento1">
+                            <button class="button1">
+  <svg viewBox="0 0 448 512" class="svgIcon1"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
+</button>
+                        </div>
+                        <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                            <button class="show-code-btn">Show Code { }</button>
+                        </a>
+                        <!-- Tags  -->
+                        <div class="tags-container">
+                            <div class="tag">Boton</div>
+                            <div class="tag">animation</div>
+                            <div class="tag">css</div>
+                            <div class="tag">html</div>
+                        </div>
+                    </div>
+
+                    <!-- Post 4 Boton Download -->
+                    <div class="post" data-tags="Checkboxes">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">Boton Download</h3>
+                        <style>
+                            .elemento3 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 35%;
+                                margin-bottom: 49%;
+                            }
+                            
+                            .button3 {
+                                position: relative;
+                                overflow: hidden;
+                                height: 3rem;
+                                padding: 0 2rem;
+                                border-radius: 1.5rem;
+                                background: #3d3a4e;
+                                background-size: 400%;
+                                color: #fff;
+                                border: none;
+                                cursor: pointer;
+                            }
+                            
+                            .button3:hover::before {
+                                -webkit-transform: scaleX(1);
+                                -ms-transform: scaleX(1);
+                                transform: scaleX(1);
+                            }
+                            
+                            .button-content3 {
+                                position: relative;
+                                z-index: 1;
+                            }
+                            
+                            .button3::before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                -webkit-transform: scaleX(0);
+                                -ms-transform: scaleX(0);
+                                transform: scaleX(0);
+                                -webkit-transform-origin: 0 50%;
+                                -ms-transform-origin: 0 50%;
+                                transform-origin: 0 50%;
+                                width: 100%;
+                                height: inherit;
+                                border-radius: inherit;
+                                background: linear-gradient( 82.3deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
+                                -webkit-transition: all 0.475s;
+                                transition: all 0.475s;
+                            }
+                        </style>
+                        <div class="elemento3">
+                            <button class="button3">
+    <span class="button-content3">Download </span>
+  </button>
+                        </div>
+                        <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                            <button class="show-code-btn">Show Code { }</button>
+                        </a>
+                        <!-- Tags  -->
+                        <div class="tags-container">
+                            <div class="tag">Boton</div>
+                            <div class="tag">animation</div>
+                            <div class="tag">css</div>
+                            <div class="tag">html</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Post 5 Boton Rojo  -->
+                    <div class="post" data-tags="Checkboxes">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">Boton Magenta</h3>
+                        <style>
+                            .elemento5 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 35%;
+                                margin-bottom: 49%;
+                            }
+                            
+                            button5 {
+                                position: relative;
+                                background-color: rgb(230, 34, 77);
+                                border-radius: 5px;
+                                box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+                                padding: 15px;
+                                background-repeat: no-repeat;
+                                cursor: pointer;
+                                box-sizing: border-box;
+                                width: 154px;
+                                height: 49px;
+                                color: #fff;
+                                border: none;
+                                font-size: 20px;
+                                transition: all 0.3s ease-in-out;
+                                z-index: 1;
+                                overflow: hidden;
+                            }
+                            
+                            button5::before {
+                                content: "";
+                                background-color: rgb(248, 50, 93);
+                                width: 0;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: -1;
+                                transition: width 700ms ease-in-out;
+                                display: inline-block;
+                            }
+                            
+                            button5:hover::before {
+                                width: 100%;
+                            }
+                        </style>
+
+                        <div class="elemento5">
+                            <button5>Button</button5>
+                        </div>
+                        <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                            <button class="show-code-btn">Show Code { }</button>
+                        </a>
+                        <!-- Tags  -->
+                        <div class="tags-container">
+                            <div class="tag">Boton</div>
+                            <div class="tag">animation</div>
+                            <div class="tag">css</div>
+                            <div class="tag">html</div>
+                        </div>
+                    </div>
+
+                    <!-- Post 6 Boton Morado con Enlace -->
+                    <div class="post">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">Botón Morado</h3>
+                        <style>
+                            .elemento7 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 35%;
+                                margin-bottom: 49%;
+                            }
+                            
+                            .pushable7 {
+                                position: relative;
+                                background: transparent;
+                                padding: 0px;
+                                border: none;
+                                cursor: pointer;
+                                outline-offset: 4px;
+                                outline-color: deeppink;
+                                transition: filter 250ms;
+                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            }
+                            
+                            .shadow7 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                background: hsl(226, 25%, 69%);
+                                border-radius: 8px;
+                                filter: blur(2px);
+                                will-change: transform;
+                                transform: translateY(2px);
+                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                            }
+                            
+                            .edge7 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 8px;
+                                background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
+                            }
+                            
+                            .front7 {
+                                display: block;
+                                position: relative;
+                                border-radius: 8px;
+                                background: hsl(248, 53%, 58%);
+                                padding: 16px 32px;
+                                color: white;
+                                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                letter-spacing: 1.5px;
+                                font-size: 1rem;
+                                transform: translateY(-4px);
+                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                            }
+                            
+                            .pushable7:hover {
+                                filter: brightness(110%);
+                            }
+                            
+                            .pushable7:hover .front7 {
+                                transform: translateY(-6px);
+                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                            }
+                            
+                            .pushable7:active .front7 {
+                                transform: translateY(-2px);
+                                transition: transform 34ms;
+                            }
+                            
+                            .pushable7:hover .shadow7 {
+                                transform: translateY(4px);
+                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                            }
+                            
+                            .pushable7:active .shadow7 {
+                                transform: translateY(1px);
+                                transition: transform 34ms;
+                            }
+                            
+                            .pushable7:focus:not(:focus-visible) {
+                                outline: none;
+                            }
+                        </style>
+                        <div class="elemento7">
+                            <button class="pushable7">
+                                <span class="shadow7"></span>
+                                <span class="edge7"></span>
+                                <span class="front7">
+                                    Push Me
+                                </span>
+                                </button>
+
+                        </div>
+                        <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                            <button class="show-code-btn">Show Code { }</button>
+                        </a>
+                        <!-- Tags  -->
+                        <div class="tags-container">
+                            <div class="tag">Boton</div>
+                            <div class="tag">animation</div>
+                            <div class="tag">css</div>
+                            <div class="tag">html</div>
+                        </div>
+
+                    </div>
+                    <!-- Post 7 Boton Morado con Enlace -->
+                    <div class="post">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">Botón Morado</h3>
+                        <style>
+                            .elemento8 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 35%;
+                                margin-bottom: 49%;
+                            }
+                            
+                            .pushable8 {
+                                position: relative;
+                                background: transparent;
+                                padding: 0px;
+                                border: none;
+                                cursor: pointer;
+                                outline-offset: 4px;
+                                outline-color: deeppink;
+                                transition: filter 250ms;
+                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            }
+                            
+                            .shadow8 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                background: hsl(226, 25%, 69%);
+                                border-radius: 8px;
+                                filter: blur(2px);
+                                will-change: transform;
+                                transform: translateY(2px);
+                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                            }
+                            
+                            .edge8 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 8px;
+                                background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
+                            }
+                            
+                            .front8 {
+                                display: block;
+                                position: relative;
+                                border-radius: 8px;
+                                background: hsl(248, 53%, 58%);
+                                padding: 16px 32px;
+                                color: white;
+                                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                letter-spacing: 1.5px;
+                                font-size: 1rem;
+                                transform: translateY(-4px);
+                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                            }
+                            
+                            .pushable8:hover {
+                                filter: brightness(110%);
+                            }
+                            
+                            .pushable8:hover .front7 {
+                                transform: translateY(-6px);
+                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                            }
+                            
+                            .pushable8:active .front7 {
+                                transform: translateY(-2px);
+                                transition: transform 34ms;
+                            }
+                            
+                            .pushable8:hover .shadow7 {
+                                transform: translateY(4px);
+                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                            }
+                            
+                            .pushable8:active .shadow7 {
+                                transform: translateY(1px);
+                                transition: transform 34ms;
+                            }
+                            
+                            .pushable8:focus:not(:focus-visible) {
+                                outline: none;
+                            }
+                        </style>
+                        <div class="elemento8">
+                            <button class="pushable8">
+                                        <span class="shadow8"></span>
+                                        <span class="edge8"></span>
+                                        <span class="front8">
+                                            Push Me
+                                        </span>
+                                </button>
+
+                        </div>
+                        <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                            <button class="show-code-btn">Show Code { }</button>
+                        </a>
+                        <!-- Tags  -->
+                        <div class="tags-container">
+                            <div class="tag">Boton</div>
+                            <div class="tag">animation</div>
+                            <div class="tag">css</div>
+                            <div class="tag">html</div>
+                        </div>
+                    </div>
+                    <!-- Post 8 Boton Morado con Enlace -->
+                    <div class="post">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">Botón Morado</h3>
+                        <style>
+                            .elemento8 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-top: 35%;
+                                margin-bottom: 49%;
+                            }
+                            
+                            .pushable8 {
+                                position: relative;
+                                background: transparent;
+                                padding: 0px;
+                                border: none;
+                                cursor: pointer;
+                                outline-offset: 4px;
+                                outline-color: deeppink;
+                                transition: filter 250ms;
+                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            }
+                            
+                            .shadow8 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                background: hsl(226, 25%, 69%);
+                                border-radius: 8px;
+                                filter: blur(2px);
+                                will-change: transform;
+                                transform: translateY(2px);
+                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                            }
+                            
+                            .edge8 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 8px;
+                                background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
+                            }
+                            
+                            .front8 {
+                                display: block;
+                                position: relative;
+                                border-radius: 8px;
+                                background: hsl(248, 53%, 58%);
+                                padding: 16px 32px;
+                                color: white;
+                                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                letter-spacing: 1.5px;
+                                font-size: 1rem;
+                                transform: translateY(-4px);
+                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                            }
+                            
+                            .pushable8:hover {
+                                filter: brightness(110%);
+                            }
+                            
+                            .pushable8:hover .front7 {
+                                transform: translateY(-6px);
+                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                            }
+                            
+                            .pushable8:active .front7 {
+                                transform: translateY(-2px);
+                                transition: transform 34ms;
+                            }
+                            
+                            .pushable8:hover .shadow7 {
+                                transform: translateY(4px);
+                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                            }
+                            
+                            .pushable8:active .shadow7 {
+                                transform: translateY(1px);
+                                transition: transform 34ms;
+                            }
+                            
+                            .pushable8:focus:not(:focus-visible) {
+                                outline: none;
+                            }
+                        </style>
+                        <div class="elemento8">
+                            <button class="pushable8">
+                                                                <span class="shadow8"></span>
+                                                                <span class="edge8"></span>
+                                                                <span class="front8">
+                                                                    Push Me
+                                                                </span>
+                                                        </button>
+
+                        </div>
+                        <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                            <button class="show-code-btn">Show Code { }</button>
+                        </a>
+                        <!-- Tags  -->
+                        <div class="tags-container">
+                            <div class="tag">Boton</div>
+                            <div class="tag">animation</div>
+                            <div class="tag">css</div>
+                            <div class="tag">html</div>
+                        </div>
+                    </div>
+                                        <!-- Post 8 Boton Morado con Enlace -->
+                                        <div class="post">
+                                            <input type="checkbox" class="theme-checkbox">
+                                            <h3 class="post-title">Botón Morado</h3>
+                                            <style>
+                                                .elemento8 {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin-top: 35%;
+                                                    margin-bottom: 49%;
+                                                }
+                                                
+                                                .pushable8 {
+                                                    position: relative;
+                                                    background: transparent;
+                                                    padding: 0px;
+                                                    border: none;
+                                                    cursor: pointer;
+                                                    outline-offset: 4px;
+                                                    outline-color: deeppink;
+                                                    transition: filter 250ms;
+                                                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                                }
+                                                
+                                                .shadow8 {
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    background: hsl(226, 25%, 69%);
+                                                    border-radius: 8px;
+                                                    filter: blur(2px);
+                                                    will-change: transform;
+                                                    transform: translateY(2px);
+                                                    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                                                }
+                                                
+                                                .edge8 {
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    border-radius: 8px;
+                                                    background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
+                                                }
+                                                
+                                                .front8 {
+                                                    display: block;
+                                                    position: relative;
+                                                    border-radius: 8px;
+                                                    background: hsl(248, 53%, 58%);
+                                                    padding: 16px 32px;
+                                                    color: white;
+                                                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                                                    font-weight: 600;
+                                                    text-transform: uppercase;
+                                                    letter-spacing: 1.5px;
+                                                    font-size: 1rem;
+                                                    transform: translateY(-4px);
+                                                    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                                                }
+                                                
+                                                .pushable8:hover {
+                                                    filter: brightness(110%);
+                                                }
+                                                
+                                                .pushable8:hover .front7 {
+                                                    transform: translateY(-6px);
+                                                    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                                                }
+                                                
+                                                .pushable8:active .front7 {
+                                                    transform: translateY(-2px);
+                                                    transition: transform 34ms;
+                                                }
+                                                
+                                                .pushable8:hover .shadow7 {
+                                                    transform: translateY(4px);
+                                                    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+                                                }
+                                                
+                                                .pushable8:active .shadow7 {
+                                                    transform: translateY(1px);
+                                                    transition: transform 34ms;
+                                                }
+                                                
+                                                .pushable8:focus:not(:focus-visible) {
+                                                    outline: none;
+                                                }
+                                            </style>
+                                            <div class="elemento8">
+                                                <button class="pushable8">
+                                                                                    <span class="shadow8"></span>
+                                                                                    <span class="edge8"></span>
+                                                                                    <span class="front8">
+                                                                                        Push Me
+                                                                                    </span>
+                                                                            </button>
+                    
+                                            </div>
+                                            <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
+                                                <button class="show-code-btn">Show Code { }</button>
+                                            </a>
+                                            <!-- Tags  -->
+                                            <div class="tags-container">
+                                                <div class="tag">Boton</div>
+                                                <div class="tag">animation</div>
+                                                <div class="tag">css</div>
+                                                <div class="tag">html</div>
+                                            </div>
+                                        </div>
+                        <!-- Fin de los posts -->
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <hr>
+                <div class="columna1footer">
+                    <p>Elementos CSS DAJ tiene licencia CC BY-NC 4.0.© 1 por AgusTheKing</p>
+                    <p xmlns:cc="http://creativecommons.org/ns">Esta WEB tiene la licencia <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="licencia noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:textoinferior;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-abajo;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-abajo;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></p>
+                </div>
+
+                <div class="columna2footer">
+                    <a href="https://elementscss.000webhostapp.com/Privacidad%20y%20Cookies.html" id="aboutMeBtn">Terms & Conditions</a>
+                    <p id="rights">Todos los derechos reservados ElementsCSSDAJ© 2024</p>
+                </div>
+
+                <!-- Nueva columna para el menú -->
+                <div class="menuFooter">
+                    <ul>
+                        <li>
+                            <a href="#home">HOME</a>
+                        </li>
+                        <li>
+                            <a href="https://elementscss.000webhostapp.com/Aboutme.html">About me</a>
+                        </li>
+                        <li>
+                            <a href="https://elementscss.000webhostapp.com/Privacidad%20y%20Cookies.html">Terms & Conditions</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Obtener todos los checkboxes y los contenedores .post
+                var checkboxes = document.querySelectorAll('.theme-checkbox');
+                var postContainers = document.querySelectorAll('.post');
+
+                // Agregar un evento de cambio a cada checkbox
+                checkboxes.forEach(function(checkbox, index) {
+                    checkbox.addEventListener('change', function() {
+                        // Verificar si el checkbox está marcado
+                        if (checkbox.checked) {
+                            // Cambiar el fondo a negro, el color del texto a blanco y el borde a negro para el contenedor correspondiente
+                            postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
+                            postContainers[index].style.color = '#fff';
+                            postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
+                            postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
+
+                            // Adjust the color of the post-title directly
+                            var postTitle = postContainers[index].querySelector('.post-title');
+                            if (postTitle) {
+                                postTitle.style.color = '#fff';
+                            }
+                        } else {
+                            // Restaurar el fondo original, el color del texto original y el borde original para el contenedor correspondiente
+                            postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
+                            postContainers[index].style.color = 'white';
+                            postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
+                            postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
+
+                            // Adjust the color of the post-title directly
+                            var postTitle = postContainers[index].querySelector('.post-title');
+                            if (postTitle) {
+                                postTitle.style.color = 'black';
+                            }
+                        }
+                    });
+                });
+            });
+
+            //CODE PARA TAGS
+            document.addEventListener('DOMContentLoaded', function() {
+                // Obtener todos los checkboxes y los contenedores .post
+                var checkboxes = document.querySelectorAll('.theme-checkbox');
+                var postContainers = document.querySelectorAll('.post');
+
+                // Agregar un evento de cambio a cada checkbox
+                checkboxes.forEach(function(checkbox, index) {
+                    checkbox.addEventListener('change', function() {
+                        // Verificar si el checkbox está marcado
+                        if (checkbox.checked) {
+                            // Cambiar el fondo a negro, el color del texto a blanco y el borde a negro para el contenedor correspondiente
+                            postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
+                            postContainers[index].style.color = '#fff';
+                            postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
+                            postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
+
+                            // Adjust the color of the post-title directly
+                            var postTitle = postContainers[index].querySelector('.post-title');
+                            if (postTitle) {
+                                postTitle.style.color = '#fff';
+                            }
+                        } else {
+                            // Restaurar el fondo original, el color del texto original y el borde original para el contenedor correspondiente
+                            postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
+                            postContainers[index].style.color = 'white';
+                            postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
+                            postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
+
+                            // Adjust the color of the post-title directly
+                            var postTitle = postContainers[index].querySelector('.post-title');
+                            if (postTitle) {
+                                postTitle.style.color = 'black';
+                            }
+                        }
+                    });
+                });
+
+                //CODE PARA TAGS
+                $(document).ready(function() {
+                    var $searchInput = $('#search-box');
+                    var $tagButtons = $('.tag-button');
+                    var $posts = $('#main3 .post'); // Update the selector to target posts under the "main3" container
+
+                    $searchInput.on('keyup', function() {
+                        var searchTerm = $(this).val().toLowerCase();
+                        $posts.hide().filter(function() {
+                            var postTitle = $(this).text().toLowerCase();
+                            return postTitle.includes(searchTerm);
+                        }).show();
+                    });
+
+                    $tagButtons.on('click', function() {
+                        var tag = $(this).data('tag').toLowerCase();
+                        $posts.hide().filter(function() {
+                            var postTags = $(this).data('tags') || '';
+                            return postTags.split(',').map(function(t) {
+                                return t.trim();
+                            }).includes(tag);
+                        }).show();
+                    });
+                });
+            });
+        </script>
+
+</html>
+
