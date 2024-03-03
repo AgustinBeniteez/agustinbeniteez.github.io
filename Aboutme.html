@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>About DAJ</title>
+    <meta name="description" content="Information about the website and developer and tutorials on how to use the website DAJ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+    <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRWEyYlt2FGfrp3LkQfvPyIRw4SjH1wojJZUbfm0UIxcv_a_WfdMAhADPMz-OKRyKge6K1htUx8TyQeYYliGGukkknJa3NWeJkOC_C6hwym3p3kq3iKt19mER-MS7BciVUX4oo99TWGV9rDD8etsUd5NQkyRtabtPYh1lCYns1A70dBgU1vPZCvqGyHkpG/s1600/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        html{
+            height: 100%;
+        }
+        body {
+            background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+            margin: 60px;
+            padding: 20px 10px;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+            color: #000000;
+            font-size: small;
+            overflow-x: hidden;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(245, 245, 245, 0.09);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(94, 54, 130, 0.60);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: linear-gradient(143deg, #1795A6 43.13%, #01B3B1 100%);
+        }
+        
+
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+    
+        }
+        
+        .menuFooter {
+            flex: 1;
+        
+            color: #000000;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .menuFooter {
+            text-align: right;
+        }
+        
+        .menuFooter ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .menuFooter li {
+            display: inline;
+            margin-right: 10px;
+        }
+        
+        .menuFooter a {
+            text-decoration: none;
+            color: #8d0e43;
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.80);
+            background: rgba(217, 217, 217, 0.90);
+            box-shadow: 0px 0px 11.3px 2px rgba(29, 29, 29, 0.25) inset;
+            padding: 6px;
+    
+        }
+        
+
+        /* FOOTER */
+        
+        .columna1footer {
+            float: left;
+            width: 50%;
+            color: #000000;
+        }
+        
+        .columna2footer {
+            float: right;
+            width: 50%;
+            color: #000000;
+        }
+        
+        .columna1footer a,
+        .columna2footer a {
+            color: #7a1246;
+  
+            text-decoration: none;
+   
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+  
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+
+        }
+        
+        .columna1footer,
+        .columna2footer,
+        .menuFooter {
+            flex: 1;
+
+            color: #000000;
+            padding: 15px;
+            box-sizing: border-box;
+
+        }
+
+        .ytlogobucle{
+            border-radius: 20px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+        
+        h1{
+            color: #ffffff;
+            text-align: left;
+            font-family: "SegoeUiVariable-RegularDisplay", sans-serif;
+            font-size: 66px;
+            -webkit-text-stroke: 2px #ffffff;
+        }
+
+        h2{
+            color: #ffffff;
+            text-align: left;
+            font-family: "SegoeUiVariable-RegularDisplay", sans-serif;
+            font-size: 36px;
+          
+        }
+
+        .txtelements{
+            color: #ffffff;
+            text-align: left;
+            font-family: "SegoeUiVariable-RegularDisplay", sans-serif;
+            font-size: 16px;
+        }
+
+        .gif{
+            width:560px;
+            height:315px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+        .gif img {
+            width:560px; 
+            height:315px;
+     
+        }
+/* REDES SOCIALES */
+
+/* Contenedor para los botones sociales */
+.social-icons-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Estilo para los botones sociales */
+.social-icon {
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px; /* Radio del borde */
+    padding: 5px; /* Espaciado interno */
+}
+
+.social-icon img {
+    width: 50px; /* Tamaño de la imagen */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Cambia el tamaño del icono al pasar el cursor */
+}
+
+.txtelements2{
+    color: #ffffff;
+            text-align: left;
+            font-family: "SegoeUiVariable-RegularDisplay", sans-serif;
+            font-size: 16px;
+}
+/* Estilos para las miniaturas de los vídeos */
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* @MEDIAS DE PANTALLA*/
+
+/* Media query para pantallas de hasta 768px de ancho (dispositivos móviles) */
+@media only screen and (max-width: 968px) {
+    body {
+        margin: 0; /* Elimina el margen en dispositivos móviles */
+    }
+
+    #content {
+        flex-direction: column; /* Cambia la dirección del contenido a columnas */
+        align-items: center; /* Centra los elementos en el eje horizontal */
+    }
+    .txtelements{
+    margin-top: 9%;
+    }
+
+    .gif,
+    .social-icons-container,
+    .txtelements:last-child:not(:nth-last-child(2)) { /* Oculta el último elemento txtelements que no es el penúltimo */
+        display: none; /* Oculta el div del gif, las redes sociales y el div del desarrollador */
+    }
+
+    .columna1footer,
+    .columna2footer {
+        width: 100%; /* Ajusta el ancho de las columnas del footer al 100% */
+        text-align: center; /* Centra el texto en las columnas del footer */
+    }
+
+    /* Añadimos estilos para los divs de la izquierda */
+    #content > div:nth-child(1),
+    #content > div:nth-child(2) {
+        width: 100%; /* Los divs de la izquierda ocupan el 100% de ancho */
+    }
+
+    /* Ajustamos la altura del footer */
+
+
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div id="content" style="display: flex; height: 750px;">
+        <div style="flex: 2; display: flex; flex-direction: column;">
+            <div  class="txtelements" style="flex: 1;">
+                <h1>Elements Css DAJ</h1>
+                <p>It is a web platform that offers a wide range of free elements for web designers and developers.<br> From CSS styles sets to HTML components, this platform provides essential resources to enhance <br> the aesthetics and functionality of websites.</p>
+       
+           
+                <ul>
+                    <li>Free elements for web designers and developers.</li>
+                    <li>CSS styles sets and HTML components available.</li>
+                    <li>Intuitive and easy-to-navigate interface.</li>
+                    <li>Resources to customize and improve website aesthetics.</li>
+                </ul>
+           
+       
+            
+                <ul>
+                    <li>Access to high-quality free resources.</li>
+                    <li>Possibility to enhance the functionality and aesthetics of your websites.</li>
+                    <li>Time saving in web development projects.</li>
+                    <li>Active community of designers and developers.</li>
+                </ul>
+           
+
+
+
+            </div>
+            <div class="txtelements2" style="flex: -1; position: relative; white-space: nowrap; margin-bottom: 20px;">
+                <h1>Tutorials</h1>
+                <p>Tutorials for Website Management and Implementation of Elements on your Website [UNDER MAINTENANCE] (Videos are being created)</p>
+
+                <div style="display: flex;">
+                    <div style="width: 350px; height: 200px; margin-right: 10px; margin-bottom: 20px;">
+                        <a href="https://elementscss.000webhostapp.com/tutorials/video-example.html">
+                            <img class="video-thumbnail" style="width: 100%; border-radius:10px;" src="https://lh5.googleusercontent.com/nTIWuMW8OQVrrJ9S-JFrBCnMHtxs9brTY7iLg6sAuFmNiGGgFE1Bc6_XEImnD8FAnWDCF7557VifQf1d_F68nCUWVeDdgXYbqbF_5jFKGjnIuxKR-D60rshLzcrgHxjhPA=w1280" alt="Miniatura del vídeo">
+                        </a>
+                    </div>
+                    <div style="width: 350px; height: 200px; margin-right: 10px; margin-bottom: 20px;">
+                        <a href="https://elementscss.000webhostapp.com/tutorials/video-example.html">
+                            <img class="video-thumbnail" style="width: 100%; border-radius:10px;" src="https://lh4.googleusercontent.com/K1HgNEQGgeFyv-cIJG-OE5sFLREwtjYmNNBjpxn4OelG8OVUAobnVTdDRQLLCIV_WjdCLZfs4XOVhguhzCdHg834-NKckb4esBBan6_gXm4_Npj8N2NttfLvO4LtYMxHuw=w1280" alt="Miniatura del vídeo">
+                        </a>
+                    </div>
+                    <div style="width: 350px; height: 200px; margin-right: 10px; margin-bottom: 20px;">
+                        <a href="https://elementscss.000webhostapp.com/tutorials/video-example.html">
+                            <img class="video-thumbnail" style="width: 100%; border-radius:10px;" src="https://lh6.googleusercontent.com/EOee7WjgNCpMHjJ4NgSmH8oRmqps6_ttt0sZ-wXL4NVvh0gN5ZUgYkM7jlZY3VMzoftsSwAk-MdRdjUUwyCJC2OWKBDTc2OAPj4HnCyQIsC7Iar9tjGLQo_QFYIzfRh8bw=w1280" alt="Miniatura del vídeo">
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column;">
+            <div style="flex: 1;">
+                <img class="gif" src="https://lh6.googleusercontent.com/6E6maUrMDCF7Kd6Za_ZSgER2MaVv9gRLe6GSlpvqObNIn-v4NQRJiv0rVDSwxcWoCoDjs5WKxt5HQ830k-EqGUioMoouYaocwkJZMPk7YF1dPju1nH-55Nmxs6T2PQbv3Q=w1280" alt="DAJ" onerror="this.onerror=null; this.src='DAJ.png'; this.alt='Elements Css DAJ LOGO';">
+            </div>
+            <div  class="txtelements" style="flex: 1;">
+                <h2>Developer</h2>
+                <p>I'm AgusTheKing, a passionate web designer and developer. Welcome, I hope to help you!</p>
+                <div class="social-icons-container">
+                    <a href="https://twitter.com/ElementsCssDAJ" class="social-icon" target="_blank"><img src="https://lh4.googleusercontent.com/2-kk8x5ihozU6CTF6lNR3MEtJgwLrIuTUXtR1XxUOFX7GDw-UpbQgMwYAreqtLvFhYMRkHn4WE6jHb_wc956y-c=w1280" alt="Twitter"></a>
+                    <br>
+                    <a href="https://www.youtube.com/@ElementscssDaj" class="social-icon" target="_blank"><img src="https://lh6.googleusercontent.com/GQpDOJO_8sSwSPG5lqf5Zak3Q5luB4sx0KfvlQ6-xzBHZ8nmj6a2enOPpQV0Kv7AbyyaoeS_fuFwcnr4hFxhwQ=w1280" alt="youtube"></a>
+                    <br>
+                    <a href="https://www.instagram.com/elementscssdaj/" class="social-icon" target="_blank"><img src="https://lh5.googleusercontent.com/lC9d0mZxQDi6aM-wKJjy8BH0_VEfwWqudIcrtjITl84MZiiY8JbTsEdNyMesw3Ei5hv8jFF4I7l2S_e4oTkn6zs=w1280" alt="Instagram"></a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+
+    
+    
+    
+    <footer>
+        <hr>
+        <div class="columna1footer">
+            <p>Elements CSS DAJ has CC BY-NC 4.0 license.© 1 by AgusTheKing</p>
+            <p xmlns:cc="http://creativecommons.org/ns">This WEBSITE is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:textoinferior;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></p>
+        </div>
+
+        <div class="columna2footer">
+            <a href="https://elementscss.000webhostapp.com/Privacy%20and%20Cookies.html" id="aboutMeBtn">Terms & Conditions</a>
+            <p id="rights">All rights reserved ElementsCSSDAJ© 2024</p>
+        </div>
+
+
+    </footer>
+
+    </div>
+    <script>
+      
+    </script>
+
+</html>
