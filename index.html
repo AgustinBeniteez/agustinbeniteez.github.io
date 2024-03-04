@@ -1412,104 +1412,163 @@
                                         <!-- Post 8 Boton Morado con Enlace -->
                                         <div class="post">
                                             <input type="checkbox" class="theme-checkbox">
-                                            <h3 class="post-title">Botón Morado</h3>
+                                            <h3 class="post-title">Botón Bola de Nieve</h3>
                                             <style>
-                                                .elemento8 {
+                                                .elemento9 {
                                                     display: flex;
                                                     align-items: center;
                                                     justify-content: center;
                                                     margin-top: 35%;
-                                                    margin-bottom: 49%;
+                                                    margin-bottom: 39%;
                                                 }
                                                 
-                                                .pushable8 {
+                                                .snowball-button9 {
                                                     position: relative;
-                                                    background: transparent;
-                                                    padding: 0px;
-                                                    border: none;
-                                                    cursor: pointer;
-                                                    outline-offset: 4px;
-                                                    outline-color: deeppink;
-                                                    transition: filter 250ms;
-                                                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                                                }
-                                                
-                                                .shadow8 {
-                                                    position: absolute;
-                                                    top: 0;
-                                                    left: 0;
-                                                    height: 100%;
-                                                    width: 100%;
-                                                    background: hsl(226, 25%, 69%);
-                                                    border-radius: 8px;
-                                                    filter: blur(2px);
-                                                    will-change: transform;
-                                                    transform: translateY(2px);
-                                                    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-                                                }
-                                                
-                                                .edge8 {
-                                                    position: absolute;
-                                                    top: 0;
-                                                    left: 0;
-                                                    height: 100%;
-                                                    width: 100%;
-                                                    border-radius: 8px;
-                                                    background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
-                                                }
-                                                
-                                                .front8 {
-                                                    display: block;
-                                                    position: relative;
-                                                    border-radius: 8px;
-                                                    background: hsl(248, 53%, 58%);
-                                                    padding: 16px 32px;
+                                                    display: flex;
+                                                    align-items: flex-end;
+                                                    justify-content: center;
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    border-radius: 50%;
+                                                    background: linear-gradient(to bottom, #007bff, #007bff 70%, #ffffff 70%, #ffffff);
+                                                    /* Fondo azul arriba, blanco abajo */
                                                     color: white;
-                                                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                                                    font-weight: 600;
-                                                    text-transform: uppercase;
-                                                    letter-spacing: 1.5px;
-                                                    font-size: 1rem;
-                                                    transform: translateY(-4px);
-                                                    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-                                                }
-                                                
-                                                .pushable8:hover {
-                                                    filter: brightness(110%);
-                                                }
-                                                
-                                                .pushable8:hover .front7 {
-                                                    transform: translateY(-6px);
-                                                    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-                                                }
-                                                
-                                                .pushable8:active .front7 {
-                                                    transform: translateY(-2px);
-                                                    transition: transform 34ms;
-                                                }
-                                                
-                                                .pushable8:hover .shadow7 {
-                                                    transform: translateY(4px);
-                                                    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-                                                }
-                                                
-                                                .pushable8:active .shadow7 {
-                                                    transform: translateY(1px);
-                                                    transition: transform 34ms;
-                                                }
-                                                
-                                                .pushable8:focus:not(:focus-visible) {
+                                                    font-size: 24px;
+                                                    font-weight: bold;
+                                                    cursor: pointer;
+                                                    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+                                                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                                    overflow: hidden;
+                                                    border: none;
                                                     outline: none;
                                                 }
+
+                                                /* Línea divisoria */
+
+                                                .snowball-button9::before {
+                                                    content: "";
+                                                    position: absolute;
+                                                    bottom: 30%;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    height: 1px;
+                                                    background-color: rgba(255, 255, 255, 0.5);
+                                                    /* Color blanco con transparencia */
+                                                    z-index: 1;
+                                                    /* Asegura que esté sobre el fondo */
+                                                }
+
+                                                /* Cambio de sombra al pasar el cursor */
+
+                                                .snowball-button9:hover {
+                                                    transform: scale(1.1);
+                                                    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+                                                    animation: shake 0.5s linear infinite;
+                                                    /* Temblor al pasar el cursor */
+                                                }
+
+                                                /* Estilo del icono */
+
+                                                .snowball-button9 .icon {
+                                                    font-size: 36px;
+                                                    line-height: 1;
+                                                    margin-bottom: 10px;
+                                                    /* Espacio entre el icono y la parte inferior */
+                                                    z-index: 2;
+                                                    /* Asegura que esté sobre la línea divisoria */
+                                                    position: relative;
+                                                    /* Asegura que el z-index funcione */
+                                                }
+
+                                                /* Estilo de las estrellas */
+
+                                                .stars9 {
+                                                    display: none;
+                                                    /* Ocultar por defecto */
+                                                    position: absolute;
+                                                    top: -500px;
+                                                    left: -500px;
+                                                    width: 2000px;
+                                                    height: 2000px;
+                                                    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 5%, transparent 20%);
+                                                    /* Distribución más salteada de estrellas */
+                                                    background-size: 30px 30px;
+                                                    /* Estrellas más grandes */
+                                                    z-index: 3;
+                                                    /* Asegura que esté sobre el emoji */
+                                                    animation: none;
+                                                    /* No se mueve inicialmente */
+                                                }
+
+                                                /* Animación de estrellas al pasar el cursor */
+
+                                                .snowball-button9:hover .stars9 {
+                                                    display: block;
+                                                    /* Mostrar al pasar el cursor */
+                                                    animation: move-stars 60s linear infinite, fade-in 1s;
+                                                    /* Se mueve al pasar el cursor y desvanece */
+                                                }
+
+                                                /* Animación de estrellas */
+
+                                                @keyframes move-stars {
+                                                    0% {
+                                                        transform: translate(-500px, -500px);
+                                                        /* Comienza arriba izquierda */
+                                                    }
+                                                    100% {
+                                                        transform: translate(500px, 500px);
+                                                        /* Termina abajo derecha */
+                                                    }
+                                                }
+
+                                                /* Animación de desvanecer */
+
+                                                @keyframes fade-in {
+                                                    0% {
+                                                        opacity: 0;
+                                                        /* Comienza invisible */
+                                                    }
+                                                    100% {
+                                                        opacity: 1;
+                                                        /* Termina completamente visible */
+                                                    }
+                                                }
+
+                                                /* Animación de temblor */
+
+                                                @keyframes shake {
+                                                    0% {
+                                                        transform: translateX(0);
+                                                    }
+                                                    25% {
+                                                        transform: translateX(-3px);
+                                                    }
+                                                    50% {
+                                                        transform: translateX(3px);
+                                                    }
+                                                    75% {
+                                                        transform: translateX(-3px);
+                                                    }
+                                                    100% {
+                                                        transform: translateX(0);
+                                                    }
+                                                }
                                             </style>
-                                            <div class="elemento8">
-                                                <button class="pushable8">
-                                                                                    <span class="shadow8"></span>
-                                                                                    <span class="edge8"></span>
-                                                                                    <span class="front8">
-                                                                                        Push Me
-                                                                                    </span>
-                                                                            </button>
+                                            <div class="elemento9">
+                                                <button class="snowball-button9">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 48 48">
+                                                        <path fill="#E8EAF6" d="M42 39L6 39 6 23 24 6 42 23z"></path>
+                                                        <path fill="#C5CAE9" d="M39 21L34 16 34 9 39 9zM6 39H42V44H6z"></path>
+                                                        <path fill="#B71C1C" d="M24 4.3L4 22.9 6 25.1 24 8.4 42 25.1 44 22.9z"></path>
+                                                        <path fill="#D84315" d="M18 28H30V44H18z"></path>
+                                                        <path fill="#01579B" d="M21 17H27V23H21z"></path>
+                                                        <path fill="#FF8A65"
+                                                            d="M27.5,35.5c-0.3,0-0.5,0.2-0.5,0.5v2c0,0.3,0.2,0.5,0.5,0.5S28,38.3,28,38v-2C28,35.7,27.8,35.5,27.5,35.5z">
+                                                        </path>
+                                                    </svg>
+                                                    <div class="stars9"></div>
+                                                </button>
                     
                                             </div>
                                             <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
