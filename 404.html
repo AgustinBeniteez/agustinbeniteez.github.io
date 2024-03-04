@@ -2,28 +2,46 @@
 <html lang="en">
 
 <head>
-    <title>ERROR 404 | DAJ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
-    <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRWEyYlt2FGfrp3LkQfvPyIRw4SjH1wojJZUbfm0UIxcv_a_WfdMAhADPMz-OKRyKge6K1htUx8TyQeYYliGGukkknJa3NWeJkOC_C6hwym3p3kq3iKt19mER-MS7BciVUX4oo99TWGV9rDD8etsUd5NQkyRtabtPYh1lCYns1A70dBgU1vPZCvqGyHkpG/s1600/favicon.ico">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>ERROR 404 | DAJ Not Found</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png">
     <style>
-        html {
-            height: 100%;
-        }
-
         body {
             background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #000000;
+            margin: 200px;
+            padding: 20px 10px;
+            text-align: center;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
             font-size: small;
             overflow-x: hidden;
+            color: #ececec;
+        }
+        
+        #header {
+            width: 99%;
+            border-radius: 50px;
+            align-items: right;
+            margin-left: 10px;
+            text-align: right;
+        }
+        
+        #blog-title {
+            color: #ececec;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-stroke: 3px #ffffff;
+
+            text-align: right;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150px;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+            font-size: 140px;
         }
 
+        #blog-title1 {
+            color: #ececec;
+            text-align:right;
+            margin-right: 20px;
+        }
         ::-webkit-scrollbar {
             width: 12px;
             border-radius: 30px;
@@ -31,202 +49,225 @@
             background: rgba(245, 245, 245, 0.09);
             backdrop-filter: blur(26.149999618530273px);
         }
-
-        ::-webkit-scrollbar-thumb {
+        
+         ::-webkit-scrollbar-thumb {
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.80);
             background: rgba(94, 54, 130, 0.60);
             backdrop-filter: blur(26.149999618530273px);
         }
-
-        ::-webkit-scrollbar-track {
+        
+         ::-webkit-scrollbar-track {
             background: linear-gradient(143deg, #1795A6 43.13%, #01B3B1 100%);
         }
 
-        #content {
-            border-radius: 30px;
-            border: 3px solid rgba(255, 255, 255, 0.80);
-            background: rgba(217, 217, 217, 0.90);
-            box-shadow: 0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset;
-            padding: 30px;
-
-        }
-
-        .theme-checkbox {
-            --toggle-size: 12px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 4.25em;
-            height: 2.125em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 0;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.4s;
-            border-radius: 99em;
-            position: relative;
-            cursor: pointer;
-            font-size: var(--toggle-size);
-        }
-
-        .theme-checkbox::before {
-            content: "";
-            width: 1.25em;
-            height: 1.25em;
-            position: absolute;
-            top: 0.438em;
-            left: 0.438em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 100%;
-            border-radius: 50%;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.4s;
-        }
-
-        .theme-checkbox:checked::before {
-            left: calc(120% - 2.25em - 0.538em);
-            background-position: 0;
-        }
-
-        .theme-checkbox:checked {
-            background-position: 100%;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            /* Tres columnas con igual ancho */
-        }
-
-        .footer-container {
+        nav {
+            background-color: #22222200;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
             display: flex;
             justify-content: space-between;
-            /* Distribuye el espacio entre las columnas */
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
         }
-
-        .menuFooter {
-            flex: 1;
-            /* Cada columna ocupa una fracción igual del espacio disponible */
-            color: #000000;
-            padding: 15px;
-            box-sizing: border-box;
-            /* Incluye el padding en el ancho total */
+        
+        nav img {
+            width: 40px;
+            height: auto;
         }
-
-        .menuFooter {
-            text-align: right;
-        }
-
-        .menuFooter ul {
-            list-style-type: none;
+        
+        nav ul {
+            margin: 10px;
             padding: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
         }
-
-        .menuFooter li {
-            display: inline;
-            margin-right: 10px;
+        
+        nav ul li {
+            margin-right: 20px;
         }
-
-        .menuFooter a {
+        
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        
+        nav ul li a {
+            color: white;
             text-decoration: none;
-            color: #8d0e43;
+            font-weight: bold;
+        }
+        
+        nav input[type="text"] {
+            margin-left: auto;
+            margin-right: 2%;
+            padding: 5px;
+            width: 150px;
             border-radius: 5px;
-            border: 2px solid rgba(255, 255, 255, 0.80);
-            background: rgba(217, 217, 217, 0.90);
-            box-shadow: 0px 0px 11.3px 2px rgba(29, 29, 29, 0.25) inset;
-            padding: 6px;
-
+            background: rgba(240, 240, 240, 0.9);
+            border-radius: 17px;
+            border-style: solid;
+            border-color: rgba(216, 216, 216, 0.76);
+            border-width: 3px;
+            box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
+        }
+        
+        nav button {
+            margin-left: 20px;
+            padding: 20px 40px; /* Aumenta el padding para hacer el botón más grande */
+            border-radius: 5px;
+            border: none;
+            background-color: #333;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centra el contenido verticalmente */
+            font-size: 5.2em; /* Aumenta el tamaño del texto */
+        }
+        
+        nav button:last-child {
+            margin-right: 0;
         }
 
-    </style>
+        .button-icon4 {
+            margin-top: 20px; /* Ajusta el margen superior para separar el botón del título */
+            display: flex;
+            justify-content: center; /* Centra el botón horizontalmente */
+        }
+      
+        .icon4 {
+            background: linear-gradient(to right, #673ab7, #2196f3); /* Degradado morado a azul */
+            padding: 10px 10px 13px 10px;
+            border: 3px #2196f3 solid; /* Cambio de color del borde a azul */
+        }
+      
+        .icon4 svg {
+            width: 25px;
+            height: 25px;
+        }
+      
+        .cube4 {
+            transition: all 0.6s;
+            transform-style: preserve-3d;
+            width: 300px; /* Ajusta el ancho del cubo para centrar el texto */
+            height: 40px; /* Ajusta la altura del cubo para centrar el texto verticalmente */
+            perspective: 99999px; /* Se agrega la perspectiva para el efecto 3D */
+        }
+      
+        .button-icon4:hover {
+            border-color: #ff98a2;
+        }
+      
+        .button-icon4:hover .cube4 {
+            transform: rotateX(90deg);
+        }
+      
+        .side4 {
+            position: absolute;
+            height: 67px;
+            width: 400px; /* Ajusta el ancho del cubo para centrar el texto */
+            display: flex;
+            font-size: 0.8em;
+            justify-content: center;
+            align-items: center;
+            text-transform: none; /* Cambio a minúsculas */
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+      
+        .top4 {
+            background: linear-gradient(to right, #673ab7, #2196f3); /* Degradado morado a azul */
+            color: #fff;
+            font-size: 20px;
+            transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+        }
+      
+        .front4 {
+            background: #222229;
+            color: #fff;
+            font-size: 20px;
+            transform: translate3d(0, 0, 1em);
+        }
 
-    <!-- HTML ----- WEB DE AGUSTHEKING -->
+        .titular{
+            align-items: center;
+            margin-left: 10px;
+        }
+        /* REDES SOCIALES */
+
+/* Contenedor para los botones sociales */
+.social-icons-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+/* Estilo para los botones sociales */
+.social-icon {
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px; /* Radio del borde */
+    padding: 5px; /* Espaciado interno */
+}
+
+.social-icon img {
+    width: 50px; /* Tamaño de la imagen */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Cambia el tamaño del icono al pasar el cursor */
+}
+    </style>
 </head>
 
 <body>
 
-    <div id="content">
+    <nav id="content">
+        <div class="social-icons-container">
+            <a href="https://twitter.com/ElementsCssDAJ" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/twitter.png" alt="Twitter"></a>
+            <br>
+            <a href="https://www.youtube.com/@ElementscssDaj" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/youtube.png" alt="youtube"></a>
+            <br>
+            <a href="https://www.instagram.com/elementscssdaj/" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/instagram.png" alt="Instagram"></a>
+        </div>
+    </nav>
         <div id="header">
-
-            <input type="checkbox" class="theme-checkbox">
+            <!-- Your header content goes here -->
             <div style="display: flex; align-items: center; justify-content: space-between; margin-left:20px;">
                 <div>
-                    <div style="flex-shrink: 0; margin-left: 20px; display: flex; align-items: center;">
-                        <img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"
-                            alt="Logo" style="max-width: 100px; max-height: 100px;">
-                        <h1 id="blog-title" style=" font-size:60px;">ELEMENTS CSS DAJ</h1>
-
-
-
-                    </div>
-
-                    <h1 style="font-size: 100px; text-align: center; margin-top: 20px;">404</h1>
-                    <h1 style="text-align: center;">Page Not Found</h1>
-                    <p style="text-align: center;">Sorry, the page you are looking for is not available.</p>
-                    <p style="text-align: center;">Possible solutions:</p>
-                    <ul style="text-align: center;">
-                        <li>Check the URL to make sure it is correctly spelled.</li>
-                        <li>Return to the <a href="/">homepage</a> of our site.</li>
-                        <li>Contact the site administrator to report this issue.</li>
-                    </ul>
-                    <p style="font-size: 20px; text-align: center;">Thank you for using ElementsCssDAJ.</p>
+                    <h1 id="blog-title">ERROR 404</h1>
+                    <h2 id="blog-title1" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
                 </div>
 
-
+                <div style="flex-shrink: 0; margin-left: 20px; display: flex; align-items: center;">
+                    <!-- Add your logo/image here -->
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim9XUno9EVVr29zcw0wvf9i-cYBSTsTHqe-2wgDemXhXARVQd-OVsU6VuTtDVmMc4vePOnBGp8aa_mKrdgQ4VaJXC2mmrtkRUmvKk-Cg-VgxNfbJEgiCCO3GaDMwBk1-5FwXdyJu1EkObSK6FemFmUZdbDPMyXQSuYKAB5UNIww8pBbdLHVhYto-2C7xDw/s686/DAJ.png"
+                        alt="Logo" style="max-width: 300px; max-height: 300px; vertical-align: middle;">
+                </div>
             </div>
-
+            <!-- End header content -->
         </div>
+        <div class="titular">
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page Not Found<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Check the URL to make sure it is correctly spelled.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Thank you for using Elements Css DAJ</h1> <!-- New Title -->
+            <!-- Botón añadido -->
+            <a href="https://agustheking.github.io">
+            <div class="button-icon4">
+                <div class="cube4">
+                    <span class="side4 front4">Go to Elements Css DAJ</span>
+                    <span class="side4 top4">Go to the Home WEB</span>
+                </div>
+            </div>
+           </a>
+        </div>
+    </nav>
 
-
-    </div>
-  
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtener todos los checkboxes y los contenedores .post
-            var checkboxes = document.querySelectorAll('.theme-checkbox');
-            var postContainers = document.querySelectorAll('#content');
-
-            // Agregar un evento de cambio a cada checkbox
-            checkboxes.forEach(function(checkbox, index) {
-                checkbox.addEventListener('change', function() {
-                    // Verificar si el checkbox está marcado
-                    if (checkbox.checked) {
-                        // Cambiar el fondo a negro, el color del texto a blanco y el borde a negro para el contenedor correspondiente
-                        postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
-                        postContainers[index].style.color = '#fff';
-                        postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
-                        postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
-
-                        // Ajustar el color de todos los elementos de texto dentro del contenedor
-                        var textElements = postContainers[index].querySelectorAll('p, h1, h2, ul, li');
-                        textElements.forEach(function(element) {
-                            element.style.color = '#fff';
-                        });
-                    } else {
-                        // Restaurar el fondo original, el color del texto original y el borde original para el contenedor correspondiente
-                        postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
-                        postContainers[index].style.color = 'white';
-                        postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
-                        postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
-
-                        // Ajustar el color de todos los elementos de texto dentro del contenedor
-                        var textElements = postContainers[index].querySelectorAll('p, h1, h2, ul, li');
-                        textElements.forEach(function(element) {
-                            element.style.color = 'black';
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+</body>
 
 </html>
