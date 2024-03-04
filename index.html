@@ -742,88 +742,97 @@
                 <div id="main3">
                     <!-- -----------POSTS---------- -->
 
-                    <!-- Posts DIV CON POST dentro Botones etc...-->
-                    <div class="main3" id="elements">
-                        <!-- Post 1 TWITCH -->
-                        <div class="post" data-tags="button">
-                            <input type="checkbox" class="theme-checkbox">
-                            <h3 class="post-title">Boton Twitch</h3>
-                            <style>
-                                .elemento9 {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    margin-top: 35%;
-                                    margin-bottom: 49%
-                                }
-                                
-                                                    /* Colors */
-                                :root {
-                                --bttwitch-bg-primary: rgb(184.24, 23.67, 210.37);
-                                --bttwitch-bg-secondary: rgb(98.82, 58.13, 214.62);
-                                --bttwitch-bg-tertiary: rgb(149.07, 72.39, 209.31);
-                                --bttwitch-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-                                }
+                                      <!-- Posts DIV CON POST dentro Botones etc...-->
+                                      <div class="main3" id="elements">
+                                        <!-- Post 1 TWITCH -->
+                                        <div class="post" data-tags="button">
+                                            <input type="checkbox" class="theme-checkbox">
+                                            <h3 class="post-title">Boton Twitch</h3>
+                                            <style>
+                                                .elemento9 {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    margin-top: 35%;
+                                                    margin-bottom: 49%
+                                                }
                                                 
-                                /* Botton styles */
-                                    .button9 {
-                                    width: 170px;
-                                    height: 60px;
-                                    border-radius: 10px;
-                                    border: none;
-                                    font-weight: 600;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    box-shadow: var(--bttwitch-box-shadow);
-                                    cursor: pointer;
-                                    transition-duration: .3s;
-                                    overflow: hidden;
-                                    position: relative;
-                                    }
-                                                    
-                                    .button9 img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: scale-down;
-                                    transition: transform 0.3s;
-                                    }
-                                                    
-                                    .button9:hover img {
-                                    transform: translateX(-40px) scale(0.9);
-                                    }
-                                                    
-                                    /* Button colors */
-                                    .button9 {
-                                    background: linear-gradient(140deg, var(--bttwitch-bg-primary) 0%, var(--bttwitch-bg-secondary) 53.5%, var(--bttwitch-bg-tertiary) 100%);
-                                    }
-                                                    
-                                    /* Nametag */
-                                    .button9::before {
-                                    position: absolute;
-                                    top: -20px;
-                                    content: "@Namehere";
-                                    color: white;
-                                    transition-duration: .3s;
-                                    font-size: 12px; /* Reduce the size of the text Depending on the size of the name */
-                                    left: 50%;
-                                    transform: translateX(-50%);
-                                    white-space: nowrap; 
-                                }
-
-                                .button9:hover::before {
-                                    white-space: pre-wrap; 
-                                    opacity: 1;
-                                    transform: translateY(30px);
-                                }
-                            </style>
-                           <div class="elemento9">
-                            <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" class="button9">
-                                <img src="https://i.imgur.com/ZhlLjXl.png" alt="Twitch" style="width:100%;height:100%">
-                            </a>
-                        </div>
+                                                /* Colors */
+                
+                                                :root {
+                                                        --bttwitch-bg-primary: rgb(184.24, 23.67, 210.37);
+                                                        --bttwitch-bg-secondary: rgb(98.82, 58.13, 214.62);
+                                                        --bttwitch-bg-tertiary: rgb(149.07, 72.39, 209.31);
+                                                        --bttwitch-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+                                                    }
+                
+                                                    /* Botton styles */
+                
+                                                    .button9 {
+                                                        width: 170px;
+                                                        height: 60px;
+                                                        border-radius: 10px;
+                                                        border: none;
+                                                        font-weight: 600;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        box-shadow: var(--bttwitch-box-shadow);
+                                                        cursor: pointer;
+                                                        transition-duration: .3s;
+                                                        overflow: hidden;
+                                                        position: relative;
+                                                    }
+                
+                                                    .button9 svg {
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        object-fit: scale-down;
+                                                        transition: transform 0.3s;
+                                                    }
+                
+                                                    .button9:hover svg {
+                                                        transform: translateX(-40px) scale(0.9);
+                                                    }
+                
+                                                    /* Button colors */
+                
+                                                    .button9 {
+                                                        background: linear-gradient(140deg, var(--bttwitch-bg-primary) 0%, var(--bttwitch-bg-secondary) 53.5%, var(--bttwitch-bg-tertiary) 100%);
+                                                    }
+                
+                                                    /* Nametag */
+                
+                                                    .button9::before {
+                                                        position: absolute;
+                                                        top: -20px;
+                                                        /* ------NAME or Nametag | Twitch ----------*/
+                                                        content: "@Namehere";
+                                                        /* -End-----NAME or Nametag | Twitch ----------*/
+                                                        color: white;
+                                                        transition-duration: .3s;
+                                                        font-size: 12px;
+                                                        /* Reduce the size of the text Depending on the size of the name */
+                                                        left: 50%;
+                                                        transform: translateX(-50%);
+                                                        white-space: nowrap;
+                                                    }
+                
+                                                    .button9:hover::before {
+                                                        white-space: pre-wrap;
+                                                        opacity: 1;
+                                                        transform: translateY(30px);
+                                                    }
+                                            </style>
+                                           <div class="elemento9">
+                                                <a href="https://agustheking.github.io/elements/elemento1.html" target="_blank" class="button9">
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0,0,255.99609,255.99609">
+                                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M41.754,27.958l-8.455,9.699c-0.19,0.218 -0.465,0.343 -0.754,0.343h-6.175c-0.239,0 -0.47,0.085 -0.651,0.241l-6.438,5.519c-0.181,0.155 -0.412,0.24 -0.651,0.24h-1.63c-0.552,0 -1,-0.448 -1,-1v-4c0,-0.552 -0.448,-1 -1,-1h-8c-0.552,0 -1,-0.448 -1,-1v-21.057c0,-0.156 0.036,-0.309 0.106,-0.448l3.981,-7.943c0.17,-0.338 0.516,-0.552 0.894,-0.552h30.019c0.552,0 1,0.448 1,1v19.301c0,0.242 -0.087,0.475 -0.246,0.657z" fill="#000000"></path><path d="M39,26.369c-1.667,1.877 -3.333,3.754 -5,5.631c-2.333,0 -4.667,0 -7,0c-2.333,2 -4.667,4 -7,6c0,-2 0,-4 0,-6c-2.667,-0.008 -5.333,-0.016 -8,-0.024c0,-7.326 0,-14.651 0,-21.976c9,0 18,0 27,0c0,5.456 0,10.912 0,16.369z" fill="#fafafa"></path><rect x="21" y="16" width="3" height="10" fill="#000000"></rect><rect x="30" y="16" width="3" height="10" fill="#000000"></rect></g></g>
+                                                </svg>
+                                                </a>
+                                            </div>
                         
-                            <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
+                            <a href="https://agustheking.github.io/elements/elemento1.html" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
                             <div class="tags-container">
                                 <div class="tag">Boton</div>
                                 <div class="tag">Social</div>
@@ -833,13 +842,10 @@
                         </div>
                     </div>
 
-
-
-
                     <!-- Post 2 Animación interior ONDAS -->
                     <div class="post" data-tags="button">
                         <input type="checkbox" class="theme-checkbox">
-                        <h3 class="post-title">Boton Animacion Interior</h3>
+                        <h3 class="post-title">Boton Discord Server</h3>
                         <style>
                             .elemento8 {
                                 display: flex;
@@ -849,66 +855,77 @@
                                 margin-bottom: 49%;
                             }
                             
-                            .button8 {
-                                --color: #00A97F;
-                                padding: 0.8em 1.7em;
-                                background-color: transparent;
-                                border-radius: .3em;
-                                position: relative;
-                                overflow: hidden;
-                                cursor: pointer;
-                                transition: .5s;
-                                font-weight: 400;
-                                font-size: 17px;
-                                border: 1px solid;
-                                font-family: inherit;
-                                text-transform: uppercase;
-                                color: var(--color);
-                                z-index: 1;
+                            .Btn {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            width: 160px; /* Ancho ajustado para acomodar el texto y la imagen */
+                            height: 40px;
+                            border: none;
+                            padding: 0px 20px;
+                            background: linear-gradient(to right, #8be3fc, #576bff);
+                            color: white;
+                            font-size: 16px;
+                            font-weight: 600;
+                            cursor: pointer;
+                            border-radius: 12px;
+                            box-shadow: 0 20px 30px -7px rgba(97, 118, 238, 0.5);
+                            transition-duration: 0.6s;
+                            overflow: hidden;
                             }
-                            
-                            .button8::before,
-                            .button8::after {
-                                content: '';
-                                display: block;
-                                width: 50px;
-                                height: 50px;
-                                transform: translate(-50%, -50%);
-                                position: absolute;
-                                border-radius: 50%;
-                                z-index: -1;
-                                background-color: var(--color);
-                                transition: 1s ease;
+
+                            .Btn .svg-icon {
+                            position: absolute;
+                            width: 32px; /* Ancho del icono SVG */
+                            height: 32px; /* Alto del icono SVG */
+                            right: 10px; /* Ajusta la posición del icono SVG según necesites */
+                            fill: white; /* Color del icono SVG */
+                            transition: right 0.7s ease-in-out; /* Transición suave del icono */
                             }
-                            
-                            .button8::before {
-                                top: -1em;
-                                left: -1em;
+
+                            .Btn .server-name {
+                            position: absolute;
+                            left: -160px; /* Inicialmente fuera del botón */
+                            transition: left 0.7s ease-in-out; /* Transición para cuando aparece */
                             }
-                            
-                            .button8::after {
-                                left: calc(100% + 1em);
-                                top: calc(100% + 1em);
+
+                            .Btn:hover .server-name {
+                            left: 10px; /* Aparece moviéndose de izquierda a derecha */
                             }
-                            
-                            .button8:hover::before,
-                            .button8:hover::after {
-                                height: 410px;
-                                width: 410px;
+
+                            .Btn:not(.clicked):hover .initial-text {
+                            opacity: 0; /* Desaparece cuando se pasa el cursor */
+                            transition: opacity 0.7s ease-in-out; /* Añadido para la transición */
                             }
-                            
-                            .button8:hover {
-                                color: rgb(10, 25, 30);
+
+                            .Btn.clicked .initial-text {
+                            opacity: 1; /* Asegura que el texto inicial aparezca cuando se hace clic */
                             }
-                            
-                            .button8:active {
-                                filter: brightness(.8);
+
+                            .Btn:not(.clicked):hover .svg-icon {
+                            right: 5px; /* Ajusta la posición del icono SVG al hacer hover */
+                            }
+
+                            .Btn:active {
+                            transform: translate(3px, 3px);
+                            transition-duration: 0.5s;
+                            }
+
+                            .Btn.clicked .server-name {
+                            left: -160px; /* Desaparece moviéndose hacia la izquierda */
+                            transition: left 0.7s ease-in-out; /* Transición para cuando desaparece */
                             }
                         </style>
 
                         <div class="elemento8">
-                            <button class="button8"> Button
-                                </button>
+                            <button class="Btn" onclick="this.classList.toggle('clicked')">
+                                <span class="initial-text">Discord</span>
+                                <span class="server-name">NombreServer</span>
+                                <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                                  <path d="M 41.625 10.769531 C 37.644531 7.566406 31.347656 7.023438 31.078125 7.003906 C 30.660156 6.96875 30.261719 7.203125 30.089844 7.589844 C 30.074219 7.613281 29.9375 7.929688 29.785156 8.421875 C 32.417969 8.867188 35.652344 9.761719 38.578125 11.578125 C 39.046875 11.867188 39.191406 12.484375 38.902344 12.953125 C 38.710938 13.261719 38.386719 13.429688 38.050781 13.429688 C 37.871094 13.429688 37.6875 13.378906 37.523438 13.277344 C 32.492188 10.15625 26.210938 10 25 10 C 23.789063 10 17.503906 10.15625 12.476563 13.277344 C 12.007813 13.570313 11.390625 13.425781 11.101563 12.957031 C 10.808594 12.484375 10.953125 11.871094 11.421875 11.578125 C 14.347656 9.765625 17.582031 8.867188 20.214844 8.425781 C 20.0625 7.929688 19.925781 7.617188 19.914063 7.589844 C 19.738281 7.203125 19.34375 6.960938 18.921875 7.003906 C 18.652344 7.023438 12.355469 7.566406 8.320313 10.8125 C 6.214844 12.761719 2 24.152344 2 34 C 2 34.175781 2.046875 34.34375 2.132813 34.496094 C 5.039063 39.605469 12.972656 40.941406 14.78125 41 C 14.789063 41 14.800781 41 14.8125 41 C 15.132813 41 15.433594 40.847656 15.621094 40.589844 L 17.449219 38.074219 C 12.515625 36.800781 9.996094 34.636719 9.851563 34.507813 C 9.4375 34.144531 9.398438 33.511719 9.765625 33.097656 C 10.128906 32.683594 10.761719 32.644531 11.175781 33.007813 C 11.234375 33.0625 15.875 37 25 37 C 34.140625 37 38.78125 33.046875 38.828125 33.007813 C 39.242188 32.648438 39.871094 32.683594 40.238281 33.101563 C 40.601563 33.515625 40.5625 34.144531 40.148438 34.507813 C 40.003906 34.636719 37.484375 36.800781 32.550781 38.074219 L 34.378906 40.589844 C 34.566406 40.847656 34.867188 41 35.1875 41 C 35.199219 41 35.210938 41 35.21875 41 C 37.027344 40.941406 44.960938 39.605469 47.867188 34.496094 C 47.953125 34.34375 48 34.175781 48 34 C 48 24.152344 43.785156 12.761719 41.625 10.769531 Z M 18.5 30 C 16.566406 30 15 28.210938 15 26 C 15 23.789063 16.566406 22 18.5 22 C 20.433594 22 22 23.789063 22 26 C 22 28.210938 20.433594 30 18.5 30 Z M 31.5 30 C 29.566406 30 28 28.210938 28 26 C 28 23.789063 29.566406 22 31.5 22 C 33.433594 22 35 23.789063 35 26 C 35 28.210938 33.433594 30 31.5 30 Z"/>
+                                </svg>
+                              </button>
                         </div>
                         <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
                             <button class="show-code-btn">Show Code { }</button>
@@ -1014,7 +1031,7 @@
                     <!-- Post 4 Boton Download -->
                     <div class="post" data-tags="Checkboxes">
                         <input type="checkbox" class="theme-checkbox">
-                        <h3 class="post-title">Boton Download</h3>
+                        <h3 class="post-title">Boton 3D Cube</h3>
                         <style>
                             .elemento3 {
                                 display: flex;
@@ -1024,53 +1041,70 @@
                                 margin-bottom: 49%;
                             }
                             
-                            .button3 {
-                                position: relative;
-                                overflow: hidden;
-                                height: 3rem;
-                                padding: 0 2rem;
-                                border-radius: 1.5rem;
-                                background: #3d3a4e;
-                                background-size: 400%;
-                                color: #fff;
-                                border: none;
-                                cursor: pointer;
+                            .button-icon4 {
+                                width: fit-content;
+                                height: fit-content;
                             }
-                            
-                            .button3:hover::before {
-                                -webkit-transform: scaleX(1);
-                                -ms-transform: scaleX(1);
-                                transform: scaleX(1);
+
+                            .icon4 {
+                                background: linear-gradient(to right, #673ab7, #2196f3); /* Degradado morado a azul */
+                                padding: 10px 10px 13px 10px;
+                                border: 3px #2196f3 solid; /* Cambio de color del borde a azul */
                             }
-                            
-                            .button-content3 {
-                                position: relative;
-                                z-index: 1;
+
+                            .icon4 svg {
+                                width: 25px;
+                                height: 25px;
                             }
-                            
-                            .button3::before {
-                                content: "";
+
+                            .cube4 {
+                                transition: all 0.6s;
+                                transform-style: preserve-3d;
+                                width: 200px;
+                                height: 20px;
+                                perspective: 99999px; /* Se agrega la perspectiva para el efecto 3D */
+                            }
+
+                            .button-icon4:hover {
+                                border-color: #ff98a2;
+                            }
+
+                            .button-icon4:hover .cube4 {
+                                transform: rotateX(90deg);
+                            }
+
+                            .side4 {
                                 position: absolute;
-                                top: 0;
-                                left: 0;
-                                -webkit-transform: scaleX(0);
-                                -ms-transform: scaleX(0);
-                                transform: scaleX(0);
-                                -webkit-transform-origin: 0 50%;
-                                -ms-transform-origin: 0 50%;
-                                transform-origin: 0 50%;
-                                width: 100%;
-                                height: inherit;
-                                border-radius: inherit;
-                                background: linear-gradient( 82.3deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
-                                -webkit-transition: all 0.475s;
-                                transition: all 0.475s;
+                                height: 47px;
+                                width: 200px;
+                                display: flex;
+                                font-size: 0.8em;
+                                justify-content: center;
+                                align-items: center;
+                                text-transform: none; /* Cambio a minúsculas */
+                                letter-spacing: 0.5px;
+                                font-weight: bold;
+                            }
+
+                            .top4 {
+                                background: linear-gradient(to right, #673ab7, #2196f3); /* Degradado morado a azul */
+                                color: #fff;
+                                transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+                            }
+
+                            .front4 {
+                                background: #222229;
+                                color: #fff;
+                                transform: translate3d(0, 0, 1em);
                             }
                         </style>
                         <div class="elemento3">
-                            <button class="button3">
-    <span class="button-content3">Download </span>
-  </button>
+                            <div class="button-icon4">
+                                <div class="cube4">
+                                  <span class="side4 front4">Elements Css DAJ</span>
+                                  <span class="side4 top4">Show Code Free</span>
+                                </div>
+                              </div>
                         </div>
                         <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
                             <button class="show-code-btn">Show Code { }</button>
@@ -1088,7 +1122,7 @@
                     <!-- Post 5 Boton Rojo  -->
                     <div class="post" data-tags="Checkboxes">
                         <input type="checkbox" class="theme-checkbox">
-                        <h3 class="post-title">Boton Magenta</h3>
+                        <h3 class="post-title">Boton YouTube</h3>
                         <style>
                             .elemento5 {
                                 display: flex;
@@ -1098,45 +1132,52 @@
                                 margin-bottom: 49%;
                             }
                             
-                            button5 {
-                                position: relative;
-                                background-color: rgb(230, 34, 77);
-                                border-radius: 5px;
-                                box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
-                                padding: 15px;
-                                background-repeat: no-repeat;
-                                cursor: pointer;
-                                box-sizing: border-box;
-                                width: 154px;
-                                height: 49px;
-                                color: #fff;
-                                border: none;
-                                font-size: 20px;
-                                transition: all 0.3s ease-in-out;
-                                z-index: 1;
-                                overflow: hidden;
+                            .button5 {
+                            padding: 1em 2em;
+                            border: none;
+                            border-radius: 50px; /* Haciendo el botón más redondito */
+                            font-weight: bold;
+                            letter-spacing: 2px; /* Espaciado de letras reducido */
+                            text-transform: uppercase;
+                            cursor: pointer;
+                            color: #fff;
+                            background: linear-gradient(45deg, #b20710, #7e0308); /* Degradado */
+                            transition: all 1000ms;
+                            font-size: 15px;
+                            position: relative;
+                            overflow: hidden;
                             }
-                            
-                            button5::before {
-                                content: "";
-                                background-color: rgb(248, 50, 93);
-                                width: 0;
-                                height: 100%;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                z-index: -1;
-                                transition: width 700ms ease-in-out;
-                                display: inline-block;
+
+                            .button5:hover {
+                            color: #ffffff;
+                            transform: scale(1.05);
+                            box-shadow: 4px 5px 18px -4px #a51a24; /* Cambiar el color aquí */
                             }
-                            
-                            button5:hover::before {
-                                width: 100%;
+
+                            .button5::before {
+                            content: "";
+                            position: absolute;
+                            left: -50px;
+                            top: 0px;
+                            width: 0;
+                            height: 110%;
+                            background: linear-gradient(45deg, #ff4e4e, #ff0000); /* Degradado para la animación */
+                            transform: skewX(45deg);
+                            z-index: -1;
+                            transition: width 1000ms;
+                            }
+
+                            .button5:hover::before {
+                            width: 200%;
+                            }
+
+                            .button5:focus {
+                            outline: none; /* Elimina el contorno en foco */
                             }
                         </style>
 
                         <div class="elemento5">
-                            <button5>Button</button5>
+                            <button class="button5">YouTube</button>
                         </div>
                         <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
                             <button class="show-code-btn">Show Code { }</button>
@@ -1153,9 +1194,9 @@
                     <!-- Post 6 Boton Morado con Enlace -->
                     <div class="post">
                         <input type="checkbox" class="theme-checkbox">
-                        <h3 class="post-title">Botón Morado</h3>
+                        <h3 class="post-title">Botón Windows Retro</h3>
                         <style>
-                            .elemento7 {
+                            .elemento6 {
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
@@ -1163,94 +1204,27 @@
                                 margin-bottom: 49%;
                             }
                             
-                            .pushable7 {
-                                position: relative;
-                                background: transparent;
-                                padding: 0px;
-                                border: none;
-                                cursor: pointer;
-                                outline-offset: 4px;
-                                outline-color: deeppink;
-                                transition: filter 250ms;
-                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            .button6 {
+                            font-family: inherit;
+                            border: none;
+                            outline: 1px dotted rgb(37, 37, 37);
+                            outline-offset: -4px;
+                            background: hsl(0deg 0% 75%);
+                            box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            padding: 5px 30px;
+                            cursor: pointer;
                             }
-                            
-                            .shadow7 {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                height: 100%;
-                                width: 100%;
-                                background: hsl(226, 25%, 69%);
-                                border-radius: 8px;
-                                filter: blur(2px);
-                                will-change: transform;
-                                transform: translateY(2px);
-                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-                            }
-                            
-                            .edge7 {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                height: 100%;
-                                width: 100%;
-                                border-radius: 8px;
-                                background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
-                            }
-                            
-                            .front7 {
-                                display: block;
-                                position: relative;
-                                border-radius: 8px;
-                                background: hsl(248, 53%, 58%);
-                                padding: 16px 32px;
-                                color: white;
-                                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                                font-weight: 600;
-                                text-transform: uppercase;
-                                letter-spacing: 1.5px;
-                                font-size: 1rem;
-                                transform: translateY(-4px);
-                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-                            }
-                            
-                            .pushable7:hover {
-                                filter: brightness(110%);
-                            }
-                            
-                            .pushable7:hover .front7 {
-                                transform: translateY(-6px);
-                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-                            }
-                            
-                            .pushable7:active .front7 {
-                                transform: translateY(-2px);
-                                transition: transform 34ms;
-                            }
-                            
-                            .pushable7:hover .shadow7 {
-                                transform: translateY(4px);
-                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-                            }
-                            
-                            .pushable7:active .shadow7 {
-                                transform: translateY(1px);
-                                transition: transform 34ms;
-                            }
-                            
-                            .pushable7:focus:not(:focus-visible) {
-                                outline: none;
+
+                            .button6:active {
+                                box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
                             }
                         </style>
-                        <div class="elemento7">
-                            <button class="pushable7">
-                                <span class="shadow7"></span>
-                                <span class="edge7"></span>
-                                <span class="front7">
-                                    Push Me
-                                </span>
-                                </button>
+
+                        <div class="elemento6">
+                        <button class="button6">OK</button>
 
                         </div>
                         <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
@@ -1349,9 +1323,9 @@
                     <!-- Post 8 Boton Morado con Enlace -->
                     <div class="post">
                         <input type="checkbox" class="theme-checkbox">
-                        <h3 class="post-title">Botón Morado</h3>
+                        <h3 class="post-title">Botón Home Elegant</h3>
                         <style>
-                            .elemento8 {
+                            .elemento7 {
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
@@ -1359,94 +1333,69 @@
                                 margin-bottom: 49%;
                             }
                             
-                            .pushable8 {
+                            .box7 {
+                                width: 140px;
+                                height: auto;
+                                float: left;
                                 position: relative;
-                                background: transparent;
-                                padding: 0px;
-                                border: none;
-                                cursor: pointer;
-                                outline-offset: 4px;
-                                outline-color: deeppink;
-                                transition: filter 250ms;
-                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                            }
-                            
-                            .shadow8 {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                height: 100%;
-                                width: 100%;
-                                background: hsl(226, 25%, 69%);
-                                border-radius: 8px;
-                                filter: blur(2px);
-                                will-change: transform;
-                                transform: translateY(2px);
-                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-                            }
-                            
-                            .edge8 {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                height: 100%;
-                                width: 100%;
-                                border-radius: 8px;
-                                background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100%);
-                            }
-                            
-                            .front8 {
                                 display: block;
-                                position: relative;
-                                border-radius: 8px;
-                                background: hsl(248, 53%, 58%);
-                                padding: 16px 32px;
-                                color: white;
-                                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                                font-weight: 600;
+                                overflow: hidden;
+                                padding: 15px;
+                                text-align: center;
+                                margin: 0 5px;
+                                font-weight: 700;
+                                background: transparent;
                                 text-transform: uppercase;
-                                letter-spacing: 1.5px;
-                                font-size: 1rem;
-                                transform: translateY(-4px);
-                                transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+                                border-radius: 30px;
+                                /* Aumento del radio del borde */
+                                color: black;
+                                /* Cambio del color de texto */
                             }
-                            
-                            .pushable8:hover {
-                                filter: brightness(110%);
+
+                            .box7:before {
+                                position: absolute;
+                                content: '';
+                                left: 0;
+                                bottom: 0;
+                                height: 4px;
+                                width: 100%;
+                                border-bottom: 4px solid transparent;
+                                border-left: 4px solid transparent;
+                                box-sizing: border-box;
+                                transform: translateY(100%);
                             }
-                            
-                            .pushable8:hover .front7 {
-                                transform: translateY(-6px);
-                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+
+                            .box7:after {
+                                position: absolute;
+                                content: '';
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 4px;
+                                border-top: 4px solid transparent;
+                                border-right: 4px solid transparent;
+                                box-sizing: border-box;
+                                transform: translateY(-100%);
                             }
-                            
-                            .pushable8:active .front7 {
-                                transform: translateY(-2px);
-                                transition: transform 34ms;
+
+                            .box7:hover {
+                                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+                                transition: box-shadow 0.5s ease;
                             }
-                            
-                            .pushable8:hover .shadow7 {
-                                transform: translateY(4px);
-                                transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+
+                            .box7:not(:hover) {
+                                box-shadow: none;
+                                transition: box-shadow 0.5s ease;
                             }
-                            
-                            .pushable8:active .shadow7 {
-                                transform: translateY(1px);
-                                transition: transform 34ms;
-                            }
-                            
-                            .pushable8:focus:not(:focus-visible) {
-                                outline: none;
+
+                            .box7:hover:before,
+                            .box7:hover:after {
+                                height: 100%;
+                                transform: translateY(0);
                             }
                         </style>
-                        <div class="elemento8">
-                            <button class="pushable8">
-                                                                <span class="shadow8"></span>
-                                                                <span class="edge8"></span>
-                                                                <span class="front8">
-                                                                    Push Me
-                                                                </span>
-                                                        </button>
+                        <div class="elemento7">
+                            <div class="box7">HOME</div>
 
                         </div>
                         <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
