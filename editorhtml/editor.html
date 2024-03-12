@@ -427,11 +427,46 @@
     // Obtener el textarea de código principal
     var mainCodeTextarea = document.getElementById('main-code-textarea');
 
-    // Verificar si hay un tema guardado en el almacenamiento local al cargar la página
+    // Verificar si hay un tema guardado en el almacenamiento local
     var savedTheme = localStorage.getItem('editorTheme');
     if (savedTheme) {
         // Aplicar el tema guardado
-        if (savedTheme === 'dark') {
+        applyTheme(savedTheme);
+    } else {
+        // Obtener el tema predeterminado del navegador
+        var defaultTheme = getDefaultTheme();
+        // Aplicar el tema predeterminado del navegador
+        applyTheme(defaultTheme);
+    }
+
+    // Agregar un evento de cambio al checkbox de tema
+    themeCheckbox.addEventListener('change', function() {
+        // Verificar si el checkbox está marcado
+        if (themeCheckbox.checked) {
+            // Cambiar el tema a oscuro
+            applyTheme('dark');
+            // Guardar el tema seleccionado en el almacenamiento local
+            localStorage.setItem('editorTheme', 'dark');
+        } else {
+            // Cambiar el tema a claro
+            applyTheme('light');
+            // Guardar el tema seleccionado en el almacenamiento local
+            localStorage.setItem('editorTheme', 'light');
+        }
+    });
+
+    // Función para obtener el tema predeterminado del navegador
+    function getDefaultTheme() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'; // Si el navegador está en modo oscuro
+        } else {
+            return 'light'; // Si el navegador está en modo claro
+        }
+    }
+
+    // Función para aplicar un tema
+    function applyTheme(theme) {
+        if (theme === 'dark') {
             // Cambiar el tema a oscuro
             themeCheckbox.checked = true;
             mainCodeTextarea.style.background = 'rgba(23, 23, 23, 0.90)';
@@ -443,27 +478,8 @@
             mainCodeTextarea.style.color = 'black';
         }
     }
-
-    // Agregar un evento de cambio al checkbox de tema
-    themeCheckbox.addEventListener('change', function() {
-        // Verificar si el checkbox está marcado
-        if (themeCheckbox.checked) {
-            // Cambiar el tema a oscuro
-            mainCodeTextarea.style.background = 'rgba(23, 23, 23, 0.90)';
-            mainCodeTextarea.style.color = '#fff';
-            // Guardar el tema seleccionado en el almacenamiento local
-            localStorage.setItem('editorTheme', 'dark');
-        } else {
-            // Cambiar el tema a claro
-            mainCodeTextarea.style.background = 'rgba(217, 217, 217, 0.90)';
-            mainCodeTextarea.style.color = 'black';
-            // Guardar el tema seleccionado en el almacenamiento local
-            localStorage.setItem('editorTheme', 'light');
-        }
-    });
 });
 
-    </script>
     </script>
 </body>
 
