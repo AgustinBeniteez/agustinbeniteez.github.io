@@ -1672,51 +1672,50 @@
                                                                                                                                                                         align-items: center;
                                                                                                                                                                         justify-content: center;
                                                                                                                                                                         margin-top: 35%;
-                                                                                                                                                                        margin-right: 5%;
-                                                                                                                                                                        margin-bottom: 38%;
+                                                                                                                                                                        margin-right: 3%;
+                                                                                                                                                                        margin-bottom: 50%;
                                                                                                                                                                     }
                                                                             
                                                                                                                                                                     /* Creado por AgusTheKing*/
-                                                                                                                                                                    /* Minecraft Style Button */
-                                                                                                                                                                    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+                                                                                                                                                                  /* Minecraft Style Button */
+                                                                                                                                                                  .mc-button {
+                                                                                                                                                                            width: 15vw; 
+                                                                                                                                                                            height: 5vh;
+                                                                                                                                                                            cursor: pointer;
+                                                                                                                                                                            overflow: hidden;
+                                                                                                                                                                            white-space: nowrap;
+                                                                                                                                                                            user-select: none;
+                                                                                                                                                                            background: #999 url('https://raw.githubusercontent.com/AgusTheKing/icons/main/btmc.png') center / cover;
+                                                                                                                                                                            image-rendering: pixelated;
+                                                                                                                                                                            border: 2px solid #000;
+                                                                                                                                                                            padding-bottom: .3em;
+                                                                                                                                                                            color: #DDD;
+                                                                                                                                                                            text-shadow: 2px 2px #000A;
+                                                                                                                                                                            box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+                                                                                                                                                                            font-size: 1.6em; /* Tamaño de la fuente */
+                                                                                                                                                                            font-family: sans-serif; 
+                                                                                                                                                                            transition: filter 0.3s; /* Transición suave del filtro */
+                                                                                                                                                                        }
 
-                                                                                                                                                                    .mc-button {
-                                                                                                                                                                        width: 30vw; /* Ancho del botón como el 30% del ancho de la pantalla */
-                                                                                                                                                                        height: 10vh; /* Altura del botón como el 10% de la altura de la pantalla */
-                                                                                                                                                                        cursor: pointer;
-                                                                                                                                                                        overflow: hidden;
-                                                                                                                                                                        white-space: nowrap;
-                                                                                                                                                                        user-select: none;
-                                                                                                                                                                        background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
-                                                                                                                                                                        image-rendering: pixelated;
-                                                                                                                                                                        border: 2px solid #000;
-                                                                                                                                                                        padding-bottom: .3em;
-                                                                                                                                                                        color: #DDD;
-                                                                                                                                                                        text-shadow: 2px 2px #000A;
-                                                                                                                                                                        box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
-                                                                                                                                                                        font-size: 1.6em; /* Tamaño de la fuente */
-                                                                                                                                                                        font-family: 'Press Start 2P', cursive; /* Fuente de aspecto pixelado */
-                                                                                                                                                                        transition: filter 0.3s; /* Transición suave del filtro */
-                                                                                                                                                                    }
+                                                                                                                                                                        .mc-button:hover {
+                                                                                                                                                                            filter: brightness(130%) saturate(220%) hue-rotate(210deg) sepia(0) contrast(1); /* Filtro de color azul */
+                                                                                                                                                                        }
 
-                                                                                                                                                                    .mc-button:hover {
-                                                                                                                                                                        filter: brightness(130%) saturate(220%) hue-rotate(210deg) sepia(0) contrast(1); /* Filtro de color azul */
-                                                                                                                                                                    }
+                                                                                                                                                                        .mc-button:active .title {
+                                                                                                                                                                            box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+                                                                                                                                                                        }
 
-                                                                                                                                                                    .mc-button:active .title {
-                                                                                                                                                                        box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
-                                                                                                                                                                    }
+                                                                                                                                                                        .mc-button.full { 
+                                                                                                                                                                            width: 100%; 
+                                                                                                                                                                            height: 100%; 
+                                                                                                                                                                        }
 
-                                                                                                                                                                    .mc-button.full { 
-                                                                                                                                                                        width: 100%; 
-                                                                                                                                                                        height: 100%; 
-                                                                                                                                                                    }
-
-                                                                                                                                                                    .mc-button.lang { 
-                                                                                                                                                                        padding-bottom: 0; 
-                                                                                                                                                                    }
+                                                                                                                                                                        .mc-button.lang { 
+                                                                                                                                                                            padding-bottom: 0; 
+                                                                                                                                                                        }
                                                                                                                                                                 </style>
                                                                                                                                                                     <div class="elemento13">
+                                                                                                                                                                        <!-- Botón Minecraft -->
                                                                                                                                                                         <button class="mc-button">
                                                                                                                                                                             Help
                                                                                                                                                                         </button>
