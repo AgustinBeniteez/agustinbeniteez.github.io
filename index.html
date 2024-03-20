@@ -686,6 +686,11 @@
                         </div>                                                              
                         <!-- Fin de los posts -->
                     </div>
+                    
+                </div>
+                <div id="pagination-buttons">
+                    <button id="prev-page">Prev</button>
+                    <button id="next-page">Next</button>
                 </div>
             </div>
 
@@ -715,6 +720,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Iterate over each post data and create HTML for each post
             data.forEach(post => {
+                
                 const postHTML = `
                     <div class="post" data-tags="${post.tags}">
                         <input type="checkbox" class="theme-checkbox">
@@ -792,11 +798,46 @@ $(document).ready(function() {
     });
 });
 
+
     // BORRADOR
     function limpiarBusqueda() {
      // Limpiar el contenido del input de búsqueda
      document.getElementById('search-box').value = '';
     }
+
+
+
+    // Variable para almacenar el número de página actual
+    let currentPage = 1;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para cargar los posts de la página actual
+        function loadPosts(page) {
+            // Oculta todos los posts
+            $('.post').hide();
+            // Muestra solo los posts correspondientes a la página actual
+            $('.post').slice((page - 1) * 8, page * 8).show();
+        }
+
+        // Llama a la función para cargar los posts al cargar la página
+        loadPosts(currentPage);
+
+        // Manejador de evento para el botón de página anterior
+        $('#prev-page').on('click', function() {
+            if (currentPage > 1) {
+                currentPage--;
+                loadPosts(currentPage);
+            }
+        });
+
+        // Manejador de evento para el botón de página siguiente
+        $('#next-page').on('click', function() {
+            if (currentPage < Math.ceil($('.post').length / 5)) {
+                currentPage++;
+                loadPosts(currentPage);
+            }
+        });
+    });   
 </script>
 
 </html>
