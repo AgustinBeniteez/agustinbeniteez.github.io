@@ -428,13 +428,13 @@
         }
         /* FOOTER */
         
-        .columna1footer {
+        .columna11footer {
             float: left;
             width: 50%;
             color: #000000;
         }
         
-        .columna2footer {
+        .columna22footer {
             float: right;
             width: 50%;
             color: #000000;
@@ -1177,83 +1177,96 @@
                         </div>
 
                     </div>
-                    <!-- Post 7 Boton Morado con Enlace -->
+
+
+                     <!-- POST 15 que en verdad es el 7  -->
                     <div class="post">
                         <input type="checkbox" class="theme-checkbox">
-                        <h3 class="post-title">Botón Morado</h3>
+                        <h3 class="post-title">Boton google play</h3>
                         <style>
-                            .elemento8 {
+                               /* Boton Creado Por AgusTheKing */
+                               .elemento15 {
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
                                 margin-top: 35%;
-                                margin-bottom: 49%;
+                                margin-bottom: 39%;
                             }
                             
-                            .export1 {
-                            position: relative;
-                            overflow: hidden;
-                            height: 3rem;
-                            width: 3rem; /* Establece el ancho del botón */
-                            border-radius: 0.3rem;
-                            background: linear-gradient(143deg, rgba(69,246,173,1) 0%, rgba(87,194,221,1) 100%);
-                            color: #fff;
-                            border: none;
-                            cursor: pointer;
-                            outline: none;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            }
-                            
-                            .export1-content {
-                            position: relative;
-                            z-index: 1;
-                            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-                            opacity: 0; /* Hace que el texto "Export" esté inicialmente oculto */
-                            }
-                            
-                            .export1:hover .export1-content {
-                            transform: translateY(-3px);
-                            opacity: 1; /* Hace que el texto "Export" se muestre cuando se pasa el cursor */
-                            }
-                            
-                            .export1::before {
-                            content: url('data:image/svg+xml;utf8,<svg width="37" height="47" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 1px;"><rect y="31" width="37" height="7" rx="3.5" fill="white"/><rect width="18" height="7" rx="3.5" fill="white"/><rect width="7" height="38" rx="3.5" fill="white"/><rect x="30" y="22" width="7" height="16" rx="3.5" fill="white"/><path d="M11.3833 23.2466C11.2927 23.156 11.242 23.0337 11.2416 22.9049L11.2411 22.7481C11.2409 22.6519 11.2564 22.5559 11.2871 22.4638L12.2399 19.6061L14.0421 15.6473V15.6473C15.7868 12.7104 18.4943 10.4305 21.7057 9.1938L22.974 8.70535C23.1364 8.64282 23.2495 8.49402 23.2637 8.32422L23.6698 3.45541C23.6979 3.11842 24.113 2.95722 24.3562 3.18885L34.0187 12.3931C34.1398 12.5085 34.1371 12.7021 34.0127 12.8206L24.3452 22.0274C24.1002 22.2607 23.697 22.1206 23.6671 21.7917L23.2517 17.2265C23.2453 17.1561 23.186 17.1029 23.1139 17.1029L21.8464 17.1029C20.4678 17.1029 19.1046 17.4665 17.8987 18.1558V18.1558C16.7986 18.7847 15.7874 19.5568 14.8936 20.4507L13.2407 22.1036L12.1103 23.2365C11.9081 23.4392 11.5805 23.4438 11.3833 23.2466V23.2466Z" fill="white"/></svg>');
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            width: 100%;
-                            height: 100%;
-                            transition: opacity 0.3s ease-in-out;
-                            }
-                            
-                            .export1:hover::before {
-                            opacity: 0; /* Hace que la imagen se oculte cuando se pasa el cursor */
-                            }
-                            
-                            .animacion-texto {
-                                font-size: 18px;
-                                font-weight: bold;
+                            .buttongoogleplay {
+                                display: flex;
+                                width: 200px;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: #000;
                                 color: #fff;
-                                text-align: center;
-                                margin-top: 0;
-                                animation: animarTexto 2s infinite alternate;
+                                border: none;
+                                padding: 10px 20px;
+                                border-radius: 50px;
+                                font-size: 14px; 
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                                text-decoration: none;
+                                position: relative; 
+                            }
+
+                            .buttongoogleplay:hover {
+                                background-color: #4CAF50;
+                            }
+
+                            .buttongoogleplay span {
+                                transition: transform 0.3s ease; 
+                            }
+
+                            .buttongoogleplay:hover span {
+                                transform: translateX(-100%); 
+                            }
+
+                            .buttongoogleplay svg {
+                                margin-right: 10px;
+                                fill: #fff; 
+                                transition: opacity 0.3s ease, transform 0.3s ease;
+                            }
+
+                            .buttongoogleplay:hover svg {
+                                opacity: 0;
+                                transform: translateX(-10%);
+                            }
+
+                            .buttongoogleplay .downloadicon2 {
+                                position: absolute;
+                                right: 10px; 
+                                width: 40px;
+                                height: 40px;
+                                opacity: 0;
+                                transition: opacity 0.3s ease, transform 0.3s ease;
+                            }
+
+                            .buttongoogleplay:hover .downloadicon2 {
+                                opacity: 1;
+                                transform: translateX(0); 
                             }
                         </style>
-                                                <div class="elemento8">
-                                                    <button class="export1">
-                                                        <span class="export1-content">Export</span>
-                                                    </button>
-                                                </div>
+                        <div class="elemento15">
+                            <a href="#aas" class="buttongoogleplay">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 64 64" alt="google">
+                                    <path d="M37.289 28.973l7.139-7.313L15.401 6.325C14.7 5.955 13.95 5.898 13.27 6.072L37.289 28.973zM11.084 8.284C11.033 8.505 11 8.736 11 8.978v46.044c0 .272.036.531.101.777l22.911-23.469L11.084 8.284zM37.248 35.723L13.355 57.949c.657.147 1.374.081 2.046-.274l28.447-15.029L37.248 35.723zM58.979 29.347l-9.489-5.013-8.638 8.036 8.003 7.631 10.124-5.349C61.111 33.526 61.111 30.474 58.979 29.347z"></path>
+                                </svg>
+                                <span>Download on <br>Google Play</span>
+                                <svg class="downloadicon2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24" alt="download">
+                                    <path d="M19.355,10.036C18.674,6.595,15.641,4,12,4C9.108,4,6.603,5.639,5.352,8.036C2.343,8.36,0,10.906,0,14c0,3.314,2.686,6,6,6 h13c2.761,0,5-2.239,5-5C24,12.36,21.948,10.221,19.355,10.036z M12,18l-4.333-4.333C7.421,13.421,7.595,13,7.943,13H10V9.5 C10,9.224,10.224,9,10.5,9h3C13.776,9,14,9.224,14,9.5V13h2.057c0.348,0,0.522,0.421,0.276,0.667L12,18z"></path>
+                                </svg>
+                            </a>
+
+                        </div>
                         <a href="https://elementscss.000webhostapp.com/elements/elemento1.html" target="_blank">
                             <button class="show-code-btn">Show Code { }</button>
                         </a>
                         <!-- Tags  -->
                         <div class="tags-container">
                             <div class="tag">Boton</div>
-                            <div class="tag">animation</div>
+                            <div class="tag">GooglePlay</div>
                             <div class="tag">css</div>
                             <div class="tag">html</div>
                         </div>
@@ -1347,6 +1360,8 @@
                             <div class="tag">html</div>
                         </div>
                     </div>
+
+
                                         <!-- Post 8 Boton Morado con Enlace -->
                                         <div class="post">
                                             <input type="checkbox" class="theme-checkbox">
@@ -1809,6 +1824,9 @@
                                                                                                                                                                     <div class="tag">html</div>
                                                                                                                                                                 </div>
                                                                                                                                                             </div>
+
+
+                                                                                                                                 
                         <!-- Fin de los posts -->
                     </div>
                 </div>
@@ -1816,17 +1834,16 @@
 
             <footer>
                 <hr>
-                <div class="columna1footer">
+                <div class="columna11footer">
                     <p>Elementos CSS DAJ tiene licencia CC BY-NC 4.0.© 1 por AgusTheKing</p>
                     <p xmlns:cc="http://creativecommons.org/ns">Esta WEB tiene la licencia <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="licencia noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:textoinferior;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="cc"><img style="height:22px!important;margin-left:3px;vertical-align:text-abajo;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="👤"><img style="height:22px!important;margin-left:3px;vertical-align:text-abajo;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt="$/"></a></p>
                 </div>
-
-                <div class="columna2footer">
-                    <a href="https://agustheking.github.io/Privacidad%20y%20Cookies.html" id="aboutMeBtn">Terms & Conditions</a>
+                <div class="columna22footer">
+                    <a href="/Privacidad%20y%20Cookies.html" id="aboutMeBtn">Terms & Conditions</a>
                     <p id="rights">Todos los derechos reservados ElementsCSSDAJ© 2024</p>
                 </div>
-               
             </footer>
+            
 
         </div>
         <script>
