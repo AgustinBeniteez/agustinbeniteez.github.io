@@ -798,7 +798,7 @@
                             display: flex;
                             align-items: center;
                             justify-content: flex-start;
-                            width: 160px; /* Ancho ajustado para acomodar el texto y la imagen */
+                            width: 160px; 
                             height: 40px;
                             border: none;
                             padding: 0px 20px;
@@ -815,34 +815,34 @@
 
                             .Btn .svg-icon {
                             position: absolute;
-                            width: 32px; /* Ancho del icono SVG */
-                            height: 32px; /* Alto del icono SVG */
-                            right: 10px; /* Ajusta la posición del icono SVG según necesites */
-                            fill: white; /* Color del icono SVG */
-                            transition: right 0.7s ease-in-out; /* Transición suave del icono */
+                            width: 32px; 
+                            height: 32px;
+                            right: 10px; 
+                            fill: white; 
+                            transition: right 0.7s ease-in-out; 
                             }
 
                             .Btn .server-name {
                             position: absolute;
-                            left: -160px; /* Inicialmente fuera del botón */
-                            transition: left 0.7s ease-in-out; /* Transición para cuando aparece */
+                            left: -160px;
+                            transition: left 0.7s ease-in-out; 
                             }
 
                             .Btn:hover .server-name {
-                            left: 10px; /* Aparece moviéndose de izquierda a derecha */
+                            left: 10px; 
                             }
 
                             .Btn:not(.clicked):hover .initial-text {
-                            opacity: 0; /* Desaparece cuando se pasa el cursor */
-                            transition: opacity 0.7s ease-in-out; /* Añadido para la transición */
+                            opacity: 0; 
+                            transition: opacity 0.7s ease-in-out; 
                             }
 
                             .Btn.clicked .initial-text {
-                            opacity: 1; /* Asegura que el texto inicial aparezca cuando se hace clic */
+                            opacity: 1; 
                             }
 
                             .Btn:not(.clicked):hover .svg-icon {
-                            right: 5px; /* Ajusta la posición del icono SVG al hacer hover */
+                            right: 5px; 
                             }
 
                             .Btn:active {
@@ -851,8 +851,8 @@
                             }
 
                             .Btn.clicked .server-name {
-                            left: -160px; /* Desaparece moviéndose hacia la izquierda */
-                            transition: left 0.7s ease-in-out; /* Transición para cuando desaparece */
+                            left: -160px; 
+                            transition: left 0.7s ease-in-out; 
                             }
                         </style>
 
