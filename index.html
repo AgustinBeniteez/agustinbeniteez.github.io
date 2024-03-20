@@ -716,6 +716,7 @@
                 data.forEach(post => {
                     const postHTML = `
                         <div class="post">
+                            <input type="checkbox" class="theme-checkbox">
                             <h3 class="post-title">${post.titulo}</h3>
                             <style>${post.estilos}</style>
                             ${post.contenido}
