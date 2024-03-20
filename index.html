@@ -682,8 +682,7 @@
                 <!-- Posts DIV CON POST dentro Botones etc...-->
                     <div class="main3" id="elements">
                          <!-- posts -->
-                         <div id="posts-container">
-                        </div>                                                              
+                                                                               
                         <!-- Fin de los posts -->
                     </div>
                 </div>
@@ -710,7 +709,7 @@
                 fetch('/elements/estilos/php/postcss.json')
                     .then(response => response.json())
                     .then(data => {
-                        const postsContainer = document.getElementById('posts-container');
+                        const postsContainer = document.getElementById('elements');
 
                         // Iterate over each post data and create HTML for each post
                         data.forEach(post => {
@@ -772,28 +771,22 @@
 
                 //CODE PARA TAGS
                 $(document).ready(function() {
-                    var $searchInput = $('#search-box');
-                    var $tagButtons = $('.tag-button');
-                    var $posts = $('#main3 .post'); // Update the selector to target posts under the "main3" container
+    var $searchInput = $('#search-box');
+    var $posts = $('.post');
 
-                    $searchInput.on('keyup', function() {
-                        var searchTerm = $(this).val().toLowerCase();
-                        $posts.hide().filter(function() {
-                            var postTitle = $(this).text().toLowerCase();
-                            return postTitle.includes(searchTerm);
-                        }).show();
-                    });
+    $searchInput.on('keyup', function() {
+        var searchTerm = $(this).val().toLowerCase().trim();
+        $posts.each(function() {
+            var postContent = $(this).text().toLowerCase();
+            if (postContent.includes(searchTerm)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+});
 
-                    $tagButtons.on('click', function() {
-                        var tag = $(this).data('tag').toLowerCase();
-                        $posts.hide().filter(function() {
-                            var postTags = $(this).data('tags') || '';
-                            return postTags.split(',').map(function(t) {
-                                return t.trim();
-                            }).includes(tag);
-                        }).show();
-                    });
-                });
           
 
                     // BORRADOR
