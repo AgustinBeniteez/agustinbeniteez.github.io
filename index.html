@@ -682,7 +682,8 @@
                 <!-- Posts DIV CON POST dentro Botones etc...-->
                     <div class="main3" id="elements">
                          <!-- posts -->
-                                                                               
+                         <div id="posts-container">
+                        </div>                                                              
                         <!-- Fin de los posts -->
                     </div>
                 </div>
@@ -703,99 +704,94 @@
 
         </div>
 </body>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Fetch data from JSON file
-                fetch('/elements/estilos/php/postcss.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        const postsContainer = document.getElementById('elements');
+<!-- Parte del script del checkbox -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch data from JSON file
+    fetch('/elements/estilos/php/postcss.json')
+        .then(response => response.json())
+        .then(data => {
+            const postsContainer = document.getElementById('posts-container');
 
-                        // Iterate over each post data and create HTML for each post
-                        data.forEach(post => {
-                            const postHTML = `
-                                <div class="post">
-                                    <input type="checkbox" class="theme-checkbox">
-                                    <h3 class="post-title">${post.titulo}</h3>
-                                    <style>${post.estilos}</style>
-                                    ${post.contenido}
-                                    <a href="${post.enlace}" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
-                                    <div class="tags-container">
-                                        ${post.tags.split(',').map(tag => `<div class="tag">${tag.trim()}</div>`).join('')}
-                                    </div>
-                                </div>
-                            `;
-                            postsContainer.innerHTML += postHTML;
-                        });
-
-                        // Select post containers after loading posts
-                        var postContainers = document.querySelectorAll('.post');
-
-                        // Add change event to each checkbox
-                        checkboxes.forEach(function(checkbox, index) {
-                            checkbox.addEventListener('change', function() {
-                                // Check if checkbox is checked
-                                if (checkbox.checked) {
-                                    // Change background to black, text color to white, and border to black for corresponding container
-                                    postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
-                                    postContainers[index].style.color = '#fff';
-                                    postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
-                                    postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
-
-                                    // Adjust the color of the post-title directly
-                                    var postTitle = postContainers[index].querySelector('.post-title');
-                                    if (postTitle) {
-                                        postTitle.style.color = '#fff';
-                                    }
-                                } else {
-                                    // Restore original background, text color, and border for corresponding container
-                                    postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
-                                    postContainers[index].style.color = 'white';
-                                    postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
-                                    postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
-
-                                    // Adjust the color of the post-title directly
-                                    var postTitle = postContainers[index].querySelector('.post-title');
-                                    if (postTitle) {
-                                        postTitle.style.color = 'black';
-                                    }
-                                }
-                            });
-                        });
-                    })
-                    .catch(error => console.error('Error fetching data:', error));
+            // Iterate over each post data and create HTML for each post
+            data.forEach(post => {
+                const postHTML = `
+                    <div class="post" data-tags="${post.tags}">
+                        <input type="checkbox" class="theme-checkbox">
+                        <h3 class="post-title">${post.titulo}</h3>
+                        <style>${post.estilos}</style>
+                        ${post.contenido}
+                        <a href="${post.enlace}" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
+                        <div class="tags-container">
+                            ${post.tags.split(',').map(tag => `<div class="tag">${tag.trim()}</div>`).join('')}
+                        </div>
+                    </div>
+                `;
+                postsContainer.innerHTML += postHTML;
             });
 
-            //CODE PARA TAGS
-           
+            // Call the function to initialize the checkbox event listener after posts are loaded
+            initializeCheckBoxes();
+        })
+        .catch(error => console.error('Error fetching data:', error));
 
-                //CODE PARA TAGS
-                $(document).ready(function() {
-    var $searchInput = $('#search-box');
-    var $posts = $('.post');
+    // Function to initialize checkbox event listener
+    function initializeCheckBoxes() {
+        var checkboxes = document.querySelectorAll('.theme-checkbox');
+        var postContainers = document.querySelectorAll('.post');
 
-    $searchInput.on('keyup', function() {
-        var searchTerm = $(this).val().toLowerCase().trim();
-        $posts.each(function() {
-            var postContent = $(this).text().toLowerCase();
-            if (postContent.includes(searchTerm)) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
+        checkboxes.forEach(function(checkbox, index) {
+            checkbox.addEventListener('change', function() {
+                if (checkbox.checked) {
+                    postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
+                    postContainers[index].style.color = '#fff';
+                    postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
+                    postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
+
+                    var postTitle = postContainers[index].querySelector('.post-title');
+                    if (postTitle) {
+                        postTitle.style.color = '#fff';
+                    }
+                } else {
+                    postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
+                    postContainers[index].style.color = 'white';
+                    postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
+                    postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
+
+                    var postTitle = postContainers[index].querySelector('.post-title');
+                    if (postTitle) {
+                        postTitle.style.color = 'black';
+                    }
+                }
+            });
         });
-    });
+    }
 });
 
-          
+$(document).ready(function() {
+    var $searchInput = $('#search-box');
+    var $tagButtons = $('.tag-button');
+    var $posts = $('.post'); // Cambiado para seleccionar todos los posts
 
-                    // BORRADOR
-                    function limpiarBusqueda() {
-        // Limpiar el contenido del input de búsqueda
-        document.getElementById('search-box').value = '';
-         }
+    $searchInput.on('keyup', function() {
+        var searchTerm = $(this).val().toLowerCase();
+        $posts.hide().filter(function() {
+            var postTitle = $(this).find('.post-title').text().toLowerCase();
+            return postTitle.includes(searchTerm);
+        }).show();
+    });
 
-        </script>
+    $tagButtons.on('click', function() {
+        var tag = $(this).data('tag').toLowerCase();
+        $posts.hide().filter(function() {
+            var postTags = $(this).data('tags') || '';
+            return postTags.split(',').map(function(t) {
+                return t.trim();
+            }).includes(tag);
+        }).show();
+    });
+});
+</script>
 
 </html>
 
