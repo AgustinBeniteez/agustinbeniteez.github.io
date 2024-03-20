@@ -719,7 +719,7 @@
                             <h3 class="post-title">${post.titulo}</h3>
                             <style>${post.estilos}</style>
                             ${post.contenido}
-                            <a href="${post.enlace}" target="_blank">Read More</a>
+                            <a href="${post.enlace}" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
                             <div class="tags-container">
                                 ${post.tags.split(',').map(tag => `<div class="tag">${tag.trim()}</div>`).join('')}
                             </div>
