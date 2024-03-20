@@ -705,109 +705,70 @@
         </div>
 </body>
         <script>
- document.addEventListener('DOMContentLoaded', function() {
-        // Fetch data from JSON file
-        fetch('/elements/estilos/php/postcss.json')
-            .then(response => response.json())
-            .then(data => {
-                const postsContainer = document.getElementById('posts-container');
-
-                // Iterate over each post data and create HTML for each post
-                data.forEach(post => {
-                    const postHTML = `
-                        <div class="post">
-                            <input type="checkbox" class="theme-checkbox">
-                            <h3 class="post-title">${post.titulo}</h3>
-                            <style>${post.estilos}</style>
-                            ${post.contenido}
-                            <a href="${post.enlace}" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
-                            <div class="tags-container">
-                                ${post.tags.split(',').map(tag => `<div class="tag">${tag.trim()}</div>`).join('')}
-                            </div>
-                        </div>
-                    `;
-                    postsContainer.innerHTML += postHTML;
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    });
-
-
             document.addEventListener('DOMContentLoaded', function() {
-                // Obtener todos los checkboxes y los contenedores .post
-                var checkboxes = document.querySelectorAll('.theme-checkbox');
-                var postContainers = document.querySelectorAll('.post');
+                // Fetch data from JSON file
+                fetch('/elements/estilos/php/postcss.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const postsContainer = document.getElementById('posts-container');
 
-                // Agregar un evento de cambio a cada checkbox
-                checkboxes.forEach(function(checkbox, index) {
-                    checkbox.addEventListener('change', function() {
-                        // Verificar si el checkbox está marcado
-                        if (checkbox.checked) {
-                            // Cambiar el fondo a negro, el color del texto a blanco y el borde a negro para el contenedor correspondiente
-                            postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
-                            postContainers[index].style.color = '#fff';
-                            postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
-                            postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
+                        // Iterate over each post data and create HTML for each post
+                        data.forEach(post => {
+                            const postHTML = `
+                                <div class="post">
+                                    <input type="checkbox" class="theme-checkbox">
+                                    <h3 class="post-title">${post.titulo}</h3>
+                                    <style>${post.estilos}</style>
+                                    ${post.contenido}
+                                    <a href="${post.enlace}" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
+                                    <div class="tags-container">
+                                        ${post.tags.split(',').map(tag => `<div class="tag">${tag.trim()}</div>`).join('')}
+                                    </div>
+                                </div>
+                            `;
+                            postsContainer.innerHTML += postHTML;
+                        });
 
-                            // Adjust the color of the post-title directly
-                            var postTitle = postContainers[index].querySelector('.post-title');
-                            if (postTitle) {
-                                postTitle.style.color = '#fff';
-                            }
-                        } else {
-                            // Restaurar el fondo original, el color del texto original y el borde original para el contenedor correspondiente
-                            postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
-                            postContainers[index].style.color = 'white';
-                            postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
-                            postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
+                        // Select post containers after loading posts
+                        var postContainers = document.querySelectorAll('.post');
 
-                            // Adjust the color of the post-title directly
-                            var postTitle = postContainers[index].querySelector('.post-title');
-                            if (postTitle) {
-                                postTitle.style.color = 'black';
-                            }
-                        }
-                    });
-                });
+                        // Add change event to each checkbox
+                        checkboxes.forEach(function(checkbox, index) {
+                            checkbox.addEventListener('change', function() {
+                                // Check if checkbox is checked
+                                if (checkbox.checked) {
+                                    // Change background to black, text color to white, and border to black for corresponding container
+                                    postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
+                                    postContainers[index].style.color = '#fff';
+                                    postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
+                                    postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
+
+                                    // Adjust the color of the post-title directly
+                                    var postTitle = postContainers[index].querySelector('.post-title');
+                                    if (postTitle) {
+                                        postTitle.style.color = '#fff';
+                                    }
+                                } else {
+                                    // Restore original background, text color, and border for corresponding container
+                                    postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
+                                    postContainers[index].style.color = 'white';
+                                    postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
+                                    postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
+
+                                    // Adjust the color of the post-title directly
+                                    var postTitle = postContainers[index].querySelector('.post-title');
+                                    if (postTitle) {
+                                        postTitle.style.color = 'black';
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
             });
 
             //CODE PARA TAGS
-            document.addEventListener('DOMContentLoaded', function() {
-                // Obtener todos los checkboxes y los contenedores .post
-                var checkboxes = document.querySelectorAll('.theme-checkbox');
-                var postContainers = document.querySelectorAll('.post');
-
-                // Agregar un evento de cambio a cada checkbox
-                checkboxes.forEach(function(checkbox, index) {
-                    checkbox.addEventListener('change', function() {
-                        // Verificar si el checkbox está marcado
-                        if (checkbox.checked) {
-                            // Cambiar el fondo a negro, el color del texto a blanco y el borde a negro para el contenedor correspondiente
-                            postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
-                            postContainers[index].style.color = '#fff';
-                            postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
-                            postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
-
-                            // Adjust the color of the post-title directly
-                            var postTitle = postContainers[index].querySelector('.post-title');
-                            if (postTitle) {
-                                postTitle.style.color = '#fff';
-                            }
-                        } else {
-                            // Restaurar el fondo original, el color del texto original y el borde original para el contenedor correspondiente
-                            postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
-                            postContainers[index].style.color = 'white';
-                            postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
-                            postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
-
-                            // Adjust the color of the post-title directly
-                            var postTitle = postContainers[index].querySelector('.post-title');
-                            if (postTitle) {
-                                postTitle.style.color = 'black';
-                            }
-                        }
-                    });
-                });
+           
 
                 //CODE PARA TAGS
                 $(document).ready(function() {
@@ -833,13 +794,14 @@
                         }).show();
                     });
                 });
-            });
+          
 
                     // BORRADOR
                     function limpiarBusqueda() {
         // Limpiar el contenido del input de búsqueda
         document.getElementById('search-box').value = '';
-    }
+         }
+
         </script>
 
 </html>
