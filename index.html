@@ -165,7 +165,7 @@
             margin-left: 10px;
         }
         
-        #header div {}
+        
         
         #blog-title {
             color: #ececec;
@@ -281,9 +281,7 @@
         #footer a {
             color: #fff;
         }
-        /* Feeds */
-        
-        #blogfeeds {}
+
         
         #postfeeds {
             padding: 0 15px 0;
@@ -651,7 +649,7 @@
 
                 <div style="flex-shrink: 0; margin-left: 20px; display: flex; align-items: center;">
                     <!-- Add your logo/image here -->
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim9XUno9EVVr29zcw0wvf9i-cYBSTsTHqe-2wgDemXhXARVQd-OVsU6VuTtDVmMc4vePOnBGp8aa_mKrdgQ4VaJXC2mmrtkRUmvKk-Cg-VgxNfbJEgiCCO3GaDMwBk1-5FwXdyJu1EkObSK6FemFmUZdbDPMyXQSuYKAB5UNIww8pBbdLHVhYto-2C7xDw/s686/DAJ.png"
+                    <img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"
                         alt="Logo" style="max-width: 300px; max-height: 300px; vertical-align: middle;">
                 </div>
             </div>
@@ -690,6 +688,7 @@
                 </div>
                 <div id="pagination-buttons">
                     <button id="prev-page">Prev</button>
+                    <span id="current-page">1</span> <!-- Display current page number here -->
                     <button id="next-page">Next</button>
                 </div>
             </div>
@@ -807,37 +806,48 @@ $(document).ready(function() {
 
 
 
-    // Variable para almacenar el número de página actual
-    let currentPage = 1;
+// Variable to store the current page number
+let currentPage = 1;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Función para cargar los posts de la página actual
-        function loadPosts(page) {
-            // Oculta todos los posts
-            $('.post').hide();
-            // Muestra solo los posts correspondientes a la página actual
-            $('.post').slice((page - 1) * 8, page * 8).show();
+document.addEventListener('DOMContentLoaded', function() {
+// Function to load posts for the given page
+function loadPosts(page) {
+    // Hide all posts
+    $('.post').hide();
+    // Calculate the starting index of the posts for the current page
+    const startIndex = (page - 1) * 12;
+    // Calculate the ending index of the posts for the current page
+    const endIndex = startIndex + 12;
+    // Show only the posts corresponding to the current page within the range of startIndex and endIndex
+    $('.post').slice(startIndex, endIndex).show();
+    // Display the current page number
+    $('#current-page').text(page);
+}
+
+
+    // Call the function to load posts when the page loads
+    loadPosts(currentPage);
+
+    // Event handler for the previous page button
+    $('#prev-page').on('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            loadPosts(currentPage);
         }
+    });
 
-        // Llama a la función para cargar los posts al cargar la página
-        loadPosts(currentPage);
+    // Event handler for the next page button
+    $('#next-page').on('click', function() {
+        // Calculate the total number of pages
+        const totalPages = Math.ceil($('.post').length / 12);
+        if (currentPage < totalPages) {
+            currentPage++;
+            loadPosts(currentPage);
+        }
+    });
+});
 
-        // Manejador de evento para el botón de página anterior
-        $('#prev-page').on('click', function() {
-            if (currentPage > 1) {
-                currentPage--;
-                loadPosts(currentPage);
-            }
-        });
 
-        // Manejador de evento para el botón de página siguiente
-        $('#next-page').on('click', function() {
-            if (currentPage < Math.ceil($('.post').length / 5)) {
-                currentPage++;
-                loadPosts(currentPage);
-            }
-        });
-    });   
 </script>
 
 </html>
