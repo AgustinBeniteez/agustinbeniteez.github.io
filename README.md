@@ -40,6 +40,21 @@ Luego, puedes aplicar las clases CSS proporcionadas a los elementos que desees e
 ```html
 <button class="btn btn-primary">Botón</button>
 ```
+<h2 style="color: #44AEFB"> |🔧 Tutorials</h2>
+<br>   
+<div align="center">
+  <a href="https://agustheking.github.io/" target="_blank">
+      <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura1.png"/>
+  </a>
+  <a href="https://agustheking.github.io/" target="_blank" >
+      <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura2.png"/>
+  </a>
+  <a href="https://agustheking.github.io/" target="_blank">
+      <img  alt="tutorial" height="190px" style="padding-right:20px; border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura3.png"/>
+  </a>
+</div>
+<br>
+
 
 ## Contribución
 
