@@ -1,46 +1,58 @@
-# Sitio Web Elements CSS DAJ
+## Website Elements CSS DAJ
 
-Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto es una colección de elementos de diseño CSS creados por AgusTheKing para facilitar el desarrollo web y mejorar la estética de las páginas.
+<img alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"/> <img alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/tituloletras.png"/><br>
+This is the official repository for the Elements CSS DAJ website. This project is a collection of CSS design elements created by AgusTheKing to facilitate web development and enhance the aesthetics of web pages.
 
-## Contenido
+## Contents
 
-- [Descripción](#descripción)
-- [Características](#características)
-- [Demostración](#demostración)
-- [Uso](#uso)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
+- [Description](#Contents)
+- [Features](#Description)
+- [Tutorials](#tutorial)
+- [Tutorial Videos](#videos)
+- [Contribution](#Contribution)
+- [License](#licencia)
 
-## Descripción
+## Description
 
-Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente integrados en proyectos web. Estos estilos están pensados para mejorar la apariencia y la usabilidad de los elementos comunes en las páginas web, como botones, formularios, tipografías, entre otros.
+Elements CSS DAJ is a set of CSS styles designed to be easily integrated into web projects. These styles are intended to enhance the appearance and usability of common elements on web pages, such as buttons, forms, typography, among others.
 
-## Características
+## Features
 
-- Estilos modernos y minimalistas.
-- Totalmente personalizables.
-- Responsivos y compatibles con diferentes dispositivos.
-- Ligeros y optimizados para un rendimiento óptimo.
-- Fácilmente integrables en proyectos existentes.
+- Modern and minimalist styles.
+- Fully customizable.
+- Responsive and compatible with different devices.
+- Lightweight and optimized for optimal performance.
+- Easily integrable into existing projects.
 
-## Demostración
+## tutorial
 
-Puedes ver una demostración en vivo de los estilos en el siguiente enlace: [Demo de Elements CSS DAJ](#)
+<h2 style="color: #44AEFB"> |🔧 Tutorial</h2>
+CSS styles can be embedded in any website using the following steps:<br>
+<h3>1. | Go to the Main Menu of elements <a href="https://agustheking.github.io/" target="_blank"> Elements CSS DAJ</a></h3> 
+<h3>2. | Select the element to embed by clicking the Show Code { } button <img alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/></h3>  
+<h3>3. | Copy the HTML of the element</h3>
+Example:
 
-## Uso
-
-Para utilizar Elements CSS DAJ en tu proyecto, simplemente incluye el archivo CSS en tu página HTML:
-
-```html
-<link rel="stylesheet" href="ruta/a/elements.css">
+```html example
+<button class="button5">YouTube</button>
 ```
+Copy in Orange Button HTML: <img alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/> <br> <br>
+<h3>3.1 ·| With the copied element, paste it into the <body> of the HTML where you want to embed it (depending on where you want to put it, it will be in one div or another)</h3>
+<h3>4 ·| Copy the CSS of the element</h3>
 
-Luego, puedes aplicar las clases CSS proporcionadas a los elementos que desees estilizar:
-
-```html
-<button class="btn btn-primary">Botón</button>
+Copy in Orange Button Css:<img alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
+<br>
+<h3>  4.1. | With the copied element CSS, there are 2 ways to add it to the HTML </h3> <br>
+   <h4> 1. In a <style> (With a <style>, you only need to insert a tag in the html, which is written as <b><style></style></b>, and in between the css you want to embed)</h4>
+  <h4> 2. In a CSS File, Create a document <b>any desired name + .css</b> example: (style.css) and in that document paste the copied css and to link it, we would use this code in the head:</h4>
+  
+   ```css vinculo
+<link rel="stylesheet" href="styles.css">
 ```
-<h2 style="color: #44AEFB"> |🔧 Tutorials</h2>
+ change <b>href</b> according to the name and location of the .css file<br>
+
+## videos
+<h2 style="color: #44AEFB"> |🔧🎞️ Video Tutorials</h2>
 <br>   
 <div align="center">
   <a href="https://agustheking.github.io/" target="_blank">
@@ -56,14 +68,14 @@ Luego, puedes aplicar las clases CSS proporcionadas a los elementos que desees e
 <br>
 
 
-## Contribución
-
-¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar Elements CSS DAJ, siéntete libre de abrir un problema o enviar un pull request. Antes de hacerlo, por favor, asegúrate de revisar las pautas de contribución.
+## Contribution
+Contributions are welcome! If you have ideas to improve Elements CSS DAJ, feel free to open an issue or submit a pull request. Before doing so, please make sure to review the contribution guidelines.
 
 ## Licencia
 
-Este proyecto está bajo la licencia [CC BY-NC 4.0 DEED](https://creativecommons.org/licenses/by-nc/4.0/legalcode), que puedes revisar en el archivo LICENSE.md.
+This project is licensed under the [CC BY-NC 4.0 DEED](https://creativecommons.org/licenses/by-nc/4.0/legalcode),which you can review in the LICENSE.md file.
 
 ---
 
-Asegúrate de proporcionar el enlace correcto a la licencia y cualquier otra información adicional relevante que desees incluir.
+Created by Agustín Benítez López.                  <br>                                                                                   ![GitHub Org's stars](https://img.shields.io/github/stars/agustheking?style=social)
+
