@@ -38,8 +38,8 @@ Example:
 ```
 Copy in Boton Naranja HTML: <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/>  <br> <br>
 3.1·| Con el elemento copiado  los pegaremos en el <body> de el HTML en el que lo queremos incrustar (depende de donde lo quieras poner estara en un div u otro)<br>
-4·| Copiar el CSS del elemento 
-Example: 
+4·| Copiar el CSS del elemento <br>
+Example: <br>
 ```html example
 .button5 {
   padding: 1em 2em;
@@ -65,7 +65,7 @@ Example:
 ```
 Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
  <br>
- 4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML 
+ 4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML <br><br>
    1· En un <style> (Con un <style> solo hace falta meter en el html una etiqueta que se escribe <style></style> y en medio el css que queramos incrustar)
    ```<style>
 <style>
