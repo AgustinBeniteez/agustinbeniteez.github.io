@@ -7,8 +7,8 @@ This is the official repository for the Elements CSS DAJ website. This project i
 
 - [Description](#Contents)
 - [Features](#Description)
-- [Tutorials](#tutorial)
-- [Tutorial Videos](#videos)
+- [Tutorials](#|🔧 Tutorial)
+- [Tutorial Videos](#🔧🎞️ Video Tutorials)
 - [Contribution](#Contribution)
 - [License](#licencia)
 
@@ -24,9 +24,7 @@ Elements CSS DAJ is a set of CSS styles designed to be easily integrated into we
 - Lightweight and optimized for optimal performance.
 - Easily integrable into existing projects.
 
-## tutorial
-
-<h2 style="color: #44AEFB"> |🔧 Tutorial</h2>
+## |🔧 Tutorial
 CSS styles can be embedded in any website using the following steps:<br>
 <h3>1. | Go to the Main Menu of elements <a href="https://agustheking.github.io/" target="_blank"> Elements CSS DAJ</a></h3> 
 <h3>2. | Select the element to embed by clicking the Show Code { } button <img alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/></h3>  
@@ -51,8 +49,7 @@ Copy in Orange Button Css:<img alt="Copy Code{}" height="40px" src="https://raw.
 ```
  change <b>href</b> according to the name and location of the .css file<br>
 
-## videos
-<h2 style="color: #44AEFB"> |🔧🎞️ Video Tutorials</h2>
+## |🔧🎞️ Video Tutorials
 <br>   
 <div align="center">
   <a href="https://agustheking.github.io/" target="_blank">
