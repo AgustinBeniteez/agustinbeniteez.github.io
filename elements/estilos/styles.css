@@ -709,6 +709,12 @@ nav ul.active li a {
     #header {
         margin-left: 0;
     }
+    #search-and-tags-container {
+        display:block;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px;
+    }
 }
 
 
