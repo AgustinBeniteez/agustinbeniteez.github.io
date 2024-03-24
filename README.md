@@ -25,7 +25,7 @@ Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente i
 - Fácilmente integrables en proyectos existentes.
 
 ## Demostración
-
+<h2 style="color: #44AEFB"> |🔧 Tutorials</h2>
 Puedes ver una demostración en vivo de los estilos en el siguiente enlace: [Demo de Elements CSS DAJ](#)
 
 ## Uso
@@ -41,7 +41,7 @@ Luego, puedes aplicar las clases CSS proporcionadas a los elementos que desees e
 ```html
 <button class="btn btn-primary">Botón</button>
 ```
-<h2 style="color: #44AEFB"> |🔧 Tutorials</h2>
+<h2 style="color: #44AEFB"> |🔧🎞️ Video Tutorials</h2>
 <br>   
 <div align="center">
   <a href="https://agustheking.github.io/" target="_blank">
