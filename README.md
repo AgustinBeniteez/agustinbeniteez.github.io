@@ -28,21 +28,21 @@ Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente i
 
 <h2 style="color: #44AEFB"> |🔧 Tutorial</h2>
 Los estilos Css se pueden isncrustar en cualquier sitio web usando los siguientes pasos:<br>
-<h3> 1·|Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ</a> <br></h2> 
-<h3> 2·|Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/></h2>  
-<h3> 3·|Copiar el HTML del elemento </h2>
+<h3> 1·|Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ</a></h3> 
+<h3> 2·|Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/></h3>  
+<h3> 3·|Copiar el HTML del elemento </h3>
 
 Example: 
 ```html example
 <button class="button5">YouTube</button>
 ```
 Copy in Boton Naranja HTML: <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/>  <br> <br>
-3.1·| Con el elemento copiado  los pegaremos en el <body> de el HTML en el que lo queremos incrustar (depende de donde lo quieras poner estara en un div u otro)<br>
-4·| Copiar el CSS del elemento <br>
+<h3>3.1·| Con el elemento copiado  los pegaremos en el <body> de el HTML en el que lo queremos incrustar (depende de donde lo quieras poner estara en un div u otro)</h3>
+<h3>4·| Copiar el CSS del elemento </h3>
 
 Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
  <br>
- 4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML <br><br>
+<h3>  4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML </h3> <br>
    1· En un <style> (Con un <style> solo hace falta meter en el html una etiqueta que se escribe <b><style></style></b> y en medio el css que queramos incrustar)<br>
    2· En File css, Crearemos un documento <b>nombre que queramos + .css</b> example: (style.css) y en ese documento pegaremos el css copiado y para vincularlo lo ariamos con este codigo en el head:<br>
    ```css vinculo
