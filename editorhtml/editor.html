@@ -128,7 +128,7 @@
         }
  
         
-        nav#nav {
+        nav {
             background-color: #22222200;
             position: fixed;
             top: 0;
@@ -140,67 +140,71 @@
             align-items: center;
             padding: 0 20px;
             z-index: 1000;
+            
         }
-        
-        nav#nav img {
-            width: 40px;
-            height: auto;
-        }
-        
-        nav#nav ul {
-            margin: 10px;
-            padding: 0;
-            list-style-type: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        nav#nav ul li {
-            margin-right: 20px;
-        }
-        
-        nav#nav ul li:last-child {
-            margin-right: 0;
-        }
-        
-        nav#nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        nav#nav input[type="text"] {
-            margin-left: auto;
-            margin-right: 2%;
-            padding: 5px;
-            width: 150px;
-            border-radius: 5px;
-            background: rgba(240, 240, 240, 0.9);
-            border-radius: 17px;
-            border-style: solid;
-            border-color: rgba(216, 216, 216, 0.76);
-            border-width: 3px;
-            box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-        }
-        
-        nav#nav button {
-            margin-left: 20px;
-            padding: 20px 40px; /* Aumenta el padding para hacer el botón más grande */
-            border-radius: 5px;
-            border: none;
-            background-color: #333;
-            color: #ffffff;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Centra el contenido verticalmente */
-            font-size: 5.2em; /* Aumenta el tamaño del texto */
-        }
-        
-        nav#nav button:last-child {
-            margin-right: 0;
-        }
+
+nav img {
+    width: 40px;
+    height: auto;
+}
+
+nav ul {
+    margin: 10px;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+    /* Alinea verticalmente los elementos */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Estilos para el campo de búsqueda */
+
+nav input[type="text"] {
+    margin-left: auto;
+    margin-right: 2%;
+    /* Alinear a la derecha */
+    padding: 5px;
+    width: 150px;
+    /* Ancho del campo de búsqueda */
+    border-radius: 5px;
+    background: rgba(240, 240, 240, 0.9);
+    border-radius: 17px;
+    border-style: solid;
+    border-color: rgba(216, 216, 216, 0.76);
+    border-width: 3px;
+    box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
+}
+/* Estilos para los botones */
+
+nav button {
+    margin-left: 20px;
+    /* Añadir margen a los botones */
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav button:last-child {
+    margin-right: 0;
+}
 
         nav#menu {
             position: fixed;
@@ -327,22 +331,129 @@
         .theme-checkbox:checked {
             background-position: 100%;
         }
+
+    #menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 80%;
+}
+
+#menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Estilos para mostrar el menú */
+nav ul.active {
+    display: flex !important;
+    flex-direction: column;
+    background-color: #2222229d;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 86%;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 1.5; /* Ajusta el espaciado entre las palabras del menú */
+}
+
+nav ul.active li {
+    margin-right: 0;
+}
+
+nav ul.active li a {
+    color: #fff;
+    padding: 10px;
+}
+
+/* Estilos para el botón de menú cuando está activo */
+#menu-toggle.active span {
+    background-color: transparent;
+}
+
+#menu-toggle.active span:nth-child(2) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+        @media only screen and (max-width: 767px) {
+
+        nav  {
+            width: 100%;
+        }
+        nav ul {
+            display: none; /* Ocultar el menú en dispositivos móviles */
+        }
+        nav #menu-toggle{
+        float: right;
+        display: block;
+        margin-left: 75%;
+        }
+        .menur {
+            display: none;
+        }
+        .menul {
+            display: flex;
+            margin-top: -100px;
+        }
+        }
+        
+        /* Para portátil */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav #menu-toggle{
+        display: none;
+    }
+
+}
+
+/* Para PC */
+@media only screen and (min-width: 1025px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav #menu-toggle{
+        display: none;
+    }
+}
     </style>
 </head>
 
 <body>
     <nav id="nav">
         <!-- Logo de la web -->
-        <img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png" alt="Logo de la web" width="150" height="150">
+        <a href="/"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png" alt="Logo de la web" width="150" height="150"></a>
+        <button id="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <!-- Enlaces -->
         <ul>
-            <li><a href="/elements/elemento1.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/">Elementos CSS</a></li>
             <li><a href="/tutorials/menututorials.html">Tutorials</a></li>
             <li><a href="/Aboutme.html">About DAJ</a></li>
+            <li><a href="/editorhtml/editor.html">Editor Code</span></a></li>
+           
         </ul>
-        <span style="margin-left: auto; padding: 5px;"></span>
-    </nav>
+        <span style="margin-left: auto; padding: 5px;">
+
+    </nav>  
+
     <nav id="menu">
         <div class="menul">
             Change Dark/Light Theme    <input type="checkbox" class="theme-checkbox">
@@ -479,7 +590,19 @@
         }
     }
 });
+     // NAV menu movil
+     document.addEventListener('DOMContentLoaded', function () {
+// Obtener referencias al botón de menú y al menú
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
 
+// Agregar un event listener para el clic en el botón de menú
+menuToggle.addEventListener('click', function() {
+    // Alternar la clase 'active' en el menú para mostrarlo u ocultarlo
+    navMenu.classList.toggle('active');
+});
+
+});
     </script>
 </body>
 
