@@ -8,7 +8,7 @@ This is the official repository for the Elements CSS DAJ website. This project i
 - [Description](#Contents)
 - [Features](#Description)
 - [Tutorials](#-tutorial)
-- [Tutorial Videos](#-Video Tutorials)
+- [Tutorial Videos](#%EF%B8%8F-video-tutorials)
 - [Contribution](#Contribution)
 - [License](#licencia)
 
