@@ -1,4 +1,4 @@
-# Sitio Web Elements CSS DAJ
+w# Sitio Web Elements CSS DAJ
 
 <img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"/> <img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/tituloletras.png"/><br>
 Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto es una colección de elementos de diseño CSS creados por AgusTheKing para facilitar el desarrollo web y mejorar la estética de las páginas.   
@@ -25,16 +25,43 @@ Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente i
 - Fácilmente integrables en proyectos existentes.
 
 ## Demostración
+
 <h2 style="color: #44AEFB"> |🔧 Tutorials</h2>
 Los estilos Css se pueden isncrustar en cualquier sitio web usando los siguientes pasos:<br>
 1·| Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ</a> <br>
 2·| Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/> 
-3·| Copiar el HTML del elemento <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/> 
+3·| Copiar el HTML del elemento 
 
+Example: 
 ```html example
 <button class="button5">YouTube</button>
 ```
+Copy in Boton Naranja HTML: <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/>  <br>
 3·| Copiar el CSS del elemento <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
+Example: 
+```html example
+.button5 {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 50px; 
+  font-weight: bold;
+  letter-spacing: 2px; 
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(45deg, #b20710, #7e0308); 
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  }
+
+.button5:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 4px 5px 18px -4px #a51a24; 
+  }
+
+```
  <br>
  
 
