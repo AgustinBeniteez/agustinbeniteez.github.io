@@ -49,7 +49,7 @@ Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw
    ```css vinculo
 <link rel="stylesheet" href="styles.css">
 ```
-  <br> cambiara segun el nombre y localizacion del archivo .css<br>
+ cambiar <b>href</b>segun el nombre y localizacion del archivo .css<br>
 
 ## videos
 <h2 style="color: #44AEFB"> |🔧🎞️ Video Tutorials</h2>
