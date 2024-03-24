@@ -7,8 +7,8 @@ Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto
 
 - [Descripción](#descripción)
 - [Características](#características)
-- [Demostración](#demostración)
-- [Uso](#uso)
+- [Tutorials](#demostración)
+- [Tutorials Video](#uso)
 - [Contribución](#contribución)
 - [Licencia](#licencia)
 
