@@ -1,4 +1,4 @@
-w# Sitio Web Elements CSS DAJ
+## Sitio Web Elements CSS DAJ
 
 <img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"/> <img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/tituloletras.png"/><br>
 Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto es una colección de elementos de diseño CSS creados por AgusTheKing para facilitar el desarrollo web y mejorar la estética de las páginas.   
@@ -26,7 +26,7 @@ Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente i
 
 ## Demostración
 
-<h2 style="color: #44AEFB"> |🔧 Tutorials</h2>
+<h2 style="color: #44AEFB"> |🔧 Tutorial</h2>
 Los estilos Css se pueden isncrustar en cualquier sitio web usando los siguientes pasos:<br>
 1·| Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ</a> <br>
 2·| Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/> 
