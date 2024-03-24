@@ -67,17 +67,16 @@ Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw
  <br>
  4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML <br><br>
    1· En un <style> (Con un <style> solo hace falta meter en el html una etiqueta que se escribe <style></style> y en medio el css que queramos incrustar)
-   ```<style>
-<style>
-  .button5 {  
-    padding: 1em 2em;
-    border: none;
-    border-radius: 50px; 
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-</style>
-```
+ | <style>
+ |   .button5 {  
+ |     padding: 1em 2em;
+ |     border: none;
+ |     border-radius: 50px; 
+ |      font-weight: bold;
+ |     letter-spacing: 2px;
+ |   }
+
+
    2· Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML 
 
 Para utilizar Elements CSS DAJ en tu proyecto, simplemente incluye el archivo CSS en tu página HTML:
