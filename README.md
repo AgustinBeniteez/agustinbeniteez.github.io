@@ -43,7 +43,7 @@ Copy in Boton Naranja HTML: <img  alt="Copy Code{}" height="40px" src="https://r
 Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
  <br>
 <h3>  4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML </h3> <br>
-   <h4> 1· En un <style> (Con un <style> solo hace falta meter en el html una etiqueta que se escribe <b><style></style></b> y en medio el css que queramos incrustar)</h4><br> 
+   <h4> 1· En un <style> (Con un <style> solo hace falta meter en el html una etiqueta que se escribe <b><style></style></b> y en medio el css que queramos incrustar)</h4>
   <h4> 2· En File css, Crearemos un documento <b>nombre que queramos + .css</b> example: (style.css) y en ese documento pegaremos el css copiado y para vincularlo lo ariamos con este codigo en el head:</h4>
    
    ```css vinculo
