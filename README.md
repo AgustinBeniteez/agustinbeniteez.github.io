@@ -8,7 +8,7 @@ Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto
 - [Descripción](#descripción)
 - [Características](#características)
 - [Tutorials](#demostración)
-- [Tutorials Video](#uso)
+- [Tutorials Video](#videos)
 - [Contribución](#contribución)
 - [Licencia](#licencia)
 
@@ -30,14 +30,19 @@ Los estilos Css se pueden isncrustar en cualquier sitio web usando los siguiente
 1·| Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ</a> <br>
 2·| Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/> 
 3·| Copiar el HTML del elemento <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/> 
+
+```html example
+<button class="button5">YouTube</button>
+```
 3·| Copiar el CSS del elemento <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
  <br>
-## Uso
+ 
+
 
 Para utilizar Elements CSS DAJ en tu proyecto, simplemente incluye el archivo CSS en tu página HTML:
 
 ```html
-<link rel="stylesheet" href="ruta/a/elements.css">
+<button class="button5">YouTube</button>
 ```
 
 Luego, puedes aplicar las clases CSS proporcionadas a los elementos que desees estilizar:
@@ -45,6 +50,7 @@ Luego, puedes aplicar las clases CSS proporcionadas a los elementos que desees e
 ```html
 <button class="btn btn-primary">Botón</button>
 ```
+## videos
 <h2 style="color: #44AEFB"> |🔧🎞️ Video Tutorials</h2>
 <br>   
 <div align="center">
