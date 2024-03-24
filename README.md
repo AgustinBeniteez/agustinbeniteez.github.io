@@ -29,8 +29,9 @@ Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente i
 Los estilos Css se pueden isncrustar en cualquier sitio web usando los siguientes pasos:<br>
 1·| Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ</a> <br>
 2·| Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/> 
-<br>
 3·| Copiar el HTML del elemento <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/> 
+3·| Copiar el CSS del elemento <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
+ <br>
 ## Uso
 
 Para utilizar Elements CSS DAJ en tu proyecto, simplemente incluye el archivo CSS en tu página HTML:
