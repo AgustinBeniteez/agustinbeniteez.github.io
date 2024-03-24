@@ -5,11 +5,11 @@ This is the official repository for the Elements CSS DAJ website. This project i
 
 ## Contents
 
-- [Description](#Contenido)
+- [Description](#Contents)
 - [Features](#Description)
 - [Tutorials](#tutorial)
 - [Tutorial Videos](#videos)
-- [Contribution](#contribución)
+- [Contribution](#Contribution)
 - [License](#licencia)
 
 ## Description
