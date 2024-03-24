@@ -1,55 +1,55 @@
-## Sitio Web Elements CSS DAJ
+## Website Elements CSS DAJ
 
-<img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"/> <img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/tituloletras.png"/><br>
-Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto es una colección de elementos de diseño CSS creados por AgusTheKing para facilitar el desarrollo web y mejorar la estética de las páginas.   
+<img alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"/> <img alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/tituloletras.png"/><br>
+This is the official repository for the Elements CSS DAJ website. This project is a collection of CSS design elements created by AgusTheKing to facilitate web development and enhance the aesthetics of web pages.
 
-## Contenido
+## Contents
 
-- [Descripción](#Contenido)
-- [Características](#Descripción)
-- [Tutorials](#demostración)
-- [Tutorials Video](#videos)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
+- [Description](#Contenido)
+- [Features](#Description)
+- [Tutorials](#tutorial)
+- [Tutorial Videos](#videos)
+- [Contribution](#contribución)
+- [License](#licencia)
 
-## Descripción
+## Description
 
-Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente integrados en proyectos web. Estos estilos están pensados para mejorar la apariencia y la usabilidad de los elementos comunes en las páginas web, como botones, formularios, tipografías, entre otros.
+Elements CSS DAJ is a set of CSS styles designed to be easily integrated into web projects. These styles are intended to enhance the appearance and usability of common elements on web pages, such as buttons, forms, typography, among others.
 
-## Características
+## Features
 
-- Estilos modernos y minimalistas.
-- Totalmente personalizables.
-- Responsivos y compatibles con diferentes dispositivos.
-- Ligeros y optimizados para un rendimiento óptimo.
-- Fácilmente integrables en proyectos existentes.
+- Modern and minimalist styles.
+- Fully customizable.
+- Responsive and compatible with different devices.
+- Lightweight and optimized for optimal performance.
+- Easily integrable into existing projects.
 
-## Demostración
+## tutorial
 
 <h2 style="color: #44AEFB"> |🔧 Tutorial</h2>
-Los estilos Css se pueden isncrustar en cualquier sitio web usando los siguientes pasos:<br>
-<h3> 1·|Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ</a></h3> 
-<h3> 2·|Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/></h3>  
-<h3> 3·|Copiar el HTML del elemento </h3>
+CSS styles can be embedded in any website using the following steps:<br>
+<h3>1. | Go to the Main Menu of elements <a href="https://agustheking.github.io/" target="_blank"> Elements CSS DAJ</a></h3> 
+<h3>2. | Select the element to embed by clicking the Show Code { } button <img alt="Show Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcode.png"/></h3>  
+<h3>3. | Copy the HTML of the element</h3>
+Example:
 
-Example: 
 ```html example
 <button class="button5">YouTube</button>
 ```
-Copy in Boton Naranja HTML: <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/>  <br> <br>
-<h3>3.1·| Con el elemento copiado  los pegaremos en el <body> de el HTML en el que lo queremos incrustar (depende de donde lo quieras poner estara en un div u otro)</h3>
-<h3>4·| Copiar el CSS del elemento </h3>
+Copy in Orange Button HTML: <img alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/> <br> <br>
+<h3>3.1 ·| With the copied element, paste it into the <body> of the HTML where you want to embed it (depending on where you want to put it, it will be in one div or another)</h3>
+<h3>4 ·| Copy the CSS of the element</h3>
 
-Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
- <br>
-<h3>  4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML </h3> <br>
-   <h4> 1· En un <style> (Con un <style> solo hace falta meter en el html una etiqueta que se escribe <b><style></style></b> y en medio el css que queramos incrustar)</h4>
-  <h4> 2· En File css, Crearemos un documento <b>nombre que queramos + .css</b> example: (style.css) y en ese documento pegaremos el css copiado y para vincularlo lo ariamos con este codigo en el head:</h4>
-   
+Copy in Orange Button Css:<img alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
+<br>
+<h3>  4.1. | With the copied element CSS, there are 2 ways to add it to the HTML </h3> <br>
+   <h4> 1. In a <style> (With a <style>, you only need to insert a tag in the html, which is written as <b><style></style></b>, and in between the css you want to embed)</h4>
+  <h4> 2. In a CSS File, Create a document <b>any desired name + .css</b> example: (style.css) and in that document paste the copied css and to link it, we would use this code in the head:</h4>
+  
    ```css vinculo
 <link rel="stylesheet" href="styles.css">
 ```
- cambiar <b>href</b> segun el nombre y localizacion del archivo .css<br>
+ change <b>href</b> according to the name and location of the .css file<br>
 
 ## videos
 <h2 style="color: #44AEFB"> |🔧🎞️ Video Tutorials</h2>
@@ -68,14 +68,13 @@ Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw
 <br>
 
 
-## Contribución
-
-¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar Elements CSS DAJ, siéntete libre de abrir un problema o enviar un pull request. Antes de hacerlo, por favor, asegúrate de revisar las pautas de contribución.
+## Contribution
+Contributions are welcome! If you have ideas to improve Elements CSS DAJ, feel free to open an issue or submit a pull request. Before doing so, please make sure to review the contribution guidelines.
 
 ## Licencia
 
-Este proyecto está bajo la licencia [CC BY-NC 4.0 DEED](https://creativecommons.org/licenses/by-nc/4.0/legalcode), que puedes revisar en el archivo LICENSE.md.
+This project is licensed under the [CC BY-NC 4.0 DEED](https://creativecommons.org/licenses/by-nc/4.0/legalcode),which you can review in the LICENSE.md file.
 
 ---
 
-Creado por Agustín Benítez López.
+Created by Agustín Benítez López.
