@@ -77,4 +77,5 @@ This project is licensed under the [CC BY-NC 4.0 DEED](https://creativecommons.o
 
 ---
 
-Created by Agustín Benítez López.
+Created by Agustín Benítez López.                  <br>                                                                                   ![GitHub Org's stars](https://img.shields.io/github/stars/agustheking?style=social)
+
