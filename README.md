@@ -26,8 +26,9 @@ Elements CSS DAJ es un conjunto de estilos CSS diseñados para ser fácilmente i
 
 ## Demostración
 <h2 style="color: #44AEFB"> |🔧 Tutorials</h2>
-Puedes ver una demostración en vivo de los estilos en el siguiente enlace: [Demo de Elements CSS DAJ](#)
-
+Los estilos Css se pueden isncrustar en cualquier sitio web usando los siguientes pasos:<br>
+1·| Entrar en el Menu Principal de elementos <a href="https://agustheking.github.io/" target="_blank"> Elements Css DAJ/</a> <br>
+2·| Seleccionar el elemento a insrustar dandole al boton Show Code { } <img  alt="tutorial" height="50px" style=";border-radius:65px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/showcodeimg.png"/> <br>
 ## Uso
 
 Para utilizar Elements CSS DAJ en tu proyecto, simplemente incluye el archivo CSS en tu página HTML:
@@ -67,4 +68,4 @@ Este proyecto está bajo la licencia [CC BY-NC 4.0 DEED](https://creativecommons
 
 ---
 
-Asegúrate de proporcionar el enlace correcto a la licencia y cualquier otra información adicional relevante que desees incluir.
+Creado por Agustín Benítez López.
