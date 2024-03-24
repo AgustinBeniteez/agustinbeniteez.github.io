@@ -1,6 +1,7 @@
 # Sitio Web Elements CSS DAJ
 
-Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto es una colección de elementos de diseño CSS creados por AgusTheKing para facilitar el desarrollo web y mejorar la estética de las páginas.
+<img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/DAJ.png"/> <img  alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/tituloletras.png"/><br>
+Este es el repositorio oficial para el sitio web Elements CSS DAJ. Este proyecto es una colección de elementos de diseño CSS creados por AgusTheKing para facilitar el desarrollo web y mejorar la estética de las páginas.   
 
 ## Contenido
 
