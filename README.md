@@ -39,30 +39,7 @@ Example:
 Copy in Boton Naranja HTML: <img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodehtml.png"/>  <br> <br>
 3.1·| Con el elemento copiado  los pegaremos en el <body> de el HTML en el que lo queremos incrustar (depende de donde lo quieras poner estara en un div u otro)<br>
 4·| Copiar el CSS del elemento <br>
-Example: <br>
-```html example
-.button5 {
-  padding: 1em 2em;
-  border: none;
-  border-radius: 50px; 
-  font-weight: bold;
-  letter-spacing: 2px; 
-  text-transform: uppercase;
-  color: #fff;
-  background: linear-gradient(45deg, #b20710, #7e0308); 
-  transition: all 1000ms;
-  font-size: 15px;
-  position: relative;
-  overflow: hidden;
-  }
 
-.button5:hover {
-  color: #ffffff;
-  transform: scale(1.05);
-  box-shadow: 4px 5px 18px -4px #a51a24; 
-  }
-
-```
 Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/copycodecss.png"/>
  <br>
  4.1·| Con el Css del elemento copiado hay 2 maneras de añadirlo al HTML <br><br>
@@ -73,17 +50,6 @@ Copy in Boton Naranja Css:<img  alt="Copy Code{}" height="40px" src="https://raw
 ```
   <br> cambiara segun el nombre y localizacion del archivo .css<br>
 
-Para utilizar Elements CSS DAJ en tu proyecto, simplemente incluye el archivo CSS en tu página HTML:
-
-```html
-<button class="button5">YouTube</button>
-```
-
-Luego, puedes aplicar las clases CSS proporcionadas a los elementos que desees estilizar:
-
-```html
-<button class="btn btn-primary">Botón</button>
-```
 ## videos
 <h2 style="color: #44AEFB"> |🔧🎞️ Video Tutorials</h2>
 <br>   
