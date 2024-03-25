@@ -256,6 +256,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const tagButtons = document.querySelectorAll('.tag-button');
+    const posts = document.querySelectorAll('.post');
+    const noResultsMessage = document.getElementById('no-results-message');
+
+    tagButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tag = button.getAttribute('data-tag').toLowerCase();
+
+            // Mostrar solo los posts que contienen la etiqueta seleccionada
+            posts.forEach(post => {
+                const postTags = post.getAttribute('data-tags').toLowerCase().split(',');
+                if (postTags.includes(tag)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+
+            // Ocultar el mensaje de no resultados si hay posts visibles
+            let visiblePosts = Array.from(posts).filter(post => post.style.display !== 'none');
+            if (visiblePosts.length > 0) {
+                noResultsMessage.style.display = 'none';
+            } else {
+                noResultsMessage.style.display = 'block';
+            }
+        });
+    });
+});
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const tagButtons = document.querySelectorAll('.tag-button');
