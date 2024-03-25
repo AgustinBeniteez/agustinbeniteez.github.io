@@ -66,45 +66,83 @@ document.addEventListener('DOMContentLoaded', function() {
        }
    });
    
-   $(document).ready(function() {
-       var $searchInput = $('#search-box');
-       var $tagButtons = $('.tag-button');
-       var $posts = $('.post'); // Cambiado para seleccionar todos los posts
+$(document).ready(function() {
+    var $searchInput = $('#search-box');
+    var $tagButtons = $('.tag-button');
+    var $posts = $('.post');
+    var $noResultsMessage = $('#no-results-message');
+
+    $searchInput.on('keyup', function() {
+        var searchTerm = $(this).val().toLowerCase();
+        var matchingPosts = $posts.filter(function() {
+            var postTitle = $(this).find('.post-title').text().toLowerCase();
+            return postTitle.includes(searchTerm);
+        });
+    
+        if (matchingPosts.length > 0) {
+            $noResultsMessage.hide();
+            $posts.hide();
+            matchingPosts.show();
+        } else {
+            $posts.hide();
+            // Ocultar el mensaje solo si hay al menos 1 post visible
+            if ($('.post:visible').length > 0) {
+                $noResultsMessage.hide();
+            } else {
+                $noResultsMessage.show();
+            }
+        }
+    });
+    
+    
+
+    $tagButtons.on('click', function() {
+        var tag = $(this).data('tag').toLowerCase();
+        var matchingPosts = $posts.filter(function() {
+            var postTags = $(this).data('tags') || '';
+            return postTags.split(',').map(function(t) {
+                return t.trim();
+            }).includes(tag);
+        });
+
+        if (matchingPosts.length > 0) {
+            $noResultsMessage.hide();
+            $posts.hide();
+            matchingPosts.show();
+        } else {
+            $posts.hide();
+            $noResultsMessage.show();
+        }
+    });
+
+    // Agrega esta función para mostrar el mensaje cuando se elimine el texto de búsqueda y se muestren todos los posts nuevamente
+    $searchInput.on('input', function() {
+        var searchTerm = $(this).val().toLowerCase();
+        if (searchTerm === '') {
+            $noResultsMessage.hide();
+        }
+    });
+});
+
+
    
-       $searchInput.on('keyup', function() {
-           var searchTerm = $(this).val().toLowerCase();
-           $posts.hide().filter(function() {
-               var postTitle = $(this).find('.post-title').text().toLowerCase();
-               return postTitle.includes(searchTerm);
-           }).show();
-       });
    
-       $tagButtons.on('click', function() {
-           var tag = $(this).data('tag').toLowerCase();
-           $posts.hide().filter(function() {
-               var postTags = $(this).data('tags') || '';
-               return postTags.split(',').map(function(t) {
-                   return t.trim();
-               }).includes(tag);
-           }).show();
-       });
-   });
-   
-   
-       // BORRADOR
-       function limpiarBusqueda() {
-       // Limpiar el contenido del input de búsqueda
-       document.getElementById('search-box').value = '';
-       
-       // Mostrar todos los posts ocultos
-       $('.post').show();
-       
-       // Recargar los posts en la página actual
-       loadPosts(currentPage);
-   }
-   
-   
-   
+// BORRADOR
+function limpiarBusqueda() {
+    // Limpiar el contenido del input de búsqueda
+    document.getElementById('search-box').value = '';
+    
+    // Mostrar todos los posts ocultos
+    $('.post').show();
+    
+    // Ocultar el mensaje "No se encontraron resultados"
+    $('#no-results-message').hide();
+
+    // Recargar los posts en la página actual
+    loadPosts(currentPage);
+}
+
+
    
    // Variable to store the current page number
    let currentPage = 1;

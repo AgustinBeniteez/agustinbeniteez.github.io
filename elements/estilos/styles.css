@@ -635,6 +635,14 @@ nav ul.active li a {
     padding: 10px;
 }
 
+#no-results-message {
+   text-align: center;
+    align-items: center; 
+}
+
+
+
+
 /* Estilos para el botón de menú cuando está activo */
 #menu-toggle.active span {
     background-color: transparent;
@@ -715,6 +723,10 @@ nav ul.active li a {
         align-items: center;
         margin: 10px;
     }
+    #no-results-message {
+
+        margin-left:50%;
+    }
 }
 
 
@@ -739,6 +751,10 @@ nav ul.active li a {
 
     nav #menu-toggle{
         display: none;
+    }
+    #no-results-message {
+        width: 120%;
+        margin-left: 0%;
     }
 }
 
