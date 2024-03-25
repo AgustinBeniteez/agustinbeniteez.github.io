@@ -212,3 +212,58 @@ menuToggle.addEventListener('click', function() {
 });
 
 });
+
+// Cuando se carga el documento
+document.addEventListener('DOMContentLoaded', function () {
+    // Event listener para los botones de etiqueta
+    $('.tag-button').on('click', function () {
+        // Obtener la etiqueta de datos del botón clickeado
+        var tag = $(this).data('tag').toLowerCase();
+        
+        // Filtrar los posts por la etiqueta clickeada
+        var matchingPosts = $('.post').filter(function () {
+            var postTags = $(this).data('tags') || '';
+            return postTags.split(',').map(function (t) {
+                return t.trim().toLowerCase();
+            }).includes(tag);
+        });
+
+        // Mostrar los posts que coinciden con la etiqueta y ocultar los demás
+        if (matchingPosts.length > 0) {
+            $('.post').hide();
+            matchingPosts.show();
+            $('#no-results-message').hide(); // Ocultar el mensaje si hay resultados
+        } else {
+            $('#no-results-message').show(); // Mostrar el mensaje solo si no hay resultados
+        }
+    });
+
+    // Event listener para la barra de búsqueda
+    $('#search-box').on('keyup', function () {
+        const searchTerm = $(this).val().toLowerCase().trim();
+        if (searchTerm === '') {
+            $('.post').show();
+        } else {
+            $('.post').hide().filter(function () {
+                const postTitle = $(this).find('.post-title').text().toLowerCase();
+                return postTitle.includes(searchTerm);
+            }).show();
+        }
+        if ($('.post:visible').length === 0) {
+            $('#no-results-message').show(); // Mostrar el mensaje solo si no hay resultados
+        } else {
+            $('#no-results-message').hide();
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const tagButtons = document.querySelectorAll('.tag-button');
+    const noResultsMessage = document.getElementById('no-results-message');
+
+    tagButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            noResultsMessage.style.display = 'none';
+        });
+    });
+});
