@@ -1,9 +1,13 @@
+// When the document is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Show spinner when posts are being loaded
+    document.getElementById('spinner-container').style.display = 'block';
+
     // Generar un timestamp actual
     const timestamp = new Date().getTime();
-       // Construir la URL del archivo JSON con el timestamp como parámetro de consulta
-       const jsonUrl = `/elements/estilos/conf/postcss.json?timestamp=${timestamp}`;
-   
+    // Construir la URL del archivo JSON con el timestamp como parámetro de consulta
+    const jsonUrl = `/elements/estilos/conf/postcss.json?timestamp=${timestamp}`;
+
        // Fetch data from JSON file
        fetch(jsonUrl)
            .then(response => response.json())
@@ -27,8 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
                    postsContainer.innerHTML += postHTML;
                });
    
-               // Call the function to initialize the checkbox event listener after posts are loaded
-               initializeCheckBoxes();
+      // Call the function to initialize the checkbox event listener after posts are loaded
+      initializeCheckBoxes();
+
+      // Hide spinner after posts are loaded
+      document.getElementById('spinner-container').style.display = 'none';
+               
            })
            .catch(error => console.error('Error fetching data:', error));
    
@@ -297,3 +305,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// When the document is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Show spinner when posts are being loaded
+    document.getElementById('spinner-container').style.display = 'block';
+
+    // Simulate delay in fetching data (replace this with your actual fetch call)
+    setTimeout(() => {
+        const postsContainer = document.getElementById('posts-container');
+        // Here you can either proceed with your fetch call or simulate an error
+        // For example, simulating an error by rejecting the Promise
+        Promise.reject("Simulated network error");
+    }, 3000); // Simulate a delay of 3 seconds
+});
+
