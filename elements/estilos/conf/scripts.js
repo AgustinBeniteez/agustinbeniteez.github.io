@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// When the document is fully loaded
+// POST loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Show spinner when posts are being loaded
     document.getElementById('spinner-container').style.display = 'block';

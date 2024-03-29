@@ -620,7 +620,7 @@ nav ul.active {
     position: absolute;
     top: 60px;
     left: 10px;
-    width: 86%;
+    width: 480px;
     border-radius: 20px;
     font-size: 20px;
     line-height: 1.5; /* Ajusta el espaciado entre las palabras del menú */
@@ -769,6 +769,70 @@ nav ul.active li a {
     padding: 100px; 
     margin-left: 20em;
   }
+
+  #content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main {
+    width: 100%;
+    margin: 1%;
+}
+
+#main2 {
+    float: left;
+    width: 100%;
+    margin: 1px;
+    padding: 10px 0 0;
+}
+
+#main3 {
+    float: left;
+    padding: 0;
+}
+
+#search-and-tags-container {
+    
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1%;
+}
+
+#search-box {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0px;
+}
+.post{
+    margin-left: 7%;
+}
+
+#header{
+   width: 500px;
+}
+
+#ad {
+    background-color: rgba(44, 39, 39, 0.425);
+    height: 160px;
+    width: 460px;
+    margin: 10px;
+    margin-top: 50px;
+    padding: 20px 10px;
+    text-align: center;
+    font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+    color: #333;
+    font-size: small;
+    border-radius: 20px;
+}
+
 }
 
 
