@@ -171,12 +171,18 @@
             height:315px;
      
         }
+        ul {
+        list-style-type: none; /* Quita los puntos de la lista */
+        padding: 0; /* Elimina el relleno predeterminado de la lista */
+        margin: 0; /* Elimina el margen predeterminado de la lista */
+    }
 /* REDES SOCIALES */
 
 /* Contenedor para los botones sociales */
 .social-icons-container {
+
     display: flex;
-    justify-content: center; /* Centra los botones horizontalmente */
+    justify-content: left; /* Centra los botones horizontalmente */
     margin-top: 20px; /* Espaciado superior */
 }
 
@@ -216,9 +222,97 @@
     transform: scale(1.05);
 }
 
+/* CARD 3d */
+.card {
+    position: relative;
+    width: 600px;
+    height: 700px;
+    perspective: 1000px;
+  }
 
+  .card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-25deg); /* Inclinar hacia la izquierda desde el principio */
+    transition: transform 0.5s;
+  }
 
+  .card:hover .card-inner {
+    transform: rotateY(0deg); /* Rotación de regreso a la posición normal al pasar el cursor */
+  }
 
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background: linear-gradient(
+    154.38deg,
+    rgba(84, 83, 86, 1) 0%,
+    rgba(113, 51, 206, 1) 0.009999999747378752%,
+    rgba(49, 201, 203, 1) 100%
+  );
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    background-color: #f0f0f0;
+  }
+
+/* dentro de CARD 3d*/
+  .support-me,
+.support-me * {
+  box-sizing: border-box;
+}
+.support-me {
+  color: #ffffff;
+  text-align: left;
+  font-family: "SegoeUiVariable-RegularDisplay", sans-serif;
+  font-size: 66px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  position: relative;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -webkit-text-stroke: 2px #ffffff;
+}
+.github,
+.github * {
+  box-sizing: border-box;
+}
+.github {
+  color: #ffffff;
+  text-align: left;
+  font-family: "SegoeUiVariable-RegularDisplay", sans-serif;
+  font-size: 102px;
+  line-height: 0;
+  font-weight: 400;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -webkit-text-stroke: 3px #ffffff;
+}
+.imagegit{
+    width: 100%;
+}
+.card h3{
+    color: #f0f0f0;
+    font-size: 20px;
+}
+.ph{
+    float: left;
+
+}
 /* @MEDIAS DE PANTALLA*/
 
 /* Media query para pantallas de hasta 768px de ancho (dispositivos móviles) */
@@ -269,24 +363,24 @@
         <div style="flex: 2; display: flex; flex-direction: column;">
             <div  class="txtelements" style="flex: 1;">
                 <h1>Elements Css DAJ</h1>
-                <p>It is a web platform that offers a wide range of free elements for web designers and developers.<br> From CSS styles sets to HTML components, this platform provides essential resources to enhance <br> the aesthetics and functionality of websites.</p>
-       
-           
+
                 <ul>
-                    <li>Free elements for web designers and developers.</li>
-                    <li>CSS styles sets and HTML components available.</li>
-                    <li>Intuitive and easy-to-navigate interface.</li>
-                    <li>Resources to customize and improve website aesthetics.</li>
+                    <li>It is a web platform that offers a wide range of free elements for web designers and developers.</li>
+                    <li>From CSS styles sets to HTML components, this platform provides essential resources to enhance the aesthetics and functionality of websites.</li>
                 </ul>
-           
-       
-            
+                
+                <p>Free elements for web designers and developers.</p>
+                <p>CSS styles sets and HTML components available.</p>
+                <p>Intuitive and easy-to-navigate interface.</p>
+                <p>Resources to customize and improve website aesthetics.</p>
+                
                 <ul>
                     <li>Access to high-quality free resources.</li>
                     <li>Possibility to enhance the functionality and aesthetics of your websites.</li>
                     <li>Time saving in web development projects.</li>
                     <li>Active community of designers and developers.</li>
                 </ul>
+                
            
 
 
@@ -317,20 +411,34 @@
             </div>
         </div>
         <div style="flex: 1; display: flex; flex-direction: column;">
-            <div style="flex: 1;">
-                <img class="gif" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/gif/DAJ%20logo%20Bucle.gif" alt="DAJ" onerror="this.onerror=null; this.src='DAJ.png'; this.alt='Elements Css DAJ LOGO';">
-            </div>
-            <div  class="txtelements" style="flex: 1;">
-                <h2>Developer</h2>
-                <p>I'm AgusTheKing, a passionate web designer and developer. Welcome, I hope to help you!</p>
-                <div class="social-icons-container">
-                    <a href="https://twitter.com/ElementsCssDAJ" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/twitter.png" alt="Twitter"></a>
-                    <br>
-                    <a href="https://www.youtube.com/@ElementscssDaj" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/youtube.png" alt="youtube"></a>
-                    <br>
-                    <a href="https://www.instagram.com/elementscssdaj/" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/instagram.png" alt="Instagram"></a>
+            <article class="card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    </section class="ph">
+                        <h1 class="support-me">Support me</h1>
+                        <h3>You can follow me on the Official Social Media of the Web</h3>
+                    </section>
+                    <div class="social-icons-container">
+                        <a href="https://twitter.com/ElementsCssDAJ" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/twitter.png" alt="Twitter"></a>
+                        <br>
+                        <a href="https://www.youtube.com/@ElementscssDaj" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/youtube.png" alt="youtube"></a>
+                        <br>
+                        <a href="https://www.instagram.com/elementscssdaj/" class="social-icon" target="_blank"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/instagram.png" alt="Instagram"></a>
+                    </div>
+                    <section class="ph">
+                        <h1 class="github">Github</h1>
+                        <h3>You can support me by giving me the star of the project on github</h3>
+                    </section>
+                    <!--<img src="" alt="GitHub image">-->
+                    <a href="https://github.com/AgusTheKing/agustheking.github.io">
+                        <img class="imagegit" src="/imagenes/githubstars.png" alt="GitHub image">
+                    </a>
+                  </div>
+                  <div class="card-back">
+                    <h1>hola? XD</h1>
+                  </div>
                 </div>
-            </div>
+              </article>
             
             
         </div>
