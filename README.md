@@ -52,13 +52,13 @@ Copy in Orange Button Css:<img alt="Copy Code{}" height="40px" src="https://raw.
 ## |🔧🎞️ Video Tutorials
 <br>   
 <div align="center">
-  <a href="https://agustheking.github.io/" target="_blank">
+  <a href="https://agustheking.github.io/tutorials/menututorials.html" target="_blank">
       <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura1.png"/>
   </a>
-  <a href="https://agustheking.github.io/" target="_blank" >
+  <a href="https://agustheking.github.io/tutorials/menututorials.html" target="_blank" >
       <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura2.png"/>
   </a>
-  <a href="https://agustheking.github.io/" target="_blank">
+  <a href="https://agustheking.github.io/tutorials/menututorials.html" target="_blank">
       <img  alt="tutorial" height="190px" style="padding-right:20px; border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura3.png"/>
   </a>
 </div>
