@@ -1,5 +1,6 @@
 html{
     height: 103%;
+    
 }
 body {
     background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
@@ -8,6 +9,7 @@ body {
     color: #000000;
     font-size: small;
     overflow-x: hidden;
+    overflow: hidden; /* Esto desactivará el scroll */
 }
 
  ::-webkit-scrollbar {
@@ -451,6 +453,7 @@ transform: translateY(-8px) rotate(-45deg);
 @media only screen and (max-width: 968px) {
 body {
 margin: 0; /* Elimina el margen en dispositivos móviles */
+overflow: scroll; /* desactiva el scroll */
 }
 
 #content {

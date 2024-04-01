@@ -1,724 +1,267 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta name="description" content="Twitch HTML & CSS Button | free to use for your website | Elements Css DAJ">
-    <title>Elements Css DAJ</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/AgusTheKing/icons/main/DAJ.png">
-    <style>
-
-        html{
-            height: 100%;
-        }
-        body {
-            background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
-            margin: 0;
-            padding: 20px 10px;
-            text-align: center;
-            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
-            color: #333;
-            font-size: small;
-            overflow-x: hidden;
-            box-sizing: border-box;
-        }
- 
-
-        #izquierda {
-            width: 80%;
-            height: 97%;
-            float: left;
-            margin-top: 2%;
-        }
-        
-        #derecha {
-            width: 19%;
-            height: 80%;
-            margin-left: 10px;
-            border: 1px solid rgb(255, 255, 255);
-            background: rgba(245, 245, 245, 0.363);
-            backdrop-filter: blur(26.149999618530273px);
-            float: left;
-            margin-top: 2%;
-        }
-        
-        #derechaSuperior {
-            width: 32%;
-            height: 96%;
-            background: rgba(55, 55, 55, 0.9);
-            border-radius: 17px;
-            border-style: solid;
-            border-color: rgba(137, 137, 137, 0.76);
-            border-width: 3px;
-            box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-            float: right;
-            margin: 10px;
-        }
-        
-        #izquierdaSuperior {
-            width: 970px;
-            height: 250px;
-            border: 1px solid rgba(255, 255, 255, 0.80);
-            background: rgba(245, 245, 245, 0.09);
-            float: left;
-            margin: 10px;
-        }
-        
-        #izquierdaInferiorDerecho {
-            width: 31%;
-            height: 66%;
-            border-radius: 10px;
-            background: rgba(55, 55, 55, 0.9);
-            border-radius: 17px;
-            border: 3px solid;
-            border-color: rgba(137, 137, 137, 0.76);
-            box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-            float: left;
-            margin: 10px;
-        }
-        
-        #izquierdaInferiorIzquierdo {
-            width: 32%;
-            height: 66%;
-            background: rgba(53, 53, 53, 0);
-            float: left;
-            margin: 10px;
-        }
-        
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 10px;
-            position: relative;
-            left: 5%;
-            align-items: center;
-            /* Centra verticalmente el contenido */
-        }
-        
-        .tags-container::before {
-            content: "Tags: ";
-            margin-right: 4px;
-            color: rgba(142, 142, 142, 1);
-            font-weight: bold;
-        }
-        
-        .tag {
-            margin: 5px;
-            padding: 4px 10px;
-            border-radius: 5px;
-            border: 1px solid rgba(85, 85, 85, 1);
-            background: rgba(42, 42, 42, 1);
-            color: rgba(142, 142, 142, 1);
-        }
-        
-        .theme-checkbox {
-            --toggle-size: 12px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 4.25em;
-            height: 2.125em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 0;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.4s;
-            border-radius: 99em;
-            position: relative;
-            cursor: pointer;
-            font-size: var(--toggle-size);
-        }
-        
-        .theme-checkbox::before {
-            content: "";
-            width: 1.25em;
-            height: 1.25em;
-            position: absolute;
-            top: 0.438em;
-            left: 0.438em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 100%;
-            border-radius: 50%;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.4s;
-        }
-        /* BOTON - Cambios al hacer clic */
-        
-        .theme-checkbox:checked::before {
-            left: calc(120% - 2.25em - 0.438em);
-            background-position: 0;
-        }
-        
-        .theme-checkbox:checked {
-            background-position: 100%;
-        }
-        
-        .theme-checkbox {
-            float: right;
-            margin-right: 2%;
-            margin-top: 2%;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 4.25em;
-            height: 2.125em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 0;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.4s;
-            border-radius: 99em;
-            position: relative;
-            cursor: pointer;
-            font-size: var(--toggle-size);
-        }
-        
-        .theme-checkbox::before {
-            content: "";
-            width: 1.25em;
-            height: 1.25em;
-            position: absolute;
-            top: 0.438em;
-            left: 0.438em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 100%;
-            border-radius: 50%;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.4s;
-        }
-        
-        .theme-checkbox:checked::before {
-            left: calc(100% - 1.25em - 0.438em);
-            background-position: 0;
-        }
-        
-        .theme-checkbox:checked {
-            background-position: 100%;
-        }
-        
-        .botoncpcss {
-            padding: 4px 10px;
-            border-radius: 5px;
-            border: 1px solid rgba(85, 85, 85, 1);
-            background: rgb(32, 131, 197);
-            color: rgb(240, 240, 240);
-        }
-        
-        .botoncphtml {
-            padding: 4px 10px;
-            border-radius: 5px;
-            border: 1px solid rgba(85, 85, 85, 1);
-            background: rgb(214, 121, 14);
-            color: rgb(240, 240, 240);
-        }
-        /* SCROLL STYLE*/
-        /* Barra */
-        
-         ::-webkit-scrollbar {
-            width: 10px;
-            /* Ancho de la barra de desplazamiento */
-            background-color: transparent;
-            /* Fondo transparente */
-        }
-        /* Mango o manija de la barra de desplazamiento */
-        
-         ::-webkit-scrollbar-thumb {
-            background-color: rgba(15, 46, 131, 0.438);
-            /* Color del mango */
-            border-radius: 5px;
-            /* Borde redondeado */
-        }
-        /* Al desplazarse por la barra de desplazamiento */
-        
-         ::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-            /* Color del mango al pasar el cursor */
-        }
-        /* Al hacer clic en la barra de desplazamiento */
-        
-         ::-webkit-scrollbar-thumb:active {
-            background-color: rgba(255, 255, 255, 0.6);
-            /* Color del mango al hacer clic */
-        }
-        /* Ocultar el cuadrado blanco que aparece debajo del scroll */
-        
-         ::-webkit-scrollbar-corner {
-            display: none;
-        }
-                
-        ::-webkit-scrollbar-track {
-            background: linear-gradient(143deg, #1795A6 43.13%, #01B3B1 100%);
-            border-radius: 20px;
-        }
-      
-
-        /* Estilos para pantallas pequeñas */
-@media only screen and (max-width: 767px) {
-    #derecha {
-        display: none; /* Ocultar el div derecha en pantallas pequeñas */
-    }
-    
-    #izquierda {
-        width: 100%;
-        display: flex;
-        flex-direction: column; /* Cambia el orden de los elementos */
-    }
-    
-    #izquierdaInferiorIzquierdo {
-        order: -1; /* Cambia el orden visual, aparecerá primero */
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        height: 66%;
-        margin: 10px;
-    }
-    
-    #izquierdaSuperior {
-        order: 1; /* Aparece primero */
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        height: 250px;
-        border: 1px solid rgba(255, 255, 255, 0.80);
-        background: rgba(245, 245, 245, 0.09);
-        margin: 10px;
-    }
-    
-    #derechaSuperior {
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        min-height: 500px;
-        border-radius: 10px;
-        background: rgba(55, 55, 55, 0.9);
-        border-radius: 17px;
-        border: 3px solid;
-        border-color: rgba(137, 137, 137, 0.76);
-        box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-        float: left;
-        margin: 10px;
-        margin-bottom: 5%;
-    
-    }
-    
-    #derechaInferior, #izquierdaInferiorDerecho {
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        min-height: 440px;
-        border-radius: 10px;
-        background: rgba(55, 55, 55, 0.9);
-        border-radius: 17px;
-        border: 3px solid;
-        border-color: rgba(137, 137, 137, 0.76);
-        box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-        margin: 10px;
-        margin-bottom: 10%;
-    }
-    #izquierdaSuperior{
-         order: -2; /* Aparece primero */
-         margin-top: 6%;
-         min-height: 140px;
-    }
-    .iconoleng{
-        width: 35px!important;; 
-        height: 35px!important;;
-    }
-    .elemento9{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10%!important;;
-        margin-bottom: 10%!important;;
-
-    }
-}
-
-
-/* Estilos para pantallas medianas */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    #derecha {
-        display: none; /* Ocultar el div derecha en pantallas pequeñas */
-    }
-    
-    #izquierda {
-        width: 100%;
-        display: flex;
-        flex-direction: column; /* Cambia el orden de los elementos */
-    }
-    
-    #izquierdaInferiorIzquierdo {
-        order: -1; /* Cambia el orden visual, aparecerá primero */
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        height: 66%;
-        margin: 10px;
-    }
-    
-    #izquierdaSuperior {
-        order: 1; /* Aparece primero */
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        height: 250px;
-        border: 1px solid rgba(255, 255, 255, 0.80);
-        background: rgba(245, 245, 245, 0.09);
-        margin: 10px;
-    }
-    
-    #derechaSuperior {
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        min-height: 500px;
-        border-radius: 10px;
-        background: rgba(55, 55, 55, 0.9);
-        border-radius: 17px;
-        border: 3px solid;
-        border-color: rgba(137, 137, 137, 0.76);
-        box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-        float: left;
-        margin: 10px;
-        margin-bottom: 5%;
-    
-    }
-    
-    #derechaInferior, #izquierdaInferiorDerecho {
-        width: calc(100% - 20px); /* Resta el margen para ocupar el espacio completo */
-        min-height: 440px;
-        border-radius: 10px;
-        background: rgba(55, 55, 55, 0.9);
-        border-radius: 17px;
-        border: 3px solid;
-        border-color: rgba(137, 137, 137, 0.76);
-        box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-        margin: 10px;
-        margin-bottom: 10%;
-    }
-    #izquierdaSuperior{
-         order: -2; /* Aparece primero */
-         margin-top: 6%;
-         min-height: 140px;
-    }
-    .iconoleng{
-        width: 35px!important;; 
-        height: 35px!important;;
-    }
-    .elemento9{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 8%!important;;
-        margin-bottom: 5%!important;;
-
-    }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1670px) { 
-    #izquierda {
-        width: 79%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    #izquierdaInferiorIzquierdo {
-        order: -1; /* Cambia el orden visual, aparecerá primero */
-        height: 66%;
-        margin: 10px;
-    }
-    
-    #izquierdaSuperior {
-        order: -2; /* Aparece primero */
-        margin-top: 6%;
-        min-height: 140px;
-        border: 1px solid rgba(255, 255, 255, 0.80);
-        background: rgba(245, 245, 245, 0.09);
-        margin: 10px;
-    }
-    
-    #derechaSuperior {
-        min-height: 500px;
-        border-radius: 10px;
-        background: rgba(55, 55, 55, 0.9);
-        border-radius: 17px;
-        border: 3px solid;
-        border-color: rgba(137, 137, 137, 0.76);
-        box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-        margin: 10px;
-        margin-bottom: 5%;
-    }
-    
-    #derechaInferior, #izquierdaInferiorDerecho {
-        min-height: 440px;
-        border-radius: 10px;
-        background: rgba(55, 55, 55, 0.9);
-        border-radius: 17px;
-        border: 3px solid;
-        border-color: rgba(137, 137, 137, 0.76);
-        box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-        margin: 10px;
-        margin-bottom: 10%;
-    }
-    
-    .iconoleng {
-        width: 35px!important;
-        height: 35px!important;
-    }
-    
-    .elemento9 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20%!important;
-        margin-bottom: 20%!important;
-    }
-
-    /* Agregar reglas para flexbox */
-    #derecha {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #derechaSuperior {
-        width: 50%; /* Ajustar según el espacio necesario */
-    }
-}
-
-
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/elements/elementsplantcss.css">
 </head>
-
-
-
 <body>
+    <nav id="nav">
+        <!-- Logo de la web -->
+        <a href="/"><img src="../DAJ.png" alt="Logo de la web" width="100" height="100"></a>
+            <button id="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- Enlaces -->
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tutorials/menututorials.html">Tutorials</a></li>
+            <li><a href="/Aboutme.html">About DAJ</a></li>
+            <li><a href="/editorhtml/editor.html">Editor Code</span></a></li>
+           
+        </ul>
+        <span style="margin-left: auto; padding: 5px;">
 
-    <div id="izquierda">
-
-        <div id="derechaSuperior">
-            <!-- Div arriba a la derecha -->
-            <div class="iconoleng" style="width: 7%; height: 4%; border-radius: 10px 0px 9px 0px; border: 1px solid #1572B6; background: #33A9DC; backdrop-filter: blur(26.149999618530273px); float: left; margin: 0;">
-                <!-- Contenido del div -->
-                <img src="https://raw.githubusercontent.com/AgusTheKing/icons/main/css.png" alt="CSS" style="width: 100%; height: 100%; border-radius: 10px 0px 0px 0px;">
-            </div>
-
-            <!-- Área de texto para código HTML -->
-            <textarea id="codigoHTMLderechaSuperior" style="width: 90%; height: 89%; color:white; margin: 10px; border-radius: 20px; border: 2px solid rgb(52, 132, 179); background: rgba(53, 53, 53, 0.63); backdrop-filter: blur(26.149999618530273px);" readonly>
-                    /* Colors */
-:root {
- --bttwitch-bg-primary: rgb(184.24, 23.67, 210.37);
- --bttwitch-bg-secondary: rgb(98.82, 58.13, 214.62);
- --bttwitch-bg-tertiary: rgb(149.07, 72.39, 209.31);
- --bttwitch-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
- }
+    </nav>  
+    <div class="container">
+        <div class="leftvisual-block"> <div id="posts-container"></div></div>
+        <div class="left2-block">
+            <div id="description-container" style="max-height: 200px; overflow-y: hidden;">
+                <!-- Contenido de la descripción -->
+             <ul>
+                        <li>Este botón está diseñado para promocionar tu canal de Twitch en tu sitio web o en cualquier lugar donde puedas agregar HTML y CSS.</li>
+                        <li>Tiene un aspecto atractivo y moderno, con colores vibrantes que recuerdan a la marca Twitch.</li>
+                        <li>Puedes personalizar el nombre que aparece en el botón para que se ajuste a tu nombre de usuario en Twitch.</li>
+                        <li>Además, cuando pasas el mouse sobre el botón, el ícono se mueve sutilmente hacia la izquierda, lo que le da un toque interactivo y atractivo.</li>
+                        <li>Es una manera llamativa de dirigir a tus visitantes a tu canal de Twitch y aumentar tu audiencia.</li>
+              </ul>
                 
-   /* Botton styles */
-    .button9 {
-     width: 170px;
-     height: 60px;
-     border-radius: 10px;
-     border: none;
-     font-weight: 600;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     box-shadow: var(--bttwitch-box-shadow);
-     cursor: pointer;
-     transition-duration: .3s;
-     overflow: hidden;
-     position: relative;
-     }
-                    
-     .button9 img {
-      width: 100%;
-      height: 100%;
-      object-fit: scale-down;
-      transition: transform 0.3s;
-      }
-                    
-     .button9:hover img {
-     transform: translateX(-40px) scale(0.9);
-     }
-                    
-     /* Button colors */
-     .button9 {
-      background: linear-gradient(140deg, var(--bttwitch-bg-primary) 0%, var(--bttwitch-bg-secondary) 53.5%, var(--bttwitch-bg-tertiary) 100%);
-      }
-                    
-     /* Nametag */
-     .button9::before {
-     position: absolute;
-     top: -20px;
-    /* ------NAME or Nametag | Twitch ----------*/
-            content: "@Namehere";
-    /* -End-----NAME or Nametag | Twitch ----------*/
-     color: white;
-     transition-duration: .3s;
-     font-size: 12px; /* Reduce the size of the text Depending on the size of the name */
-     left: 50%;
-     transform: translateX(-50%);
-     white-space: nowrap; 
- }
-
- .button9:hover::before {
-     white-space: pre-wrap; 
-     opacity: 1;
-     transform: translateY(30px);
- }
-            </textarea>
-
-            <!-- Botón para copiar el código HTML -->
-            <button class="botoncpcss" onclick="copiarCodigo('codigoHTMLderechaSuperior')">Copy Code { }</button>
-        </div>
-
-
-
-
-        <div id="izquierdaSuperior">
-            <!-- AD -->Mantenimiento
-        </div>
-
-
-        <div id="izquierdaInferiorIzquierdo">
-            <!-- Div arriba -->
-            <div class="elementodiv" style="width: 95%; height: 60%;  border-radius: 30px;
-            border: 3px solid rgba(255, 255, 255, 0.80);
-            background: rgba(217, 217, 217, 0.90);
-            box-shadow: 0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset; margin: 10px; float: left;">
-                <input type="checkbox" class="theme-checkbox">
-                <!-- Contenido del ELEMENTO -->
+            </div>
+            <button id="ver-mas-btn">Ver más</button>
+        </div>        
     
-
-
-            </div>
-
-            <!-- Div en medio -->
-            <div style="width: 95%; height: 11%; border-radius: 10px; background: rgba(55, 55, 55, 0.9);
-            border-radius: 17px;
-            border-style: solid;
-            border-color: rgba(137, 137, 137, 0.76);
-            border-width: 3px;
-            box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25); margin: 10px; float: left;">
-                <!-- Contenido del segundo div -->
-                <div style=" color:rgb(163, 163, 163); float: left; width: 50%; margin:20px; font-weight: bold;">
-                    <!-- Texto dentro del div -->
-                    Boton de Twitch
-                </div>
-
-                <!-- Dos divs a la derecha del texto -->
-                <div style="float: left; width: 37px; height: 39px; margin-left: 10px; border-radius: 6px;
-                background: linear-gradient(120deg, #E7A184 3.5%, #CB6D45 43.06%, #C0573C 100%); margin:12px;">
-                    <!-- Contenido del primer div pequeño -->
-                    <img src="https://raw.githubusercontent.com/AgusTheKing/icons/main/html.png" alt="HTML" style="width: 27px; height: 32px; margin:5px;">
-                </div>
-
-                <div style="float: left; ; height: 39px; margin-left: 10px; border-radius: 6px;
-                background: linear-gradient(120deg, #88C7F4 3.5%, #55B7FF 43.06%, #237CFC 100%); margin:12px;">
-                    <!-- Contenido del segundo div pequeño -->
-                    <img src="https://raw.githubusercontent.com/AgusTheKing/icons/main/css.png" alt="CSS" style="width: 27px; height: 32px; margin:5px;">
-                </div>
-            </div>
-
-            <!-- Div debajo -->
-            <div style="width: 95%; height: 20%; margin: 10px; float: left;">
-
-                <div class="tags-container">
-                    <div class="tag">Boton</div>
-                    <div class="tag">animation</div>
-                    <div class="tag">css</div>
-                    <div class="tag">html</div>
-                </div>
-
-            </div>
+        <div class="top-block">En Mantenimiento🔧 </div>
+        <div class="leftad-block" class="ads">En Mantenimiento🔧</div>
+        <div class="left-block">
+            <h3>HTML</h3>
+            <textarea id="html-content" rows="30" cols="50" onchange="cambiarColorTextarea()"></textarea>
+            <button onclick="copyHtmlContent()">Copiar HTML</button>
         </div>
-
-
-
-
-        <div id="izquierdaInferiorDerecho">
-            <!-- Div arriba a la izquierda -->
-            <div class="iconoleng" style="width: 30px; height: 30px; border-radius: 10px 0px 9px 0px; border: 1px solid #C87023; background: #DA7F58; backdrop-filter: blur(26.149999618530273px); float: left; margin: 0;">
-                <!-- Contenido del div -->
-                <img src="https://raw.githubusercontent.com/AgusTheKing/icons/main/html.png" alt="HTML" style="width: 100%; height: 100%; border-radius: 10px 0px 0px 0px;">
-            </div>
-
-            <!-- Área de texto para código HTML -->
-            <textarea id="codigoHTMLizquierdaInferiorDerecho" style="width: 90%; height:85%; color: #d3d3d3; margin: 10px; border-radius: 20px; border: 2px solid rgb(214, 114, 56); background: rgba(53, 53, 53, 0.63); backdrop-filter: blur(26.149999618530273px);"
-                readonly>  <!-- Change URL  -->
-            <a href="https://www.twitch.tv/agustheking_10">
-
-            <button class="button9">
-            <img src="https://i.imgur.com/ZhlLjXl.png" alt="Twitch" style="width: 100%; height: 100%;">
-            </button>
-
-            </a>
-            </textarea>
-
-            <!-- Botón para copiar el código HTML -->
-            <button class="botoncphtml" onclick="copiarCodigo('codigoHTMLizquierdaInferiorDerecho')">Copy Code { }</button>
+        <div class="right-block">
+            <h3>CSS</h3>
+            <textarea id="css-content" rows="30" cols="50"></textarea>
+            <button onclick="copyCssContent()">Copiar CSS</button>
         </div>
-
     </div>
-
-
-
-
-
-    <div id="derecha">
-        Mantenimiento
-    </div>
-
-
-    <script>
-        // Obtener el elemento de texto COPIAR Y PEGAR
-        function copiarCodigo(idTextArea) {
-            // Obtener el elemento de texto
-            var elemento = document.getElementById(idTextArea);
-
-            // Seleccionar y copiar el contenido del área de texto
-            elemento.select();
-            document.execCommand('copy');
-
-            // Alerta o mensaje de confirmación (puedes personalizar esto)
-            alert('Código copiado al portapapeles');
-        }
-        // TEMA OSCURO Y CLARO BOTON
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtener todos los checkboxes y los contenedores .post
-            var checkboxes = document.querySelectorAll('.theme-checkbox');
-            var postContainers = document.querySelectorAll('.elementodiv');
-
-            // Agregar un evento de cambio a cada checkbox
-            checkboxes.forEach(function(checkbox, index) {
-                checkbox.addEventListener('change', function() {
-                    // Verificar si el checkbox está marcado
-                    if (checkbox.checked) {
-                        // Cambiar el fondo a negro, el color del texto a blanco y el borde a negro para el contenedor correspondiente
-                        postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
-                        postContainers[index].style.color = '#fff';
-                        postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
-                        postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
-
-                        // Adjust the color of the post-title directly
-                        var postTitle = postContainers[index].querySelector('.post-title');
-                        if (postTitle) {
-                            postTitle.style.color = '#fff';
-                        }
-                    } else {
-                        // Restaurar el fondo original, el color del texto original y el borde original para el contenedor correspondiente
-                        postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
-                        postContainers[index].style.color = 'white';
-                        postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
-                        postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
-
-                        // Adjust the color of the post-title directly
-                        var postTitle = postContainers[index].querySelector('.post-title');
-                        if (postTitle) {
-                            postTitle.style.color = 'black';
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="cerrarPopup()">&times;</span>
+          <h1 id="popup-title"></h1>
+          <h3 id="popup-description"></h3>
+        </div>
+      </div>
+      
 </body>
 
+<script>
+ // NAV menu movil
+    document.addEventListener('DOMContentLoaded', function () {
+ // Obtener referencias al botón de menú y al menú
+ const menuToggle = document.getElementById('menu-toggle');
+ const navMenu = document.querySelector('nav ul');
+ 
+ // Agregar un event listener para el clic en el botón de menú
+ menuToggle.addEventListener('click', function() {
+     // Alternar la clase 'active' en el menú para mostrarlo u ocultarlo
+     navMenu.classList.toggle('active');
+ });
+ 
+ });
+ 
+// Cargar el archivo JSON 'postcsselement.json'
+fetch('postcsselement.json')
+    .then(response => response.json())
+    .then(data => {
+        // Obtener el primer elemento del archivo JSON
+        const post = data[0]; // Cambiar el índice si quieres mostrar otro elemento
+
+        // Obtener el contenedor donde se mostrarán los elementos
+        const container = document.getElementById('posts-container');
+
+        // Crear un elemento div para este post
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post');
+
+        // Crear el HTML utilizando los datos del post
+        postDiv.innerHTML = `
+            <input type="checkbox" class="theme-checkbox">
+            <h2 class="post-title">${post.titulo}</h2>
+            <style>${post.estilos}</style>
+            <p>${post.contenido}</p>
+        `;
+
+        // Agregar el elemento div al contenedor
+        container.appendChild(postDiv);
+
+        // Llamar a la función para inicializar los checkboxes después de que se hayan creado las publicaciones
+        initializeCheckBoxes();
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+// Function to initialize checkbox event listener
+function initializeCheckBoxes() {
+    var checkboxes = document.querySelectorAll('.theme-checkbox');
+    var postContainers = document.querySelectorAll('.post');
+
+    checkboxes.forEach(function(checkbox, index) {
+        checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+                // Cambiar el fondo de leftvisual-block cuando el checkbox está marcado
+                document.querySelector('.leftvisual-block').style.background = 'rgba(23, 23, 23, 0.90)';
+                document.querySelector('.leftvisual-block').style.color = 'white';
+                document.querySelector('.leftvisual-block').style.border = '3px solid rgba(45, 45, 45, 0.76)';
+                document.querySelector('.leftvisual-block').style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';  
+            } else {
+                // Cambiar el fondo de leftvisual-block cuando el checkbox está desmarcado
+                document.querySelector('.leftvisual-block').style.background = 'rgba(217, 217, 217, 0.90)';
+                document.querySelector('.leftvisual-block').style.color = 'black';
+                document.querySelector('.leftvisual-block').style.border = '3px solid rgba(255, 255, 255, 0.80)';
+                document.querySelector('.leftvisual-block').style.boxShadow = '0px 0px 11.3px 2px rgba(1, 0, 0, 0.25) inset';
+            }
+        });
+    });
+}
+// Cargar el archivo JSON 'postcsselement.json'
+fetch('postcsselement.json')
+    .then(response => response.json())
+    .then(data => {
+        // Obtener el primer elemento del archivo JSON
+        const post = data[0]; // Puedes cambiar el índice para seleccionar otro elemento
+
+        // Obtener el contenido HTML y los estilos CSS del post
+        const htmlContent = post.contenido;
+        const cssContent = post.estilos;
+
+        // Mostrar el contenido HTML en el textarea
+        document.getElementById('html-content').value = htmlContent;
+
+        // Mostrar los estilos CSS en el textarea
+        document.getElementById('css-content').value = cssContent;
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+    function copyHtmlContent() {
+    // Seleccionar el contenido del textarea de HTML
+    var htmlContent = document.getElementById('html-content');
+    htmlContent.select();
+    htmlContent.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+    // Copiar el contenido seleccionado al portapapeles
+    document.execCommand('copy');
+
+    // Alerta de copia exitosa
+    alert('Contenido HTML copiado al portapapeles: \n' + htmlContent.value);
+}
+
+function copyHtmlContent() {
+    // Seleccionar el contenido del textarea de HTML
+    var htmlContent = document.getElementById('html-content');
+    htmlContent.select();
+    htmlContent.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+    // Copiar el contenido seleccionado al portapapeles
+    document.execCommand('copy');
+}
+
+function copyCssContent() {
+    // Seleccionar el contenido del textarea de CSS
+    var cssContent = document.getElementById('css-content');
+    cssContent.select();
+    cssContent.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+    // Copiar el contenido seleccionado al portapapeles
+    document.execCommand('copy');
+}
+
+function cambiarColorTextarea() {
+    // Obtener el contenido del textarea
+    var textarea = document.getElementById("html-content");
+    var contenido = textarea.value;
+
+    // Definir colores predeterminados
+    var color = "#ffffff"; // Blanco
+    var backgroundColor = "#000000"; // Negro
+
+    // Verificar el contenido y ajustar los colores
+    if (contenido.includes("<html>") || contenido.includes("<body>") || contenido.includes("<head>")) {
+        // Cambiar a colores HTML
+        color = "#ff0000"; // Rojo
+        backgroundColor = "#ffffff"; // Blanco
+    } else if (contenido.includes("{") && contenido.includes("}")) {
+        // Cambiar a colores CSS
+        color = "#0000ff"; // Azul
+        backgroundColor = "#ffff00"; // Amarillo
+    }
+
+    // Aplicar los colores al textarea
+    textarea.style.color = color;
+    textarea.style.backgroundColor = backgroundColor;
+}
+
+// Cargar el archivo JSON 'postcsselement.json'
+fetch('postcsselement.json')
+    .then(response => response.json())
+    .then(data => {
+        // Obtener el primer elemento del archivo JSON
+        const post = data[0]; // Puedes cambiar el índice para seleccionar otro elemento
+
+        // Obtener el contenido HTML y los estilos CSS del post
+        const htmlContent = post.contenido;
+        const cssContent = post.estilos;
+        const titulo = post.titulo;
+
+        // Mostrar el contenido HTML en el textarea
+        document.getElementById('html-content').value = htmlContent;
+
+        // Mostrar los estilos CSS en el textarea
+        document.getElementById('css-content').value = cssContent;
+
+        // Actualizar el título del post en el popup
+        document.getElementById("popup-title").innerText = titulo;
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+document.getElementById("ver-mas-btn").addEventListener("click", function() {
+  // Obtener la descripción extendida
+  const descripcionExtendida = `
+  <ul>
+                        <li>Este botón está diseñado para promocionar tu canal de Twitch en tu sitio web o en cualquier lugar donde puedas agregar HTML y CSS.</li>
+                        <li>Tiene un aspecto atractivo y moderno, con colores vibrantes que recuerdan a la marca Twitch.</li>
+                        <li>Puedes personalizar el nombre que aparece en el botón para que se ajuste a tu nombre de usuario en Twitch.</li>
+                        <li>Además, cuando pasas el mouse sobre el botón, el ícono se mueve sutilmente hacia la izquierda, lo que le da un toque interactivo y atractivo.</li>
+                        <li>Es una manera llamativa de dirigir a tus visitantes a tu canal de Twitch y aumentar tu audiencia.</li>
+              </ul>
+  `;
+
+  // Abrir el popup con el título del post y la descripción extendida
+  abrirPopup(descripcionExtendida);
+});
+
+function abrirPopup(descripcion) {
+  // Establecer la descripción extendida en el popup
+  document.getElementById("popup-description").innerHTML = descripcion;
+
+  // Mostrar el popup
+  document.getElementById("popup").style.display = "block";
+}
+
+function cerrarPopup() {
+  // Ocultar el popup
+  document.getElementById("popup").style.display = "none";
+}
+
+
+ </script>
 </html>

@@ -320,7 +320,7 @@ a img {
 }
 /* BOTON - Cambios al hacer clic */
 
-.theme-checkbox:checked::before {
+.theme-v:checked::before {
     left: calc(120% - 2.25em - 0.438em);
     background-position: 0;
 }

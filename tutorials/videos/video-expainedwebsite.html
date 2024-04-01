@@ -175,6 +175,17 @@
             box-sizing: border-box;
 
         }
+        /* Define la transición */
+.page-transition {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+/* Cuando se elimine la clase de transición, la página se mostrará */
+body:not(.page-transition) {
+    opacity: 1;
+}
+
     </style>
 
     <!-- HTML ----- WEB DE AGUSTHEKING -->
@@ -236,7 +247,27 @@
     </footer>
 
     <script>
-      
+      document.addEventListener('DOMContentLoaded', function() {
+    // Escucha los clics en los enlaces de navegación
+    document.querySelectorAll('nav a').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita que el enlace funcione normalmente
+
+            // Obtén la URL a la que se dirige el enlace
+            const nextPage = this.getAttribute('href');
+
+            // Agrega la clase de transición al cuerpo
+            document.body.classList.add('page-transition');
+
+            // Espera un breve período de tiempo para que se aplique la transición
+            setTimeout(function() {
+                // Redirige a la nueva página
+                window.location.href = nextPage;
+            }, 500); // Este valor debe coincidir con la duración de la transición CSS
+        });
+    });
+});
+
     </script>
 
 </html>
