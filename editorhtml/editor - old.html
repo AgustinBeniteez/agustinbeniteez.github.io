@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Editor HTML Online | DAJ </title>
+    <meta name="description" content="Editor Online html Css and JavaScript FREE">
+    <link rel="icon" href="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png">
+    <style>
+
+        body {
+            background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+            margin-top: 5%;
+            padding: 20px 10px;
+            text-align: center;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+            font-size: small;
+            overflow-x: hidden;
+            color: #ececec;
+        }
+        
+        #header {
+            width: 99%;
+            border-radius: 50px;
+            align-items: right;
+            margin-left: 10px;
+            text-align: right;
+        }
+        
+        #blog-title {
+            color: #ececec;
+            -webkit-text-stroke-color: #ffffff;
+            -webkit-text-stroke: 3px #ffffff;
+
+            text-align: right;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150px;
+            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
+            font-size: 140px;
+        }
+
+        #blog-title1 {
+            color: #ececec;
+            text-align:right;
+            margin-right: 20px;
+        }
+        ::-webkit-scrollbar {
+            width: 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(245, 245, 245, 0.09);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.80);
+            background: rgba(94, 54, 130, 0.60);
+            backdrop-filter: blur(26.149999618530273px);
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: linear-gradient(143deg, #1795A6 43.13%, #01B3B1 100%);
+        }
+
+        .button-icon4 {
+            margin-top: 20px; /* Ajusta el margen superior para separar el botón del título */
+            display: flex;
+            justify-content: center; /* Centra el botón horizontalmente */
+        }
+      
+        .icon4 {
+            background: linear-gradient(to right, #673ab7, #2196f3); /* Degradado morado a azul */
+            padding: 10px 10px 13px 10px;
+            border: 3px #2196f3 solid; /* Cambio de color del borde a azul */
+        }
+      
+        .icon4 svg {
+            width: 25px;
+            height: 25px;
+        }
+      
+        .cube4 {
+            transition: all 0.6s;
+            transform-style: preserve-3d;
+            width: 300px; /* Ajusta el ancho del cubo para centrar el texto */
+            height: 40px; /* Ajusta la altura del cubo para centrar el texto verticalmente */
+            perspective: 99999px; /* Se agrega la perspectiva para el efecto 3D */
+        }
+      
+        .button-icon4:hover {
+            border-color: #ff98a2;
+        }
+      
+        .button-icon4:hover .cube4 {
+            transform: rotateX(90deg);
+        }
+      
+        .side4 {
+            position: absolute;
+            height: 67px;
+            width: 400px; /* Ajusta el ancho del cubo para centrar el texto */
+            display: flex;
+            font-size: 0.8em;
+            justify-content: center;
+            align-items: center;
+            text-transform: none; /* Cambio a minúsculas */
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+      
+        .top4 {
+            background: linear-gradient(to right, #673ab7, #2196f3);
+            color: #fff;
+            font-size: 20px;
+            transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+        }
+      
+        .front4 {
+            background: #222229;
+            color: #fff;
+            font-size: 20px;
+            transform: translate3d(0, 0, 1em);
+        }
+
+        .titular{
+            align-items: center;
+            margin-left: 10px;
+        }
+ 
+        
+        nav {
+            background-color: #22222200;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            
+        }
+
+nav img {
+    width: 40px;
+    height: auto;
+}
+
+nav ul {
+    margin: 10px;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+    /* Alinea verticalmente los elementos */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Estilos para el campo de búsqueda */
+
+nav input[type="text"] {
+    margin-left: auto;
+    margin-right: 2%;
+    /* Alinear a la derecha */
+    padding: 5px;
+    width: 150px;
+    /* Ancho del campo de búsqueda */
+    border-radius: 5px;
+    background: rgba(240, 240, 240, 0.9);
+    border-radius: 17px;
+    border-style: solid;
+    border-color: rgba(216, 216, 216, 0.76);
+    border-width: 3px;
+    box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
+}
+/* Estilos para los botones */
+
+nav button {
+    margin-left: 20px;
+    /* Añadir margen a los botones */
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav button:last-child {
+    margin-right: 0;
+}
+
+        nav#menu {
+            position: fixed;
+            top: 60px;
+            left: 100px; 
+            display: flex; /* Hacer que los elementos dentro de #menu se muestren en línea */
+            justify-content: space-between; /* Espacio uniforme entre los elementos */
+            width: calc(100% - 200px); /* Toma el ancho total de la ventana menos 200px de margen izquierdo y derecho */
+        }
+
+        .menul {
+            float: left;
+        }
+
+        .menur {
+            float: right;
+        }
+
+        #main-code {
+            width: 38%;
+            height: calc(100vh - 160px); /* El 160px es la suma del alto del encabezado y del menú */
+            background-color: #f2f2f2; /* Color de fondo del área de código */
+            overflow-y: auto; /* Hacer que haya desplazamiento vertical si el contenido es demasiado largo */
+            float: left;
+            margin: 1%;
+            overflow-y: hidden; /* Ocultar el desplazamiento vertical si el contenido es demasiado largo */
+        }
+
+        #main-show {
+            width: 60%;
+            height: calc(100vh - 160px); /* El 160px es la suma del alto del encabezado y del menú */
+            background-color: #fff; /* Color de fondo del área de vista previa */
+            margin: 1%;
+            overflow-y: hidden;
+        }
+
+        #main-code-textarea {
+            width: 100%; /* Para ocupar todo el ancho del contenedor */
+            height: 100%; /* Para ocupar todo el alto del contenedor */
+            resize: none; /* Para evitar que el usuario pueda redimensionar el textarea */
+            border: none; /* Para quitar el borde predeterminado */
+            padding: 10px; /* Añadir un espacio interno para que el texto no quede pegado a los bordes */
+            box-sizing: border-box; /* Hacer que el padding esté incluido en el ancho y alto del textarea */
+            font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para mantener el formato del código */
+            font-size: 16px; /* Tamaño de fuente predeterminado */
+
+        }
+        #preview-frame {
+            width: 100%; /* Para ocupar todo el ancho del contenedor */
+            height: 100%; /* Para ocupar todo el alto del contenedor */
+            resize: none; /* Para evitar que el usuario pueda redimensionar el textarea */
+            border: none; /* Para quitar el borde predeterminado */
+            
+           
+        }
+
+        /* Estilos para los botones */
+        .menur {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .menur button {
+            width: 200px;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            background-color: #007bff00;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .menur button:hover {
+            background-color: #575b5f3a;
+        }
+
+        .theme-checkbox {
+        margin-left:5%;
+            --toggle-size: 12px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 4.25em;
+            height: 2.125em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 0;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 99em;
+            position: relative;
+            cursor: pointer;
+            font-size: var(--toggle-size);
+        }
+        
+        .theme-checkbox::before {
+            content: "";
+            width: 1.25em;
+            height: 1.25em;
+            position: absolute;
+            top: 0.438em;
+            left: 0.438em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+            background-size: 205%;
+            background-position: 100%;
+            border-radius: 50%;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.5s;
+        }
+        
+        .theme-checkbox:checked::before {
+            left: calc(100% - 1.55em - 0.138em);
+            background-position: 0;
+        }
+        
+        .theme-checkbox:checked {
+            background-position: 100%;
+        }
+
+    #menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 80%;
+}
+
+#menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Estilos para mostrar el menú */
+nav ul.active {
+    display: flex !important;
+    flex-direction: column;
+    background-color: #2222229d;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 86%;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 1.5; /* Ajusta el espaciado entre las palabras del menú */
+}
+
+nav ul.active li {
+    margin-right: 0;
+}
+
+nav ul.active li a {
+    color: #fff;
+    padding: 10px;
+}
+
+/* Estilos para el botón de menú cuando está activo */
+#menu-toggle.active span {
+    background-color: transparent;
+}
+
+#menu-toggle.active span:nth-child(2) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+        @media only screen and (max-width: 767px) {
+
+        nav  {
+            width: 100%;
+        }
+        nav ul {
+            display: none; /* Ocultar el menú en dispositivos móviles */
+        }
+        nav #menu-toggle{
+        float: right;
+        display: block;
+        margin-left: 75%;
+        }
+        .menur {
+            display: none;
+        }
+        .menul {
+            display: flex;
+            margin-top: -100px;
+        }
+        }
+        
+        /* Para portátil */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav #menu-toggle{
+        display: none;
+    }
+
+}
+
+/* Para PC */
+@media only screen and (min-width: 1025px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav #menu-toggle{
+        display: none;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <!-- Logo de la web -->
+        <a href="/"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png" alt="Logo de la web" width="150" height="150"></a>
+        <button id="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- Enlaces -->
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Elementos CSS</a></li>
+            <li><a href="/tutorials/menututorials.html">Tutorials</a></li>
+            <li><a href="/Aboutme.html">About DAJ</a></li>
+            <li><a href="/editorhtml/editor.html">Editor Code</span></a></li>
+           
+        </ul>
+        <span style="margin-left: auto; padding: 5px;">
+
+    </nav>  
+
+    <nav id="menu">
+        <div class="menul">
+            Change Dark/Light Theme    <input type="checkbox" class="theme-checkbox">
+        </div>
+        <div class="menur">
+            <button class="box7" id="btn-fullscreen">Ver en pantalla completa</button>
+            <button class="box7" id="btn-clear">Borrar</button>
+            <button class="box7" id="btn-format">Formatear código</button>
+        </div>
+    </nav>
+    <div id="editor-container">
+        <main id="main-code">
+            <textarea id="main-code-textarea" placeholder="Escribe tu código HTML aquí"></textarea>
+        </main>
+    </div>
+        <main id="main-show">
+            <!-- Aquí se mostrará la previsualización del código -->
+            <iframe id="preview-frame"></iframe>
+        </main>
+    </div>
+
+    <script>
+        const mainCodeTextarea = document.getElementById('main-code-textarea');
+        const previewFrame = document.getElementById('preview-frame');
+        const btnFullscreen = document.getElementById('btn-fullscreen');
+        const btnClear = document.getElementById('btn-clear');
+        const btnFormat = document.getElementById('btn-format');
+
+        // Función para actualizar la previsualización
+        function updatePreview() {
+            const htmlContent = mainCodeTextarea.value;
+            const previewDocument = previewFrame.contentWindow.document;
+
+            previewDocument.open();
+            previewDocument.write(htmlContent);
+            previewDocument.close();
+
+            // Guardar el contenido en el almacenamiento local
+            localStorage.setItem('editorContent', htmlContent);
+        }
+
+        // Función para limpiar el código
+        function clearCode() {
+            mainCodeTextarea.value = '';
+            updatePreview();
+        }
+
+        // Función para formatear el código (solo un ejemplo básico)
+        function formatCode() {
+            // Aquí puedes agregar cualquier formateo adicional si es necesario
+            updatePreview();
+        }
+
+        // Event listeners
+        mainCodeTextarea.addEventListener('input', updatePreview);
+        btnFullscreen.addEventListener('click', () => {
+            // Aquí puedes implementar la lógica para ver en pantalla completa
+            alert('En mantenimiento pantalla completa');
+        });
+        btnClear.addEventListener('click', clearCode);
+        btnFormat.addEventListener('click', formatCode);
+
+        // Verificar si hay contenido guardado en el almacenamiento local al cargar la página
+        const storedContent = localStorage.getItem('editorContent');
+        if (storedContent) {
+            mainCodeTextarea.value = storedContent;
+            updatePreview();
+        }
+
+        // Evento antes de descargar la página
+        window.addEventListener('beforeunload', (event) => {
+            // Verificar si hay cambios sin guardar
+            if (localStorage.getItem('editorContent') !== mainCodeTextarea.value) {
+                // Mostrar mensaje de confirmación
+                event.returnValue = 'Tienes cambios sin guardar. ¿Estás seguro de que quieres salir?';
+            }
+        });
+  // TEMA COLOR OSCURO
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el checkbox de tema
+    var themeCheckbox = document.querySelector('.theme-checkbox');
+    // Obtener el textarea de código principal
+    var mainCodeTextarea = document.getElementById('main-code-textarea');
+
+    // Verificar si hay un tema guardado en el almacenamiento local
+    var savedTheme = localStorage.getItem('editorTheme');
+    if (savedTheme) {
+        // Aplicar el tema guardado
+        applyTheme(savedTheme);
+    } else {
+        // Obtener el tema predeterminado del navegador
+        var defaultTheme = getDefaultTheme();
+        // Aplicar el tema predeterminado del navegador
+        applyTheme(defaultTheme);
+    }
+
+    // Agregar un evento de cambio al checkbox de tema
+    themeCheckbox.addEventListener('change', function() {
+        // Verificar si el checkbox está marcado
+        if (themeCheckbox.checked) {
+            // Cambiar el tema a oscuro
+            applyTheme('dark');
+            // Guardar el tema seleccionado en el almacenamiento local
+            localStorage.setItem('editorTheme', 'dark');
+        } else {
+            // Cambiar el tema a claro
+            applyTheme('light');
+            // Guardar el tema seleccionado en el almacenamiento local
+            localStorage.setItem('editorTheme', 'light');
+        }
+    });
+
+    // Función para obtener el tema predeterminado del navegador
+    function getDefaultTheme() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'; // Si el navegador está en modo oscuro
+        } else {
+            return 'light'; // Si el navegador está en modo claro
+        }
+    }
+
+    // Función para aplicar un tema
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            // Cambiar el tema a oscuro
+            themeCheckbox.checked = true;
+            mainCodeTextarea.style.background = 'rgba(23, 23, 23, 0.90)';
+            mainCodeTextarea.style.color = '#fff';
+        } else {
+            // Cambiar el tema a claro
+            themeCheckbox.checked = false;
+            mainCodeTextarea.style.background = 'rgba(217, 217, 217, 0.90)';
+            mainCodeTextarea.style.color = 'black';
+        }
+    }
+});
+     // NAV menu movil
+     document.addEventListener('DOMContentLoaded', function () {
+// Obtener referencias al botón de menú y al menú
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+// Agregar un event listener para el clic en el botón de menú
+menuToggle.addEventListener('click', function() {
+    // Alternar la clase 'active' en el menú para mostrarlo u ocultarlo
+    navMenu.classList.toggle('active');
+});
+
+});
+    </script>
+</body>
+
+</html>

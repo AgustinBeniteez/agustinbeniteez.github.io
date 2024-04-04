@@ -1,610 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <title>Editor HTML Online | DAJ </title>
-    <meta name="description" content="Editor Online html Css and JavaScript FREE">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png">
+    <meta name="description" content="Editor Online html Css and JavaScript FREE">
+    <title>Editor HTML Online | DAJ </title>
     <style>
+        :root{
+            --navleft:rgb(37,37,37);
+            --navtop:rgb(27, 27, 27);
+            --buttonback:rgb(30,30,30);
+            --letters:rgb(243,243,243);
+            --background:rgb(48,48,48);
+        }
 
         body {
-            background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
-            margin-top: 5%;
-            padding: 20px 10px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--background);
+        }
+        #top-nav {
+            background-color: var(--navtop);
+            color: #fff;
+            padding: 10px;
             text-align: center;
-            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
-            font-size: small;
-            overflow-x: hidden;
-            color: #ececec;
+            position: relative;
+            height: 50px;
+            border-bottom: 4px solid;
+            border-image: linear-gradient(to right, #5E3481, #00B3B1);
+            border-image-slice: 1;
         }
-        
-        #header {
-            width: 99%;
-            border-radius: 50px;
-            align-items: right;
-            margin-left: 10px;
-            text-align: right;
-        }
-        
-        #blog-title {
-            color: #ececec;
-            -webkit-text-stroke-color: #ffffff;
-            -webkit-text-stroke: 3px #ffffff;
+        #top-nav a{
+            color: white;
 
-            text-align: right;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150px;
-            font: x-small/1.5em "Trebuchet MS", Verdana, Arial, Sans-serif;
-            font-size: 140px;
-        }
-
-        #blog-title1 {
-            color: #ececec;
-            text-align:right;
-            margin-right: 20px;
-        }
-        ::-webkit-scrollbar {
-            width: 12px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.80);
-            background: rgba(245, 245, 245, 0.09);
-            backdrop-filter: blur(26.149999618530273px);
         }
         
-         ::-webkit-scrollbar-thumb {
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.80);
-            background: rgba(94, 54, 130, 0.60);
-            backdrop-filter: blur(26.149999618530273px);
-        }
-        
-         ::-webkit-scrollbar-track {
-            background: linear-gradient(143deg, #1795A6 43.13%, #01B3B1 100%);
-        }
-
-        .button-icon4 {
-            margin-top: 20px; /* Ajusta el margen superior para separar el botón del título */
+        #wrapper {
             display: flex;
-            justify-content: center; /* Centra el botón horizontalmente */
+            height: calc(100vh - 40px); /* Calculamos el 100% del viewport menos la altura del nav */
         }
-      
-        .icon4 {
-            background: linear-gradient(to right, #673ab7, #2196f3); /* Degradado morado a azul */
-            padding: 10px 10px 13px 10px;
-            border: 3px #2196f3 solid; /* Cambio de color del borde a azul */
+        #navtool {
+            background-color: var(--navleft);
+            max-width: 200px; /* Anchura máxima del navtool */
+            padding: 20px;
         }
-      
-        .icon4 svg {
-            width: 25px;
-            height: 25px;
+       #container {
+    display: grid;
+    grid-template-areas: 
+        "top-left top-right"
+        "bottom-left bottom-right";
+    grid-template-columns: 1fr 1fr; /* División equitativa en dos columnas */
+    grid-template-rows: 1fr 1fr; /* División equitativa en dos filas */
+    padding: 0; /* Eliminar el relleno */
+    background-color: var(--background);
+    flex: 1; /* Ocupa todo el espacio restante */
+    border: 4px solid transparent; /* Borde transparente */
+    border-top: none; /* Elimina el borde superior */
+    border-image: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+    border-image-slice: 1;
+}
+
+.corner {
+    padding: 0; /* Eliminar el relleno */
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 0; /* Eliminar los márgenes */
+    
+}
+
+#top-left,
+#top-right,
+#bottom-left,
+#bottom-right {
+    padding: 0; /* Eliminar el relleno */
+    margin: 0; /* Eliminar los márgenes */
+}
+
+        #top-left {
+            grid-area: top-left;
+            position: relative;
+            
         }
-      
-        .cube4 {
-            transition: all 0.6s;
-            transform-style: preserve-3d;
-            width: 300px; /* Ajusta el ancho del cubo para centrar el texto */
-            height: 40px; /* Ajusta la altura del cubo para centrar el texto verticalmente */
-            perspective: 99999px; /* Se agrega la perspectiva para el efecto 3D */
+
+        #top-right {
+            grid-area: top-right;
+            position: relative;
         }
-      
-        .button-icon4:hover {
-            border-color: #ff98a2;
+
+        #bottom-left {
+            grid-area: bottom-left;
+            position: relative;
         }
-      
-        .button-icon4:hover .cube4 {
-            transform: rotateX(90deg);
+
+        #bottom-right {
+            grid-area: bottom-right;
+            position: relative;
         }
-      
-        .side4 {
+
+        /* Estilos para los editores Monaco */
+        .monaco-editor {
+            width: 100%;
+            height: calc(100% - 30px); /* Altura del editor menos altura del botón */
+        }
+
+        /* Botón Full */
+        .full-button {
             position: absolute;
-            height: 67px;
-            width: 400px; /* Ajusta el ancho del cubo para centrar el texto */
-            display: flex;
-            font-size: 0.8em;
-            justify-content: center;
-            align-items: center;
-            text-transform: none; /* Cambio a minúsculas */
-            letter-spacing: 0.5px;
-            font-weight: bold;
-        }
-      
-        .top4 {
-            background: linear-gradient(to right, #673ab7, #2196f3);
-            color: #fff;
-            font-size: 20px;
-            transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
-        }
-      
-        .front4 {
-            background: #222229;
-            color: #fff;
-            font-size: 20px;
-            transform: translate3d(0, 0, 1em);
+            top: 5px;
+            right: 5px;
+            z-index: 999; /* Asegura que el botón esté encima de todo */
+            background-color: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
 
-        .titular{
-            align-items: center;
-            margin-left: 10px;
+        /*nav buttons*/
+        #toptools  button{
+            width: 100%;
+            height: 5em;
+            background-color: #1d1d1d;
+            border: 0;
+            margin-top: 5%;
+            box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+            color: var(--letters);
+            font-display:  block;
         }
- 
-        
-        nav {
-            background-color: #22222200;
+        #navtool {
+    background-color: var(--navleft);
+    max-width: 200px; /* Anchura máxima del navtool */
+    padding: 20px;
+    
+}
+
+#conf {
+    background-color: #000;
+    position: absolute;
+    bottom: 20px; /* Ajuste vertical desde la parte inferior */
+    left: 20px; /* Ajuste horizontal desde la izquierda */
+    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+}
+#conf button {
+    background-color: #000;
+    position: absolute;
+    bottom: 20px; /* Ajuste vertical desde la parte inferior */
+    left: 20px; /* Ajuste horizontal desde la izquierda */
+    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+    
+}
+
+
+        .logonav {
+            position: absolute;
+            left: 10px;
+        }
+
+        /* Estilos para el popup */
+        #popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            z-index: 1000;
-            
-        }
-
-nav img {
-    width: 40px;
-    height: auto;
-}
-
-nav ul {
-    margin: 10px;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-
-    /* Alinea verticalmente los elementos */
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-/* Estilos para el campo de búsqueda */
-
-nav input[type="text"] {
-    margin-left: auto;
-    margin-right: 2%;
-    /* Alinear a la derecha */
-    padding: 5px;
-    width: 150px;
-    /* Ancho del campo de búsqueda */
-    border-radius: 5px;
-    background: rgba(240, 240, 240, 0.9);
-    border-radius: 17px;
-    border-style: solid;
-    border-color: rgba(216, 216, 216, 0.76);
-    border-width: 3px;
-    box-shadow: inset 0px 0px 11.3px 4px rgba(0, 0, 0, 0.25);
-}
-/* Estilos para los botones */
-
-nav button {
-    margin-left: 20px;
-    /* Añadir margen a los botones */
-    padding: 8px 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: #333;
-    color: #ffffff;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-nav button:last-child {
-    margin-right: 0;
-}
-
-        nav#menu {
-            position: fixed;
-            top: 60px;
-            left: 100px; 
-            display: flex; /* Hacer que los elementos dentro de #menu se muestren en línea */
-            justify-content: space-between; /* Espacio uniforme entre los elementos */
-            width: calc(100% - 200px); /* Toma el ancho total de la ventana menos 200px de margen izquierdo y derecho */
-        }
-
-        .menul {
-            float: left;
-        }
-
-        .menur {
-            float: right;
-        }
-
-        #main-code {
-            width: 38%;
-            height: calc(100vh - 160px); /* El 160px es la suma del alto del encabezado y del menú */
-            background-color: #f2f2f2; /* Color de fondo del área de código */
-            overflow-y: auto; /* Hacer que haya desplazamiento vertical si el contenido es demasiado largo */
-            float: left;
-            margin: 1%;
-            overflow-y: hidden; /* Ocultar el desplazamiento vertical si el contenido es demasiado largo */
-        }
-
-        #main-show {
-            width: 60%;
-            height: calc(100vh - 160px); /* El 160px es la suma del alto del encabezado y del menú */
-            background-color: #fff; /* Color de fondo del área de vista previa */
-            margin: 1%;
-            overflow-y: hidden;
-        }
-
-        #main-code-textarea {
-            width: 100%; /* Para ocupar todo el ancho del contenedor */
-            height: 100%; /* Para ocupar todo el alto del contenedor */
-            resize: none; /* Para evitar que el usuario pueda redimensionar el textarea */
-            border: none; /* Para quitar el borde predeterminado */
-            padding: 10px; /* Añadir un espacio interno para que el texto no quede pegado a los bordes */
-            box-sizing: border-box; /* Hacer que el padding esté incluido en el ancho y alto del textarea */
-            font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para mantener el formato del código */
-            font-size: 16px; /* Tamaño de fuente predeterminado */
-
-        }
-        #preview-frame {
-            width: 100%; /* Para ocupar todo el ancho del contenedor */
-            height: 100%; /* Para ocupar todo el alto del contenedor */
-            resize: none; /* Para evitar que el usuario pueda redimensionar el textarea */
-            border: none; /* Para quitar el borde predeterminado */
-            
-           
-        }
-
-        /* Estilos para los botones */
-        .menur {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .menur button {
-            width: 200px;
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            background-color: #007bff00;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .menur button:hover {
-            background-color: #575b5f3a;
-        }
-
-        .theme-checkbox {
-        margin-left:5%;
-            --toggle-size: 12px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 4.25em;
-            height: 2.125em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 0;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.4s;
-            border-radius: 99em;
-            position: relative;
-            cursor: pointer;
-            font-size: var(--toggle-size);
-        }
-        
-        .theme-checkbox::before {
-            content: "";
-            width: 1.25em;
-            height: 1.25em;
-            position: absolute;
-            top: 0.438em;
-            left: 0.438em;
-            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
-            background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
-            background-size: 205%;
-            background-position: 100%;
-            border-radius: 50%;
-            -webkit-transition: 0.4s;
-            -o-transition: 0.4s;
-            transition: 0.5s;
-        }
-        
-        .theme-checkbox:checked::before {
-            left: calc(100% - 1.55em - 0.138em);
-            background-position: 0;
-        }
-        
-        .theme-checkbox:checked {
-            background-position: 100%;
-        }
-
-    #menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin-left: 80%;
-}
-
-#menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: #fff;
-    margin-bottom: 5px;
-}
-
-/* Estilos para mostrar el menú */
-nav ul.active {
-    display: flex !important;
-    flex-direction: column;
-    background-color: #2222229d;
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    width: 86%;
-    border-radius: 20px;
-    font-size: 20px;
-    line-height: 1.5; /* Ajusta el espaciado entre las palabras del menú */
-}
-
-nav ul.active li {
-    margin-right: 0;
-}
-
-nav ul.active li a {
-    color: #fff;
-    padding: 10px;
-}
-
-/* Estilos para el botón de menú cuando está activo */
-#menu-toggle.active span {
-    background-color: transparent;
-}
-
-#menu-toggle.active span:nth-child(2) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-#menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-        @media only screen and (max-width: 767px) {
-
-        nav  {
-            width: 100%;
-        }
-        nav ul {
-            display: none; /* Ocultar el menú en dispositivos móviles */
-        }
-        nav #menu-toggle{
-        float: right;
-        display: block;
-        margin-left: 75%;
-        }
-        .menur {
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
             display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
-        .menul {
-            display: flex;
-            margin-top: -100px;
+
+        #popup-content {
+            background-color: #fff;
+            border: 1px solid #000;
+            padding: 20px;
+            width: 90%; /* Ancho del popup */
+            height: 90%; /* Altura del popup */
+            max-width: 800px; /* Ancho máximo del contenido */
+            max-height: 600px; /* Altura máxima del contenido */
+            overflow: auto; /* Agrega scroll si el contenido es demasiado grande */
+            position: relative;
         }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: #1d1d1d;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
-        
-        /* Para portátil */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    nav ul {
-        display: flex;
-    }
-
-    nav #menu-toggle{
-        display: none;
-    }
-
-}
-
-/* Para PC */
-@media only screen and (min-width: 1025px) {
-    nav ul {
-        display: flex;
-    }
-
-    nav #menu-toggle{
-        display: none;
-    }
-}
     </style>
 </head>
-
 <body>
-    <nav id="nav">
-        <!-- Logo de la web -->
-        <a href="/"><img src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png" alt="Logo de la web" width="150" height="150"></a>
-        <button id="menu-toggle" aria-label="Toggle Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <!-- Enlaces -->
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Elementos CSS</a></li>
-            <li><a href="/tutorials/menututorials.html">Tutorials</a></li>
-            <li><a href="/Aboutme.html">About DAJ</a></li>
-            <li><a href="/editorhtml/editor.html">Editor Code</span></a></li>
-           
-        </ul>
-        <span style="margin-left: auto; padding: 5px;">
-
-    </nav>  
-
-    <nav id="menu">
-        <div class="menul">
-            Change Dark/Light Theme    <input type="checkbox" class="theme-checkbox">
-        </div>
-        <div class="menur">
-            <button class="box7" id="btn-fullscreen">Ver en pantalla completa</button>
-            <button class="box7" id="btn-clear">Borrar</button>
-            <button class="box7" id="btn-format">Formatear código</button>
-        </div>
-    </nav>
-    <div id="editor-container">
-        <main id="main-code">
-            <textarea id="main-code-textarea" placeholder="Escribe tu código HTML aquí"></textarea>
-        </main>
-    </div>
-        <main id="main-show">
-            <!-- Aquí se mostrará la previsualización del código -->
-            <iframe id="preview-frame"></iframe>
+    <header id="top-nav">
+        <a href="/"><img class="logonav" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png" alt="Logo de la web" width="60" height="50"></a>
+            <a href="/">Home</a>  <a href="/tutorials/menututorials.html">Tutorials</a>  <a href="../aboutme.html">Aboutme</a>
+    </header>
+    <div id="wrapper">
+        <aside id="navtool">
+            <!-- Contenido del div izquierdo ( navtool) -->
+            <aside id="toptools">
+                <button>Clear</button>
+                <button>Format Code</button>
+                <button>Download</button>
+                <button>Console</button>
+            </aside>
+            <aside id="conf">
+                <button>conf</button>
+            </aside>
+        </aside>
+        <main id="container">
+            <!-- Contenido del div derecho ( container) -->
+            <section id="top-left" class="corner">
+                <!-- Botón Full para HTML Editor -->
+                <button class="full-button" onclick="toggleFullScreen(document.getElementById('top-left'))">Full</button>
+            </section>
+            <section id="top-right" class="corner">
+                <!-- Botón Full para CSS Editor -->
+                <button class="full-button" onclick="toggleFullScreen(document.getElementById('top-right'))">Full</button>
+            </section>
+            <section id="bottom-left" class="corner">
+                <!-- Botón Full para JavaScript Editor -->
+                <button class="full-button" onclick="toggleFullScreen(document.getElementById('bottom-left'))">Full</button>
+            </section>
+            <section id="bottom-right" class="corner"><iframe id="renderFrame" style="width: 100%; height: 100%; border: none;"></iframe></section>
         </main>
     </div>
 
+    <!-- Load Monaco Editor -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
     <script>
-        const mainCodeTextarea = document.getElementById('main-code-textarea');
-        const previewFrame = document.getElementById('preview-frame');
-        const btnFullscreen = document.getElementById('btn-fullscreen');
-        const btnClear = document.getElementById('btn-clear');
-        const btnFormat = document.getElementById('btn-format');
+        require.config({ paths: { 'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs' }});
+        require(['vs/editor/editor.main'], function () {
+            // HTML Editor Initialization
+            var htmlEditor = monaco.editor.create(document.getElementById('top-left'), {
+                value: '',
+                language: 'html',
+                theme: 'vs-dark', // Modo oscuro
+            });
 
-        // Función para actualizar la previsualización
-        function updatePreview() {
-            const htmlContent = mainCodeTextarea.value;
-            const previewDocument = previewFrame.contentWindow.document;
+            // CSS Editor Initialization
+            var cssEditor = monaco.editor.create(document.getElementById('top-right'), {
+                value: '',
+                language: 'css',
+                theme: 'vs-dark', // Modo oscuro
+            });
 
-            previewDocument.open();
-            previewDocument.write(htmlContent);
-            previewDocument.close();
+            // JavaScript Editor Initialization
+            var jsEditor = monaco.editor.create(document.getElementById('bottom-left'), {
+                value: '',
+                language: 'javascript',
+                theme: 'vs-dark', // Modo oscuro
+            });
 
-            // Guardar el contenido en el almacenamiento local
-            localStorage.setItem('editorContent', htmlContent);
-        }
-
-        // Función para limpiar el código
-        function clearCode() {
-            mainCodeTextarea.value = '';
-            updatePreview();
-        }
-
-        // Función para formatear el código (solo un ejemplo básico)
-        function formatCode() {
-            // Aquí puedes agregar cualquier formateo adicional si es necesario
-            updatePreview();
-        }
-
-        // Event listeners
-        mainCodeTextarea.addEventListener('input', updatePreview);
-        btnFullscreen.addEventListener('click', () => {
-            // Aquí puedes implementar la lógica para ver en pantalla completa
-            alert('En mantenimiento pantalla completa');
-        });
-        btnClear.addEventListener('click', clearCode);
-        btnFormat.addEventListener('click', formatCode);
-
-        // Verificar si hay contenido guardado en el almacenamiento local al cargar la página
-        const storedContent = localStorage.getItem('editorContent');
-        if (storedContent) {
-            mainCodeTextarea.value = storedContent;
-            updatePreview();
-        }
-
-        // Evento antes de descargar la página
-        window.addEventListener('beforeunload', (event) => {
-            // Verificar si hay cambios sin guardar
-            if (localStorage.getItem('editorContent') !== mainCodeTextarea.value) {
-                // Mostrar mensaje de confirmación
-                event.returnValue = 'Tienes cambios sin guardar. ¿Estás seguro de que quieres salir?';
+            // Función para actualizar el render en el iframe
+            function updateRender() {
+                var htmlCode = htmlEditor.getValue();
+                var cssCode = '<style>' + cssEditor.getValue() + '</style>';
+                var jsCode = '<script>' + jsEditor.getValue() + '</scr' + 'ipt>'; // Evitar error de "Unterminated string literal"
+                var renderCode = htmlCode + cssCode + jsCode;
+                var iframe = document.getElementById('renderFrame');
+                var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                iframeDocument.body.innerHTML = renderCode;
             }
+
+            // Agregar eventos input a los editores
+            htmlEditor.onDidChangeModelContent(updateRender);
+            cssEditor.onDidChangeModelContent(updateRender);
+            jsEditor.onDidChangeModelContent(updateRender);
+
+            // Inicializar el render
+            updateRender();
         });
-  // TEMA COLOR OSCURO
-  document.addEventListener('DOMContentLoaded', function() {
-    // Obtener el checkbox de tema
-    var themeCheckbox = document.querySelector('.theme-checkbox');
-    // Obtener el textarea de código principal
-    var mainCodeTextarea = document.getElementById('main-code-textarea');
 
-    // Verificar si hay un tema guardado en el almacenamiento local
-    var savedTheme = localStorage.getItem('editorTheme');
-    if (savedTheme) {
-        // Aplicar el tema guardado
-        applyTheme(savedTheme);
-    } else {
-        // Obtener el tema predeterminado del navegador
-        var defaultTheme = getDefaultTheme();
-        // Aplicar el tema predeterminado del navegador
-        applyTheme(defaultTheme);
-    }
+        // Función para cambiar al modo de pantalla completa
+        function toggleFullScreen(section) {
+            var popupOverlay = document.getElementById('popup-overlay');
+            var popupContent = document.getElementById('popup-content');
+            var fullButton = section.querySelector('.full-button');
 
-    // Agregar un evento de cambio al checkbox de tema
-    themeCheckbox.addEventListener('change', function() {
-        // Verificar si el checkbox está marcado
-        if (themeCheckbox.checked) {
-            // Cambiar el tema a oscuro
-            applyTheme('dark');
-            // Guardar el tema seleccionado en el almacenamiento local
-            localStorage.setItem('editorTheme', 'dark');
-        } else {
-            // Cambiar el tema a claro
-            applyTheme('light');
-            // Guardar el tema seleccionado en el almacenamiento local
-            localStorage.setItem('editorTheme', 'light');
+            if (!popupOverlay.style.display || popupOverlay.style.display === 'none') {
+                // Entrar en modo fullscreen
+                section.classList.add('fullscreen');
+                popupContent.innerHTML = section.innerHTML;
+                popupOverlay.style.display = 'flex';
+                fullButton.innerText = 'Close'; // Cambiar el texto del botón a "Close"
+                fullButton.classList.add('popup-close'); // Agregar la clase de estilo para el botón de cerrar
+                section.style.zIndex = '1001'; // Asegurar que el section esté por encima del popup
+            } else {
+                // Salir del modo fullscreen
+                section.classList.remove('fullscreen');
+                popupOverlay.style.display = 'none';
+                fullButton.innerText = 'Full'; // Cambiar el texto del botón a "Full"
+                fullButton.classList.remove('popup-close'); // Eliminar la clase de estilo para el botón de cerrar
+                section.style.zIndex = ''; // Restaurar el zIndex del section
+            }
         }
-    });
-
-    // Función para obtener el tema predeterminado del navegador
-    function getDefaultTheme() {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark'; // Si el navegador está en modo oscuro
-        } else {
-            return 'light'; // Si el navegador está en modo claro
-        }
-    }
-
-    // Función para aplicar un tema
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            // Cambiar el tema a oscuro
-            themeCheckbox.checked = true;
-            mainCodeTextarea.style.background = 'rgba(23, 23, 23, 0.90)';
-            mainCodeTextarea.style.color = '#fff';
-        } else {
-            // Cambiar el tema a claro
-            themeCheckbox.checked = false;
-            mainCodeTextarea.style.background = 'rgba(217, 217, 217, 0.90)';
-            mainCodeTextarea.style.color = 'black';
-        }
-    }
-});
-     // NAV menu movil
-     document.addEventListener('DOMContentLoaded', function () {
-// Obtener referencias al botón de menú y al menú
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.querySelector('nav ul');
-
-// Agregar un event listener para el clic en el botón de menú
-menuToggle.addEventListener('click', function() {
-    // Alternar la clase 'active' en el menú para mostrarlo u ocultarlo
-    navMenu.classList.toggle('active');
-});
-
-});
     </script>
-</body>
 
+    <!-- Popup Overlay -->
+    <div id="popup-overlay">
+        <div id="popup-content">
+            <!-- Contenido del section -->
+            <button class="popup-close" onclick="toggleFullScreen(document.getElementById('top-left'))">Close</button>
+        </div>
+    </div>
+</body>
 </html>
