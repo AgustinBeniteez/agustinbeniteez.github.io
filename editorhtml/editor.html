@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png">
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png">
     <meta name="description" content="Editor Online html Css and JavaScript FREE">
     <title>Editor HTML Online | DAJ </title>
     <style>
-        :root{
-            --navleft:rgb(37,37,37);
-            --navtop:rgb(27, 27, 27);
-            --buttonback:rgb(30,30,30);
-            --letters:rgb(243,243,243);
-            --background:rgb(48,48,48);
+        :root {
+            --navleft: rgb(37, 37, 37);
+            --navtop: rgb(27, 27, 27);
+            --buttonback: rgb(30, 30, 30);
+            --letters: rgb(243, 243, 243);
+            --background: rgb(48, 48, 48);
         }
 
         body {
@@ -21,6 +23,7 @@
             font-family: Arial, sans-serif;
             background-color: var(--background);
         }
+
         #top-nav {
             background-color: var(--navtop);
             color: #fff;
@@ -32,56 +35,81 @@
             border-image: linear-gradient(to right, #5E3481, #00B3B1);
             border-image-slice: 1;
         }
-        #top-nav a{
+
+        #top-nav a {
             color: white;
 
         }
-        
+
         #wrapper {
             display: flex;
-            height: calc(100vh - 40px); /* Calculamos el 100% del viewport menos la altura del nav */
+            height: calc(100vh - 40px);
+            /* Calculamos el 100% del viewport menos la altura del nav */
         }
+
         #navtool {
             background-color: var(--navleft);
-            max-width: 200px; /* Anchura máxima del navtool */
+            max-width: 200px;
+            /* Anchura máxima del navtool */
             padding: 20px;
         }
-       #container {
-    display: grid;
-    grid-template-areas: 
-        "top-left top-right"
-        "bottom-left bottom-right";
-    grid-template-columns: 1fr 1fr; /* División equitativa en dos columnas */
-    grid-template-rows: 1fr 1fr; /* División equitativa en dos filas */
-    padding: 0; /* Eliminar el relleno */
-    background-color: var(--background);
-    flex: 1; /* Ocupa todo el espacio restante */
-    border: 4px solid transparent; /* Borde transparente */
-    border-top: none; /* Elimina el borde superior */
-    border-image: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
-    border-image-slice: 1;
-}
 
-.corner {
-    padding: 0; /* Eliminar el relleno */
-    background-color: #fff;
-    border: 1px solid #000;
-    margin: 0; /* Eliminar los márgenes */
-    
-}
+        #container {
+            display: grid;
+            grid-template-areas:
+                "top-left top-right"
+                "bottom-left bottom-right";
+            grid-template-columns: 1fr 1fr;
+            /* División equitativa en dos columnas */
+            grid-template-rows: 1fr 1fr;
+            /* División equitativa en dos filas */
+            padding: 0;
+            /* Eliminar el relleno */
+            background-color: var(--background);
+            flex: 1;
+            /* Ocupa todo el espacio restante */
+            border: 4px solid transparent;
+            /* Borde transparente */
+            border-top: none;
+            /* Elimina el borde superior */
+            border-image: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+            border-image-slice: 1;
+        }
 
-#top-left,
-#top-right,
-#bottom-left,
-#bottom-right {
-    padding: 0; /* Eliminar el relleno */
-    margin: 0; /* Eliminar los márgenes */
-}
+        .corner {
+            padding: 0;
+            /* Eliminar el relleno */
+            background-color: #303030;
+            border: 1px solid #000;
+            margin: 0;
+            /* Eliminar los márgenes */
+
+        }
+
+        .corner1 {
+            padding: 0;
+            /* Eliminar el relleno */
+            background-color: #ffffff;
+            border: 1px solid #000;
+            margin: 0;
+            /* Eliminar los márgenes */
+
+        }
+
+        #top-left,
+        #top-right,
+        #bottom-left,
+        #bottom-right {
+            padding: 0;
+            /* Eliminar el relleno */
+            margin: 0;
+            /* Eliminar los márgenes */
+        }
 
         #top-left {
             grid-area: top-left;
             position: relative;
-            
+
         }
 
         #top-right {
@@ -102,7 +130,8 @@
         /* Estilos para los editores Monaco */
         .monaco-editor {
             width: 100%;
-            height: calc(100% - 30px); /* Altura del editor menos altura del botón */
+            height: calc(100% - 30px);
+            /* Altura del editor menos altura del botón */
         }
 
         /* Botón Full */
@@ -110,7 +139,8 @@
             position: absolute;
             top: 5px;
             right: 5px;
-            z-index: 999; /* Asegura que el botón esté encima de todo */
+            z-index: 999;
+            /* Asegura que el botón esté encima de todo */
             background-color: transparent;
             color: white;
             border: none;
@@ -118,7 +148,7 @@
         }
 
         /*nav buttons*/
-        #toptools  button{
+        #toptools button {
             width: 100%;
             height: 5em;
             background-color: #1d1d1d;
@@ -126,30 +156,48 @@
             margin-top: 5%;
             box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
             color: var(--letters);
-            font-display:  block;
+            font-display: block;
         }
-        #navtool {
-    background-color: var(--navleft);
-    max-width: 200px; /* Anchura máxima del navtool */
-    padding: 20px;
-    
-}
 
-#conf {
-    background-color: #000;
-    position: absolute;
-    bottom: 20px; /* Ajuste vertical desde la parte inferior */
-    left: 20px; /* Ajuste horizontal desde la izquierda */
-    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
-}
-#conf button {
-    background-color: #000;
-    position: absolute;
-    bottom: 20px; /* Ajuste vertical desde la parte inferior */
-    left: 20px; /* Ajuste horizontal desde la izquierda */
-    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
-    
-}
+        #toptools select {
+            width: 100%;
+            height: 5em;
+            background-color: #1d1d1d;
+            border: 0;
+            margin-top: 5%;
+            box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+            color: var(--letters);
+            font-display: block;
+        }
+
+        #navtool {
+            background-color: var(--navleft);
+            max-width: 200px;
+            /* Anchura máxima del navtool */
+            padding: 20px;
+
+        }
+
+        #conf {
+            background-color: #000;
+            position: absolute;
+            bottom: 20px;
+            /* Ajuste vertical desde la parte inferior */
+            left: 20px;
+            /* Ajuste horizontal desde la izquierda */
+            box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        #conf button {
+            background-color: #000;
+            position: absolute;
+            bottom: 20px;
+            /* Ajuste vertical desde la parte inferior */
+            left: 20px;
+            /* Ajuste horizontal desde la izquierda */
+            box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+
+        }
 
 
         .logonav {
@@ -164,24 +212,46 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            background: rgba(0, 0, 0, 0.5);
+            /* Fondo semi-transparente */
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
 
+        /* Estilos adicionales para la pantalla completa */
+        .fullscreen #top-left,
+        .fullscreen #top-right,
+        .fullscreen #bottom-left {
+            width: calc(100% - 40px);
+            /* Reducir el tamaño del editor cuando está en pantalla completa */
+            height: calc(100% - 40px);
+            /* Reducir el tamaño del editor cuando está en pantalla completa */
+            margin: auto;
+            /* Centrar el editor */
+        }
+
         #popup-content {
             background-color: #fff;
             border: 1px solid #000;
             padding: 20px;
-            width: 90%; /* Ancho del popup */
-            height: 90%; /* Altura del popup */
-            max-width: 800px; /* Ancho máximo del contenido */
-            max-height: 600px; /* Altura máxima del contenido */
-            overflow: auto; /* Agrega scroll si el contenido es demasiado grande */
+            width: 90%;
+            /* Ancho del popup */
+            height: 90%;
+            /* Altura del popup */
+            max-width: 90vw;
+            /* Ancho máximo del contenido */
+            max-height: 90vh;
+            /* Altura máxima del contenido */
+            overflow: auto;
+            /* Agrega scroll si el contenido es demasiado grande */
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
 
         .popup-close {
             position: absolute;
@@ -196,67 +266,112 @@
         }
     </style>
 </head>
+
 <body>
     <header id="top-nav">
-        <a href="/"><img class="logonav" src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png" alt="Logo de la web" width="60" height="50"></a>
-            <a href="/">Home</a>  <a href="/tutorials/menututorials.html">Tutorials</a>  <a href="../aboutme.html">Aboutme</a>
+        <a href="/"><img class="logonav"
+                src="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/editorhtml/editorcodedaj.png"
+                alt="Logo de la web" width="60" height="50"></a>
+        <a href="/">Home</a> <a href="/tutorials/menututorials.html">Tutorials</a> <a href="../aboutme.html">Aboutme</a>
     </header>
     <div id="wrapper">
         <aside id="navtool">
             <!-- Contenido del div izquierdo ( navtool) -->
             <aside id="toptools">
-                <button>Clear</button>
+                <select id="clearDropdown" onchange="confirmClear(this.value)">
+                    <optgroup label="Clear">
+                        <option disabled selected hidden>Clear</option>
+                    </optgroup>
+                    <optgroup label="Clear All">
+                        <option value="all">All</option>
+                    </optgroup>
+                    <optgroup label="Clear Individual">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JavaScript</option>
+                    </optgroup>
+                </select>
                 <button>Format Code</button>
                 <button>Download</button>
                 <button>Console</button>
             </aside>
             <aside id="conf">
-                <button>conf</button>
+                <button onclick="toggleConfigPopup()">Configuración</button>
             </aside>
+
         </aside>
         <main id="container">
             <!-- Contenido del div derecho ( container) -->
             <section id="top-left" class="corner">
                 <!-- Botón Full para HTML Editor -->
-                <button class="full-button" onclick="toggleFullScreen(document.getElementById('top-left'))">Full</button>
+                <button class="full-button"
+                    onclick="toggleFullScreen(document.getElementById('top-left'))">Full</button>
             </section>
             <section id="top-right" class="corner">
                 <!-- Botón Full para CSS Editor -->
-                <button class="full-button" onclick="toggleFullScreen(document.getElementById('top-right'))">Full</button>
+                <button class="full-button"
+                    onclick="toggleFullScreen(document.getElementById('top-right'))">Full</button>
             </section>
             <section id="bottom-left" class="corner">
                 <!-- Botón Full para JavaScript Editor -->
-                <button class="full-button" onclick="toggleFullScreen(document.getElementById('bottom-left'))">Full</button>
+                <button class="full-button"
+                    onclick="toggleFullScreen(document.getElementById('bottom-left'))">Full</button>
             </section>
-            <section id="bottom-right" class="corner"><iframe id="renderFrame" style="width: 100%; height: 100%; border: none;"></iframe></section>
+            <section id="bottom-right" class="corner1"><iframe id="renderFrame"
+                    style="width: 100%; height: 100%; border: none;"></iframe></section>
         </main>
     </div>
 
     <!-- Load Monaco Editor -->
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
     <script>
-        require.config({ paths: { 'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs' }});
+        require.config({
+            paths: {
+                'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs'
+            }
+        });
+
         require(['vs/editor/editor.main'], function () {
+            // Función para obtener el contenido de un editor desde el almacenamiento local
+            function getEditorContent(editorId) {
+                return localStorage.getItem(editorId) || '';
+            }
+
             // HTML Editor Initialization
             var htmlEditor = monaco.editor.create(document.getElementById('top-left'), {
-                value: '',
+                value: getEditorContent('htmlContent'),
                 language: 'html',
                 theme: 'vs-dark', // Modo oscuro
+                minimap: { enabled: false } // Deshabilitar el minimapa
             });
 
             // CSS Editor Initialization
             var cssEditor = monaco.editor.create(document.getElementById('top-right'), {
-                value: '',
+                value: getEditorContent('cssContent'),
                 language: 'css',
                 theme: 'vs-dark', // Modo oscuro
+                minimap: { enabled: false } // Deshabilitar el minimapa
             });
 
             // JavaScript Editor Initialization
             var jsEditor = monaco.editor.create(document.getElementById('bottom-left'), {
-                value: '',
+                value: getEditorContent('jsContent'),
                 language: 'javascript',
                 theme: 'vs-dark', // Modo oscuro
+                minimap: { enabled: false } // Deshabilitar el minimapa
             });
+
+            // Función para actualizar el contenido del editor y guardarlo en el almacenamiento local
+            function updateEditorContent(editor, editorId) {
+                return function () {
+                    localStorage.setItem(editorId, editor.getValue());
+                };
+            }
+
+            // Agregar eventos input a los editores
+            htmlEditor.onDidChangeModelContent(updateEditorContent(htmlEditor, 'htmlContent'));
+            cssEditor.onDidChangeModelContent(updateEditorContent(cssEditor, 'cssContent'));
+            jsEditor.onDidChangeModelContent(updateEditorContent(jsEditor, 'jsContent'));
 
             // Función para actualizar el render en el iframe
             function updateRender() {
@@ -277,8 +392,14 @@
             // Inicializar el render
             updateRender();
         });
+        // Controlador de evento de redimensionamiento de ventana
+        window.addEventListener('resize', function () {
+            // Forzar una nueva renderización de la página
+            setTimeout(function () {
+                window.location.reload();
+            }, 50);
+        });
 
-        // Función para cambiar al modo de pantalla completa
         function toggleFullScreen(section) {
             var popupOverlay = document.getElementById('popup-overlay');
             var popupContent = document.getElementById('popup-content');
@@ -287,28 +408,140 @@
             if (!popupOverlay.style.display || popupOverlay.style.display === 'none') {
                 // Entrar en modo fullscreen
                 section.classList.add('fullscreen');
-                popupContent.innerHTML = section.innerHTML;
+                popupContent.innerHTML = ''; // Limpiar el contenido del popup
                 popupOverlay.style.display = 'flex';
                 fullButton.innerText = 'Close'; // Cambiar el texto del botón a "Close"
-                fullButton.classList.add('popup-close'); // Agregar la clase de estilo para el botón de cerrar
-                section.style.zIndex = '1001'; // Asegurar que el section esté por encima del popup
+                fullButton.classList.add('popup-close'); // Agrega la clase de estilo para el botón de cerrar
+                section.style.zIndex = '1001'; // por encima del popup
+
+                // Colocar los editores dentro del popup
+                popupContent.appendChild(htmlEditor.getDomNode());
+                popupContent.appendChild(cssEditor.getDomNode());
+                popupContent.appendChild(jsEditor.getDomNode());
+
+                // Ajustar el tamaño del editor al tamaño del popup
+                setTimeout(function () {
+                    htmlEditor.layout();
+                    cssEditor.layout();
+                    jsEditor.layout();
+
+                    // Ajustar el tamaño del contenedor del popup según el tamaño del editor más grande
+                    var maxWidth = Math.max(htmlEditor.getDomNode().offsetWidth, cssEditor.getDomNode().offsetWidth, jsEditor.getDomNode().offsetWidth);
+                    var maxHeight = Math.max(htmlEditor.getDomNode().offsetHeight, cssEditor.getDomNode().offsetHeight, jsEditor.getDomNode().offsetHeight);
+                    popupContent.style.width = maxWidth + 'px';
+                    popupContent.style.height = maxHeight + 'px';
+                }, 100); // Ajusta el tiempo de espera según sea necesario
             } else {
                 // Salir del modo fullscreen
                 section.classList.remove('fullscreen');
                 popupOverlay.style.display = 'none';
                 fullButton.innerText = 'Full'; // Cambiar el texto del botón a "Full"
                 fullButton.classList.remove('popup-close'); // Eliminar la clase de estilo para el botón de cerrar
-                section.style.zIndex = ''; // Restaurar el zIndex del section
+
+                // Restaurar la estructura de grid
+                document.getElementById('container').style.display = 'grid';
+
+                // Quitar los editores del popup y volver a colocarlos en su lugar original
+                document.getElementById('top-left').appendChild(htmlEditor.getDomNode());
+                document.getElementById('top-right').appendChild(cssEditor.getDomNode());
+                document.getElementById('bottom-left').appendChild(jsEditor.getDomNode());
+            }
+        }
+
+        // Función para confirmar antes de borrar el contenido del editor
+        function confirmClear(editorType) {
+            if (editorType === '') return; // Si no se selecciona ninguna opción, no hacer nada
+
+            // Mensaje de confirmación predeterminado
+            var confirmationMessage = "¿Estás seguro de que deseas borrar el contenido? Esto no se puede deshacer.";
+
+            // Determinar el mensaje de confirmación específico según el tipo de editor
+            switch (editorType) {
+                case 'html':
+                    confirmationMessage = "¿Estás seguro de que deseas borrar el contenido HTML? Esto no se puede deshacer.";
+                    break;
+                case 'css':
+                    confirmationMessage = "¿Estás seguro de que deseas borrar el contenido CSS? Esto no se puede deshacer.";
+                    break;
+                case 'js':
+                    confirmationMessage = "¿Estás seguro de que deseas borrar el contenido JavaScript? Esto no se puede deshacer.";
+                    break;
+                case 'all':
+                    confirmationMessage = "¿Estás seguro de que deseas borrar todo el contenido de los editores HTML, CSS y JavaScript? Esto no se puede deshacer.";
+                    break;
+                default:
+                    break;
+            }
+
+            // Se muestra un cuadro de confirmación con el mensaje correspondiente
+            var confirmDelete = window.confirm(confirmationMessage);
+
+            // Si el usuario confirma la acción, se borra el contenido del editor o de todos los editores
+            if (confirmDelete) {
+                // Se obtiene el editor o los editores y se limpia su contenido según el tipo seleccionado
+                switch (editorType) {
+                    case 'html':
+                        var htmlEditor = monaco.editor.getEditors()[0];
+                        if (htmlEditor) {
+                            htmlEditor.setValue('');
+                        }
+                        break;
+                    case 'css':
+                        var cssEditor = monaco.editor.getEditors()[1];
+                        if (cssEditor) {
+                            cssEditor.setValue('');
+                        }
+                        break;
+                    case 'js':
+                        var jsEditor = monaco.editor.getEditors()[2];
+                        if (jsEditor) {
+                            jsEditor.setValue('');
+                        }
+                        break;
+                    case 'all':
+                        monaco.editor.getModels().forEach(function (model) {
+                            model.setValue('');
+                        });
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     </script>
+    <script>
+        function toggleConfigPopup() {
+            var popupOverlay = document.getElementById('popup-overlay');
+            var popupContent = document.getElementById('popup-content');
+            var configButton = document.getElementById('conf').querySelector('button');
 
+            if (!popupOverlay.style.display || popupOverlay.style.display === 'none') {
+                // Mostrar el popup de configuración
+                popupContent.innerHTML = ''; // Limpiar el contenido del popup
+                popupOverlay.style.display = 'flex';
+                configButton.innerText = 'Close'; // Cambiar el texto del botón a "Close"
+                configButton.classList.add('popup-close'); // Agrega la clase de estilo para el botón de cerrar
+                popupContent.innerHTML = 'Aquí puedes agregar configuraciones adicionales.'; // Contenido del popup
+
+                // Establecer el tamaño del popup
+                popupContent.style.width = '300px';
+                popupContent.style.height = '200px';
+            } else {
+                // Ocultar el popup de configuración
+                popupOverlay.style.display = 'none';
+                configButton.innerText = 'Configuración'; // Cambiar el texto del botón a "Configuración"
+                configButton.classList.remove('popup-close'); // Eliminar la clase de estilo para el botón de cerrar
+            }
+        }
+    </script>
     <!-- Popup Overlay -->
     <div id="popup-overlay">
+        <!-- Popup Content -->
         <div id="popup-content">
-            <!-- Contenido del section -->
-            <button class="popup-close" onclick="toggleFullScreen(document.getElementById('top-left'))">Close</button>
+            <!-- Close Button -->
+            <button class="popup-close" onclick="toggleConfigPopup()">Close</button>
         </div>
     </div>
 </body>
+
 </html>
