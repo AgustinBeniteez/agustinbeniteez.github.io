@@ -264,6 +264,28 @@
             border: none;
             border-radius: 5px;
         }
+
+
+        /* Estilo para el scroll */
+::-webkit-scrollbar {
+    width: 10px; /* Ancho del scroll */
+}
+
+/* Estilo para el track (fondo) del scroll */
+::-webkit-scrollbar-track {
+    background: #1b1b1b; /* Color de la barra */
+}
+
+/* Estilo para el thumb (barra) del scroll */
+::-webkit-scrollbar-thumb {
+    background: #292929; /* Color de la barra */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para el thumb cuando se hace hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color de la barra al hacer hover */
+}
     </style>
 </head>
 
@@ -279,12 +301,10 @@
             <!-- Contenido del div izquierdo ( navtool) -->
             <aside id="toptools">
                 <select id="clearDropdown" onchange="confirmClear(this.value)">
-                    <optgroup label="Clear">
+                    <optgroup label="Clear" >
                         <option disabled selected hidden>Clear</option>
                     </optgroup>
-                  
                         <option value="all">All</option>
-           
                     <optgroup label="--- Editor ---">
                         <option value="html">HTML</option>
                         <option value="css">CSS</option>
