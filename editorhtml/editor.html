@@ -28,9 +28,9 @@
             background-color: var(--navtop);
             color: #fff;
             padding: 10px;
-            text-align: center;
+
             position: relative;
-            height: 50px;
+            height: 16px;
             border-bottom: 4px solid;
             border-image: linear-gradient(to right, #5E3481, #00B3B1);
             border-image-slice: 1;
@@ -38,7 +38,9 @@
 
         #top-nav a {
             color: white;
-
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 70px;
         }
 
         #wrapper {
@@ -148,7 +150,30 @@
         }
 
         /*nav buttons*/
-        #toptools button {
+        #toptools .buttonclear {
+            width: 100%;
+            height: 5em;
+            background-color: #341a44;
+            border: 0;
+            margin-top: 5%;
+            box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+            color: var(--letters);
+            font-display: block;
+            border-radius: 10px;
+        }
+
+        #toptools .buttonclear:hover {
+            width: 100%;
+            height: 5em;
+            background-color: #321842;
+            margin-top: 5%;
+            box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
+            color: var(--letters);
+            font-display: block;
+            border-radius: 10px;
+        }
+
+        #toptools .buttontool {
             width: 100%;
             height: 5em;
             background-color: #1d1d1d;
@@ -157,6 +182,44 @@
             box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
             color: var(--letters);
             font-display: block;
+            border-radius: 10px;
+        }
+
+        #toptools .buttontool:hover {
+            width: 100%;
+            height: 5em;
+            background-color: #2b2a2a;
+            margin-top: 5%;
+            box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
+            color: var(--letters);
+            font-display: block;
+            border-radius: 10px;
+        }
+
+        #toptools .buttonclearall {
+            width: 100%;
+            height: 5em;
+            background-color: #520b2e;
+            border: 0;
+            margin-top: 5%;
+            box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+            color: var(--letters);
+            font-display: block;
+            border-radius: 10px;
+        }
+
+        #toptools .buttonclearall:hover {
+            width: 100%;
+            height: 5em;
+            background-color: #470a38;
+            margin-top: 5%;
+            box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
+            color: var(--letters);
+            font-display: block;
+            border-radius: 10px;
+            border-radius: 10px;
+            border: 4px solid rgb(155, 7, 110);
+
         }
 
         #toptools select {
@@ -203,6 +266,14 @@
         .logonav {
             position: absolute;
             left: 10px;
+            background: linear-gradient(107.56deg,
+                    rgba(56, 5, 107, 1) 0%,
+                    rgba(56, 5, 107, 1) 0.009999999747378752%,
+                    rgba(134, 215, 213, 1) 100%,
+                    rgba(21, 217, 212, 1) 100%,
+                    rgba(56, 5, 107, 0) 100%);
+            border-radius: 10px;
+            width: 60px;
         }
 
         /* Estilos para el popup */
@@ -267,25 +338,45 @@
 
 
         /* Estilo para el scroll */
-::-webkit-scrollbar {
-    width: 10px; /* Ancho del scroll */
-}
+        ::-webkit-scrollbar {
+            width: 10px;
+            /* Ancho del scroll */
+        }
 
-/* Estilo para el track (fondo) del scroll */
-::-webkit-scrollbar-track {
-    background: #1b1b1b; /* Color de la barra */
-}
+        /* Estilo para el track (fondo) del scroll */
+        ::-webkit-scrollbar-track {
+            background: #1b1b1b;
+            /* Color de la barra */
+        }
 
-/* Estilo para el thumb (barra) del scroll */
-::-webkit-scrollbar-thumb {
-    background: #292929; /* Color de la barra */
-    border-radius: 5px; /* Bordes redondeados */
-}
+        /* Estilo para el thumb (barra) del scroll */
+        ::-webkit-scrollbar-thumb {
+            background: #292929;
+            /* Color de la barra */
+            border-radius: 5px;
+            /* Bordes redondeados */
+        }
 
-/* Estilo para el thumb cuando se hace hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color de la barra al hacer hover */
-}
+        /* Estilo para el thumb cuando se hace hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            /* Color de la barra al hacer hover */
+        }
+
+        .language-logo-container {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .language-logo {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -300,21 +391,23 @@
         <aside id="navtool">
             <!-- Contenido del div izquierdo ( navtool) -->
             <aside id="toptools">
-                <select id="clearDropdown" onchange="confirmClear(this.value)">
-                    <optgroup label="Clear" >
-                        <option disabled selected hidden>Clear</option>
-                    </optgroup>
-                        <option value="all">All</option>
-                    <optgroup label="--- Editor ---">
-                        <option value="html">HTML</option>
-                        <option value="css">CSS</option>
-                        <option value="js">JavaScript</option>
-                    </optgroup>
+                <div id="clearButtons">
+                    <button class="buttonclear" onclick="confirmClear('html')">Clear HTML</button>
+                    <button class="buttonclear" onclick="confirmClear('css')">Clear CSS</button>
+                    <button class="buttonclear" onclick="confirmClear('js')">Clear JavaScript</button>
+                    <button class="buttonclearall" onclick="confirmClear('all')">Clear All</button>
+                </div>
+                <select id="formatSelect" class="buttontool" onchange="formatCode(this.value)">
+                    <option value="" disabled selected>Format Code</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
                 </select>
-                <button>Format Code</button>
-                <button>Download</button>
-                <button>Console</button>
+                
+                <button class="buttontool download-button" onclick="download()">Download</button>
+                <button class="buttontool">Console</button>
             </aside>
+
             <aside id="conf">
                 <button onclick="toggleConfigPopup()">Configuración</button>
             </aside>
@@ -326,16 +419,54 @@
                 <!-- Botón Full para HTML Editor -->
                 <button class="full-button"
                     onclick="toggleFullScreen(document.getElementById('top-left'))">Full</button>
+                <!-- Imagen SVG para HTML -->
+                <div class="language-logo-container">
+                    <svg class="language-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                        viewBox="0 0 48 48">
+                        <path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+                        <path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+                        <path fill="#FFF"
+                            d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z">
+                        </path>
+                        <path fill="#EEE"
+                            d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z">
+                        </path>
+                    </svg>
+                </div>
             </section>
             <section id="top-right" class="corner">
                 <!-- Botón Full para CSS Editor -->
                 <button class="full-button"
                     onclick="toggleFullScreen(document.getElementById('top-right'))">Full</button>
+                <!-- Imagen SVG para CSS -->
+                <div class="language-logo-container">
+                    <svg class="language-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                        viewBox="0 0 48 48">
+                        <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+                        <path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+                        <path fill="#FFF"
+                            d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z">
+                        </path>
+                        <path fill="#EEE"
+                            d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z">
+                        </path>
+                    </svg>
+                </div>
             </section>
             <section id="bottom-left" class="corner">
                 <!-- Botón Full para JavaScript Editor -->
                 <button class="full-button"
                     onclick="toggleFullScreen(document.getElementById('bottom-left'))">Full</button>
+                <!-- Imagen SVG para JavaScript -->
+                <div class="language-logo-container">
+                    <svg class="language-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                        viewBox="0 0 48 48">
+                        <path fill="#ffd600" d="M6,42V6h36v36H6z"></path>
+                        <path fill="#000001"
+                            d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585 0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0 3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985 1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538 32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953 4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z">
+                        </path>
+                    </svg>
+                </div>
             </section>
             <section id="bottom-right" class="corner1"><iframe id="renderFrame"
                     style="width: 100%; height: 100%; border: none;"></iframe></section>
@@ -344,6 +475,8 @@
 
     <!-- Load Monaco Editor -->
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
     <script>
         require.config({
             paths: {
@@ -468,7 +601,6 @@
             }
         }
 
-        // Función para confirmar antes de borrar el contenido del editor
         function confirmClear(editorType) {
             if (editorType === '') return; // Si no se selecciona ninguna opción, no hacer nada
 
@@ -528,8 +660,7 @@
                 }
             }
         }
-    </script>
-    <script>
+
         function toggleConfigPopup() {
             var popupOverlay = document.getElementById('popup-overlay');
             var popupContent = document.getElementById('popup-content');
@@ -553,7 +684,80 @@
                 configButton.classList.remove('popup-close'); // Eliminar la clase de estilo para el botón de cerrar
             }
         }
+
+        // Función para obtener el contenido de un editor desde el almacenamiento local
+function getEditorContent(editorId) {
+    return localStorage.getItem(editorId) || '';
+}
+
+// HTML Editor Initialization
+var htmlEditor = monaco.editor.create(document.getElementById('top-left'), {
+    value: getEditorContent('htmlContent'),
+    language: 'html',
+    theme: 'vs-dark', // Modo oscuro
+    minimap: { enabled: false } // Deshabilitar el minimapa
+});
+
+// CSS Editor Initialization
+var cssEditor = monaco.editor.create(document.getElementById('top-right'), {
+    value: getEditorContent('cssContent'),
+    language: 'css',
+    theme: 'vs-dark', // Modo oscuro
+    minimap: { enabled: false } // Deshabilitar el minimapa
+});
+
+// JavaScript Editor Initialization
+var jsEditor = monaco.editor.create(document.getElementById('bottom-left'), {
+    value: getEditorContent('jsContent'),
+    language: 'javascript',
+    theme: 'vs-dark', // Modo oscuro
+    minimap: { enabled: false } // Deshabilitar el minimapa
+});
+
+// Función para actualizar el contenido del editor y guardarlo en el almacenamiento local
+function updateEditorContent(editor, editorId) {
+    return function () {
+        localStorage.setItem(editorId, editor.getValue());
+    };
+}
+
+// Agregar eventos input a los editores
+htmlEditor.onDidChangeModelContent(updateEditorContent(htmlEditor, 'htmlContent'));
+cssEditor.onDidChangeModelContent(updateEditorContent(cssEditor, 'cssContent'));
+jsEditor.onDidChangeModelContent(updateEditorContent(jsEditor, 'jsContent'));
+
+
+// Downloadddddss
+document.querySelector('.download-button').addEventListener('click', function () {
+    // Crear una nueva instancia de JSZip
+    var zip = new JSZip();
+
+    // Obtener el contenido de cada editor
+    var htmlContent = htmlEditor.getValue();
+    var cssContent = cssEditor.getValue();
+    var jsContent = jsEditor.getValue();
+
+    // Agregar archivos al archivo zip
+    zip.file("html.html", htmlContent);
+    zip.file("css.css", cssContent);
+    zip.file("js.js", jsContent);
+
+    // Generar el archivo zip
+    zip.generateAsync({ type: "blob" })
+        .then(function (content) {
+            // Crear un enlace para descargar el archivo zip
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(content);
+            link.download = 'code.zip';
+            link.click();
+        });
+});
+
+
+
+
     </script>
+    
     <!-- Popup Overlay -->
     <div id="popup-overlay">
         <!-- Popup Content -->
