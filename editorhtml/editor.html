@@ -242,23 +242,40 @@
         }
 
         #conf {
-            background-color: #000;
+            width: 220px;
+            height: 20%;
+            background-color: #201f1f;
             position: absolute;
             bottom: 20px;
-            /* Ajuste vertical desde la parte inferior */
-            left: 20px;
-            /* Ajuste horizontal desde la izquierda */
+            border-radius: 10px;
+            left: 10px;
             box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
         }
 
+        #conf1 {
+            position: relative;
+            margin-top: 5px;
+        }
+
+        #conf h3 {
+            position: absolute;
+            top: -52px;
+            left: 13%;
+            color: var(--letters);
+        }
+
+        #conf h4 {
+            color: var(--letters);
+            margin-left: 10px;
+            margin-bottom: 7px;
+        }
+
         #conf button {
-            background-color: #000;
+
             position: absolute;
             bottom: 20px;
-            /* Ajuste vertical desde la parte inferior */
             left: 20px;
-            /* Ajuste horizontal desde la izquierda */
-            box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+
 
         }
 
@@ -377,7 +394,23 @@
             width: 100%;
             height: 100%;
         }
-        
+
+        #zoomValue {
+            color: var(--letters);
+            font-weight: bold;
+        }
+
+        #zoom {
+            color: var(--letters);
+            font-weight: bold;
+        }
+
+        #zoomSlider::-webkit-slider-runnable-track {
+            background-color: rgb(90, 20, 104);
+            /* Cambia el color de la barra a azul */
+            border-radius: 20px;
+            /* Agrega bordes redondeados */
+        }
     </style>
 </head>
 
@@ -394,33 +427,77 @@
             <aside id="toptools">
                 <div id="clearButtons">
                     <button class="buttonclear" onclick="confirmClear('html')">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0,0,255.99609,255.99609">
-                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z"></path></g></g>
-                            </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                            viewBox="0,0,255.99609,255.99609">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(10.66667,10.66667)">
+                                    <path
+                                        d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
                         Clear HTML
                     </button>
-                    
+
                     <button class="buttonclear" onclick="confirmClear('css')">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0,0,255.99609,255.99609">
-                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z"></path></g></g>
-                            </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                            viewBox="0,0,255.99609,255.99609">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(10.66667,10.66667)">
+                                    <path
+                                        d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
                         Clear CSS
                     </button>
-                    
+
                     <button class="buttonclear" onclick="confirmClear('js')">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0,0,255.99609,255.99609">
-                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z"></path></g></g>
-                            </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                            viewBox="0,0,255.99609,255.99609">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(10.66667,10.66667)">
+                                    <path
+                                        d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
                         Clear JavaScript
                     </button>
-                    
+
                     <button class="buttonclearall" onclick="confirmClear('all')">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0,0,255.99609,255.99609">
-                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z"></path></g></g>
-                            </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                            viewBox="0,0,255.99609,255.99609">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(10.66667,10.66667)">
+                                    <path
+                                        d="M10.80664,2c-0.517,0 -1.01095,0.20431 -1.37695,0.57031l-0.42969,0.42969h-5c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h16c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-5l-0.42969,-0.42969c-0.365,-0.366 -0.85995,-0.57031 -1.37695,-0.57031zM4.36523,7l1.52734,13.26367c0.132,0.99 0.98442,1.73633 1.98242,1.73633h8.24805c0.998,0 1.85138,-0.74514 1.98438,-1.74414l1.52734,-13.25586z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
                         Clear All
                     </button>
-                    
+
+
+
+
+
                 </div>
                 <select id="formatSelect" class="buttontool" onchange="formatCode(this.value)">
                     <option value="" disabled selected>Format Code</option>
@@ -430,10 +507,22 @@
                 </select>
                 <button id="downloadButton" class="buttontool" onclick="downloadFiles()">Descargar Archivos</button>
                 <button class="buttontool">Console</button>
+
             </aside>
 
             <aside id="conf">
-                <button onclick="toggleConfigPopup()">Configuración</button>
+                <aside id="conf1">
+                    <h3>⚙️Configuration</h3>
+                    <h4>Zoom Code preview</h4>
+                    <span id="zoom">zoom</span><input type="range" id="zoomSlider" min="0.1" max="3" step="0.1"
+                        value="1" oninput="updateZoom()"><span id="zoomValue">100%</span>
+                    <h4>Dark / light Mode</h4>
+                    <input type="checkbox" id="preference1" name="preference1" checked>
+                    <label style="color: var(--letters);" for="preference1">vs-dark</label><br>
+                    <h4>Map Mode</h4>
+                    <input type="checkbox" id="preference1" name="preference1" checked>
+                    <label style="color: var(--letters);" for="preference1">vs-dark</label><br>
+                </aside>
             </aside>
 
         </aside>
@@ -682,30 +771,8 @@
             }
         }
 
-        function toggleConfigPopup() {
-            var popupOverlay = document.getElementById('popup-overlay');
-            var popupContent = document.getElementById('popup-content');
-            var configButton = document.getElementById('conf').querySelector('button');
 
-            if (!popupOverlay.style.display || popupOverlay.style.display === 'none') {
-                // Mostrar el popup de configuración
-                popupContent.innerHTML = ''; // Limpiar el contenido del popup
-                popupOverlay.style.display = 'flex';
-                configButton.innerText = 'Close'; // Cambiar el texto del botón a "Close"
-                configButton.classList.add('popup-close'); // Agrega la clase de estilo para el botón de cerrar
-                popupContent.innerHTML = 'configuraciones por asignar'; // Contenido del popup
-
-                // Establecer el tamaño del popup
-                popupContent.style.width = '300px';
-                popupContent.style.height = '200px';
-            } else {
-                // Ocultar el popup de configuración
-                popupOverlay.style.display = 'none';
-                configButton.innerText = 'Configuración'; // Cambiar el texto del botón a "Configuración"
-                configButton.classList.remove('popup-close'); // Eliminar la clase de estilo para el botón de cerrar
-            }
-        }
-
+        // SAVE AUTOMATICO almacenamiento local
         // Función para obtener el contenido de un editor desde el almacenamiento local
         function getEditorContent(editorId) {
             return localStorage.getItem(editorId) || '';
@@ -747,6 +814,22 @@
         cssEditor.onDidChangeModelContent(updateEditorContent(cssEditor, 'cssContent'));
         jsEditor.onDidChangeModelContent(updateEditorContent(jsEditor, 'jsContent'));
 
+        // Zoom de IFRAME
+        function updateZoom() {
+            var slider = document.getElementById('zoomSlider');
+            var sliderValue = parseFloat(slider.value);
+            var zoomValue = document.getElementById('zoomValue');
+            var zoomPercentage = Math.round(sliderValue * 100); // Redondear a tres dígitos enteros
+            zoomValue.textContent = zoomPercentage + '%';
+            zoomValue.style.fontWeight = 'bold'; // Aplicar negrita al texto
+
+            var iframe = document.getElementById('renderFrame');
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDocument.body.style.zoom = sliderValue;
+        }
+
+
+
 
 
         // Downloadddddss
@@ -778,7 +861,6 @@
             downloadFile(cssContent, 'style.css');
             downloadFile(jsContent, 'script.js');
         }
-
 
     </script>
 
