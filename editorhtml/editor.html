@@ -505,8 +505,15 @@
                     <option value="css">CSS</option>
                     <option value="js">JavaScript</option>
                 </select>
-                <button id="downloadButton" class="buttontool" onclick="downloadFiles()">Descargar Archivos</button>
-                <button class="buttontool">Console</button>
+                <!-- Botón de descarga para el archivo HTML -->
+                <button id="downloadHTMLButton" class="buttontool" class="downloadButton">Descargar HTML</button>
+
+                <!-- Botón de descarga para el archivo CSS -->
+                <button id="downloadCSSButton" class="buttontool" class="downloadButton">Descargar CSS</button>
+
+                <!-- Botón de descarga para el archivo JavaScript -->
+                <button id="downloadJSButton" class="buttontool" class="downloadButton">Descargar JavaScript</button>
+
 
             </aside>
 
@@ -520,8 +527,9 @@
                     <input type="checkbox" id="preference1" name="preference1" checked>
                     <label style="color: var(--letters);" for="preference1">vs-dark</label><br>
                     <h4>Map Mode</h4>
-                    <input type="checkbox" id="preference1" name="preference1" checked>
-                    <label style="color: var(--letters);" for="preference1">vs-dark</label><br>
+                    <input type="checkbox" id="preference2" name="mapPreference" checked>
+                    <label style="color: var(--letters);" for="preference2">vs</label><br>
+
                 </aside>
             </aside>
 
@@ -587,7 +595,7 @@
     </div>
 
     <!-- Load Monaco Editor -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
     <script>
         require.config({
@@ -605,24 +613,23 @@
             var htmlEditor = monaco.editor.create(document.getElementById('top-left'), {
                 value: getEditorContent('htmlContent'),
                 language: 'html',
-                theme: 'vs-dark',
+                theme: currentTheme, // Usar la variable currentTheme
                 minimap: { enabled: false }
             });
 
             var cssEditor = monaco.editor.create(document.getElementById('top-right'), {
                 value: getEditorContent('cssContent'),
                 language: 'css',
-                theme: 'vs-dark',
+                theme: currentTheme, // Usar la variable currentTheme
                 minimap: { enabled: false }
             });
 
             var jsEditor = monaco.editor.create(document.getElementById('bottom-left'), {
                 value: getEditorContent('jsContent'),
                 language: 'javascript',
-                theme: 'vs-dark',
+                theme: currentTheme, // Usar la variable currentTheme
                 minimap: { enabled: false }
             });
-
 
             // Función para actualizar el contenido del editor y guardarlo en el almacenamiento local
             function updateEditorContent(editor, editorId) {
@@ -655,6 +662,7 @@
             // Inicializar el render
             updateRender();
         });
+
         // Controlador de evento de redimensionamiento de ventana
         window.addEventListener('resize', function () {
             // Forzar una nueva renderización de la página
@@ -715,7 +723,7 @@
             if (editorType === '') return; // Si no se selecciona ninguna opción, no hacer nada
 
             // Mensaje de confirmación predeterminado
-            var confirmationMessage = "Are you sure you want to clear the content? This cannot be undone.";
+            var confirmationMessage = "Are you sure you want to do this? This cannot be undone.";
 
             // Determinar el mensaje de confirmación específico según el tipo de editor
             switch (editorType) {
@@ -771,53 +779,11 @@
             }
         }
 
-
         // SAVE AUTOMATICO almacenamiento local
-        // Función para obtener el contenido de un editor desde el almacenamiento local
-        function getEditorContent(editorId) {
-            return localStorage.getItem(editorId) || '';
-        }
-
-        // HTML Editor Initialization
-        var htmlEditor = monaco.editor.create(document.getElementById('top-left'), {
-            value: getEditorContent('htmlContent'),
-            language: 'html',
-            theme: 'vs-dark', // Modo oscuro
-            minimap: { enabled: false } // Deshabilitar el minimapa
-        });
-
-        // CSS Editor Initialization
-        var cssEditor = monaco.editor.create(document.getElementById('top-right'), {
-            value: getEditorContent('cssContent'),
-            language: 'css',
-            theme: 'vs-dark', // Modo oscuro
-            minimap: { enabled: false } // Deshabilitar el minimapa
-        });
-
-        // JavaScript Editor Initialization
-        var jsEditor = monaco.editor.create(document.getElementById('bottom-left'), {
-            value: getEditorContent('jsContent'),
-            language: 'javascript',
-            theme: 'vs-dark', // Modo oscuro
-            minimap: { enabled: false } // Deshabilitar el minimapa
-        });
-
-        // Función para actualizar el contenido del editor y guardarlo en el almacenamiento local
-        function updateEditorContent(editor, editorId) {
-            return function () {
-                localStorage.setItem(editorId, editor.getValue());
-            };
-        }
-
-        // Agregar eventos input a los editores
-        htmlEditor.onDidChangeModelContent(updateEditorContent(htmlEditor, 'htmlContent'));
-        cssEditor.onDidChangeModelContent(updateEditorContent(cssEditor, 'cssContent'));
-        jsEditor.onDidChangeModelContent(updateEditorContent(jsEditor, 'jsContent'));
-
         // Zoom de IFRAME
         function updateZoom() {
             var slider = document.getElementById('zoomSlider');
-            var sliderValue = parseFloat(slider.value);
+            var sliderValue = parseFloat(slider.value) / 100; // Corregir el cálculo del valor del zoom
             var zoomValue = document.getElementById('zoomValue');
             var zoomPercentage = Math.round(sliderValue * 100); // Redondear a tres dígitos enteros
             zoomValue.textContent = zoomPercentage + '%';
@@ -828,39 +794,83 @@
             iframeDocument.body.style.zoom = sliderValue;
         }
 
+        // THEME
+        // Definir una variable para almacenar el tema actual
+        var currentTheme = 'vs-dark';
 
+        // Obtener referencia al checkbox
+        var darkModeCheckbox = document.getElementById('preference1');
 
+        // Agregar un listener para detectar cambios en el estado del checkbox de modo oscuro
+        darkModeCheckbox.addEventListener('change', function () {
+            // Obtener el estado actual del checkbox de modo oscuro
+            var isDarkModeChecked = darkModeCheckbox.checked;
 
-
-        // Downloadddddss
-        document.getElementById('downloadButton').addEventListener('click', downloadFiles);
-
-        // Definición de la función para descargar el contenido de los editores como archivos individuales
-        function downloadFiles() {
-            // Obtener el contenido de cada editor
-            var htmlContent = htmlEditor.getValue();
-            var cssContent = cssEditor.getValue();
-            var jsContent = jsEditor.getValue();
-
-            // Función para descargar un archivo con el contenido especificado
-            function downloadFile(content, filename) {
-                // Crear un objeto Blob con el contenido
-                var blob = new Blob([content], { type: 'text/plain' });
-
-                // Crear un enlace para descargar el archivo
-                var link = document.createElement('a');
-                link.href = window.URL.createObjectURL(blob);
-                link.download = filename;
-
-                // Simular un clic en el enlace para iniciar la descarga
-                link.click();
+            // Cambiar el tema del editor según el estado del checkbox de modo oscuro
+            if (isDarkModeChecked) {
+                // Cambiar a tema oscuro
+                currentTheme = 'vs-dark';
+            } else {
+                // Cambiar a tema claro
+                currentTheme = 'vs';
             }
 
-            // Descargar cada archivo con su respectivo contenido
-            downloadFile(htmlContent, 'index.html');
-            downloadFile(cssContent, 'style.css');
-            downloadFile(jsContent, 'script.js');
-        }
+            // Aplicar el tema actual a los editores de Monaco
+            htmlEditor.updateOptions({ theme: currentTheme });
+            cssEditor.updateOptions({ theme: currentTheme });
+            jsEditor.updateOptions({ theme: currentTheme });
+        });
+
+        // Inicialmente, aplicar el tema oscuro por defecto al cargar la página
+        htmlEditor.updateOptions({ theme: currentTheme });
+        cssEditor.updateOptions({ theme: currentTheme });
+        jsEditor.updateOptions({ theme: currentTheme });
+
+
+        // Download
+// Descargar archivo HTML
+// Descargar archivo HTML
+document.getElementById('downloadHTMLButton').addEventListener('click', function() {
+    var htmlContent = htmlEditor.getValue();
+    downloadFile(htmlContent, 'index.html', 'text/html');
+});
+
+// Descargar archivo CSS
+document.getElementById('downloadCSSButton').addEventListener('click', function() {
+    var cssContent = cssEditor.getValue();
+    downloadFile(cssContent, 'style.css', 'text/css');
+});
+
+// Descargar archivo JavaScript
+document.getElementById('downloadJSButton').addEventListener('click', function() {
+    var jsContent = jsEditor.getValue();
+    downloadFile(jsContent, 'script.js', 'application/javascript');
+});
+
+// Función para descargar un archivo con el contenido especificado
+function downloadFile(content, filename, contentType) {
+    // Crear un objeto Blob con el contenido
+    var blob = new Blob([content], { type: contentType });
+
+    // Crear un enlace temporal para el archivo
+    var url = URL.createObjectURL(blob);
+
+    // Crear un enlace invisible
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+
+    // Simular un clic en el enlace para iniciar la descarga
+    document.body.appendChild(link);
+    link.click();
+
+    // Limpiar después de la descarga
+    setTimeout(function() {
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }, 0);
+}
+
 
     </script>
 
