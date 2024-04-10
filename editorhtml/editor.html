@@ -780,10 +780,10 @@
         }
 
         // SAVE AUTOMATICO almacenamiento local
-        // Zoom de IFRAME
-        function updateZoom() {
+      // Zoom de IFRAME
+      function updateZoom() {
             var slider = document.getElementById('zoomSlider');
-            var sliderValue = parseFloat(slider.value) / 100; // Corregir el cálculo del valor del zoom
+            var sliderValue = parseFloat(slider.value);
             var zoomValue = document.getElementById('zoomValue');
             var zoomPercentage = Math.round(sliderValue * 100); // Redondear a tres dígitos enteros
             zoomValue.textContent = zoomPercentage + '%';
@@ -793,6 +793,7 @@
             var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
             iframeDocument.body.style.zoom = sliderValue;
         }
+
 
         // THEME
         // Definir una variable para almacenar el tema actual
