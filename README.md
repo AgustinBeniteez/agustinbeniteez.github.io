@@ -70,7 +70,7 @@ Contributions are welcome! If you have ideas to improve Elements CSS DAJ, feel f
 
 ## Licencia
 
-This project is licensed under the [CC BY-NC 4.0 DEED](https://creativecommons.org/licenses/by-nc/4.0/legalcode),which you can review in the LICENSE.md file.
+This project is licensed under the [CC BY-NC 4.0 DEED](https://creativecommons.org/licenses/by-nc/4.0/legalcode),which you can review in the [LICENSE.md](https://github.com/AgusTheKing/agustheking.github.io/blob/main/LICENSE) file.
 
 ---
 
