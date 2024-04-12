@@ -513,16 +513,6 @@
                     <option value="css">CSS</option>
                     <option value="js">JavaScript</option>
                 </select>
-                <!-- Botón de descarga para el archivo HTML -->
-                <button id="downloadHTMLButton" class="buttontool" class="downloadButton">Descargar HTML</button>
-
-                <!-- Botón de descarga para el archivo CSS -->
-                <button id="downloadCSSButton" class="buttontool" class="downloadButton">Descargar CSS</button>
-
-                <!-- Botón de descarga para el archivo JavaScript -->
-                <button id="downloadJSButton" class="buttontool" class="downloadButton">Descargar JavaScript</button>
-
-
             </aside>
 
             <aside id="conf">
@@ -834,52 +824,6 @@
         htmlEditor.updateOptions({ theme: currentTheme });
         cssEditor.updateOptions({ theme: currentTheme });
         jsEditor.updateOptions({ theme: currentTheme });
-
-
-        // Download
-        // Descargar archivo HTML
-        // Descargar archivo HTML
-        document.getElementById('downloadHTMLButton').addEventListener('click', function () {
-            var htmlContent = htmlEditor.getValue();
-            downloadFile(htmlContent, 'index.html', 'text/html');
-        });
-
-        // Descargar archivo CSS
-        document.getElementById('downloadCSSButton').addEventListener('click', function () {
-            var cssContent = cssEditor.getValue();
-            downloadFile(cssContent, 'style.css', 'text/css');
-        });
-
-        // Descargar archivo JavaScript
-        document.getElementById('downloadJSButton').addEventListener('click', function () {
-            var jsContent = jsEditor.getValue();
-            downloadFile(jsContent, 'script.js', 'application/javascript');
-        });
-
-        // Función para descargar un archivo con el contenido especificado
-        function downloadFile(content, filename, contentType) {
-            // Crear un objeto Blob con el contenido
-            var blob = new Blob([content], { type: contentType });
-
-            // Crear un enlace temporal para el archivo
-            var url = URL.createObjectURL(blob);
-
-            // Crear un enlace invisible
-            var link = document.createElement('a');
-            link.href = url;
-            link.download = filename;
-
-            // Simular un clic en el enlace para iniciar la descarga
-            document.body.appendChild(link);
-            link.click();
-
-            // Limpiar después de la descarga
-            setTimeout(function () {
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-            }, 0);
-        }
-
 
     </script>
 
