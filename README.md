@@ -53,13 +53,13 @@ Copy in Orange Button Css:<img alt="Copy Code{}" height="40px" src="https://raw.
 <br>   
 <div align="center">
   <a href="https://agustheking.github.io/tutorials/menututorials.html" target="_blank">
-      <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura1.png"/>
+      <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="/tutorials/miniaturas/miniatura1-min.webp"/>
   </a>
   <a href="https://agustheking.github.io/tutorials/menututorials.html" target="_blank" >
-      <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura2.png"/>
+      <img  alt="tutorial" height="190px" style="padding-right:20px;border-radius:15px;" src="/tutorials/miniaturas/miniatura2-min.webp"/>
   </a>
   <a href="https://agustheking.github.io/tutorials/menututorials.html" target="_blank">
-      <img  alt="tutorial" height="190px" style="padding-right:20px; border-radius:15px;" src="https://github.com/AgusTheKing/icons/blob/main/miniatura3.png"/>
+      <img  alt="tutorial" height="190px" style="padding-right:20px; border-radius:15px;" src="/tutorials/miniaturas/miniatura3-min.webp"/>
   </a>
 </div>
 <br>
@@ -68,7 +68,7 @@ Copy in Orange Button Css:<img alt="Copy Code{}" height="40px" src="https://raw.
 ## Contribution
 Contributions are welcome! If you have ideas to improve Elements CSS DAJ, feel free to open an issue or submit a pull request. Before doing so, please make sure to review the contribution guidelines.
 
-## Licencia
+## License 📖
 
 This project is licensed under the [CC BY-NC 4.0 DEED](https://creativecommons.org/licenses/by-nc/4.0/legalcode),which you can review in the [LICENSE.md](https://github.com/AgusTheKing/agustheking.github.io/blob/main/LICENSE) file.
 
