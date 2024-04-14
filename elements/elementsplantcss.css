@@ -352,8 +352,45 @@ cursor: pointer;
 font-size: 24px; /* Ajusta el tamaño de la cruz */
 }
 
+.buttoneditor {
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    background-color: #414040;
+    color: white;
+    border: solid rgb(105, 105, 105);
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center; /* Centra el texto */
+    vertical-align: middle; /* Alinea verticalmente */
+    line-height: 60px; /* Ajusta el line-height para centrar verticalmente */
+    position: relative; /* Para posicionar la imagen */
+    box-shadow: inset 17px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
+.buttoneditor p {
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+   margin: 1px;
+   margin-left: 30px;
+   font-weight: bold;
+}
 
+.buttoneditor img {
+    position: absolute; /* Posiciona la imagen */
+    top: 50%; /* Alinea la parte superior de la imagen al 50% del contenedor */
+    left: 10px; /* Ajusta el margen izquierdo */
+    transform: translateY(-50%); /* Centra verticalmente la imagen */
+}
+
+.buttoneditor:hover {
+    background-color: #3a3a3a; /* Cambia el color de fondo al pasar el cursor */
+    box-shadow: inset 17px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    2px 2px 3.5px 0px rgba(0, 0, 0, 0.35);
+}
 /* @MEDIAS DE PANTALLA*/
 
 /* Media query para pantallas de hasta 768px de ancho (dispositivos móviles) */
