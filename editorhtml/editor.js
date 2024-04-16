@@ -226,3 +226,54 @@ darkModeCheckbox.addEventListener('change', function () {
 htmlEditor.updateOptions({ theme: currentTheme });
 cssEditor.updateOptions({ theme: currentTheme });
 jsEditor.updateOptions({ theme: currentTheme });
+
+
+
+
+// URL del archivo JSON
+var jsonFileUrl = '/elements/estilos/conf/postcss.json';
+
+// Función para cargar el contenido JSON desde el archivo
+function cargarContenidoJSON() {
+    fetch(jsonFileUrl)
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error('Error al cargar el archivo JSON: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(function (data) {
+            // El contenido del JSON se guarda en la variable `data`
+            // Aquí puedes realizar las operaciones necesarias con el JSON cargado
+            // Por ejemplo, puedes guardar `data` en una variable global para acceder a él posteriormente
+            // O puedes ejecutar una función específica para manejar el JSON cargado
+            manejarContenidoJSON(data);
+        })
+        .catch(function (error) {
+            console.error('Error al cargar el archivo JSON:', error);
+        });
+}
+
+// Función para manejar el contenido JSON una vez cargado
+function manejarContenidoJSON(jsonData) {
+    // Supongamos que `jsonData` tiene propiedades para HTML, CSS y JavaScript
+    // Puedes asignar el contenido de cada propiedad a los editores correspondientes
+
+    // Por ejemplo, si tienes propiedades 'html', 'css' y 'js' en el JSON
+    // Asignar contenido HTML al editor de HTML
+    htmlEditor.setValue(jsonData.html || '');
+
+    // Asignar contenido CSS al editor de CSS
+    cssEditor.setValue(jsonData.css || '');
+
+    // Asignar contenido JavaScript al editor de JavaScript
+    jsEditor.setValue(jsonData.js || '');
+
+    // Actualizar el renderizado después de cargar el contenido del JSON
+    updateRender();
+}
+
+// Llamar a la función para cargar el contenido JSON cuando la página esté lista
+document.addEventListener('DOMContentLoaded', function () {
+    cargarContenidoJSON();
+});

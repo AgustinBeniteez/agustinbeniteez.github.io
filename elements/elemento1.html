@@ -30,7 +30,7 @@
     <div class="container">
         <div class="leftvisual-block">
             <div id="posts-container"></div>
-           <a href="/editorhtml/editor.html"><button class="buttoneditor"> <img width="40px" src="/editorhtml/logoeditormini.webp" alt="DAJ"><p>Open in Editor</p></button></a>
+            <a href="/editorhtml/editor.html"><button class="buttoneditor"> <img width="40px" src="/editorhtml/logoeditormini.webp" alt="DAJ"><p>Open in Editor</p></button></a>
         </div>
         <div class="left2-block">
             <div id="description-container" style="max-height: 200px; overflow-y: hidden;">
@@ -272,6 +272,34 @@
         document.getElementById("popup").style.display = "none";
     }
 
+
+    // "Open in Editor"
+    // Escuchar el evento de clic en el botón "Open in Editor"
+    document.addEventListener('DOMContentLoaded', function () {
+            var editorButton = document.querySelector('.buttoneditor');
+            if (editorButton) {
+                editorButton.addEventListener('click', function (event) {
+                    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+                    // Obtener el contenido HTML, CSS y JavaScript del archivo JSON
+                    fetch('/elements/estilos/conf/postcss.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            const post = data[0]; // Obtener el primer elemento del JSON
+                            // Obtener el contenido HTML, CSS y JavaScript del post
+                            const htmlContent = post.contenido ? post.contenido : "<!-- Doesn't have HTML -->";
+                            const cssContent = post.estilos ? post.estilos : "/* Doesn't have CSS */";
+                            const jsContent = post.javascript ? post.javascript : "// Doesn't have JS";
+                            // Guardar el contenido HTML, CSS y JavaScript en el almacenamiento local
+                            localStorage.setItem('htmlContent', htmlContent);
+                            localStorage.setItem('cssContent', cssContent);
+                            localStorage.setItem('jsContent', jsContent);
+                            // Redirigir a la página del editor
+                            window.location.href = '/editorhtml/editor.html';
+                        })
+                        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+                });
+            }
+        });
 
 </script>
 
