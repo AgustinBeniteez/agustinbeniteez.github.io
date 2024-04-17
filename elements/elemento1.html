@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <title>Elemento Button de Twich | DAJ </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/elements/elementsplantcss.css">
+    <!-- metas  para el SEO -->
+    <meta name="description" content="">
+    <meta property="og:title" content="Boton Css de Twitch">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="../../imagenes/logodaj.webp">
+    <link rel="icon" href="../imagenes/logodaj.webp">
+    <meta property="og:image:secure_url"
+        content="https://raw.githubusercontent.com/AgusTheKing/agustheking.github.io/main/imagenes/EditorDAJsocial.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="article">
 </head>
-
 <body>
     <nav id="nav">
         <!-- Logo de la web -->
@@ -30,7 +40,10 @@
     <div class="container">
         <div class="leftvisual-block">
             <div id="posts-container"></div>
-            <a href="/editorhtml/editor.html"><button class="buttoneditor"> <img width="40px" src="/editorhtml/logoeditormini.webp" alt="DAJ"><p>Open in Editor</p></button></a>
+            <a href="/editorhtml/editor.html"><button class="buttoneditor"> <img width="40px"
+                        src="/editorhtml/logoeditormini.webp" alt="DAJ">
+                    <p>Open in Editor</p>
+                </button></a>
         </div>
         <div class="left2-block">
             <div id="description-container" style="max-height: 200px; overflow-y: hidden;">
@@ -74,24 +87,11 @@
     </div>
 
 </body>
-
+<script src="/elements/estilos/elementnav.js"></script>
 <script>
-    // NAV menu movil
-    document.addEventListener('DOMContentLoaded', function () {
-        // Obtener referencias al botón de menú y al menú
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.querySelector('nav ul');
-
-        // Agregar un event listener para el clic en el botón de menú
-        menuToggle.addEventListener('click', function () {
-            // Alternar la clase 'active' en el menú para mostrarlo u ocultarlo
-            navMenu.classList.toggle('active');
-        });
-
-    });
 
     // Cargar el archivo JSON 'postcsselement.json'
-    fetch('postcsselement.json')
+    fetch('/elements/postcsselement.json')
         .then(response => response.json())
         .then(data => {
             // Obtener el primer elemento del archivo JSON
@@ -144,7 +144,7 @@
         });
     }
     // Cargar el archivo JSON 'postcsselement.json'
-    fetch('postcsselement.json')
+    fetch('/elements/postcsselement.json')
         .then(response => response.json())
         .then(data => {
             // Obtener el primer elemento del archivo JSON
@@ -220,8 +220,9 @@
         textarea.style.backgroundColor = backgroundColor;
     }
 
+    // DESCRIPCION Y TITULO AUTOMATICO y el textarea HTML Y CSS
     // Cargar el archivo JSON 'postcsselement.json'
-    fetch('postcsselement.json')
+    fetch('/elements/postcsselement.json')
         .then(response => response.json())
         .then(data => {
             // Obtener el primer elemento del archivo JSON
@@ -231,6 +232,7 @@
             const htmlContent = post.contenido;
             const cssContent = post.estilos;
             const titulo = post.titulo;
+            const descripcion = post.desc;
 
             // Mostrar el contenido HTML en el textarea
             document.getElementById('html-content').value = htmlContent;
@@ -240,6 +242,13 @@
 
             // Actualizar el título del post en el popup
             document.getElementById("popup-title").innerText = titulo;
+
+            // Actualizar el título de la página
+            document.title = `${titulo} | DAJ`;
+
+            // Actualizar el contenido de las etiquetas <meta> con la descripción
+            document.querySelector('meta[name="description"]').setAttribute("content", descripcion);
+            document.querySelector('meta[property="og:description"]').setAttribute("content", descripcion);
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
@@ -276,31 +285,29 @@
     // "Open in Editor"
     // Escuchar el evento de clic en el botón "Open in Editor"
     document.addEventListener('DOMContentLoaded', function () {
-            var editorButton = document.querySelector('.buttoneditor');
-            if (editorButton) {
-                editorButton.addEventListener('click', function (event) {
-                    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-                    // Obtener el contenido HTML, CSS y JavaScript del archivo JSON
-                    fetch('/elements/estilos/conf/postcss.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            const post = data[0]; // Obtener el primer elemento del JSON
-                            // Obtener el contenido HTML, CSS y JavaScript del post
-                            const htmlContent = post.contenido ? post.contenido : "<!-- Doesn't have HTML -->";
-                            const cssContent = post.estilos ? post.estilos : "/* Doesn't have CSS */";
-                            const jsContent = post.javascript ? post.javascript : "// Doesn't have JS";
-                            // Guardar el contenido HTML, CSS y JavaScript en el almacenamiento local
-                            localStorage.setItem('htmlContent', htmlContent);
-                            localStorage.setItem('cssContent', cssContent);
-                            localStorage.setItem('jsContent', jsContent);
-                            // Redirigir a la página del editor
-                            window.location.href = '/editorhtml/editor.html';
-                        })
-                        .catch(error => console.error('Error al cargar el archivo JSON:', error));
-                });
-            }
-        });
-
+        var editorButton = document.querySelector('.buttoneditor');
+        if (editorButton) {
+            editorButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+                // Obtener el contenido HTML, CSS y JavaScript del archivo JSON
+                fetch('/elements/estilos/conf/postcss.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const post = data[0]; // Obtener el primer elemento del JSON
+                        // Obtener el contenido HTML, CSS y JavaScript del post
+                        const htmlContent = post.contenido ? post.contenido : "<!-- Doesn't have HTML -->";
+                        const cssContent = post.estilos ? post.estilos : "/* Doesn't have CSS */";
+                        const jsContent = post.javascript ? post.javascript : "// Doesn't have JS";
+                        // Guardar el contenido HTML, CSS y JavaScript en el almacenamiento local
+                        localStorage.setItem('htmlContent', htmlContent);
+                        localStorage.setItem('cssContent', cssContent);
+                        localStorage.setItem('jsContent', jsContent);
+                        // Redirigir a la página del editor
+                        window.location.href = '/editorhtml/editor.html';
+                    })
+                    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+            });
+        }
+    });
 </script>
-
 </html>
