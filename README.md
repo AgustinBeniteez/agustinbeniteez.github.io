@@ -1,7 +1,7 @@
 ## Website Elements CSS DAJ
 
 <img alt="tutorial" height="190px" style="padding-right:20px;" src="/DAJ.webp"/> <img alt="tutorial" height="190px" style="padding-right:20px;" src="https://raw.githubusercontent.com/AgusTheKing/icons/main/tituloletras.png"/><br>
-This is the official repository for the [Elements CSS DAJ website](https://agustheking.github.io/). This project is a collection of CSS design elements created by AgusTheKing to facilitate web development and enhance the aesthetics of web pages.
+This is the official repository for the [Elements CSS DAJ website](https://agustinbeniteez.github.io/). This project is a collection of CSS design elements created by AgusTheKing to facilitate web development and enhance the aesthetics of web pages.
 
 ## Contents
 
