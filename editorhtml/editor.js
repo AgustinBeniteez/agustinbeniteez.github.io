@@ -3,31 +3,31 @@ require.config({
         'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs'
     }
 });
-
+var htmlEditor, cssEditor, jsEditor; // Definimos las variables en un alcance más global
 require(['vs/editor/editor.main'], function () {
     // Función para obtener el contenido de un editor desde el almacenamiento local
     function getEditorContent(editorId) {
         return localStorage.getItem(editorId) || '';
     }
 
-    var htmlEditor = monaco.editor.create(document.getElementById('top-left'), {
+    htmlEditor = monaco.editor.create(document.getElementById('top-left'), {
         value: getEditorContent('htmlContent'),
         language: 'html',
-        theme: currentTheme, // Usar la variable currentTheme
+        theme: currentTheme,
         minimap: { enabled: false }
     });
 
-    var cssEditor = monaco.editor.create(document.getElementById('top-right'), {
+    cssEditor = monaco.editor.create(document.getElementById('top-right'), {
         value: getEditorContent('cssContent'),
         language: 'css',
-        theme: currentTheme, // Usar la variable currentTheme
+        theme: currentTheme,
         minimap: { enabled: false }
     });
 
-    var jsEditor = monaco.editor.create(document.getElementById('bottom-left'), {
+    jsEditor = monaco.editor.create(document.getElementById('bottom-left'), {
         value: getEditorContent('jsContent'),
         language: 'javascript',
-        theme: currentTheme, // Usar la variable currentTheme
+        theme: currentTheme,
         minimap: { enabled: false }
     });
 
@@ -295,20 +295,28 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     }
 
-
-
     function exportHTML() {
-        // Obtener el contenido HTML del editor
-        var htmlContent = document.getElementById('container').innerHTML;
+        // Obtener el contenido de HTML, CSS y JavaScript de los editores
+        var htmlContent = htmlEditor.getValue();
+        var cssContent = cssEditor.getValue();
+        var jsContent = jsEditor.getValue();
     
-        // Crear un Blob con el contenido HTML
-        var blob = new Blob([htmlContent], { type: 'text/html' });
+        // Crear un nuevo objeto Zip
+        var zip = new JSZip();
     
-        // Crear un enlace para descargar el archivo
-        var link = document.createElement('a');
-        link.download = 'index.html';
-        link.href = window.URL.createObjectURL(blob);
-        link.click();
+        // Agregar el contenido HTML al archivo ZIP
+        zip.file('index.html', htmlContent);
+    
+        // Agregar el contenido CSS al archivo ZIP
+        zip.file('styles.css', cssContent);
+    
+        // Agregar el contenido JavaScript al archivo ZIP
+        zip.file('script.js', jsContent);
+    
+        // Generar el archivo ZIP
+        zip.generateAsync({ type: 'blob' })
+            .then(function (content) {
+                // Utilizar la biblioteca FileSaver.js para descargar el archivo ZIP
+                saveAs(content, 'project.zip');
+            });
     }
-    
-    
