@@ -98,18 +98,7 @@
                         </svg>
                         Clear All
                     </button>
-
-
-
-
-
                 </div>
-                <select id="formatSelect" class="buttontool" onchange="formatCode(this.value)">
-                    <option value="" disabled selected>Format Code</option>
-                    <option value="html">HTML</option>
-                    <option value="css">CSS</option>
-                    <option value="js">JavaScript</option>
-                </select>
             </aside>
 
             <aside id="conf">
@@ -118,12 +107,6 @@
                     <h4>Zoom Code preview</h4>
                     <span id="zoom">zoom</span><input type="range" id="zoomSlider" min="0.1" max="3" step="0.1"
                         value="1" oninput="updateZoom()"><span id="zoomValue">100%</span>
-                    <h4>Dark / light Mode</h4>
-                    <input type="checkbox" id="preference1" name="preference1" checked>
-                    <label style="color: var(--letters);" for="preference1">vs-dark</label><br>
-                    <h4>Map Mode</h4>
-                    <input type="checkbox" id="preference2" name="mapPreference" checked>
-                    <label style="color: var(--letters);" for="preference2">vs</label><br>
 
                 </aside>
             </aside>
