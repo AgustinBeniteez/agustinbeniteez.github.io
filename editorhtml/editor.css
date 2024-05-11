@@ -51,9 +51,11 @@ body {
     color: white;
     background-color: transparent;
     border: none;
+    font-size: 16px;
     text-decoration: none;
     font-weight: bold;
     margin-left: 70px;
+    cursor: pointer; 
 }
 
 #toolnavtop svg {

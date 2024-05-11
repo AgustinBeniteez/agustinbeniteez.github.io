@@ -296,27 +296,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function exportHTML() {
-        // Obtener el contenido de HTML, CSS y JavaScript de los editores
-        var htmlContent = htmlEditor.getValue();
-        var cssContent = cssEditor.getValue();
-        var jsContent = jsEditor.getValue();
+        // Ask the user to enter the file name
+        var fileName = prompt("Enter the file name:", "project");
     
-        // Crear un nuevo objeto Zip
-        var zip = new JSZip();
+        if (fileName !== null) { // If the user doesn't cancel the prompt
+            // Get the HTML, CSS, and JavaScript content
+            var htmlContent = htmlEditor.getValue();
+            var cssContent = cssEditor.getValue();
+            var jsContent = jsEditor.getValue();
     
-        // Agregar el contenido HTML al archivo ZIP
-        zip.file('index.html', htmlContent);
+            // Create a new Zip object
+            var zip = new JSZip();
     
-        // Agregar el contenido CSS al archivo ZIP
-        zip.file('styles.css', cssContent);
+            // Add the HTML content to the ZIP file
+            zip.file(fileName + '.html', htmlContent);
     
-        // Agregar el contenido JavaScript al archivo ZIP
-        zip.file('script.js', jsContent);
+            // Add the CSS content to the ZIP file
+            zip.file(fileName + '.css', cssContent);
     
-        // Generar el archivo ZIP
-        zip.generateAsync({ type: 'blob' })
-            .then(function (content) {
-                // Utilizar la biblioteca FileSaver.js para descargar el archivo ZIP
-                saveAs(content, 'project.zip');
-            });
+            // Add the JavaScript content to the ZIP file
+            zip.file(fileName + '.js', jsContent);
+    
+            // Generate the ZIP file
+            zip.generateAsync({ type: 'blob' })
+                .then(function (content) {
+                    // Use the FileSaver.js library to download the ZIP file
+                    saveAs(content, fileName + '.zip');
+                });
+        }
     }
+    
