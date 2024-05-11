@@ -309,18 +309,18 @@ document.addEventListener('DOMContentLoaded', function () {
             var zip = new JSZip();
     
             // Add the HTML content to the ZIP file
-            zip.file(fileName + '.html', htmlContent);
+            zip.file('index.html', htmlContent);
     
             // Add the CSS content to the ZIP file
-            zip.file(fileName + '.css', cssContent);
+            zip.file('styles.css', cssContent);
     
             // Add the JavaScript content to the ZIP file
-            zip.file(fileName + '.js', jsContent);
+            zip.file('script.js', jsContent);
     
             // Generate the ZIP file
             zip.generateAsync({ type: 'blob' })
                 .then(function (content) {
-                    // Use the FileSaver.js library to download the ZIP file
+                    // Use the FileSaver.js library to download the ZIP file with the provided file name
                     saveAs(content, fileName + '.zip');
                 });
         }
