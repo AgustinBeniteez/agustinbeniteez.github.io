@@ -32,6 +32,37 @@ body {
     margin-left: 70px;
 }
 
+#toolnavtop {
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 1px;
+    display: inline-block;
+}
+
+#toolnavtop a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 70px;
+}
+#toolnavtop button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 70px;
+}
+
+#toolnavtop svg {
+width: 20px;
+position: absolute;
+top: 7px;
+margin-left: -30px ;
+}
+
 #wrapper {
     display: flex;
     height: calc(100vh - 40px);

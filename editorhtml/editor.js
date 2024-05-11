@@ -277,3 +277,38 @@ function manejarContenidoJSON(jsonData) {
 document.addEventListener('DOMContentLoaded', function () {
     cargarContenidoJSON();
 });
+
+    // Función para abrir el contenido del iframe en una nueva ventana
+    function openIframeContentInNewTab() {
+        // Obtener el contenido del iframe
+        var iframeContent = document.getElementById('renderFrame').contentWindow.document.documentElement.outerHTML;
+
+        // Crear un objeto de ventana nueva
+        var newWindow = window.open();
+
+        // Escribir el contenido del iframe en la nueva ventana
+        newWindow.document.write(iframeContent);
+
+        // Cerrar la nueva ventana si el usuario cierra la ventana padre
+        window.onunload = function () {
+            newWindow.close();
+        };
+    }
+
+
+
+    function exportHTML() {
+        // Obtener el contenido HTML del editor
+        var htmlContent = document.getElementById('container').innerHTML;
+    
+        // Crear un Blob con el contenido HTML
+        var blob = new Blob([htmlContent], { type: 'text/html' });
+    
+        // Crear un enlace para descargar el archivo
+        var link = document.createElement('a');
+        link.download = 'index.html';
+        link.href = window.URL.createObjectURL(blob);
+        link.click();
+    }
+    
+    
