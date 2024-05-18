@@ -17,7 +17,6 @@ body {
     background-color: var(--navtop);
     color: #fff;
     padding: 10px;
-
     position: relative;
     height: 16px;
     border-bottom: 4px solid;
@@ -47,6 +46,7 @@ body {
     font-weight: bold;
     margin-left: 70px;
 }
+
 #toolnavtop button {
     color: white;
     background-color: transparent;
@@ -55,26 +55,26 @@ body {
     text-decoration: none;
     font-weight: bold;
     margin-left: 70px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 #toolnavtop svg {
-width: 20px;
-position: absolute;
-top: 7px;
-margin-left: -30px ;
+    width: 20px;
+    position: absolute;
+    top: 7px;
+    margin-left: -30px;
 }
 
 #wrapper {
     display: flex;
     height: calc(100vh - 40px);
-    /* Calculamos el 100% del viewport menos la altura del nav */
+    /* 100% of the viewport height minus the height of the nav */
 }
 
 #navtool {
     background-color: var(--navleft);
     max-width: 200px;
-    /* Anchura máxima del navtool */
+    /* Maximum width of navtool */
     padding: 20px;
 }
 
@@ -84,40 +84,31 @@ margin-left: -30px ;
         "top-left top-right"
         "bottom-left bottom-right";
     grid-template-columns: 1fr 1fr;
-    /* División equitativa en dos columnas */
+    /* Equitably divide into two columns */
     grid-template-rows: 1fr 1fr;
-    /* División equitativa en dos filas */
+    /* Equitably divide into two rows */
     padding: 0;
-    /* Eliminar el relleno */
     background-color: var(--background);
     flex: 1;
-    /* Ocupa todo el espacio restante */
+    /* Takes up remaining space */
     border: 4px solid transparent;
-    /* Borde transparente */
     border-top: none;
-    /* Elimina el borde superior */
     border-image: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
     border-image-slice: 1;
 }
 
 .corner {
     padding: 0;
-    /* Eliminar el relleno */
     background-color: #303030;
     border: 1px solid #000;
     margin: 0;
-    /* Eliminar los márgenes */
-
 }
 
 .corner1 {
     padding: 0;
-    /* Eliminar el relleno */
     background-color: #ffffff;
     border: 1px solid #000;
     margin: 0;
-    /* Eliminar los márgenes */
-
 }
 
 #top-left,
@@ -125,15 +116,12 @@ margin-left: -30px ;
 #bottom-left,
 #bottom-right {
     padding: 0;
-    /* Eliminar el relleno */
     margin: 0;
-    /* Eliminar los márgenes */
 }
 
 #top-left {
     grid-area: top-left;
     position: relative;
-
 }
 
 #top-right {
@@ -151,97 +139,65 @@ margin-left: -30px ;
     position: relative;
 }
 
-/* Estilos para los editores Monaco */
+/* Styles for Monaco editors */
 .monaco-editor {
     width: 100%;
     height: calc(100% - 30px);
-    /* Altura del editor menos altura del botón */
+    /* Editor height minus button height */
 }
 
-/* Botón Full */
+/* Full button styles */
 .full-button {
     position: absolute;
     top: 5px;
     right: 5px;
     z-index: 999;
-    /* Asegura que el botón esté encima de todo */
     background-color: transparent;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-/*nav buttons*/
-#toptools .buttonclear {
-    width: 100%;
-    height: 5em;
-    background-color: #341a44;
-    border: 0;
-    margin-top: 5%;
-    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
-    color: var(--letters);
-    font-display: block;
-    border-radius: 10px;
-}
-
-#toptools .buttonclear:hover {
-    width: 100%;
-    height: 5em;
-    background-color: #321842;
-    margin-top: 5%;
-    box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
-    color: var(--letters);
-    font-display: block;
-    border-radius: 10px;
-}
-
-#toptools .buttontool {
-    width: 100%;
-    height: 5em;
-    background-color: #1d1d1d;
-    border: 0;
-    margin-top: 5%;
-    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
-    color: var(--letters);
-    font-display: block;
-    border-radius: 10px;
-}
-
-#toptools .buttontool:hover {
-    width: 100%;
-    height: 5em;
-    background-color: #2b2a2a;
-    margin-top: 5%;
-    box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
-    color: var(--letters);
-    font-display: block;
-    border-radius: 10px;
-}
-
+/* Nav buttons */
+#toptools .buttonclear,
+#toptools .buttontool,
 #toptools .buttonclearall {
     width: 100%;
     height: 5em;
-    background-color: #520b2e;
     border: 0;
     margin-top: 5%;
-    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
     color: var(--letters);
     font-display: block;
     border-radius: 10px;
+    box-shadow: inset 0px -2px 19.6px 0px rgba(0, 0, 0, 0.25);
+}
+
+#toptools .buttonclear {
+    background-color: #341a44;
+}
+
+#toptools .buttonclear:hover {
+    background-color: #321842;
+    box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
+}
+
+#toptools .buttontool {
+    background-color: #1d1d1d;
+}
+
+#toptools .buttontool:hover {
+    background-color: #2b2a2a;
+    box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
+}
+
+#toptools .buttonclearall {
+    background-color: #520b2e;
 }
 
 #toptools .buttonclearall:hover {
-    width: 100%;
-    height: 5em;
     background-color: #470a38;
-    margin-top: 5%;
     box-shadow: -6px 6px 39.5px 0px rgba(0, 0, 0, 0.25);
-    color: var(--letters);
-    font-display: block;
-    border-radius: 10px;
-    border-radius: 10px;
     border: 4px solid rgb(155, 7, 110);
-
 }
 
 #toptools select {
@@ -258,9 +214,7 @@ margin-left: -30px ;
 #navtool {
     background-color: var(--navleft);
     max-width: 200px;
-    /* Anchura máxima del navtool */
     padding: 20px;
-
 }
 
 #conf {
@@ -293,73 +247,17 @@ margin-left: -30px ;
 }
 
 #conf button {
-
     position: absolute;
     bottom: 20px;
     left: 20px;
-
-
 }
-
 
 .logonav {
     position: absolute;
     left: 10px;
-    background: linear-gradient(107.56deg,
-            rgba(56, 5, 107, 1) 0%,
-            rgba(56, 5, 107, 1) 0.009999999747378752%,
-            rgba(134, 215, 213, 1) 100%,
-            rgba(21, 217, 212, 1) 100%,
-            rgba(56, 5, 107, 0) 100%);
+    background: linear-gradient(107.56deg, rgba(56, 5, 107, 1) 0%, rgba(134, 215, 213, 1) 100%);
     border-radius: 10px;
     width: 60px;
-}
-
-/* Estilos para el popup */
-#popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    /* Fondo semi-transparente */
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Estilos adicionales para la pantalla completa */
-.fullscreen #top-left,
-.fullscreen #top-right,
-.fullscreen #bottom-left {
-    width: calc(100% - 40px);
-    /* Reducir el tamaño del editor cuando está en pantalla completa */
-    height: calc(100% - 40px);
-    /* Reducir el tamaño del editor cuando está en pantalla completa */
-    margin: auto;
-    /* Centrar el editor */
-}
-
-#popup-content {
-    background-color: #fff;
-    border: 1px solid #000;
-    padding: 20px;
-    width: 90%;
-    /* Ancho del popup */
-    height: 90%;
-    /* Altura del popup */
-    max-width: 90vw;
-    /* Ancho máximo del contenido */
-    max-height: 90vh;
-    /* Altura máxima del contenido */
-    overflow: auto;
-    /* Agrega scroll si el contenido es demasiado grande */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -375,31 +273,31 @@ margin-left: -30px ;
     border-radius: 5px;
 }
 
+/* Fullscreen styles */
+.fullscreen #top-left,
+.fullscreen #top-right,
+.fullscreen #bottom-left {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: auto;
+}
 
-/* Estilo para el scroll */
+/* Scrollbar styles */
 ::-webkit-scrollbar {
     width: 10px;
-    /* Ancho del scroll */
 }
 
-/* Estilo para el track (fondo) del scroll */
 ::-webkit-scrollbar-track {
     background: #1b1b1b;
-    /* Color de la barra */
 }
 
-/* Estilo para el thumb (barra) del scroll */
 ::-webkit-scrollbar-thumb {
     background: #292929;
-    /* Color de la barra */
     border-radius: 5px;
-    /* Bordes redondeados */
 }
 
-/* Estilo para el thumb cuando se hace hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
-    /* Color de la barra al hacer hover */
 }
 
 .language-logo-container {
@@ -429,7 +327,73 @@ margin-left: -30px ;
 
 #zoomSlider::-webkit-slider-runnable-track {
     background-color: rgb(90, 20, 104);
-    /* Cambia el color de la barra a azul */
     border-radius: 20px;
-    /* Agrega bordes redondeados */
+}
+
+/* Popup styles */
+#popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el contenido del popup */
+#popup-content {
+    background-color: #242424;
+    padding: 20px;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 80%; /* Limita el ancho para que no sea demasiado grande */
+    text-align: center;
+}
+
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: #1d1d1d;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.language-logo-container {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.language-logo {
+    width: 100%;
+    height: 100%;
+}
+
+#zoomValue {
+    color: var(--letters);
+    font-weight: bold;
+}
+
+#zoom {
+    color: var(--letters);
+    font-weight: bold;
+}
+
+#zoomSlider::-webkit-slider-runnable-track {
+    background-color: rgb(90, 20, 104);
+    border-radius: 20px;
 }
