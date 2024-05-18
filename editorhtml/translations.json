@@ -1,0 +1,34 @@
+{
+    "en": {
+      "title": "Editor HTML Online | DAJ",
+      "buttonExport": "Export",
+      "buttonFullScreen": "Full",
+      "clearButtons": {
+        "clearHTML": "Clear HTML",
+        "clearCSS": "Clear CSS",
+        "clearJS": "Clear JavaScript",
+        "clearAll": "Clear All"
+      },
+      "settingsPanel": "Settings Panel",
+      "languageLabel": "Language:",
+      "themeLabel": "Theme:",
+      "buttonClose": "Close"
+    },
+    "es": {
+      "title": "Editor HTML en línea | DAJ",
+      "buttonExport": "Exportar",
+      "buttonFullScreen": "Pantalla completa",
+      "clearButtons": {
+        "clearHTML": "Borrar HTML",
+        "clearCSS": "Borrar CSS",
+        "clearJS": "Borrar JavaScript",
+        "clearAll": "Borrar todo"
+      },¡
+      "settingsPanel": "Panel de configuración",
+      "languageLabel": "Idioma:",
+      "themeLabel": "Tema:",
+      "buttonClose": "Cerrar"
+    }
+  }
+  
+  

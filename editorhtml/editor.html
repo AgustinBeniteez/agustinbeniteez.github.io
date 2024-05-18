@@ -141,8 +141,7 @@
             <!-- Contenido del div derecho ( container) -->
             <section id="top-left" class="corner">
                 <!-- Botón Full para HTML Editor -->
-                <button class="full-button"
-                    onclick="toggleFullScreen(document.getElementById('top-left'))">Full</button>
+
                 <!-- Imagen SVG para HTML -->
                 <div class="language-logo-container">
                     <svg class="language-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
@@ -160,8 +159,6 @@
             </section>
             <section id="top-right" class="corner">
                 <!-- Botón Full para CSS Editor -->
-                <button class="full-button"
-                    onclick="toggleFullScreen(document.getElementById('top-right'))">Full</button>
                 <!-- Imagen SVG para CSS -->
                 <div class="language-logo-container">
                     <svg class="language-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
@@ -179,8 +176,6 @@
             </section>
             <section id="bottom-left" class="corner">
                 <!-- Botón Full para JavaScript Editor -->
-                <button class="full-button"
-                    onclick="toggleFullScreen(document.getElementById('bottom-left'))">Full</button>
                 <!-- Imagen SVG para JavaScript -->
                 <div class="language-logo-container">
                     <svg class="language-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
@@ -213,7 +208,7 @@
             <!-- Aquí va tu contenido de configuración -->
             <div>
                 <label for="language">Language:</label>
-                <select id="language">
+                <select id="language" onchange="translatePage()">
                     <option value="en">English</option>
                     <option value="es">Spanish</option>
                     <!-- Agrega más opciones según sea necesario -->
@@ -222,8 +217,8 @@
             <div>
                 <label for="theme">Theme:</label>
                 <select id="theme">
-                    <option value="light">Light</option>
                     <option value="dark">Dark</option>
+                    <option value="light">Light</option>
                     <!-- Agrega más opciones según sea necesario -->
                 </select>
             </div>

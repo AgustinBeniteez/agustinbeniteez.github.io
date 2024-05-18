@@ -205,7 +205,7 @@ function exportHTML() {
         });
     }
 }
-
+ // POPUP ajustes
 function togglePopup() {
     var popup = document.getElementById("popup-overlay");
     if (popup.style.display === "none" || popup.style.display === "") {
@@ -223,3 +223,35 @@ document.getElementById("conf").addEventListener("click", function(event) {
 document.getElementById("closePopup").addEventListener("click", function() {
     togglePopup();
 });
+
+// Cambiar el idioma cuando se seleccione desde el menú
+document.getElementById('language').addEventListener('change', function() {
+    selectedLanguage = this.value;
+    translatePage(selectedLanguage);
+});
+
+        // Función para traducir la página
+        function translatePage(selectedLanguage) {
+            fetch('translations.json')
+            .then(response => response.json())
+            .then(languageJSON => {
+                // Obtener los elementos de la página que deben ser traducidos
+                var elementsToTranslate = document.querySelectorAll('[data-i18n]');
+                
+                // Iterar sobre los elementos y traducirlos
+                elementsToTranslate.forEach(function(element) {
+                    var key = element.dataset.i18n;
+                    element.textContent = languageJSON[selectedLanguage][key];
+                });
+            });
+        }
+
+        // Llamar a la función de traducción al cargar la página
+        var selectedLanguage = 'en'; // Por defecto, el idioma es inglés
+        translatePage(selectedLanguage);
+
+        // Cambiar el idioma cuando se seleccione desde el menú
+        document.getElementById('language').addEventListener('change', function() {
+            selectedLanguage = this.value;
+            translatePage(selectedLanguage);
+        });
