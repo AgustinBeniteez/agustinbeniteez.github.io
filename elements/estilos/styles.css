@@ -9,7 +9,7 @@ body {
     font-size: small;
     overflow-x: hidden;
 }
-
+/* Agrega esta regla de estilo CSS */
 .post-title {
     font-size: 17px;
     color: black;
@@ -195,6 +195,7 @@ a img {
     box-shadow: 0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset;
     padding: 30px;
     position: relative;
+    transition: opacity 0.5s ease; /* Transición de opacidad durante 0.5 segundos */
 }
 /* Sidebar Boxes */
 
@@ -681,7 +682,6 @@ nav ul.active li a {
 @media only screen and (max-width: 767px) {
 
     body {
-        background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
         margin: 0;
         padding: 20px 10px;
         text-align: center;
@@ -840,7 +840,6 @@ nav ul.active li a {
 /* Para portátil */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     body {
-        background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
         margin: 0;
         padding: 20px 10px;
         text-align: center;
@@ -889,7 +888,6 @@ nav ul.active li a {
 /* Para PC */
 @media only screen and (min-width: 1025px) {
     body {
-        background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
         margin: 0;
         padding: 20px 10px;
         text-align: center;

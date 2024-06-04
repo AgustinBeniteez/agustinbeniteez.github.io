@@ -8,71 +8,89 @@ document.addEventListener('DOMContentLoaded', function() {
     // Construir la URL del archivo JSON con el timestamp como parámetro de consulta
     const jsonUrl = `/elements/estilos/conf/postcss.json?timestamp=${timestamp}`;
 
-       // Fetch data from JSON file
-       fetch(jsonUrl)
-           .then(response => response.json())
-           .then(data => {
-               const postsContainer = document.getElementById('posts-container');
-   
-               // Iterate over each post data and create HTML for each post
-               data.forEach(post => {
-                   const postHTML = `
-                       <div class="post" data-tags="${post.tags}">
-                           <input type="checkbox" class="theme-checkbox">
-                           <h3 class="post-title">${post.titulo}</h3>
-                           <style>${post.estilos}</style>
-                           ${post.contenido}
-                           <a href="${post.enlace}" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
-                           <div class="tags-container">
-                               ${post.tags.split(',').map(tag => `<div class="tag">${tag.trim()}</div>`).join('')}
-                           </div>
-                       </div>
-                   `;
-                   postsContainer.innerHTML += postHTML;
-               });
-   
-      // Call the function to initialize the checkbox event listener after posts are loaded
-      initializeCheckBoxes();
+    let postsData = [];
+    let currentPostIndex = 0;
+    const postsPerPage = 10;
 
-      // Hide spinner after posts are loaded
-      document.getElementById('spinner-container').style.display = 'none';
-               
-           })
-           .catch(error => console.error('Error fetching data:', error));
-   
-   
-       // Function to initialize checkbox event listener
-       function initializeCheckBoxes() {
-           var checkboxes = document.querySelectorAll('.theme-checkbox');
-           var postContainers = document.querySelectorAll('.post');
-   
-           checkboxes.forEach(function(checkbox, index) {
-               checkbox.addEventListener('change', function() {
-                   if (checkbox.checked) {
-                       postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
-                       postContainers[index].style.color = '#fff';
-                       postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
-                       postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
-   
-                       var postTitle = postContainers[index].querySelector('.post-title');
-                       if (postTitle) {
-                           postTitle.style.color = '#fff';
-                       }
-                   } else {
-                       postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
-                       postContainers[index].style.color = 'white';
-                       postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
-                       postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
-   
-                       var postTitle = postContainers[index].querySelector('.post-title');
-                       if (postTitle) {
-                           postTitle.style.color = 'black';
-                       }
-                   }
-               });
-           });
-       }
-   });
+    // Fetch data from JSON file
+    fetch(jsonUrl)
+        .then(response => response.json())
+        .then(data => {
+            postsData = data;
+            loadMorePosts(); // Load initial posts
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+    // Function to load more posts
+    function loadMorePosts() {
+        const postsContainer = document.getElementById('posts-container');
+        const endPostIndex = currentPostIndex + postsPerPage;
+        const postsToLoad = postsData.slice(currentPostIndex, endPostIndex);
+
+        postsToLoad.forEach(post => {
+            const postHTML = `
+                <div class="post" data-tags="${post.tags}">
+                    <input type="checkbox" class="theme-checkbox">
+                    <h3 class="post-title">${post.titulo}</h3>
+                    <style>${post.estilos}</style>
+                    ${post.contenido}
+                    <a href="${post.enlace}" target="_blank"><button class="show-code-btn">Show Code { }</button></a>
+                    <div class="tags-container">
+                        ${post.tags.split(',').map(tag => `<div class="tag">${tag.trim()}</div>`).join('')}
+                    </div>
+                </div>
+            `;
+            postsContainer.innerHTML += postHTML;
+        });
+
+        currentPostIndex += postsPerPage;
+        initializeCheckBoxes(); // Initialize the checkbox event listener after posts are loaded
+        document.getElementById('spinner-container').style.display = 'none'; // Hide spinner after posts are loaded
+    }
+
+    // Function to initialize checkbox event listener
+    function initializeCheckBoxes() {
+        var checkboxes = document.querySelectorAll('.theme-checkbox');
+        var postContainers = document.querySelectorAll('.post');
+
+        checkboxes.forEach(function(checkbox, index) {
+            checkbox.addEventListener('change', function() {
+                if (checkbox.checked) {
+                    postContainers[index].style.background = 'rgba(23, 23, 23, 0.90)';
+                    postContainers[index].style.color = '#fff';
+                    postContainers[index].style.border = '3px solid rgba(45, 45, 45, 0.76)';
+                    postContainers[index].style.boxShadow = '0px 0px 11.3px 4px rgba(0, 0, 0, 0.25) inset';
+
+                    var postTitle = postContainers[index].querySelector('.post-title');
+                    if (postTitle) {
+                        postTitle.style.color = '#fff';
+                    }
+                } else {
+                    postContainers[index].style.background = 'rgba(217, 217, 217, 0.90)';
+                    postContainers[index].style.color = 'white';
+                    postContainers[index].style.border = '3px solid rgba(255, 255, 255, 0.80)';
+                    postContainers[index].style.boxShadow = '0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset';
+
+                    var postTitle = postContainers[index].querySelector('.post-title');
+                    if (postTitle) {
+                        postTitle.style.color = 'black';
+                    }
+                }
+            });
+        });
+    }
+
+    // Add scroll event listener to load more posts when scrolling down
+    window.addEventListener('scroll', function() {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 5) {
+            if (currentPostIndex < postsData.length) {
+                loadMorePosts();
+            }
+        }
+    });
+});
+
    
 $(document).ready(function() {
     var $searchInput = $('#search-box');
