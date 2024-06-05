@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let postsData = [];
     let currentPostIndex = 0;
-    const postsPerPage = 10;
+    const postsPerPage = 12;
 
     // Fetch data from JSON file
     fetch(jsonUrl)
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const endPostIndex = currentPostIndex + postsPerPage;
         const postsToLoad = postsData.slice(currentPostIndex, endPostIndex);
 
-        postsToLoad.forEach(post => {
+        postsToLoad.forEach((post, index) => {
             const postHTML = `
-                <div class="post" data-tags="${post.tags}">
+                <div class="post" data-tags="${post.tags}" style="${index >= 12 ? 'display: none;' : ''}">
                     <input type="checkbox" class="theme-checkbox">
                     <h3 class="post-title">${post.titulo}</h3>
                     <style>${post.estilos}</style>
@@ -86,6 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (scrollTop + clientHeight >= scrollHeight - 5) {
             if (currentPostIndex < postsData.length) {
                 loadMorePosts();
+            } else {
+                // Show hidden posts if all posts have been loaded
+                const hiddenPosts = document.querySelectorAll('.post[style*="display: none"]');
+                hiddenPosts.forEach(post => {
+                    post.style.display = 'block';
+                });
             }
         }
     });
