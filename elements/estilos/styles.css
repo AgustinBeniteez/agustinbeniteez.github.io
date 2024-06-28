@@ -94,7 +94,7 @@ body {
 }
 
 .theme-checkbox:checked::before {
-    left: calc(100% - 2.25em - 0.438em);
+    left: calc(100% - 1.45em - 0.338em);
     background-position: 0;
 }
 
@@ -833,6 +833,9 @@ nav ul.active li a {
     border-radius: 20px;
 }
 
+.button-containerloadmore {
+    margin-left: 0px;
+    }
 }
 
 
@@ -883,6 +886,10 @@ nav ul.active li a {
     padding: 100px; 
     margin-left: 20em;
   }
+
+  .button-containerloadmore {
+    margin-left: 35%;
+    }
 }
 
 /* Para PC */
@@ -905,4 +912,52 @@ nav ul.active li a {
     nav #menu-toggle{
         display: none;
     }
+}
+
+.button-containerloadmore {
+margin-left: 45%;
+}
+
+#load-more-btn {
+    padding: 8px;
+    width: 190px; /* Ancho del botón */
+    border-radius: 30px;
+    background-color: #414141;
+    outline: none;
+    border: solid rgb(161, 161, 161);
+    color: #ffffff;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex; /* Utilizar flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre el texto y el SVG */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+#load-more-btn .button-text {
+    vertical-align: top; /* Ajusta el texto para que esté más arriba */
+}
+
+#load-more-btn img {
+    height: 30px; /* Ajusta la altura del SVG según sea necesario */
+}
+
+#load-more-btn:hover {
+    background-color: #86b17d;
+    border: solid rgb(76, 104, 58);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.24);
+}
+
+#load-more-btn:disabled {
+    background-color: #dddddd;
+    color: #aaaaaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    border: solid rgb(133, 133, 133);
+}
+
+/* Cambiar cursor a pointer cuando hover en el botón deshabilitado */
+#load-more-btn:enabled:hover {
+    cursor: pointer;
 }
