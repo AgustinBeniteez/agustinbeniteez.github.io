@@ -1,0 +1,756 @@
+:root{
+  --html:#e65100;
+  --css:#0277bd;
+  --gold:#edbb59;
+  --banco:#fff;
+  --blackgris:#292a2b;
+  --cdb:#3493f2;
+  --cdg:#7e7e7e;
+  --cdp:#4e5260;
+  --cdopenclose:#ffb621;
+  --cdf:#ffab4a;
+  --cdo:#cdb07a;
+}
+ /* simulador code cards*/
+.cdb{
+  color: var(--cdb);
+}
+.cdg{
+  color: var(--cdg);
+}
+.cdopenclose{
+  color: var(--cdopenclose);
+}
+.cdf{
+  color: var(--cdf);
+}
+.cdo{
+  color: var(--cdo);
+}
+.cdp{
+ background-color: var(--cdp);
+ height: 86px;
+ width: 2px;
+ position: absolute;
+ bottom: 63px;
+ left: 37px;
+}
+ /* html & css */
+.css{
+  color: var(--css);
+}
+.html{
+  color: var(--html);
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #3498db,
+    #95a5a6
+  );
+  scroll-behavior: smooth;
+}
+
+section {
+  display: flex;
+  align-items: center;
+}
+
+.presentation {
+  background: linear-gradient(
+    to bottom,
+    #3498db,
+    #95a5a6
+  ); /* Degradado de azul a gris */
+  height: 100vh;
+}
+.knowledge {
+  height: 110vh;
+  background: linear-gradient(
+    -15.43deg,
+    rgb(121, 149, 170) 0%,
+     #95a5a6
+  );
+}
+.knowledge2 {
+  height: 110vh;
+  background: linear-gradient(
+    -15.43deg,
+    #95a5a6,
+     rgb(121, 149, 170) 0%
+  );
+}
+.projects {
+  height: 100vh;
+  background: linear-gradient(
+    -15.43deg,
+    #95a5a6,
+     rgb(121, 149, 170) 0%
+  );
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: relative;
+  margin-left: auto; /* Ajuste para alinear la imagen a la derecha */
+}
+
+.profile-info {
+  text-align: left;
+  color:  var(--banco);
+  max-width: 1200px;
+  padding: 20px;
+}
+
+h1 {
+  font-family: "Cascadia Code", monospace;
+  font-size: 100px;
+  font-weight: 400;
+  -webkit-text-stroke: 3px var(--banco);
+  margin: 0; /* Elimina el margen predeterminado del h1 */
+  z-index: 1; /* Asegura que esté detrás de la imagen */
+  position: relative;
+}
+h1 span {
+  border-right: 0.05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+/* Estilo para el contenedor del scroll */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+  height: 12px; /* Altura para el scroll horizontal */
+}
+
+/* Estilo para el fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: #67a8ee; /* Fondo celeste */
+}
+
+/* Estilo para la parte de deslizamiento (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #0f74c7; /* Color del thumb (parte que se mueve) */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+/* Estilo para el hover del thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4da3ff; /* Cambia el color cuando pasa el mouse */
+}
+
+p {
+  font-family: "Cascadia Code", monospace;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 10px 0; /* Agrega un pequeño margen superior e inferior */
+  max-width: 1200px;
+  z-index: 1; /* Asegura que esté detrás de la imagen */
+  position: relative;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  background-color: var(--banco);
+  color: #3f3f3f;
+  border: 2px solid var(--banco);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+}
+
+button svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+img {
+  max-width: 51%;
+  height: auto;
+  object-fit: cover;
+  right: 0; /* Ajusta la posición de la imagen */
+  z-index: 1; /* Asegura que la imagen esté detrás del texto */
+}
+
+.behind-text {
+  position: absolute;
+  right: 27%;
+  top: 40%;
+  transform: translate(50%, -50%); /* Centra vertical y horizontalmente */
+  color: var(--gold); /* Color de texto con opacidad para que sea semi-transparente */
+  font-size: 800px;
+  font-family: "inter", sans-serif;
+  white-space: nowrap; /* Evita que el texto se desborde */
+  z-index: 0; /* Asegura que esté detrás de la imagen */
+  zoom: 0.98;
+}
+.behind-text1 {
+  position: absolute;
+  right: 26%;
+  top: 40%;
+  transform: translate(50%, -50%); /* Centra vertical y horizontalmente */
+  color: var(--gold); /* Color de texto con opacidad para que sea semi-transparente */
+  font-size: 800px;
+  font-family: "inter", sans-serif;
+  white-space: nowrap; /* Evita que el texto se desborde */
+  z-index: 2; /* Asegura que esté delante de la imagen */
+  zoom: 0.98;
+}
+
+.behind-text1 span {
+  opacity: 0;
+}
+
+.knowledge {
+  h1 {
+    font-family: "Cascadia Code", monospace;
+    font-size: 100px;
+    font-weight: 400;
+    color: var(--banco);
+    margin: 0; /* Elimina el margen predeterminado del h1 */
+    z-index: 1; /* Asegura que esté detrás de la imagen */
+    position: relative;
+  }
+  p {
+    font-family: "Cascadia Code", monospace;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--banco);
+    margin: 10px 0; /* Agrega un pequeño margen superior e inferior */
+    max-width: 1200px;
+    z-index: 1; /* Asegura que esté detrás de la imagen */
+    position: relative;
+  }
+}
+
+.knowledge .container {
+  flex-direction: row; /* Cambia la dirección de flexbox para colocar la imagen y el texto en fila */
+}
+
+.knowledge-img {
+  max-width: 40%; /* Ajusta el tamaño de la imagen según tu preferencia */
+  margin-right: 20px; /* Agrega un margen derecho para separar la imagen del texto */
+}
+
+.knowledge .profile-info {
+ margin-top: -200px;
+}
+
+svg{
+  width:160px ;
+  height: 160px;
+}
+
+.ubuntuicon{
+  width:152px !important;
+  height: 160px;
+}
+.windicon{
+  width:150px ;
+  height: 160px;
+  padding-left: 26px;
+  padding-top: 6px;
+}
+
+.iconvs{
+  width:130px ;
+  height: 160px;
+}
+.knowledge .profile-info {
+  max-width: 60%; /* Ajusta el ancho máximo del contenedor de texto */
+}
+
+.skillsicons1 {
+  max-width: 35%; /* Ajusta el ancho máximo del contenedor de iconos */
+}
+
+.skillsicons1 svg {
+  width: 22%;
+  margin-bottom: 20px; /* Ajusta este valor según tu preferencia */
+}
+
+nav {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  padding: 10px;
+  color: var(--banco);
+  font-family: "Cascadia Code", monospace;
+  z-index: 2; 
+}
+
+nav ul {
+  display: flex;
+  list-style: none; /* Elimina los estilos de lista */
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-left: 20px; /* Espacio entre los elementos */
+}
+
+nav ul li:first-child {
+  margin-left: 0; /* Quita el margen izquierdo del primer elemento */
+}
+
+nav ul li a {
+  text-decoration: none; /* Quita la subrayado del enlace */
+  color: var(--banco); /* Cambia el color del texto según tu preferencia */
+  transition: filter 0.3s ease;
+}
+nav ul li a:hover {
+  text-decoration: none; /* Quita la subrayado del enlace */
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 1.984));
+}
+
+nav img{
+  width: 60px;
+  padding-right: 20px;
+}
+a {
+  text-decoration: none;
+}
+
+
+.h1pro{
+  position: absolute;
+ top: 100px;
+  color: var(--banco);
+}
+/*****************************cards***********************************/
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+ margin: 14%;
+ position: relative;
+}
+
+.card {
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  padding: 30px;
+position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  border-radius: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blackgris);
+  box-shadow: 0 7px 11px rgba(0, 0, 0, 0.301);
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  position: absolute;
+  border-radius: 20px 20px 0px 0px;
+}
+.imgmc{
+  clip-path: inset(0 0 24px 0); 
+}
+.imgenma{
+  clip-path: inset(0 0 11px 0); 
+}
+
+.code {
+  bottom: 9%;
+  left: 10%;
+  position: absolute;
+  font-size: 20px;
+  color: var(--banco);
+}
+
+.allp {
+  position: absolute;
+  bottom: 30px;
+  width: auto;
+  padding: 15px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 20px;
+  height: auto;
+  border: solid 3px var(--cdf);
+  transition: filter 0.3s ease;
+  color: #3f3f3f;
+  background-color: var(--banco);
+  font-family: "Cascadia Code", monospace;
+}
+
+.allp:hover {
+  /* Estilos que se aplicarán cuando el cursor esté sobre el botón */
+  position: absolute;
+  bottom: 30px;
+  border: solid 3px var(--cdf); 
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+.btsocial {
+  /* Estilos base del botón */
+  transition: filter 0.3s ease; /* Transición para la propiedad filter */
+}
+
+.btsocial:hover {
+  /* Estilos que se aplicarán cuando el cursor esté sobre el botón */
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+
+.imagen-con-degradado {
+position: absolute;
+bottom: 0;
+left: 30px;
+z-index: 0;
+width: 1323px !important;
+max-width: 1323px;
+overflow: hidden;
+filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+filter: blur(3px);
+pointer-events: none;
+}
+
+
+/* Animacion Boton */
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.btndetrascard1{
+background-color: #6d1650;
+color: var(--banco);
+z-index: 2;
+transition: filter 0.3s ease; /* Transición para la propiedad filter */
+}
+  
+
+.btndetrascard2{
+  background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+  color: var(--banco);
+  z-index: 2;
+  transition: filter 0.3s ease; /* Transición para la propiedad filter */
+}
+
+.btndetrascard3{
+  background-color: var(--html);
+color: var(--banco);
+z-index: 2;
+transition: filter 0.3s ease; /* Transición para la propiedad filter */
+}
+
+.btndetrascard12 {
+  z-index: 2;
+  margin-top: 40px;
+}
+    
+  
+  .btndetrascard22{
+    z-index: 2;
+  }
+  
+  .btndetrascard32{
+  z-index: 2;
+  }
+
+.btndetrascard1:hover{
+  background-color: #6d1650;
+  color: var(--banco);
+  z-index: 2;
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  }
+    
+  
+  .btndetrascard2:hover{
+    background: linear-gradient(108deg, #5E3481 0%, #00B3B1 100%);
+    color: var(--banco);
+    z-index: 2;
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  }
+  
+  .btndetrascard3:hover{
+    background-color: var(--html);
+  color: var(--banco);
+  z-index: 2;
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  }
+
+/* Media Queries */
+@media only screen and (max-width: 1128px) { /* Para tablets y dispositivos móviles */
+  /* Asegura que el contenedor de la imagen y el texto se apilen verticalmente */
+  .container {
+    display: flex;
+    flex-direction: column; /* Los elementos se apilan en lugar de alinearse en fila */
+    align-items: center; /* Centra los elementos */
+    justify-content: flex-start; /* Asegura que el contenido no se quede pegado al fondo */
+    padding: 20px; /* Agrega algo de espacio dentro del contenedor */
+  }
+
+  /* Ajusta la imagen para que ocupe el 100% de ancho en pantallas pequeñas */
+  img {
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo */
+    max-width: 100%; /* Impide que la imagen se expanda más allá del contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    margin-bottom: 20px; /* Agrega espacio entre la imagen y el texto */
+  }
+
+  /* Reajusta los tamaños de texto */
+  h1 {
+    font-size: 32px; /* Tamaño más pequeño para tablets */
+    -webkit-text-stroke: 2px var(--banco); /* Ajusta el grosor del borde */
+    margin: 0 0 10px 0; /* Margen superior e inferior */
+    text-align: center; /* Alinea el texto al centro */
+  }
+
+  p {
+    font-size: 14px; /* Tamaño de fuente más pequeño para tablets */
+    margin: 0 0 20px 0; /* Espacio entre el párrafo y los elementos siguientes */
+    text-align: center; /* Alinea el texto al centro */
+  }
+
+  /* Ajuste de los botones de navegación */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacio entre los botones y el contenido anterior */
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 14px; /* Tamaño más pequeño para los botones */
+    border-radius: 25px;
+    margin: 5px; /* Espacio entre los botones */
+  }
+
+  /* Ajustes para el texto detrás */
+  .behind-text {
+    display: none;
+
+  }
+  .behind-text1 {
+    display: none;
+}
+
+  /* Asegura que el nav y los elementos estén correctamente alineados */
+  nav ul {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Espacio entre el contenido y la barra de navegación */
+  }
+
+  nav ul li {
+    margin-top: 15px;
+  }
+
+  nav img {
+    width: 50px; /* Ajusta el tamaño del logo en la barra de navegación */
+  }
+
+
+  /* Ajusta el contenedor de las tarjetas */
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .card {
+    width: 400px; /* Las tarjetas ocupan el 90% del ancho */
+    margin-bottom: 20px; /* Espacio entre las tarjetas */
+  }
+
+  .card-inner {
+    padding: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .code {
+    font-size: 16px; /* Reduce el tamaño del texto en las tarjetas */
+  }
+  .knowledge p {
+    font-family: "Cascadia Code", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--banco);
+    margin: 10px 0;
+    max-width: 1200px;
+    z-index: 1;
+    position: relative;
+}
+.h1pro {
+  position: absolute;
+  top: -10px;
+  left: 45%;
+  color: var(--banco);
+
+}
+.imagen-con-degradado{
+  display: none;
+}
+.card-container{
+  margin-bottom: 50%;
+}
+.allp {
+  position: absolute;
+  bottom: -90px;
+  border: solid 3px var(--cdf);
+  transition: filter 0.3s ease;
+}
+.allp:hover {
+  /* Estilos que se aplicarán cuando el cursor esté sobre el botón */
+  position: absolute;
+  bottom: -90px;
+  border: solid 3px var(--cdf); 
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+}
+
+@media only screen and (max-width: 480px) { /* Para dispositivos móviles pequeños */
+  /* Ajusta aún más el tamaño de los elementos */
+  h1 {
+    font-size: 24px; /* Reduce aún más el tamaño del título */
+  }
+
+  p {
+    font-size: 12px; /* Reduce aún más el tamaño del texto */
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px; /* Tamaño de fuente más pequeño para los botones */
+  }
+
+  .behind-text {
+    font-size: 120px; /* Reduce aún más el tamaño del texto detrás */
+  }
+
+  .card {
+    width: 95%; /* Las tarjetas ocupan casi todo el ancho en pantallas pequeñas */
+  }
+
+
+  .knowledge p {
+        font-family: "Cascadia Code", monospace;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--banco);
+        margin: 10px 0;
+        max-width: 1200px;
+        z-index: 1;
+        position: relative;
+    }
+
+}
