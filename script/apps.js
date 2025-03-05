@@ -27,12 +27,14 @@ class Application {
         // Create window header
         const header = document.createElement('div');
         header.className = 'window-header';
-        header.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 8px; background: #f0f0f0;';
+        header.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 8px;  background:linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);';
         
         // Add title
         const title = document.createElement('div');
         title.textContent = this.name;
         title.style.marginLeft = '8px';
+        title.style.color = 'white';
+        title.style.fontFamily = 'Arial';
         
         // Add control buttons
         const controls = document.createElement('div');
