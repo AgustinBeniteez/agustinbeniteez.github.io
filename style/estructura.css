@@ -13,6 +13,7 @@
 
 article {
     border: 8px solid transparent;
+    clear: both;
     border-image: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%) 1;
 }
 #fondo {
@@ -54,12 +55,12 @@ article {
 }
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-columns: 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr;
+    grid-template-rows: 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.7fr 0.3fr;
     gap: 10px 10px;
     grid-auto-flow: row;
-    height: 100vh;
-    min-height: 100vh;
+    height: calc(100vh - 16px);
+    min-height: calc(100vh - 16px);
     position: relative;
 }
 
