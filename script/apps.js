@@ -54,7 +54,7 @@ class Application {
         const closeBtn = document.createElement('button');
         closeBtn.innerHTML = '&#10005;';
         closeBtn.onclick = () => this.closeWindow();
-        closeBtn.className = 'window-control';
+        closeBtn.className = 'window-control close-btn';
         
         controls.append(minimizeBtn, maximizeBtn, closeBtn);
         header.append(title, controls);

@@ -385,3 +385,25 @@ section img{
     border: none;
     display: block;
 }
+.window-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.window-control:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.window-control.close-btn {
+    background: #ff4444;
+}
+
+.window-control.close-btn:hover {
+    background: #ff6666;
+}
