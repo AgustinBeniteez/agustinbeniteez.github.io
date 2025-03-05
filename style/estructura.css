@@ -160,8 +160,118 @@ section img{
   .item:nth-child(13) {
     grid-area: 1 / 9 / 1 / 9;
   }
+#navegador {
+    background-color: var(--color-blanco);
+    width: 700px;
+    height: 400px;
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: move;
+    user-select: none;
+    padding: 25px 5px 5px 5px;
+    border: 8px solid transparent;
+    clear: both;
+    border-image: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%) 1;
+    transition: all 0.3s ease;
+}
 
-  @media screen and (max-width: 768px) {
+#navegador.fullscreen {
+    width: 80vw;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+#navegador.minimized {
+    display: none;
+}
 
-  }
+.nav-controls {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    position: relative;
+}
+
+.nav-button:hover {
+    opacity: 0.7;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-close {
+    background-color: #ff5f57;
+    border-radius: 50%;
+    order: 3;
+}
+
+.nav-close::before {
+    content: '×';
+    color: #800;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.nav-minimize {
+    background-color: #28c940;
+    border-radius: 50%;
+    order: 1;
+}
+
+.nav-minimize::before {
+    content: '-';
+    color: #164;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.nav-maximize {
+    background-color: #febc2e;
+    border-radius: 3px;
+    order: 2;
+}
+
+.nav-maximize::before {
+    content: '□';
+    color: #963;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.nav-title-minimized {
+    display: none;
+    color: var(--color-blanco);
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-title-minimized:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-title-minimized.show {
+    display: block;
+}
