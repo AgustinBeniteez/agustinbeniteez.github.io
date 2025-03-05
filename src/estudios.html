@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudios</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .estudios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .estudio-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .estudio-card:hover {
+            transform: translateY(-5px);
+        }
+        .estudio-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .estudio-content {
+            padding: 15px;
+        }
+        .estudio-title {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .estudio-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        .view-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .view-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="estudios-grid">
+        <div class="estudio-card">
+            <img src="/src/html-css.webp" alt="HTML & CSS" class="estudio-image">
+            <div class="estudio-content">
+                <h3 class="estudio-title">HTML & CSS</h3>
+                <p class="estudio-description">Learn the fundamentals of web development with HTML and CSS.</p>
+                <a href="#" class="view-button">View Resources</a>
+            </div>
+        </div>
+        <div class="estudio-card">
+            <img src="/src/javascript.webp" alt="JavaScript" class="estudio-image">
+            <div class="estudio-content">
+                <h3 class="estudio-title">JavaScript</h3>
+                <p class="estudio-description">Master JavaScript programming and web interactivity.</p>
+                <a href="#" class="view-button">View Resources</a>
+            </div>
+        </div>
+        <div class="estudio-card">
+            <img src="/src/react.webp" alt="React" class="estudio-image">
+            <div class="estudio-content">
+                <h3 class="estudio-title">React</h3>
+                <p class="estudio-description">Build modern web applications with React framework.</p>
+                <a href="#" class="view-button">View Resources</a>
+            </div>
+        </div>
+        <div class="estudio-card">
+            <img src="/src/node.webp" alt="Node.js" class="estudio-image">
+            <div class="estudio-content">
+                <h3 class="estudio-title">Node.js</h3>
+                <p class="estudio-description">Develop server-side applications with Node.js.</p>
+                <a href="#" class="view-button">View Resources</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

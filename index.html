@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style/estructura.css">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet' />
     <title>Aboutme Agus</title>
+    <script src="script/apps.js"></script>
 </head>
 <body>
     <article class="container">
@@ -13,16 +14,13 @@
             <h1>Agustin Benitez</h1>
             <img src="src/agustheking.webp" alt="Agustin img">
             <p id="description">I like Computer Science,  I'm learning Python & Java.
-
                 I have an average knowledge of HTML & CSS and I want to learn a lot more...</p>
         </div>
 
-        <section class="item">
-            <img src="/src/folder-projects.webp" alt="projectos">
+        <section class="item" onclick="openBrowserWindow('Projects')">            <img src="/src/folder-projects.webp" alt="projectos">
             <p>Projectos</p>
         </section>
-        <section class="item">
-            <img src="/src/folder-mods.webp" alt="mods">
+        <section class="item" onclick="openBrowserWindow('Mods')">            <img src="/src/folder-mods.webp" alt="mods">
             <p>Mods</p>
         </section>
         <section class="item">
@@ -32,73 +30,59 @@
         <section class="item"></section>
         <section class="item"></section>
         <section class="item" id="footer">
-                <div class="minimized-browsers">
-                    <div class="nav-title-minimized">Browser Window</div>
+                <div style="display: flex; align-items: center;">
+                    <button class="custom-button"><i class="fa-brands fa-windows"></i></button>
+                    <div class="minimized-browsers" style="margin-left: 10px;">
+                        <div class="browser-windows"></div>
+                    </div>
                 </div>
-                <button class="custom-button"><i class="fa-brands fa-windows"></i></button>
-                    <section class="calendario">
-                        <div class="clock" id="clock">00:00:00</div>
-                        <div class="fecha" id="fecha">00/00/2000</div>
-                    </section>
- 
-                    <script>
-                        function updateClockAndDate() {
-                            const now = new Date();
-                            
-                            // Update clock
-                            const hours = String(now.getHours()).padStart(2, '0');
-                            const minutes = String(now.getMinutes()).padStart(2, '0');
-                            const seconds = String(now.getSeconds()).padStart(2, '0');
-                            const timeString = `${hours}:${minutes}:${seconds}`;
-                            document.getElementById('clock').textContent = timeString;
-                            
-                            // Update date
-                            const day = String(now.getDate()).padStart(2, '0');
-                            const month = String(now.getMonth() + 1).padStart(2, '0');
-                            const year = now.getFullYear();
-                            const dateString = `${day}/${month}/${year}`;
-                            document.getElementById('fecha').textContent = dateString;
-                        }
+                <section class="calendario">
+                    <div class="clock" id="clock">00:00:00</div>
+                    <div class="fecha" id="fecha">00/00/2000</div>
+                </section>
+                <script>
+                    function updateClockAndDate() {
+                        const now = new Date();
+                        
+                        // Update clock
+                        const hours = String(now.getHours()).padStart(2, '0');
+                        const minutes = String(now.getMinutes()).padStart(2, '0');
+                        const seconds = String(now.getSeconds()).padStart(2, '0');
+                        const timeString = `${hours}:${minutes}:${seconds}`;
+                        document.getElementById('clock').textContent = timeString;
+                        
+                        // Update date
+                        const day = String(now.getDate()).padStart(2, '0');
+                        const month = String(now.getMonth() + 1).padStart(2, '0');
+                        const year = now.getFullYear();
+                        const dateString = `${day}/${month}/${year}`;
+                        document.getElementById('fecha').textContent = dateString;
+                    }
 
-                        setInterval(updateClockAndDate, 1000);
-                        updateClockAndDate();
-                    </script>
-            </div>
+                    setInterval(updateClockAndDate, 1000);
+                    updateClockAndDate();
+                </script>
         </section>
-        <section class="item">
+        <section class="item" onclick="openBrowserWindow('src/newtab.html')">
             <img src="/src/chrome.webp" alt="chrome">
             <p>Chrome</p>
         </section>
-        <section class="item">
-            <img src="/src/github.webp" alt="github">
+        <section class="item" onclick="openBrowserWindow('GitHub')">            <img src="/src/github.webp" alt="github">
             <p>Github</p>
         </section>
-        <section class="item">
-            <img src="/src/figma.webp" alt="figma">
+        <section class="item" onclick="openBrowserWindow('Figma')">            <img src="/src/figma.webp" alt="figma">
             <p>Figma</p>
         </section>
         <section class="item">
             <img src="/src/vs.webp" alt="vs">
             <p>Visual Studio</p>
         </section>
-        <section class="item">
-            <img src="/src/spotify.webp" alt="spotify">
+        <section class="item" onclick="openBrowserWindow('Spotify')">            <img src="/src/spotify.webp" alt="spotify">
             <p>Spotify</p>
         </section>
-        <section class="item">
-            <img src="/src/folder-estudios.webp" alt="estudios">
+        <section class="item" onclick="openBrowserWindow('Estudios')">            <img src="/src/folder-estudios.webp" alt="estudios">
             <p>Estudios</p>
         </section>
       </article>
-      <div id="navegador">
-        <div class="nav-controls">
-          <button class="nav-button nav-close" title="Close"></button>
-          <button class="nav-button nav-minimize" title="Minimize"></button>
-          <button class="nav-button nav-maximize" title="Maximize"></button>
-        </div>
-        <iframe src="" frameborder="0"></iframe>
-      </div>
-      <div class="nav-title-minimized">Browser Window</div>
-      <script src="script/drag.js"></script>
 </body>
 </html>

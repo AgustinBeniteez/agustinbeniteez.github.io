@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mods</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .mods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .mod-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .mod-card:hover {
+            transform: translateY(-5px);
+        }
+        .mod-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .mod-content {
+            padding: 15px;
+        }
+        .mod-title {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .mod-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        .curseforge-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f16436;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .curseforge-button:hover {
+            background: #e45325;
+        }
+    </style>
+</head>
+<body>
+    <div class="mods-grid">
+        <div class="mod-card">
+            <img src="/src/makeup-mod.webp" alt="Makeup | Aesthetics Decor" class="mod-image">
+            <div class="mod-content">
+                <h3 class="mod-title">Makeup | Aesthetics Decor</h3>
+                <p class="mod-description">A Minecraft mod that adds beautiful decorative items and furniture to enhance your builds.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/makeup-aesthetics-decor" class="curseforge-button">Ver en CurseForge</a>
+            </div>
+        </div>
+        <div class="mod-card">
+            <img src="/src/modern-decor.webp" alt="Modern Decor Wooden" class="mod-image">
+            <div class="mod-content">
+                <h3 class="mod-title">Modern Decor Wooden</h3>
+                <p class="mod-description">Add modern wooden furniture and decorations to your Minecraft world.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/modern-decor-wooden" class="curseforge-button">Ver en CurseForge</a>
+            </div>
+        </div>
+        <div class="mod-card">
+            <img src="/src/modern-outdoor.webp" alt="Modern Decor Outdoor" class="mod-image">
+            <div class="mod-content">
+                <h3 class="mod-title">Modern Decor Outdoor</h3>
+                <p class="mod-description">Enhance your outdoor spaces with modern decorative elements and furniture.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/modern-decor-outdoor" class="curseforge-button">Ver en CurseForge</a>
+            </div>
+        </div>
+        <div class="mod-card">
+            <img src="/src/hazbin-hotel.webp" alt="Hazbin Hotel Items" class="mod-image">
+            <div class="mod-content">
+                <h3 class="mod-title">Hazbin Hotel Items</h3>
+                <p class="mod-description">Add Hazbin Hotel themed items and decorations to your Minecraft world.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/hazbin-hotel-items" class="curseforge-button">Ver en CurseForge</a>
+            </div>
+        </div>
+        <div class="mod-card">
+            <img src="/src/rust-oxide.webp" alt="Rust & Oxide mod" class="mod-image">
+            <div class="mod-content">
+                <h3 class="mod-title">Rust & Oxide mod</h3>
+                <p class="mod-description">Bring elements from Rust into Minecraft with this comprehensive mod.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/rust-oxide-mod" class="curseforge-button">Ver en CurseForge</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
