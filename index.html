@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/estructura.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet' />
     <title>Aboutme Agus</title>
 </head>
 <body>
@@ -16,26 +17,39 @@
                 I have an average knowledge of HTML & CSS and I want to learn a lot more...</p>
         </div>
 
-        <section class="item">1</section>
-        <section class="item">2</section>
+        <section class="item"><i class="fa-solid fa-folder"></i></section>
+        <section class="item"><i class="fa-solid fa-folder"></i></section>
         <section class="item">3</section>
         <section class="item">5</section>
         <section class="item">6</section>
         <section class="item" id="footer">
-                <button class="custom-button">Click Me</button>
-                    <div class="clock" id="clock">00:00:00</div>
+                <button class="custom-button"><i class="fa-brands fa-windows"></i></button>
+                    <section class="calendario">
+                        <div class="clock" id="clock">00:00:00</div>
+                        <div class="fecha" id="fecha">00/00/2000</div>
+                    </section>
+ 
                     <script>
-                        function updateClock() {
+                        function updateClockAndDate() {
                             const now = new Date();
+                            
+                            // Update clock
                             const hours = String(now.getHours()).padStart(2, '0');
                             const minutes = String(now.getMinutes()).padStart(2, '0');
                             const seconds = String(now.getSeconds()).padStart(2, '0');
                             const timeString = `${hours}:${minutes}:${seconds}`;
                             document.getElementById('clock').textContent = timeString;
+                            
+                            // Update date
+                            const day = String(now.getDate()).padStart(2, '0');
+                            const month = String(now.getMonth() + 1).padStart(2, '0');
+                            const year = now.getFullYear();
+                            const dateString = `${day}/${month}/${year}`;
+                            document.getElementById('fecha').textContent = dateString;
                         }
 
-                        setInterval(updateClock, 1000);
-                        updateClock();
+                        setInterval(updateClockAndDate, 1000);
+                        updateClockAndDate();
                     </script>
             </div>
         </section>
@@ -44,7 +58,7 @@
         <section class="item">14</section>
         <section class="item">15</section>
         <section class="item">16</section>
-        <section class="item">13</section>
+        <section class="item"><i class="fa-solid fa-folder"></i></section>
       </article>
 
    

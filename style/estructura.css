@@ -69,10 +69,35 @@ section {
     width: 100%;
     background-color: rgb(98, 85, 110);
 }
-  
+.calendario {
+  background-color: transparent;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  width: 100px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
 #footer {
+    color: var(--color-blanco);
+    background-color: rgba(21, 21, 21, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     grid-row: 7;
     grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+.custom-button{
+    background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border: 0px solid transparent;
+    width: 100px;
+    font: 2em sans-serif;
 }
   .item:nth-child(1) {
     grid-area: 1 / 9 / 2 / 10;
@@ -122,7 +147,9 @@ section {
   .item:nth-child(12) {
     grid-area: 6 / 1 / 7 / 2;
   }
-
+  .item:nth-child(13) {
+    grid-area: 1 / 9 / 1 / 9;
+  }
 
   @media screen and (max-width: 768px) {
 
