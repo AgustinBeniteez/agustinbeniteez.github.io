@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primario: #1D1D1D;
+    --color-secundario: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+    --color-terciario: #151515;
+    --color-blanco: #FFFFFF;
+    --color-negro: #000000;
+}
+
+article {
+    border: 8px solid transparent;
+    border-image: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%) 1;
+}
+#fondo {
+  color: var(--color-blanco);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-primario);
+  z-index: -1;
+}
+#fondo h1 {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 5.5em;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#fondo p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5em;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#fondo img {
+  position: absolute;
+  right: 0 ;
+  bottom: 0;
+  width: 50%;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(98, 85, 110);
+}
+  
+#footer {
+    grid-row: 7;
+    grid-column: 1 / -1;
+}
+  .item:nth-child(1) {
+    grid-area: 1 / 9 / 2 / 10;
+  }
+  
+  .item:nth-child(2) {
+    grid-area: 2 / 9 / 3 / 10;
+  }
+  
+  .item:nth-child(3) {
+    grid-area: 3 / 9 / 4 / 10;
+  }
+  
+  .item:nth-child(4) {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  
+  .item:nth-child(5) {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  
+  .item:nth-child(6) {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+  
+  .item:nth-child(7) {
+    grid-area: 7 / 1 / 8 / 2;
+    grid-column: 1 / 10;
+  }
+  
+  .item:nth-child(8) {
+    grid-area: 6 / 6 / 7 / 7;
+  }
+  
+  .item:nth-child(9) {
+    grid-area: 6 / 7 / 7 / 8;
+  }
+  
+  .item:nth-child(10) {
+    grid-area: 6 / 8 / 7 / 9;
+  }
+  
+  .item:nth-child(11) {
+    grid-area: 6 / 9 / 7 / 10;
+  }
+  
+  .item:nth-child(12) {
+    grid-area: 6 / 1 / 7 / 2;
+  }
+
+
+  @media screen and (max-width: 768px) {
+
+
+  }

@@ -1,0 +1,24 @@
+.section-skills {
+    height: 7vh;
+    /* ... rest of existing section-skills styles ... */
+}
+
+.custom-button {
+    padding: 8px 16px;
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.custom-button:hover {
+    background-color: #666666;
+}
+
+.clock {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin: 5px;
+}
