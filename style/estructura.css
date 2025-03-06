@@ -97,6 +97,7 @@ article {
   height: 100%;
   width: 100%;
   background-image: url('/src/fondo.webp');
+  background-color: var(--color-terciario);
   z-index: -1;
   flex-direction: column;
   flex-wrap: nowrap;
