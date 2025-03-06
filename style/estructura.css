@@ -93,33 +93,30 @@ article {
 #fondo {
   color: var(--color-blanco);
   position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
   height: 100%;
   width: 100%;
   background-color: var(--color-primario);
   z-index: -1;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 #fondo h1 {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 5.5em;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+  padding-top: 15%;
+  background: linear-gradient(302deg, rgba(170, 119, 186, 1) 0%, rgba(194, 109, 80, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-left: 25%;
 }
 
 #fondo p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5em;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: 25%;
+  width: 40%;
 }
 #fondo img {
   position: absolute;
@@ -406,4 +403,30 @@ section img{
 
 .window-control.close-btn:hover {
     background: #ff6666;
+}
+
+@media screen and (max-width: 1600px) {
+  #fondo h1 {
+    font-size: 4em;
+    padding-top: 20%;
+  }
+
+  #fondo p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.3em;
+    margin-left: 25%;
+    width: 50%;
+  }
+
+  #fondo img {
+    width: 45%;
+  }
+
+  .container {
+    grid-template-columns: 0.4fr 1.3fr 0.6fr 0.6fr 0.6fr 0.4fr 0.4fr 0.4fr 0.4fr;
+  }
+
+  section img {
+    width: 8vh;
+  }
 }
