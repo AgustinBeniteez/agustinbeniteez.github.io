@@ -430,3 +430,10 @@ section img{
     width: 8vh;
   }
 }
+
+@media screen and (max-width: 780px) {
+.container{
+  gap: 0;
+}
+
+}
