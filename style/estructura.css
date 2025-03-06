@@ -125,6 +125,7 @@ article {
   bottom: 0;
   width: 50%;
 }
+
 .container {
     display: grid;
     grid-template-columns: 0.5fr 1.5fr 0.7fr 0.7fr 0.7fr 0.5fr 0.5fr 0.5fr 0.5fr;
@@ -231,7 +232,7 @@ section img{
   }
   .item:nth-child(13) {
     grid-area: 1 / 9 / 1 / 9;
-  }
+  }  
 #navegador {
     position: fixed;
     top: 50%;
