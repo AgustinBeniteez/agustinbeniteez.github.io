@@ -419,7 +419,7 @@ section img{
   }
 
   #fondo img {
-    width: 45%;
+    width: 55%;
   }
 
   .container {
@@ -433,7 +433,10 @@ section img{
 
 @media screen and (max-width: 780px) {
 .container{
-  gap: 0;
+  gap: 1px;
+}
+#fondo img{
+  width: 90%;
 }
 
 }
