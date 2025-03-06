@@ -23,19 +23,27 @@ class Application {
         const browserWindow = document.createElement('div');
         browserWindow.id = this.windowId;
         browserWindow.className = 'browser-window';
-        
         // Create window header
         const header = document.createElement('div');
         header.className = 'window-header';
         header.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 8px;  background:linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);';
-        
-        // Add title
+        // Add title with icon
+        const titleContainer = document.createElement('div');
+        titleContainer.style.display = 'flex';
+        titleContainer.style.alignItems = 'center';
+        titleContainer.style.gap = '8px';
+        const icon = document.createElement('img');
+        icon.src = this.icon;
+        icon.style.width = '20px';
+        icon.style.height = '20px';
         const title = document.createElement('div');
         title.textContent = this.name;
+        title.style.color = 'white';
+        title.style.fontFamily = 'Arial';
+        titleContainer.append(icon, title);
         title.style.marginLeft = '8px';
         title.style.color = 'white';
         title.style.fontFamily = 'Arial';
-        
         // Add control buttons
         const controls = document.createElement('div');
         controls.style.display = 'flex';
