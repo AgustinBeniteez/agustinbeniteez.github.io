@@ -160,13 +160,13 @@ class Application {
 
 // Create application instances
 const apps = {
-    chrome: new Application('Chrome', '/src/chrome.webp', 'src/newtab.html'),
-    github: new Application('GitHub', '/src/github.webp', 'https://github.com/AgustinBeniteez'),
-    spotify: new Application('Spotify', '/src/spotify.webp', 'https://spotify.com/user/ux4hgc54mgb76frskf7hjxz96?si=124c6432e4ca4ca1'),
-    figma: new Application('Figma', '/src/figma.webp', 'https://figma.com'),
-    estudios: new Application('Estudios', '/src/folder-estudios.webp', 'src/estudios.html'),
-    projects: new Application('Projects', '/src/folder-projects.webp'),
-    mods: new Application('Mods', '/src/folder-mods.webp', 'src/mods.html')
+    chrome: new Application('Chrome', '/src/chrome.webp', 'apps/extensiones.html'),
+    github: new Application('GitHub', '/src/github.webp', 'apps/github.html'),
+    spotify: new Application('Spotify', '/src/spotify.webp', 'apps/spotify.html'),
+    figma: new Application('Figma', '/src/figma.webp', 'apps/figma.html'),
+    estudios: new Application('Estudios', '/src/folder-estudios.webp', 'apps/estudios.html'),
+    projects: new Application('Projects', '/src/folder-projects.webp ', 'apps/projects.html'),
+    mods: new Application('Mods', '/src/folder-mods.webp', 'apps/mods.html')
 };
 
 // Function to open browser window
