@@ -54,17 +54,12 @@ class Application {
         minimizeBtn.onclick = () => this.minimizeWindow();
         minimizeBtn.className = 'window-control';
         
-        const maximizeBtn = document.createElement('button');
-        maximizeBtn.innerHTML = '&#9633;';
-        maximizeBtn.onclick = () => this.maximizeWindow();
-        maximizeBtn.className = 'window-control';
-        
         const closeBtn = document.createElement('button');
         closeBtn.innerHTML = '&#10005;';
         closeBtn.onclick = () => this.closeWindow();
         closeBtn.className = 'window-control close-btn';
         
-        controls.append(minimizeBtn, maximizeBtn, closeBtn);
+        controls.append(minimizeBtn, closeBtn);
         header.append(title, controls);
         
         // Add content
