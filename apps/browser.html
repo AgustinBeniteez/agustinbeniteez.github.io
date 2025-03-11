@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Browser</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, #4a90e2, #9b6dff);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .main-content {
+            display: flex;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .projects-nav {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+
+        .project-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .project-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .description {
+            flex: 2;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .description h2 {
+            margin-bottom: 1rem;
+            color: #9b6dff;
+        }
+
+        .description p {
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Custom Browser Main Page</h1>
+        <button class="download-btn">Download free</button>
+    </div>
+
+    <div class="main-content">
+        <nav class="projects-nav">
+            <div class="project-item">Project 1</div>
+            <div class="project-item">Project 2</div>
+            <div class="project-item">Project 3</div>
+        </nav>
+
+        <div class="description">
+            <h2>Proyecto Extension</h2>
+            <p>Welcome to the Custom Browser project! This is a modern, sleek browser interface designed to enhance your browsing experience. The project features a clean design with a gradient color scheme and intuitive navigation.</p>
+            <p>Explore the projects on the left sidebar and discover more about each feature. The interface is built with performance and user experience in mind.</p>
+        </div>
+    </div>
+</body>
+</html>

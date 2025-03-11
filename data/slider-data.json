@@ -2,28 +2,53 @@
   "slides": [
     {
       "image": "/data/slider-projects/image-project-extension.webp",
-      "title": "Project 1",
-      "description": "Description for Project 1"
+      "title": "Chrome Extension Development",
+      "description": "A powerful Chrome extension that enhances browsing productivity",
+      "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
+      "gallery": [
+        "/data/slider-projects/image-project-extension.webp",
+        "/data/slider-projects/image-project-extension-2.webp"
+      ]
     },
     {
       "image": "/data/slider-projects/laura-profolio-min.png",
-      "title": "Project 2",
-      "description": "Description for Project 2"
+      "title": "Portfolio Website",
+      "description": "Modern and responsive portfolio website design",
+      "extendedDescription": "A fully responsive portfolio website built with modern web technologies. Features include smooth animations, dynamic content loading, and optimized performance. The design focuses on user experience with intuitive navigation and clean, professional aesthetics.",
+      "gallery": [
+        "/data/slider-projects/laura-profolio-min.png",
+        "/data/slider-projects/laura-profolio-2.png"
+      ]
     },
     {
-        "image": "/data/slider-projects/ModernDecorMODS.png",
-        "title": "Project 3",
-        "description": "Description for Project 3"
+      "image": "/data/slider-projects/ModernDecorMODS.png",
+      "title": "Modern Decor E-commerce",
+      "description": "E-commerce platform for modern home decoration",
+      "extendedDescription": "A comprehensive e-commerce solution for modern home decoration products. Built with React and Node.js, it includes features like user authentication, shopping cart functionality, secure payment processing, and order management. The platform offers a seamless shopping experience with responsive design.",
+      "gallery": [
+        "/data/slider-projects/ModernDecorMODS.png",
+        "/data/slider-projects/ModernDecorMODS-2.png"
+      ]
     },
     {
       "image": "/data/slider-projects/ElementsCssDaj (AD).png",
-      "title": "Project 4",
-      "description": "Description for Project 4"
+      "title": "CSS Elements Library",
+      "description": "Modern CSS components and elements library",
+      "extendedDescription": "A comprehensive CSS library featuring modern, reusable UI components. The library includes carefully crafted elements like buttons, cards, navigation bars, and form components. Each element is fully customizable and follows current web design trends while maintaining accessibility standards.",
+      "gallery": [
+        "/data/slider-projects/ElementsCssDaj (AD).png",
+        "/data/slider-projects/ElementsCssDaj-2.png"
+      ]
     },
     {
       "image": "/data/slider-projects/EditorDAJsocial.png",
-      "title": "Project 5",
-      "description": "Description for Project 5"
+      "title": "Social Media Dashboard",
+      "description": "Comprehensive social media management dashboard",
+      "extendedDescription": "A powerful social media management dashboard that allows users to monitor and manage multiple social media accounts from a single interface. Features include analytics tracking, post scheduling, engagement metrics, and automated reporting. Built with React and integrates with various social media APIs.",
+      "gallery": [
+        "/data/slider-projects/EditorDAJsocial.png",
+        "/data/slider-projects/EditorDAJsocial-2.png"
+      ]
     }
   ]
 }

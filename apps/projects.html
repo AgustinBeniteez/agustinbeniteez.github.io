@@ -12,281 +12,292 @@
             color: white;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .projects-nav {
+            width: 300px;
+            background-color: #161b22;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 95vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #30363d #0d1117;
+        }
+
+        .projects-nav::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .projects-nav::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        .projects-nav::-webkit-scrollbar-thumb {
+            background-color: #30363d;
+            border-radius: 4px;
+        }
+
+        .project-item.active {
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            transform: translateX(5px);
+        }
+
+        .project-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             height: 100vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #30363d #0d1117;
+        }
+
+        .project-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .project-content::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+
+        .project-content::-webkit-scrollbar-thumb {
+            background-color: #30363d;
+            border-radius: 4px;
+        }
+
+        .primary-link {
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            color: white;
+        }
+
+        .secondary-link {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+        }
+
+        .projects-nav h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #c9d1d9;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .project-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 90vh;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .slide {
-            position: absolute;
-            width: 90%;
-            height: 100%;
-            left: 5%;
-            opacity: 0;
-            transition: all 0.5s ease-in-out;
-            transform: scale(0.8);
-        }
-
-        .slide.prev {
-            transform: translateX(-100%) scale(0.8);
-            opacity: 0.5;
-            left: -20%;
-        }
-
-        .slide.active {
-            opacity: 1;
-            transform: scale(1);
-            z-index: 2;
-        }
-
-        .slide.next {
-            transform: translateX(100%) scale(0.8);
-            opacity: 0.5;
-            left: 60%;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .slide-content {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(13, 17, 23, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            width: 80%;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .slide-content h2 {
-            margin: 0 0 10px 0;
-            font-size: 24px;
-        }
-
-        .slide-content p {
-            margin: 0 0 15px 0;
-            font-size: 16px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .view-project-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #4a90e2, #2d5ca6);
-            color: white;
-            text-decoration: none;
+            gap: 15px;
+            background-color: #21262d;
             border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-item img {
+            width: 270px;
+            height: 160px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .project-item:hover {
+            background-color: #2d333b;
+            transform: translateX(5px);
+        }
+
+        .project-item.active {
+            background-color: #c251a6;
+        }
+
+        .project-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .project-details {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            gap: 40px;
+            flex-direction: column;
+        }
+
+        .project-main-info {
+            flex: 1;
+        }
+
+        .project-extended-info {
+            flex: 1;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        .project-header {
+            margin-bottom: 30px;
+        }
+
+        .project-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #c9d1d9;
+        }
+
+        .project-description {
+            color: #8b949e;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .project-image {
+            /* width: 100%; */
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        .view-project-btn:hover {
+        .primary-link {
+            background-color: #2ea043;
+            color: white;
+        }
+
+        .secondary-link {
+            background-color: #21262d;
+            color: #c9d1d9;
+        }
+
+        .project-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
-        }
-
-        .slider-nav {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 3;
-        }
-
-        .slider-nav button {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            padding: 0;
-            transition: all 0.3s ease;
-        }
-
-        .slider-nav button.active {
-            background: #4a90e2;
-            transform: scale(1.2);
-        }
-
-        .slider-arrows {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            padding: 0;
-            z-index: 3;
-        }
-
-        .arrow-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            margin: 0 20px;
-        }
-
-        .arrow-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
+            filter: brightness(1.1);
         }
     </style>
 </head>
 <body>
-    <div class="slider-container" id="slider">
-        <div class="slider-arrows">
-            <button class="arrow-btn prev-btn" onclick="prevSlide()">
-                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-            </button>
-            <button class="arrow-btn next-btn" onclick="nextSlide()">
-                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            </button>
+    <nav class="projects-nav">
+        <h2>Projects</h2>
+        <div class="project-list" id="projectList">
+            <!-- Project items will be added here dynamically -->
         </div>
-    </div>
+    </nav>
+
+    <main class="project-content" id="projectContent">
+        <!-- Project details will be loaded here dynamically -->
+    </main>
 
     <script>
-        let currentSlide = 0;
-        let slides = [];
+        let currentProject = null;
 
-        async function loadSliderData() {
+        async function loadProjects() {
             try {
                 const response = await fetch('../data/slider-data.json');
                 const data = await response.json();
                 return data.slides;
             } catch (error) {
-                console.error('Error loading slider data:', error);
+                console.error('Error loading project data:', error);
                 return [];
             }
         }
 
-        function createSlider(slidesData) {
-            slides = slidesData;
-            const sliderContainer = document.getElementById('slider');
-            const navContainer = document.createElement('div');
-            navContainer.className = 'slider-nav';
-
-            slidesData.forEach((slide, index) => {
-                const slideElement = document.createElement('div');
-                slideElement.className = `slide ${index === 0 ? 'active' : index === 1 ? 'next' : 'prev'}`;
-                slideElement.innerHTML = `
-                    <img src="${slide.image}" alt="${slide.title}">
-                    <div class="slide-content">
-                        <h2>${slide.title}</h2>
-                        <p>${slide.description}</p>
-                        <a href="#" class="view-project-btn" onclick="showProjectDetails(${index}); return false;">View Project</a>
-                    </div>
+        function createProjectList(projects) {
+            const projectList = document.getElementById('projectList');
+            projects.forEach((project, index) => {
+                const projectItem = document.createElement('div');
+                projectItem.className = `project-item ${index === 0 ? 'active' : ''}`;
+                projectItem.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}">
                 `;
-
-                const navButton = document.createElement('button');
-                navButton.className = index === 0 ? 'active' : '';
-                navButton.addEventListener('click', () => goToSlide(index));
-
-                sliderContainer.appendChild(slideElement);
-                navContainer.appendChild(navButton);
+                projectItem.addEventListener('click', () => showProject(project, index));
+                projectList.appendChild(projectItem);
             });
-
-            sliderContainer.appendChild(navContainer);
         }
 
-        function showProjectDetails(index) {
-            const slide = slides[index];
-            // Here you can implement a modal or expand the description
-            alert(`${slide.title}\n\n${slide.description}`);
-        }
+        function showProject(project, index) {
+            // Update active state in project list
+            document.querySelectorAll('.project-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.project-item')[index].classList.add('active');
 
-        let slideInterval;
-
-        function startAutoSlide() {
-            stopAutoSlide();
-            slideInterval = setInterval(nextSlide, 5000);
-        }
-
-        function stopAutoSlide() {
-            if (slideInterval) {
-                clearInterval(slideInterval);
-            }
-        }
-
-        function goToSlide(index) {
-            const slideElements = document.querySelectorAll('.slide');
-            const navButtons = document.querySelectorAll('.slider-nav button');
-
-            slideElements[currentSlide].className = 'slide';
-            navButtons[currentSlide].classList.remove('active');
-
-            currentSlide = index;
-
-            updateSlideClasses(slideElements);
-            navButtons[currentSlide].classList.add('active');
-            
-            // Reset auto-slide timer when manually changing slides
-            startAutoSlide();
+            // Update project content
+            const projectContent = document.getElementById('projectContent');
+            projectContent.innerHTML = `
+                <div class="project-details">
+                    <div class="project-main-info">
+                        <div class="project-header">
+                            <h1>${project.title}</h1>
+                        </div>
+                        <img src="${project.image}" alt="${project.title}" class="project-image">
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary-link">View Project</a>
+                            <a href="#" class="project-link secondary-link">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-extended-info">
+                        <h2>Extended Description</h2>
+                        <p>${project.extendedDescription || 'No extended description available.'}</p>
+                        <div class="project-gallery">
+                            ${project.gallery ? project.gallery.map(img => `
+                                <img src="${img}" alt="Project gallery image" class="gallery-image">
+                            `).join('') : '<p>No additional images available.</p>'}
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
-            const slidesData = await loadSliderData();
-            if (slidesData.length > 0) {
-                createSlider(slidesData);
-                startAutoSlide();
+            const projects = await loadProjects();
+            if (projects.length > 0) {
+                createProjectList(projects);
+                showProject(projects[0], 0);
             }
         });
-
-        // Add event listeners to pause auto-slide on hover
-        document.querySelector('.slider-container').addEventListener('mouseenter', stopAutoSlide);
-        document.querySelector('.slider-container').addEventListener('mouseleave', startAutoSlide);
-    
-
-        function updateSlideClasses(slideElements) {
-            const total = slides.length;
-            slideElements.forEach((slide, index) => {
-                slide.className = 'slide';
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else if (index === (currentSlide + 1) % total) {
-                    slide.classList.add('next');
-                } else if (index === (currentSlide - 1 + total) % total) {
-                    slide.classList.add('prev');
-                }
-            });
-        }
-
-        function nextSlide() {
-            goToSlide((currentSlide + 1) % slides.length);
-        }
-
-        function prevSlide() {
-            goToSlide((currentSlide - 1 + slides.length) % slides.length);
-        }
     </script>
+</body>
+</html>
 </body>
 </html>
