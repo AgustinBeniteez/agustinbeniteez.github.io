@@ -10,26 +10,283 @@
             font-family: Arial, sans-serif;
             background-color: #0d1117;
             color: white;
-            padding: 20px;
-        }
-        h1 {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-left: 5%;
+            justify-content: center;
         }
-        h1 img {
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            left: 5%;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            transform: scale(0.8);
+        }
+
+        .slide.prev {
+            transform: translateX(-100%) scale(0.8);
+            opacity: 0.5;
+            left: -20%;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+        }
+
+        .slide.next {
+            transform: translateX(100%) scale(0.8);
+            opacity: 0.5;
+            left: 60%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(13, 17, 23, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .slide-content h2 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        .slide-content p {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .view-project-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #4a90e2, #2d5ca6);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .view-project-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .slider-nav button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .slider-nav button.active {
+            background: #4a90e2;
+            transform: scale(1.2);
+        }
+
+        .slider-arrows {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            z-index: 3;
+        }
+
+        .arrow-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
             width: 40px;
             height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            margin: 0 20px;
         }
-        p {
-            margin-left: 5%;
+
+        .arrow-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <h1>Projects</h1>
-    <p>This is a list of my projects</p>
+    <div class="slider-container" id="slider">
+        <div class="slider-arrows">
+            <button class="arrow-btn prev-btn" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button class="arrow-btn next-btn" onclick="nextSlide()">
+                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        let slides = [];
+
+        async function loadSliderData() {
+            try {
+                const response = await fetch('../data/slider-data.json');
+                const data = await response.json();
+                return data.slides;
+            } catch (error) {
+                console.error('Error loading slider data:', error);
+                return [];
+            }
+        }
+
+        function createSlider(slidesData) {
+            slides = slidesData;
+            const sliderContainer = document.getElementById('slider');
+            const navContainer = document.createElement('div');
+            navContainer.className = 'slider-nav';
+
+            slidesData.forEach((slide, index) => {
+                const slideElement = document.createElement('div');
+                slideElement.className = `slide ${index === 0 ? 'active' : index === 1 ? 'next' : 'prev'}`;
+                slideElement.innerHTML = `
+                    <img src="${slide.image}" alt="${slide.title}">
+                    <div class="slide-content">
+                        <h2>${slide.title}</h2>
+                        <p>${slide.description}</p>
+                        <a href="#" class="view-project-btn" onclick="showProjectDetails(${index}); return false;">View Project</a>
+                    </div>
+                `;
+
+                const navButton = document.createElement('button');
+                navButton.className = index === 0 ? 'active' : '';
+                navButton.addEventListener('click', () => goToSlide(index));
+
+                sliderContainer.appendChild(slideElement);
+                navContainer.appendChild(navButton);
+            });
+
+            sliderContainer.appendChild(navContainer);
+        }
+
+        function showProjectDetails(index) {
+            const slide = slides[index];
+            // Here you can implement a modal or expand the description
+            alert(`${slide.title}\n\n${slide.description}`);
+        }
+
+        let slideInterval;
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoSlide() {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+        }
+
+        function goToSlide(index) {
+            const slideElements = document.querySelectorAll('.slide');
+            const navButtons = document.querySelectorAll('.slider-nav button');
+
+            slideElements[currentSlide].className = 'slide';
+            navButtons[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+
+            updateSlideClasses(slideElements);
+            navButtons[currentSlide].classList.add('active');
+            
+            // Reset auto-slide timer when manually changing slides
+            startAutoSlide();
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const slidesData = await loadSliderData();
+            if (slidesData.length > 0) {
+                createSlider(slidesData);
+                startAutoSlide();
+            }
+        });
+
+        // Add event listeners to pause auto-slide on hover
+        document.querySelector('.slider-container').addEventListener('mouseenter', stopAutoSlide);
+        document.querySelector('.slider-container').addEventListener('mouseleave', startAutoSlide);
     
+
+        function updateSlideClasses(slideElements) {
+            const total = slides.length;
+            slideElements.forEach((slide, index) => {
+                slide.className = 'slide';
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlide + 1) % total) {
+                    slide.classList.add('next');
+                } else if (index === (currentSlide - 1 + total) % total) {
+                    slide.classList.add('prev');
+                }
+            });
+        }
+
+        function nextSlide() {
+            goToSlide((currentSlide + 1) % slides.length);
+        }
+
+        function prevSlide() {
+            goToSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+    </script>
 </body>
 </html>

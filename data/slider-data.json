@@ -1,0 +1,29 @@
+{
+  "slides": [
+    {
+      "image": "/data/slider-projects/image-project-extension.webp",
+      "title": "Project 1",
+      "description": "Description for Project 1"
+    },
+    {
+      "image": "/data/slider-projects/laura-profolio-min.png",
+      "title": "Project 2",
+      "description": "Description for Project 2"
+    },
+    {
+        "image": "/data/slider-projects/ModernDecorMODS.png",
+        "title": "Project 3",
+        "description": "Description for Project 3"
+    },
+    {
+      "image": "/data/slider-projects/ElementsCssDaj (AD).png",
+      "title": "Project 4",
+      "description": "Description for Project 4"
+    },
+    {
+      "image": "/data/slider-projects/EditorDAJsocial.png",
+      "title": "Project 5",
+      "description": "Description for Project 5"
+    }
+  ]
+}
