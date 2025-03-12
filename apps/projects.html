@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
     <link rel="stylesheet" href="../style/estructura.css">
     <title>Projects</title>
     <style>
@@ -166,6 +167,10 @@
 
         .project-header {
             margin-bottom: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-between;
         }
 
         .project-header h1 {
@@ -181,8 +186,8 @@
         }
 
         .project-image {
-            /* width: 100%; */
-            height: 400px;
+            width: 100%;
+            /* height: 450px; */
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 30px;
@@ -215,6 +220,37 @@
             transform: translateY(-2px);
             filter: brightness(1.1);
         }
+
+        .scroll-to-info {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-to-info.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -228,6 +264,10 @@
     <main class="project-content" id="projectContent">
         <!-- Project details will be loaded here dynamically -->
     </main>
+
+    <button class="scroll-to-info" id="scrollToInfo" aria-label="Scroll to extended info">
+        <i class="fa-solid fa-arrow-down"></i>
+    </button>
 
     <script>
         let currentProject = null;
@@ -268,15 +308,16 @@
                     <div class="project-main-info">
                         <div class="project-header">
                             <h1>${project.title}</h1>
+                            <div class="project-links">
+                                <a href="${project.projectUrl || '#'}" class="project-link primary-link" target="_blank"><i class="fa-solid fa-link"></i></i> View Project</a>
+                                <a href="${project.sourceCodeUrl || '#'}" class="project-link secondary-link" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
+                            </div>
                         </div>
                         <img src="${project.image}" alt="${project.title}" class="project-image">
                         <p class="project-description">${project.description}</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link primary-link">View Project</a>
-                            <a href="#" class="project-link secondary-link">Source Code</a>
-                        </div>
+
                     </div>
-                    <div class="project-extended-info">
+                    <div class="project-extended-info" id="extendedInfo">
                         <h2>Extended Description</h2>
                         <p>${project.extendedDescription || 'No extended description available.'}</p>
                         <div class="project-gallery">
@@ -287,6 +328,12 @@
                     </div>
                 </div>
             `;
+
+            // Reset scroll position to top
+            projectContent.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
@@ -295,6 +342,27 @@
                 createProjectList(projects);
                 showProject(projects[0], 0);
             }
+
+            const scrollButton = document.getElementById('scrollToInfo');
+            
+            // Show/hide scroll button based on scroll position
+            // Update JavaScript scroll event listener
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                if (scrollPosition > 300) {
+                    scrollButton.classList.add('hidden');
+                } else {
+                    scrollButton.classList.remove('hidden');
+                }
+            });
+
+            // Scroll to extended info section when button is clicked
+            scrollButton.addEventListener('click', () => {
+                const extendedInfo = document.getElementById('extendedInfo');
+                if (extendedInfo) {
+                    extendedInfo.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
 </body>

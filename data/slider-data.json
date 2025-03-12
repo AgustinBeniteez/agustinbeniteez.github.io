@@ -5,6 +5,8 @@
       "title": "Chrome Extension Development",
       "description": "A powerful Chrome extension that enhances browsing productivity",
       "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
+      "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
+      "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
       "gallery": [
         "/data/slider-projects/image-project-extension.webp",
         "/data/slider-projects/image-project-extension-2.webp"
@@ -15,6 +17,8 @@
       "title": "Portfolio Website",
       "description": "Modern and responsive portfolio website design",
       "extendedDescription": "A fully responsive portfolio website built with modern web technologies. Features include smooth animations, dynamic content loading, and optimized performance. The design focuses on user experience with intuitive navigation and clean, professional aesthetics.",
+      "projectUrl": "https://lauraacastro.github.io/",
+      "sourceCodeUrl": "https://github.com/LauraaCastro/LauraaCastro.github.io",
       "gallery": [
         "/data/slider-projects/laura-profolio-min.png",
         "/data/slider-projects/laura-profolio-2.png"
@@ -22,12 +26,26 @@
     },
     {
       "image": "/data/slider-projects/ModernDecorMODS.png",
-      "title": "Modern Decor E-commerce",
-      "description": "E-commerce platform for modern home decoration",
+      "title": "Modern Decor MODs",
+      "description": "Mods for Minecraft modern home decoration",
       "extendedDescription": "A comprehensive e-commerce solution for modern home decoration products. Built with React and Node.js, it includes features like user authentication, shopping cart functionality, secure payment processing, and order management. The platform offers a seamless shopping experience with responsive design.",
+      "projectUrl": "https://agustinbeniteez.github.io/Modern-Decor-mods/",
+      "sourceCodeUrl": "https://github.com/AgustinBeniteez/Modern-Decor-mods",
       "gallery": [
         "/data/slider-projects/ModernDecorMODS.png",
         "/data/slider-projects/ModernDecorMODS-2.png"
+      ]
+    },
+    {
+      "image": "/data/slider-projects/EnmaManualidades.webp",
+      "title": "Enma Manualidades",
+      "description": "Website Shop oline",
+      "extendedDescription": "Web site html & css.",
+      "projectUrl": "https://enmamanualidades.github.io/",
+      "sourceCodeUrl": "https://github.com/EnmaManualidades/enmamanualidades.github.io",
+      "gallery": [
+        "/data/slider-projects/EnmaManualidades.webp",
+        "/data/slider-projects/EnmaManualidades.webp"
       ]
     },
     {
@@ -35,6 +53,8 @@
       "title": "CSS Elements Library",
       "description": "Modern CSS components and elements library",
       "extendedDescription": "A comprehensive CSS library featuring modern, reusable UI components. The library includes carefully crafted elements like buttons, cards, navigation bars, and form components. Each element is fully customizable and follows current web design trends while maintaining accessibility standards.",
+      "projectUrl": "https://elementscssdaj.github.io/",
+      "sourceCodeUrl": "https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io",
       "gallery": [
         "/data/slider-projects/ElementsCssDaj (AD).png",
         "/data/slider-projects/ElementsCssDaj-2.png"
@@ -42,9 +62,11 @@
     },
     {
       "image": "/data/slider-projects/EditorDAJsocial.png",
-      "title": "Social Media Dashboard",
-      "description": "Comprehensive social media management dashboard",
-      "extendedDescription": "A powerful social media management dashboard that allows users to monitor and manage multiple social media accounts from a single interface. Features include analytics tracking, post scheduling, engagement metrics, and automated reporting. Built with React and integrates with various social media APIs.",
+      "title": "Editor CSS HTML JS",
+      "description": "Website with editor web",
+      "extendedDescription": "build your code in this website.",
+      "projectUrl": "https://elementscssdaj.github.io/editor/editor.html",
+      "sourceCodeUrl": "https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io/tree/main/editor",
       "gallery": [
         "/data/slider-projects/EditorDAJsocial.png",
         "/data/slider-projects/EditorDAJsocial-2.png"
