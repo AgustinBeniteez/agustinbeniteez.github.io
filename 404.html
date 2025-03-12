@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/404.css">
+    <title>404 - Page Not Found</title>
+</head>
+<body>
+    <div class="sad-face">:(</div>
+    <h1 class="error-title">This Url not is found | Error 404</h1>
+    <div class="error-code">
+        <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="/" class="home-button">Go to Homepage</a>
+        <div class="progress-container">
+            <div class="progress-text">
+                <span id="progress-percent">0%</span> Complete
+            </div>
+        </div>
+        <script>
+            let percent = 0;
+            const progressText = document.getElementById('progress-percent');
+            
+            const updatePercent = () => {
+                if (percent < 100) {
+                    percent += 2;
+                    progressText.textContent = percent + '%';
+                    setTimeout(updatePercent, 30);
+                }
+            };
+            
+            updatePercent();
+        </script>
+    </div>
+
+    <div class="qr-code"><i id="qr-icon" class="fa-solid fa-qrcode"></i><p>
+        The requested page could not be found on the server. Please check the URL and try again.
+        <br>Error_Code: 404_NOT_FOUND <i class="fa-solid fa-triangle-exclamation fa-s"></i></p></div>
+</body>
+</html>
