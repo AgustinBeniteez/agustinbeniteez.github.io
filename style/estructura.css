@@ -311,13 +311,17 @@ section img{
 }
 
 .minimized-browsers {
-    display: flex;
-    position: relative;
-    right: 0;
-    top: 20%;
-    background-color: transparent;
-    border-radius: 4px;
-    margin-right: 10px;
+  display: flex;
+  position: relative;
+  right: 0;
+  top: 20%;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-right: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
 }
 
 .browser-windows {
