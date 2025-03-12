@@ -45,7 +45,7 @@
         }
         .mods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 20px;
             padding: 30px;
         }
@@ -66,8 +66,8 @@
         }
         .mod-image {
             margin: 3%;
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             flex-shrink: 0;
         }
@@ -104,6 +104,64 @@
         }
         .curseforge-button:hover {
             background: #e45325;
+        }
+        
+        /* Media Queries for Responsive Design */
+        @media screen and (max-width: 768px) {
+            .mods-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .mod-card {
+                height: auto;
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .mod-image {
+                width: 120px;
+                height: 120px;
+                margin: 0 0 10px 0;
+            }
+            
+            .mod-content {
+                padding: 10px 0;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .game-filters {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .mods-grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            
+            .mod-card {
+                padding: 10px;
+            }
+            
+            .mod-title {
+                font-size: 1.1em;
+            }
+            
+            .mod-description {
+                font-size: 0.85em;
+            }
+            
+            .curseforge-button {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
