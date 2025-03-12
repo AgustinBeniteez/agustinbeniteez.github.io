@@ -15,6 +15,38 @@
                 rgba(29, 22, 28, 1) 100%
             );
         }
+        h3 {
+                color: white;
+                margin:10px 10% 10px 10%;
+            }
+            .artistas {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+            .artista-card {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 8px;
+                padding: 15px;
+                text-align: center;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
+            .artista-card:hover {
+                background: rgba(0, 0, 0, 0.5);
+            }
+            .artista-card img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+            .artista-card h4 {
+                color: white;
+                margin: 0;
+                font-size: 1.2em;
+            }
 
     </style>
 </head>
