@@ -93,3 +93,53 @@
       </article>
 </body>
 </html>
+<div class="start-menu" id="startMenu">
+    <div class="start-menu-header">
+        <input type="text" class="start-menu-search" placeholder="Type to search...">
+    </div>
+    <div class="start-menu-items">
+        <div class="start-menu-item" onclick="openBrowserWindow('projects')">
+            <img src="/src/folder-projects.webp" alt="Projects">
+            <p>Projects</p>
+        </div>
+        <div class="start-menu-item" onclick="openBrowserWindow('mods')">
+            <img src="/src/folder-mods.webp" alt="Mods">
+            <p>Mods</p>
+        </div>
+        <div class="start-menu-item" onclick="openBrowserWindow('estudios')">
+            <img src="/src/folder-estudios.webp" alt="Studies">
+            <p>Studies</p>
+        </div>
+        <div class="start-menu-item" onclick="openBrowserWindow('chrome')">
+            <img src="/src/chrome.webp" alt="Extensions">
+            <p>Extensions</p>
+        </div>
+        <div class="start-menu-item" onclick="openBrowserWindow('GitHub')">
+            <img src="/src/github.webp" alt="Github">
+            <p>Github</p>
+        </div>
+        <div class="start-menu-item" onclick="openBrowserWindow('figma')">
+            <img src="/src/figma.webp" alt="Figma">
+            <p>Figma</p>
+        </div>
+        <div class="start-menu-item" onclick="openBrowserWindow('spotify')">
+            <img src="/src/spotify.webp" alt="Spotify">
+            <p>Spotify</p>
+        </div>
+    </div>
+</div>
+<script>
+document.querySelector('.custom-button').addEventListener('click', function() {
+    const startMenu = document.getElementById('startMenu');
+    startMenu.classList.toggle('active');
+});
+
+document.addEventListener('click', function(event) {
+    const startMenu = document.getElementById('startMenu');
+    const windowsButton = document.querySelector('.custom-button');
+    
+    if (!startMenu.contains(event.target) && !windowsButton.contains(event.target)) {
+        startMenu.classList.remove('active');
+    }
+});
+</script>
