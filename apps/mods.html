@@ -11,43 +11,87 @@
             font-family: Arial, sans-serif;
             background-color: #0F0F0F;
         }
+        .game-filters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .game-filter {
+            padding: 10px 20px;
+            background: #1A1A1A;
+            border: 2px solid #333;
+            color: #c2c2c2;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .game-filter img {
+            width: 24px;
+            height: 24px;
+        }
+        .game-filter.active {
+            background: #f16436;
+            border-color: #f16436;
+            color: white;
+        }
+        .game-filter:hover {
+            background: #f16436;
+            border-color: #f16436;
+            color: white;
+        }
         .mods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 30px;
         }
         .mod-card {
             display: flex;
             background: #1A1A1A;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
             flex-wrap: nowrap;
             align-items: center;
+            height: 180px;
+            padding: 20px;
         }
         .mod-card:hover {
             transform: translateY(-5px);
         }
         .mod-image {
             margin: 3%;
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             object-fit: cover;
+            flex-shrink: 0;
         }
         .mod-content {
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
         }
         .mod-title {
-            margin: 0 0 10px 0;
+            margin: 0 0 5px 0;
             font-size: 1.2em;
             color: #c2c2c2;
         }
         .mod-description {
             color: #c4c4c4;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 0.9em;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         .curseforge-button {
             display: inline-block;
@@ -64,39 +108,11 @@
     </style>
 </head>
 <body>
-    <div class="mods-grid">
-        <div class="mod-card">
-            <img src="https://media.forgecdn.net/avatars/thumbnails/1190/893/256/256/638765654876934850_animated.gif" alt="Makeup | Aesthetics Decor" class="mod-image">
-            <div class="mod-content">
-                <h3 class="mod-title">Makeup | Aesthetics Decor</h3>
-                <p class="mod-description">A Minecraft mod that adds beautiful decorative items and furniture to enhance your builds.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/makeup-aesthetics-decor" target="_blank" class="curseforge-button">Ver en CurseForge</a>
-            </div>
-        </div>
-        <div class="mod-card">
-            <img src="https://media.forgecdn.net/avatars/thumbnails/1081/852/256/256/638621914409778985.png" alt="Modern Decor Wooden" class="mod-image">
-            <div class="mod-content">
-                <h3 class="mod-title">Modern Decor Wooden</h3>
-                <p class="mod-description">Add modern wooden furniture and decorations to your Minecraft world.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/modern-decor-wooden" target="_blank" class="curseforge-button">Ver en CurseForge</a>
-            </div>
-        </div>
-        <div class="mod-card">
-            <img src="https://media.forgecdn.net/avatars/thumbnails/1069/428/256/256/638604418819274553.png" alt="Modern Decor Outdoor" class="mod-image">
-            <div class="mod-content">
-                <h3 class="mod-title">Modern Decor Outdoor</h3>
-                <p class="mod-description">Enhance your outdoor spaces with modern decorative elements and furniture.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/modern-decor-outdoor" target="_blank" class="curseforge-button">Ver en CurseForge</a>
-            </div>
-        </div>
-        <div class="mod-card">
-            <img src="https://media.forgecdn.net/avatars/thumbnails/1062/32/256/256/638594386092564630.png" alt="Hazbin Hotel Items" class="mod-image">
-            <div class="mod-content">
-                <h3 class="mod-title">Hazbin Hotel Items</h3>
-                <p class="mod-description">Add Hazbin Hotel themed items and decorations to your Minecraft world.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/hazbin-hotel-items" target="_blank" class="curseforge-button">Ver en CurseForge</a>
-            </div>
-        </div>
+    <div class="game-filters">
+        <button class="game-filter active" data-game="minecraft"><img src="../src/icono-minecraft.svg" alt="Minecraft">Minecraft</button>
+        <button class="game-filter" data-game="sims4"><img src="../src/logo-sims4.svg" alt="Sims 4">Sims 4</button>
     </div>
+    <div class="mods-grid"></div>
+    <script src="../script/mods.js"></script>
 </body>
 </html>

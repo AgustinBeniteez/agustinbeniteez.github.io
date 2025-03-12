@@ -1,0 +1,60 @@
+{
+  "minecraft": [
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1190/893/256/256/638765654876934850_animated.gif",
+      "title": "Makeup | Aesthetics Decor",
+      "description": "A Minecraft mod that adds beautiful decorative items and furniture to enhance your builds.",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/makeup-aesthetics-decor"
+    },
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1081/852/256/256/638621914409778985.png",
+      "title": "Modern Decor Wooden",
+      "description": "Add modern wooden furniture and decorations to your Minecraft world.",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/modern-decor-wooden"
+    },
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1069/428/256/256/638604418819274553.png",
+      "title": "Modern Decor Outdoor",
+      "description": "Enhance your outdoor spaces with modern decorative elements and furniture.",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/modern-decor-outdoor"
+    },
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1062/32/256/256/638594386092564630.png",
+      "title": "Hazbin Hotel Items",
+      "description": "Add Hazbin Hotel themed items and decorations to your Minecraft world.",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/hazbin-hotel-items"
+    }
+  ],
+  "sims4": [
+    {
+        "image": "https://media.forgecdn.net/avatars/thumbnails/1187/765/256/256/638762171287021505_animated.gif",
+        "title": "Arcane Pictures | square frame",
+        "description": "Arcane Pictures | square frame.",
+        "url": "https://www.curseforge.com/sims4/build-buy/arcane-pictures-square-frame"
+    },
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1187/46/256/256/638761289410850447_animated.gif",
+      "title": "Poster Arcane | Jinx & Vi | Jinx was here | Arcane",
+      "description": "Decorate your Sims' walls with this beautiful Arcane poster featuring Jinx and Vi.",
+      "url": "https://www.curseforge.com/sims4/build-buy/poster-arcane-jinx-vi"
+    },
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1185/447/256/256/638759388512417620.png",
+      "title": "Cats T-shirt | Female",
+      "description": "A cute cat-themed t-shirt for your female Sims characters.",
+      "url": "https://www.curseforge.com/sims4/create-a-sim/cats-t-shirt-female"
+    },
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1184/862/256/256/638758766758614666.png",
+      "title": "Valorant T-Shirt VCT | Female",
+      "description": "Show your love for Valorant esports with this VCT themed t-shirt for female Sims.",
+      "url": "https://www.curseforge.com/sims4/create-a-sim/edit-valorant-t-shirt-vct-female"
+    },
+    {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1184/863/256/256/638758767655315654.png",
+      "title": "Valorant T-Shirt VCT | Male",
+      "description": "A Valorant esports themed t-shirt for your male Sims characters.",
+      "url": "https://www.curseforge.com/sims4/create-a-sim/valorant-t-shirt-vct-male"
+    }
+  ]
+}
