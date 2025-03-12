@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#9b59b6" />
+  <text x="200" y="160" font-family="Arial" font-size="40" text-anchor="middle" fill="white">GRADO SUPERIOR</text>
+  <text x="200" y="210" font-family="Arial" font-size="40" text-anchor="middle" fill="white">DAW</text>
+  <text x="200" y="260" font-family="Arial" font-size="20" text-anchor="middle" fill="white">Desarrollo de Aplicaciones Web</text>
+  <path d="M100,100 L300,100 L300,300 L100,300 Z" fill="none" stroke="white" stroke-width="8" />
+  <path d="M120,320 L280,320 L280,350 L120,350 Z" fill="white" />
+</svg>

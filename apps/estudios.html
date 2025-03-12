@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudios</title>
+    <title>Formación Académica</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet' />
     <style>
         body {
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
             background-color: #0F0F0F;
+            color: #fcfcfc;
+        }
+        h2 {
+            text-align: center;
+            margin: 30px 0;
+            color: #eeeeee;
+            font-size: 1.8em;
         }
         .estudios-grid {
             display: grid;
@@ -57,40 +65,102 @@
         .view-button:hover {
             opacity: 0.9;
         }
+        /* New skills styling */
+        .skills-section {
+            padding: 20px;
+        }
+        .skills-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #eeeeee;
+        }
+        .skills-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .skill-icon {
+            background: #1A1A1A;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .skill-icon:hover {
+            transform: translateY(-5px);
+        }
+        .skill-icon i {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #eeeeee;
+        }
+        .skill-icon:after {
+            content: attr(title);
+            display: block;
+            margin-top: 10px;
+            font-size: 1em;
+            color: #eeeeee;
+        }
     </style>
 </head>
 <body>
+    <h2>Formación Académica</h2>
     <div class="estudios-grid">
         <div class="estudio-card">
-            <img src="/src/html-css.webp" alt="HTML & CSS" class="estudio-image">
+            <img src="/src/eso-education.svg" alt="ESO" class="estudio-image">
             <div class="estudio-content">
-                <h3 class="estudio-title">HTML & CSS</h3>
-                <p class="estudio-description">Learn the fundamentals of web development with HTML and CSS.</p>
-                <a href="#" class="view-button">View Resources</a>
+                <h3 class="estudio-title">ESO</h3>
+                <p class="estudio-description">IES Huerta del Rosario</p>
+                <a href="#" class="view-button">Ver Detalles</a>
             </div>
         </div>
         <div class="estudio-card">
-            <img src="/src/javascript.webp" alt="JavaScript" class="estudio-image">
+            <img src="/src/grado-medio-smir.svg" alt="GRADO MEDIO SMIR" class="estudio-image">
             <div class="estudio-content">
-                <h3 class="estudio-title">JavaScript</h3>
-                <p class="estudio-description">Master JavaScript programming and web interactivity.</p>
-                <a href="#" class="view-button">View Resources</a>
+                <h3 class="estudio-title">GRADO MEDIO SMIR</h3>
+                <p class="estudio-description">PIES PABLO RUIZ PICASSO</p>
+                <a href="#" class="view-button">Ver Detalles</a>
             </div>
         </div>
         <div class="estudio-card">
-            <img src="/src/react.webp" alt="React" class="estudio-image">
+            <img src="/src/grado-superior-daw.svg" alt="GRADO SUPERIOR DAW" class="estudio-image">
             <div class="estudio-content">
-                <h3 class="estudio-title">React</h3>
-                <p class="estudio-description">Build modern web applications with React framework.</p>
-                <a href="#" class="view-button">View Resources</a>
+                <h3 class="estudio-title">GRADO SUPERIOR DAW</h3>
+                <p class="estudio-description">IES FERNANDO AGUILAR QUIGNON (estudiando actualmente)</p>
+                <a href="#" class="view-button">Ver Detalles</a>
             </div>
         </div>
-        <div class="estudio-card">
-            <img src="/src/node.webp" alt="Node.js" class="estudio-image">
-            <div class="estudio-content">
-                <h3 class="estudio-title">Node.js</h3>
-                <p class="estudio-description">Develop server-side applications with Node.js.</p>
-                <a href="#" class="view-button">View Resources</a>
+    </div>
+
+    <h2>Competencias</h2>
+    <div class="skills-section">
+        <div class="skills-icons">
+            <div class="skill-icon" title="HTML5">
+                <i class="fa-brands fa-html5"></i>
+            </div>
+            <div class="skill-icon" title="CSS">
+                <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <div class="skill-icon" title="JavaScript">
+                <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="skill-icon" title="Git">
+                <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <div class="skill-icon" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="skill-icon" title="Figma">
+                <i class="fa-brands fa-figma"></i>
+            </div>
+            <div class="skill-icon" title="Java">
+                <i class="fa-brands fa-java"></i>
+            </div>
+            <div class="skill-icon" title="Python">
+                <i class="fa-brands fa-python"></i>
             </div>
         </div>
     </div>
