@@ -163,7 +163,6 @@ class Application {
 
 // Create application instances
 const apps = {
-    chrome: new Application('Chrome', '/src/chrome.webp', 'apps/extensiones.html'),
     github: new Application('GitHub', '/src/github.webp', 'apps/github.html'),
     spotify: new Application('Spotify', '/src/spotify.webp', 'apps/spotify.html'),
     figma: new Application('Figma', '/src/figma.webp', 'apps/figma.html'),
