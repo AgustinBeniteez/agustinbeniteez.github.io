@@ -11,6 +11,10 @@
 <body>
     <nav class="projects-nav">
         <h2><i class="fa-solid fa-code"></i> Projects</h2>
+        <div class="filters-section">
+            <h3>Filter by Technology</h3>
+            <div class="filter-options" id="techFilters"></div>
+        </div>
         <div class="project-list" id="projectList">
             <!-- Project items will be added here dynamically -->
         </div>
@@ -26,6 +30,9 @@
 
     <script>
         let currentProject = null;
+        let activeFilters = {
+            technologies: new Set()
+        };
 
         async function loadProjects() {
             try {
@@ -36,6 +43,59 @@
                 console.error('Error loading project data:', error);
                 return [];
             }
+        }
+
+        function createFilterOptions(projects) {
+            const techSet = new Set();
+
+            projects.forEach(project => {
+                project.technologies?.forEach(tech => techSet.add(tech));
+            });
+
+            const techFilters = document.getElementById('techFilters');
+
+            techSet.forEach(tech => {
+                const filterItem = createFilterItem(tech);
+                techFilters.appendChild(filterItem);
+            });
+        }
+
+        function createFilterItem(value) {
+            const label = document.createElement('label');
+            label.className = 'filter-item';
+            
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = value;
+            
+            const icon = document.createElement('i');
+            icon.className = `fa-brands fa-${value}`;
+            
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    activeFilters.technologies.add(value);
+                } else {
+                    activeFilters.technologies.delete(value);
+                }
+                filterProjects();
+            });
+
+            label.appendChild(checkbox);
+            label.appendChild(icon);
+            label.appendChild(document.createTextNode(value));
+            return label;
+        }
+
+        function filterProjects() {
+            const projectItems = document.querySelectorAll('.project-item');
+            const projects = Array.from(projectItems).map((_, index) => allProjects[index]);
+
+            projects.forEach((project, index) => {
+                const matchesTech = activeFilters.technologies.size === 0 ||
+                    project.technologies?.some(tech => activeFilters.technologies.has(tech));
+
+                projectItems[index].style.display = matchesTech ? 'block' : 'none';
+            });
         }
 
         function createProjectList(projects) {
@@ -52,11 +112,9 @@
         }
 
         function showProject(project, index) {
-            // Update active state in project list
             document.querySelectorAll('.project-item').forEach(item => item.classList.remove('active'));
             document.querySelectorAll('.project-item')[index].classList.add('active');
 
-            // Update project content
             const projectContent = document.getElementById('projectContent');
             projectContent.innerHTML = `
                 <div class="project-details">
@@ -69,8 +127,17 @@
                             </div>
                         </div>
                         <img src="${project.image}" alt="${project.title}" class="project-image">
+                        <div class="project-technologies">
+                            ${project.technologies ? project.technologies.map(tech => `
+                                <i class="fa-brands fa-${tech} fa-2x" title="${tech}"></i>
+                            `).join('') : ''}
+                        </div>
+                        <div class="project-tags">
+                            ${project.tags ? project.tags.map(tag => `
+                                <span class="project-tag">${tag}</span>
+                            `).join('') : ''}
+                        </div>
                         <p class="project-description">${project.description}</p>
-
                     </div>
                     <div class="project-extended-info" id="extendedInfo">
                         <h2>Extended Description</h2>
@@ -84,23 +151,24 @@
                 </div>
             `;
 
-            // Reset scroll position to top
             projectContent.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         }
 
+        let allProjects = [];
+
         document.addEventListener('DOMContentLoaded', async () => {
-            const projects = await loadProjects();
-            if (projects.length > 0) {
-                createProjectList(projects);
-                showProject(projects[0], 0);
+            allProjects = await loadProjects();
+            if (allProjects.length > 0) {
+                createFilterOptions(allProjects);
+                createProjectList(allProjects);
+                showProject(allProjects[0], 0);
             }
 
             const scrollButton = document.getElementById('scrollToInfo');
             
-            // Show/hide scroll button based on scroll position
             window.addEventListener('scroll', () => {
                 const scrollPosition = window.scrollY;
                 if (scrollPosition > 300) {
@@ -110,7 +178,6 @@
                 }
             });
 
-            // Scroll to extended info section when button is clicked
             scrollButton.addEventListener('click', () => {
                 const extendedInfo = document.getElementById('extendedInfo');
                 if (extendedInfo) {

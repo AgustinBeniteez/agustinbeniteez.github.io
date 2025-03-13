@@ -7,6 +7,8 @@
       "extendedDescription": "A fully responsive portfolio website built with modern web technologies. Features include smooth animations, dynamic content loading, and optimized performance. The design focuses on user experience with intuitive navigation and clean, professional aesthetics.",
       "projectUrl": "https://lauraacastro.github.io/",
       "sourceCodeUrl": "https://github.com/LauraaCastro/LauraaCastro.github.io",
+      "technologies": ["html5", "css3","js"],
+      "tags": ["portfolio", "web-design"],
       "gallery": [
         "https://raw.githubusercontent.com/LauraaCastro/LauraaCastro.github.io/refs/heads/main/src/diseño-website-lau.png",
         "/data/slider-projects/laura-profolio-2.png"
@@ -19,6 +21,8 @@
       "extendedDescription": "A comprehensive e-commerce solution for modern home decoration products. Built with React and Node.js, it includes features like user authentication, shopping cart functionality, secure payment processing, and order management. The platform offers a seamless shopping experience with responsive design.",
       "projectUrl": "https://agustinbeniteez.github.io/Modern-Decor-mods/",
       "sourceCodeUrl": "https://github.com/AgustinBeniteez/Modern-Decor-mods",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["gaming", "mods"],
       "gallery": [
         "/data/slider-projects/ModernDecorMODS.png",
         "/data/slider-projects/ModernDecorMODS-2.png"
@@ -31,6 +35,8 @@
       "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
       "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
       "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["extension"],
       "gallery": [
         "/data/slider-projects/image-project-extension.webp",
         "/data/slider-projects/image-project-extension-2.webp"
@@ -43,6 +49,8 @@
       "extendedDescription": "Web site html & css.",
       "projectUrl": "https://enmamanualidades.github.io/",
       "sourceCodeUrl": "https://github.com/EnmaManualidades/enmamanualidades.github.io",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["e-commerce", "shop"],
       "gallery": [
         "/data/slider-projects/EnmaManualidades.webp",
         "/data/slider-projects/EnmaManualidades.webp"
@@ -55,6 +63,8 @@
       "extendedDescription": "A comprehensive CSS library featuring modern, reusable UI components. The library includes carefully crafted elements like buttons, cards, navigation bars, and form components. Each element is fully customizable and follows current web design trends while maintaining accessibility standards.",
       "projectUrl": "https://elementscssdaj.github.io/",
       "sourceCodeUrl": "https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["library", "ui-design"],
       "gallery": [
         "/data/slider-projects/ElementsCssDaj (AD).png",
         "/data/slider-projects/ElementsCssDaj-2.png"
@@ -67,6 +77,8 @@
       "extendedDescription": "build your code in this website.",
       "projectUrl": "https://elementscssdaj.github.io/editor/editor.html",
       "sourceCodeUrl": "https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io/tree/main/editor",
+      "technologies": ["html5", "css3"],
+      "tags": ["editor", "development"],
       "gallery": [
         "/data/slider-projects/EditorDAJsocial.png",
         "/data/slider-projects/EditorDAJsocial-2.png"
