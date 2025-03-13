@@ -77,7 +77,7 @@
       "extendedDescription": "build your code in this website.",
       "projectUrl": "https://elementscssdaj.github.io/editor/editor.html",
       "sourceCodeUrl": "https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io/tree/main/editor",
-      "technologies": ["html5", "css3"],
+      "technologies": ["html5", "css3" ,"js"],
       "tags": ["editor", "development"],
       "gallery": [
         "/data/slider-projects/EditorDAJsocial.png",
