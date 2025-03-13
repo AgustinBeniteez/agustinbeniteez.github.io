@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
-  <rect width="400" height="400" fill="#f1c40f" />
-  <text x="200" y="200" font-family="Arial" font-size="50" text-anchor="middle" fill="black">JavaScript</text>
-  <path d="M100,100 L300,100 L300,300 L100,300 Z" fill="none" stroke="black" stroke-width="8" />
-</svg>
