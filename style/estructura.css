@@ -411,6 +411,7 @@ section img{
         left: 0;
         transform: none;
         border-radius: 0;
+        animation: none;
     }
 }
 .browser-window.maximized {
