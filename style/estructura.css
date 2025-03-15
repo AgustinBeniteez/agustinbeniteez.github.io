@@ -400,6 +400,7 @@ section img{
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 12px var(--color-sombra);
+    animation: appAppear 0.5s ease-out forwards;
 }
 
 @media screen and (max-width: 768px) {
@@ -419,6 +420,7 @@ section img{
     left: 0;
     transform: none;
     border-radius: 0;
+    animation: none;
 }
 
 .window-content {
@@ -492,6 +494,7 @@ section img{
     left: 0;
     transform: none;
     border-radius: 0;
+    animation: none;
 }
 
 .window-content {
@@ -604,6 +607,29 @@ section img{
     }
     to {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes appAppear {
+    0% {
+        transform: translate(-50%, 100%) scale(0.7, 1.3) skewX(15deg);
+        opacity: 0;
+    }
+    30% {
+        transform: translate(-50%, -40%) scale(1.1, 0.9) skewX(-10deg);
+        opacity: 0.7;
+    }
+    60% {
+        transform: translate(-50%, -55%) scale(0.95, 1.05) skewX(5deg);
+        opacity: 0.9;
+    }
+    80% {
+        transform: translate(-50%, -48%) scale(1.02, 0.98) skewX(-2deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1, 1) skewX(0);
         opacity: 1;
     }
 }
@@ -766,6 +792,29 @@ section img{
     }
     to {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes appAppear {
+    0% {
+        transform: translate(-50%, 100%) scale(0.7, 1.3) skewX(15deg);
+        opacity: 0;
+    }
+    30% {
+        transform: translate(-50%, -40%) scale(1.1, 0.9) skewX(-10deg);
+        opacity: 0.7;
+    }
+    60% {
+        transform: translate(-50%, -55%) scale(0.95, 1.05) skewX(5deg);
+        opacity: 0.9;
+    }
+    80% {
+        transform: translate(-50%, -48%) scale(1.02, 0.98) skewX(-2deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1, 1) skewX(0);
         opacity: 1;
     }
 }
