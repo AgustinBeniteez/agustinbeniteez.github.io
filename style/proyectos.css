@@ -1,7 +1,43 @@
+:root {
+    /* Base colors */
+    --color-bg-primary: #0d1117;
+    --color-bg-secondary: #161b22;
+    --color-bg-tertiary: #21262d;
+    --color-bg-hover: #2d333b;
+    --color-bg-active: #c251a6;
+    --color-bg-filter: #30363d;
+    --color-bg-filter-hover: #3c444d;
+    --color-bg-tag: #2a2a2a;
+    --color-bg-tag-hover: #3a3a3a;
+    
+    /* Text colors */
+    --color-text-primary: white;
+    --color-text-secondary: #c9d1d9;
+    --color-text-tertiary: #8b949e;
+    
+    /* Border colors */
+    --color-border: #30363d;
+    --color-checkbox-border: #aaaaaa;
+    
+    /* Accent colors */
+    --color-accent-primary: #ff3366;
+    --color-accent-secondary: #ff6b6b;
+    --color-accent-green: #2ea043;
+    
+    /* Gradient */
+    --gradient-primary: linear-gradient(45deg, var(--color-accent-primary), var(--color-accent-secondary));
+    
+    /* Shadow colors */
+    --color-shadow-primary: rgba(0, 0, 0, 0.1);
+    --color-shadow-secondary: rgba(0, 0, 0, 0.2);
+    --color-shadow-tertiary: rgba(0, 0, 0, 0.3);
+    --color-accent-shadow: rgba(255, 51, 102, 0.2);
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #0d1117;
-    color: white;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -10,13 +46,13 @@ body {
 
 .projects-nav {
     width: 300px;
-    background-color: #161b22;
+    background-color: var(--color-bg-secondary);
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px var(--color-shadow-primary);
     height: 94vh;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #30363d #0d1117;
+    scrollbar-color: var(--color-bg-filter) var(--color-bg-primary);
 }
 
 .projects-nav::-webkit-scrollbar {
@@ -24,16 +60,16 @@ body {
 }
 
 .projects-nav::-webkit-scrollbar-track {
-    background: #0d1117;
+    background: var(--color-bg-primary);
 }
 
 .projects-nav::-webkit-scrollbar-thumb {
-    background-color: #30363d;
+    background-color: var(--color-bg-filter);
     border-radius: 4px;
 }
 
 .project-item.active {
-    background: linear-gradient(45deg, #ff3366, #ff6b6b);
+    background: var(--gradient-primary);
     transform: translateX(5px);
 }
 
@@ -46,7 +82,7 @@ body {
     height: 85vh;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #30363d #0d1117;
+    scrollbar-color: var(--color-bg-filter) var(--color-bg-primary);
 }
 
 .project-content::-webkit-scrollbar {
@@ -54,29 +90,29 @@ body {
 }
 
 .project-content::-webkit-scrollbar-track {
-    background: #0d1117;
+    background: var(--color-bg-primary);
 }
 
 .project-content::-webkit-scrollbar-thumb {
-    background-color: #30363d;
+    background-color: var(--color-bg-filter);
     border-radius: 4px;
 }
 
 .primary-link {
-    background: linear-gradient(45deg, #ff3366, #ff6b6b);
-    color: white;
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
 }
 
 .secondary-link {
-    background-color: #21262d;
-    color: #c9d1d9;
-    border: 1px solid #30363d;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
 }
 
 .projects-nav h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #c9d1d9;
+    color: var(--color-text-secondary);
 }
 
 .project-list {
@@ -89,7 +125,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    background-color: #21262d;
+    background-color: var(--color-bg-tertiary);
     border-radius: 8px;
     padding: 10px;
     cursor: pointer;
@@ -104,12 +140,12 @@ body {
 }
 
 .project-item:hover {
-    background-color: #2d333b;
+    background-color: var(--color-bg-hover);
     transform: translateX(5px);
 }
 
 .project-item.active {
-    background-color: #c251a6;
+    background-color: var(--color-bg-active);
 }
 
 .project-details {
@@ -158,11 +194,11 @@ body {
 .project-header h1 {
     font-size: 36px;
     margin-bottom: 10px;
-    color: #c9d1d9;
+    color: var(--color-text-secondary);
 }
 
 .project-description {
-    color: #8b949e;
+    color: var(--color-text-tertiary);
     line-height: 1.6;
     margin-bottom: 30px;
 }
@@ -188,13 +224,13 @@ body {
 }
 
 .primary-link {
-    background-color: #2ea043;
-    color: white;
+    background-color: var(--color-accent-green);
+    color: var(--color-text-primary);
 }
 
 .secondary-link {
-    background-color: #21262d;
-    color: #c9d1d9;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
 }
 
 .project-link:hover {
@@ -206,8 +242,8 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: linear-gradient(45deg, #ff3366, #ff6b6b);
-    color: white;
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -220,7 +256,7 @@ body {
     visibility: visible;
     transition: all 0.3s ease;
     border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px var(--color-shadow-secondary);
 }
 
 .scroll-to-info.hidden {
@@ -230,7 +266,7 @@ body {
 
 .scroll-to-info:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px var(--color-shadow-tertiary);
 }
 
 @media (max-width: 1024px) {
@@ -293,12 +329,13 @@ body {
 .filters-section {
     margin-bottom: 30px;
     padding: 15px;
-    background-color: #21262d;
+    background-color: var(--color-bg-tertiary);
     border-radius: 8px;
+    width: 89%;
 }
 
 .filters-section h3 {
-    color: #c9d1d9;
+    color: var(--color-text-secondary);
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -315,16 +352,16 @@ body {
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
-    background-color: #30363d;
+    background-color: var(--color-bg-filter);
     border-radius: 6px;
     cursor: pointer;
-    color: #c9d1d9;
+    color: var(--color-text-secondary);
     font-size: 14px;
     transition: all 0.2s ease;
 }
 
 .filter-item:hover {
-    background-color: #3c444d;
+    background-color: var(--color-bg-filter-hover);
 }
 
 .filter-item input[type="checkbox"] {
@@ -334,15 +371,15 @@ body {
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    border: 2px solid #aaaaaa;
+    border: 2px solid var(--color-checkbox-border);
     border-radius: 4px;
-    background-color: #30363d;
+    background-color: var(--color-bg-filter);
     transition: all 0.2s ease;
     position: relative;
 }
 
 .filter-item input[type="checkbox"]:checked {
-    border-color: #ff3366;
+    border-color: var(--color-accent-primary);
     background-color: transparent;
 }
 
@@ -354,7 +391,7 @@ body {
     transform: translate(-50%, -50%) scale(0);
     width: 8px;
     height: 8px;
-    background-color: #ff3366;
+    background-color: var(--color-accent-primary);
     border-radius: 2px;
     animation: checkmark 0.2s ease forwards;
 }
@@ -372,7 +409,7 @@ body {
 
 .filter-item input[type="checkbox"]:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(255, 51, 102, 0.2);
+    box-shadow: 0 0 0 2px var(--color-accent-shadow);
 }
 .filter-item i {
     font-size: 16px;
@@ -389,15 +426,15 @@ body {
     display: inline-block;
     padding: 6px 12px;
     margin: 4px;
-    background-color: #2a2a2a;
+    background-color: var(--color-bg-tag);
     border-radius: 8px;
-    color: #fff;
+    color: var(--color-text-primary);
     font-size: 0.9em;
     transition: background-color 0.3s ease;
 }
 
 .project-tag:hover {
-    background-color: #3a3a3a;
+    background-color: var(--color-bg-tag-hover);
 }
 .project-link:hover {
     transform: translateY(-2px);
@@ -408,8 +445,8 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: linear-gradient(45deg, #ff3366, #ff6b6b);
-    color: white;
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -422,7 +459,7 @@ body {
     visibility: visible;
     transition: all 0.3s ease;
     border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px var(--color-shadow-secondary);
 }
 
 .scroll-to-info.hidden {
@@ -432,7 +469,7 @@ body {
 
 .scroll-to-info:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px var(--color-shadow-tertiary);
 }
 
 @media (max-width: 1024px) {
@@ -506,12 +543,13 @@ body {
 .filters-section {
     margin-bottom: 30px;
     padding: 15px;
-    background-color: #21262d;
+    background-color: var(--color-bg-tertiary);
     border-radius: 8px;
+    width: 85%;
 }
 
 .filters-section h3 {
-    color: #c9d1d9;
+    color: var(--color-text-secondary);
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -528,16 +566,16 @@ body {
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
-    background-color: #30363d;
+    background-color: var(--color-bg-filter);
     border-radius: 6px;
     cursor: pointer;
-    color: #c9d1d9;
+    color: var(--color-text-secondary);
     font-size: 14px;
     transition: all 0.2s ease;
 }
 
 .filter-item:hover {
-    background-color: #3c444d;
+    background-color: var(--color-bg-filter-hover);
 }
 
 .filter-item input[type="checkbox"] {
@@ -560,8 +598,8 @@ body {
 
 .tag {
     padding: 4px 12px;
-    background-color: #30363d;
-    color: #c9d1d9;
+    background-color: var(--color-bg-filter);
+    color: var(--color-text-secondary);
     border-radius: 12px;
     font-size: 14px;
 }
