@@ -60,7 +60,7 @@ class Application {
         closeBtn.className = 'window-control close-btn';
         
         controls.append(minimizeBtn, closeBtn);
-        header.append(title, controls);
+        header.append(titleContainer, controls);
         
         // Add content
         const content = document.createElement('div');
@@ -113,7 +113,10 @@ class Application {
         
         // Remove from taskbar when closed
         const minimizedTab = Array.from(document.querySelectorAll('.nav-title-minimized'))
-            .find(tab => tab.textContent === this.name);
+            .find(tab => {
+                const textElement = tab.querySelector('span');
+                return textElement && textElement.textContent === this.name;
+            });
         if (minimizedTab) {
             minimizedTab.remove();
         }
@@ -124,15 +127,36 @@ class Application {
         const minimizedContainer = document.querySelector('.minimized-browsers');
         const minimizedTab = document.createElement('div');
         minimizedTab.className = 'nav-title-minimized';
-        minimizedTab.textContent = this.name;
+        
+        // Create a container for icon and text
+        const tabContent = document.createElement('div');
+        tabContent.style.display = 'flex';
+        tabContent.style.alignItems = 'center';
+        tabContent.style.gap = '8px';
+        
+        // Create and add the icon
+        const icon = document.createElement('img');
+        icon.src = this.icon;
+        icon.style.width = '16px';
+        icon.style.height = '16px';
+        
+        // Add the text
+        const text = document.createElement('span');
+        text.textContent = this.name;
+        
+        // Append icon and text to the container
+        tabContent.appendChild(icon);
+        tabContent.appendChild(text);
+        
+        // Append the container to the tab
+        minimizedTab.appendChild(tabContent);
+        
         minimizedTab.onclick = () => {
             if (this.isMinimized) {
                 this.restoreWindow();
             } else {
-                // If window is already open, just focus it
-                document.getElementById(this.windowId).focus();
-                // Bring window to front
-                document.getElementById(this.windowId).style.zIndex = Date.now();
+                // If window is already open, minimize it
+                this.minimizeWindow();
             }
         };
         minimizedContainer.appendChild(minimizedTab);

@@ -336,6 +336,9 @@ section img{
   width: 100%;
   height: 100%;
   border: none;
+  /* Prevent iframe content from being affected by parent's backdrop-filter */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .minimized-browsers {
@@ -400,7 +403,7 @@ section img{
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 12px var(--color-sombra);
-    animation: appAppear 0.5s ease-out forwards;
+    animation: appAppear 0.3s ease-out;
 }
 
 @media screen and (max-width: 768px) {
@@ -411,7 +414,7 @@ section img{
         left: 0;
         transform: none;
         border-radius: 0;
-        animation: none;
+        animation: none !important;
     }
 }
 .browser-window.maximized {
@@ -437,6 +440,10 @@ section img{
     width: 100%;
     border: none;
     display: block;
+    /* Prevent iframe content from being affected by parent's backdrop-filter */
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 .window-control {
     background: var(--color-overlay-claro);
@@ -510,6 +517,10 @@ section img{
     width: 100%;
     border: none;
     display: block;
+    /* Prevent iframe content from being affected by parent's backdrop-filter */
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 .window-control {
     background: var(--color-overlay-claro);
@@ -667,23 +678,11 @@ section img{
 
 @keyframes appAppear {
     0% {
-        transform: translate(-50%, 100%) scale(0.7, 1.3) skewX(15deg);
+        transform: translate(-50%, 100%) scale(0.9);
         opacity: 0;
     }
-    30% {
-        transform: translate(-50%, -40%) scale(1.1, 0.9) skewX(-10deg);
-        opacity: 0.7;
-    }
-    60% {
-        transform: translate(-50%, -55%) scale(0.95, 1.05) skewX(5deg);
-        opacity: 0.9;
-    }
-    80% {
-        transform: translate(-50%, -48%) scale(1.02, 0.98) skewX(-2deg);
-        opacity: 1;
-    }
     100% {
-        transform: translate(-50%, -50%) scale(1, 1) skewX(0);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
 }
@@ -852,23 +851,11 @@ section img{
 
 @keyframes appAppear {
     0% {
-        transform: translate(-50%, 100%) scale(0.7, 1.3) skewX(15deg);
+        transform: translate(-50%, 100%) scale(0.9);
         opacity: 0;
     }
-    30% {
-        transform: translate(-50%, -40%) scale(1.1, 0.9) skewX(-10deg);
-        opacity: 0.7;
-    }
-    60% {
-        transform: translate(-50%, -55%) scale(0.95, 1.05) skewX(5deg);
-        opacity: 0.9;
-    }
-    80% {
-        transform: translate(-50%, -48%) scale(1.02, 0.98) skewX(-2deg);
-        opacity: 1;
-    }
     100% {
-        transform: translate(-50%, -50%) scale(1, 1) skewX(0);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
 }
