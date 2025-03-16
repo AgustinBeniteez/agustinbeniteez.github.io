@@ -190,6 +190,13 @@ document.addEventListener('click', function(event) {
     const startMenu = document.getElementById('startMenu');
     const windowsButton = document.querySelector('.custom-button');
     
+    // Check if the click is on the mobile close button (::after pseudo-element)
+    if (window.innerWidth <= 768 && event.clientY < 40 && event.clientX > window.innerWidth - 40) {
+        startMenu.classList.remove('active');
+        return;
+    }
+    
+    // Close start menu when clicking outside of it or on the Windows button
     if (!startMenu.contains(event.target) && !windowsButton.contains(event.target)) {
         startMenu.classList.remove('active');
     }

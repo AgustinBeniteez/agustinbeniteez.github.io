@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='rgba(170,119,186,1)'/><stop offset='100%' stop-color='rgba(194,109,80,1)'/></linearGradient></defs><path d='M7,4 L7,20 L11,16 L15,22 L19,19 L15,13 L19,13 Z' fill='url(%23grad)' stroke='white' stroke-width='1.5'/></svg>") 7 4, auto;
 }
 
 :root {
@@ -579,11 +580,64 @@ section img{
         height: calc(100% - 40px);
         overflow-y: auto;
     }
+
+    /* Hide taskbar apps on mobile devices */
+    .minimized-browsers {
+        display: none;
+    }
+    
+    .nav-title-minimized {
+        display: none;
+    }
+    
+    /* Full screen start menu for mobile */
+    .start-menu {
+        position: fixed;
+        bottom: 70px;
+        left: 10px;
+        width: 90% !important;
+        height: auto;
+        border-radius: 8px;
+        padding-top: 20px;
+        overflow-y: auto;
+    }
+    
+    /* Close button for start menu on mobile */
+    .start-menu::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: var(--color-fondo-menu);
+        z-index: 10000;
+        border-bottom: 1px solid var(--color-borde-menu);
+    }
+    
+    .start-menu::after {
+        content: '×';
+        position: fixed;
+        top: 0;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 24px;
+        color: var(--color-blanco);
+        background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        z-index: 10001;
+        cursor: pointer;
+    }
 }
 .start-menu {
   font: 1.3em arial;
   position: fixed;
-  bottom: 70px;
+  bottom: 50px;
   left: 10px;
   width: 60vh;
   height: 600px;
@@ -768,7 +822,7 @@ section img{
 }
 .start-menu {
   position: fixed;
-  bottom: 70px;
+  bottom: 50px;
   left: 10px;
   width: 60vh;
   height: 600px;

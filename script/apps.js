@@ -79,6 +79,9 @@ class Application {
         
         // Make window draggable
         this.makeDraggable(browserWindow, header);
+        
+        // Add to taskbar immediately when window is created
+        this.addToTaskbar();
     }
 
     minimizeWindow() {
@@ -86,13 +89,7 @@ class Application {
         window.style.display = 'none';
         this.isMinimized = true;
         
-        // Add to taskbar
-        const minimizedContainer = document.querySelector('.minimized-browsers');
-        const minimizedTab = document.createElement('div');
-        minimizedTab.className = 'nav-title-minimized';
-        minimizedTab.textContent = this.name;
-        minimizedTab.onclick = () => this.restoreWindow();
-        minimizedContainer.appendChild(minimizedTab);
+        // Window is already in taskbar from creation, no need to add again
     }
 
     restoreWindow() {
@@ -100,12 +97,7 @@ class Application {
         window.style.display = 'flex';
         this.isMinimized = false;
         
-        // Remove from taskbar
-        const minimizedTab = Array.from(document.querySelectorAll('.nav-title-minimized'))
-            .find(tab => tab.textContent === this.name);
-        if (minimizedTab) {
-            minimizedTab.remove();
-        }
+        // Don't remove from taskbar, keep it there until closed
     }
 
     maximizeWindow() {
@@ -119,7 +111,7 @@ class Application {
         this.windowId = null;
         this.isMinimized = false;
         
-        // Remove from taskbar if minimized
+        // Remove from taskbar when closed
         const minimizedTab = Array.from(document.querySelectorAll('.nav-title-minimized'))
             .find(tab => tab.textContent === this.name);
         if (minimizedTab) {
@@ -127,6 +119,25 @@ class Application {
         }
     }
 
+    // Add application to taskbar
+    addToTaskbar() {
+        const minimizedContainer = document.querySelector('.minimized-browsers');
+        const minimizedTab = document.createElement('div');
+        minimizedTab.className = 'nav-title-minimized';
+        minimizedTab.textContent = this.name;
+        minimizedTab.onclick = () => {
+            if (this.isMinimized) {
+                this.restoreWindow();
+            } else {
+                // If window is already open, just focus it
+                document.getElementById(this.windowId).focus();
+                // Bring window to front
+                document.getElementById(this.windowId).style.zIndex = Date.now();
+            }
+        };
+        minimizedContainer.appendChild(minimizedTab);
+    }
+    
     makeDraggable(element, handle) {
         let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         
@@ -175,5 +186,11 @@ const apps = {
 function openBrowserWindow(appName) {
     if (apps[appName.toLowerCase()]) {
         apps[appName.toLowerCase()].createWindow();
+        
+        // Close the start menu when an app is opened
+        const startMenu = document.getElementById('startMenu');
+        if (startMenu && startMenu.classList.contains('active')) {
+            startMenu.classList.remove('active');
+        }
     }
 }
