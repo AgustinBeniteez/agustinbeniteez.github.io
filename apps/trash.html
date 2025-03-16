@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="../style/estructura.css">
+    <title>Trash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: white;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .trash-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .trash-bin {
+            width: 300px;
+            height: 350px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .crumpled-papers {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .paper {
+            position: absolute;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transform: rotate(var(--rotation));
+            width: 80px;
+            height: 100px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .paper:hover {
+            transform: rotate(var(--rotation)) scale(1.1);
+        }
+
+        .paper:nth-child(1) {
+            --rotation: -15deg;
+            top: 20px;
+            left: 30px;
+        }
+
+        .paper:nth-child(2) {
+            --rotation: 10deg;
+            top: 40px;
+            left: 100px;
+        }
+
+        .paper:nth-child(3) {
+            --rotation: -5deg;
+            top: 80px;
+            left: 60px;
+        }
+
+        .project-note {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f5f5dc;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+
+        .project-note h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .project-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .project-item h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .project-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .close-note {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 99;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="trash-container">
+        <svg class="trash-bin" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- Trash bin lid -->
+            <path d="M40 40 L160 40 L150 20 L50 20 Z" fill="#aaa" />
+            
+            <!-- Trash bin body -->
+            <rect x="45" y="40" width="110" height="160" fill="#aaa" />
+            
+            <!-- Trash bin grid lines -->
+            <g fill="#333">
+                <rect x="60" y="60" width="20" height="20" />
+                <rect x="90" y="60" width="20" height="20" />
+                <rect x="120" y="60" width="20" height="20" />
+                
+                <rect x="60" y="90" width="20" height="20" />
+                <rect x="90" y="90" width="20" height="20" />
+                <rect x="120" y="90" width="20" height="20" />
+                
+                <rect x="60" y="120" width="20" height="20" />
+                <rect x="90" y="120" width="20" height="20" />
+                <rect x="120" y="120" width="20" height="20" />
+                
+                <rect x="60" y="150" width="20" height="20" />
+                <rect x="90" y="150" width="20" height="20" />
+                <rect x="120" y="150" width="20" height="20" />
+            </g>
+            
+            <!-- Trash bin highlight -->
+            <path d="M45 40 L45 200 L60 200 L60 60 L140 60 L140 200 L155 200 L155 40 Z" fill="white" fill-opacity="0.2" />
+        </svg>
+        
+        <div class="crumpled-papers">
+            <div class="paper" id="paper1"></div>
+            <div class="paper" id="paper2"></div>
+            <div class="paper" id="paper3"></div>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="project-note" id="projectNote">
+        <button class="close-note" id="closeNote">&times;</button>
+        <h2>Old Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <img src="../old/custommainpage.webp" alt="Custom Main Page">
+                <h3>Custom Main Page</h3>
+                <p>An early version of the portfolio with a different design approach.</p>
+            </div>
+            <div class="project-item">
+                <img src="../old/browsercustomextension.webp" alt="Browser Extension">
+                <h3>Browser Extension</h3>
+                <p>A custom browser extension project with unique features.</p>
+            </div>
+            <div class="project-item">
+                <img src="../old/diseñocard3.webp" alt="Card Design">
+                <h3>Card Design</h3>
+                <p>Early UI card design experiments for web interfaces.</p>
+            </div>
+            <div class="project-item">
+                <img src="../old/elementsdaj.webp" alt="Elements DAJ">
+                <h3>Elements DAJ</h3>
+                <p>A component library with custom UI elements.</p>
+            </div>
+            <div class="project-item">
+                <img src="../old/enmama.webp" alt="Enma Ma">
+                <h3>Enma Ma</h3>
+                <p>E-commerce website design for a crafts business.</p>
+            </div>
+            <div class="project-item">
+                <img src="../old/moderndecor.webp" alt="Modern Decor">
+                <h3>Modern Decor</h3>
+                <p>Interior design showcase website with modern aesthetics.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const papers = document.querySelectorAll('.paper');
+            const projectNote = document.getElementById('projectNote');
+            const overlay = document.getElementById('overlay');
+            const closeNote = document.getElementById('closeNote');
+            
+            // Add click event to all paper elements
+            papers.forEach(paper => {
+                paper.addEventListener('click', function() {
+                    projectNote.style.display = 'block';
+                    overlay.style.display = 'block';
+                });
+            });
+            
+            // Close note when clicking the close button
+            closeNote.addEventListener('click', function() {
+                projectNote.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+            
+            // Close note when clicking outside
+            overlay.addEventListener('click', function() {
+                projectNote.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+            
+            // Add some random rotation to papers for a more natural look
+            function addRandomMovement() {
+                papers.forEach(paper => {
+                    const randomRotation = (Math.random() * 6) - 3;
+                    const currentRotation = getComputedStyle(paper).getPropertyValue('--rotation');
+                    const baseRotation = parseInt(currentRotation) || 0;
+                    paper.style.setProperty('--rotation', `${baseRotation + randomRotation}deg`);
+                });
+                
+                setTimeout(addRandomMovement, 3000);
+            }
+            
+            addRandomMovement();
+        });
+    </script>
+</body>
+</html>
