@@ -201,9 +201,9 @@ const apps = {
     github: new Application('GitHub', '/src/github.webp', 'apps/github.html'),
     spotify: new Application('Spotify', '/src/spotify.webp', 'apps/spotify.html'),
     figma: new Application('Figma', '/src/figma.webp', 'apps/figma.html'),
-    estudios: new Application('Estudios', '/src/folder-estudios.webp', 'apps/estudios.html'),
-    projects: new Application('Projects', '/src/folder-projects.webp ', 'apps/projects.html'),
-    mods: new Application('Mods', '/src/folder-mods.webp', 'apps/mods.html')
+    estudios: new Application('Estudios', '/assets/icons/folder-estudios.svg', 'apps/estudios.html'),
+    projects: new Application('Projects', '/assets/icons/folder-projects.svg', 'apps/projects.html'),
+    mods: new Application('Mods', '/assets/icons/folder-mods.svg', 'apps/mods.html')
 };
 
 // Function to open browser window
@@ -218,3 +218,10 @@ function openBrowserWindow(appName) {
         }
     }
 }
+
+// Initialize Spotify in the taskbar when the page loads
+window.addEventListener('load', function() {
+    // Create and immediately minimize Spotify window
+    apps.spotify.createWindow();
+    apps.spotify.minimizeWindow();
+});
