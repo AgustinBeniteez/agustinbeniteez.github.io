@@ -41,7 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="mod-content">
                     <h3 class="mod-title">${mod.title}</h3>
                     <p class="mod-description">${mod.description}</p>
-                    <a href="${mod.url}" target="_blank" class="curseforge-button">Ver en CurseForge</a>
+                    <a href="${mod.url}" target="_blank" class="curseforge-button">
+                        <img src="../src/curseforge-icon.svg" alt="CurseForge" class="curseforge-icon">
+                        <span>Ver en CurseForge</span>
+                    </a>
                 </div>
             `;
             

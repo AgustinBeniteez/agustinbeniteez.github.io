@@ -45,7 +45,7 @@
         }
         .mods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 30px;
         }
@@ -94,7 +94,9 @@
             overflow: hidden;
         }
         .curseforge-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 8px 16px;
             background: #f16436;
             color: white;
@@ -104,6 +106,11 @@
         }
         .curseforge-button:hover {
             background: #e45325;
+        }
+        .curseforge-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
         }
         /* Custom scrollbar styling */
         html {
@@ -129,9 +136,21 @@
             background: linear-gradient(302deg, rgb(95, 87, 97) 0%, rgb(46, 44, 43) 100%);
         }
         /* Media Queries for Responsive Design */
+        @media screen and (min-width: 1351px) {
+            .mods-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media screen and (max-width: 1350px) {
+            .mods-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media screen and (max-width: 768px) {
             .mods-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                grid-template-columns: repeat(1, 1fr);
                 padding: 15px;
                 gap: 15px;
             }
