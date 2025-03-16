@@ -34,20 +34,20 @@
         <div id="fondo">
             <h1>Agustin Benitez</h1>
             <img src="src/agustheking.webp" alt="Agustin img">
-            <p id="description">Hi! I love Computer Science and I enjoy developing and designing web pages using HTML, CSS and JS, and I'm currently learning Python and Java.</p>
+            <p id="description" data-translate="description">Hi! I love Computer Science and I enjoy developing and designing web pages using HTML, CSS and JS, and I'm currently learning Python and Java.</p>
             </div>
 
         <section class="item cursor-pointer" onclick="openBrowserWindow('projects')">
             <img src="/assets/icons/folder-projects.svg" alt="projectos">
-            <p>Projects</p>
+            <p data-translate="projects">Projects</p>
         </section>
         <section class="item cursor-pointer" onclick="openBrowserWindow('mods')">
             <img src="/assets/icons/folder-mods.svg" alt="mods">
-            <p>Mods</p>
+            <p data-translate="mods">Mods</p>
         </section>
         <section class="item cursor-pointer" onclick="openBrowserWindow('trash')">
             <img src="/src/trash.webp" alt="trash">
-            <p>Trash</p>
+            <p data-translate="trash">Trash</p>
         </section>
         <section class="item"></section>
         <section class="item"></section>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="skills-section">
-                    <div class="skills-title">Competencias</div>
+                    <div class="skills-title" data-translate="skills">Skills</div>
                     <div class="skills-icons">
                         <div class="skill-icon" title="HTML5">
                             <i class="fa-brands fa-html5"></i>
@@ -91,10 +91,46 @@
                     </div>
                 </div>
                 <section class="calendario">
-                    <div class="clock" id="clock">00:00:00</div>
-                    <div class="fecha" id="fecha">00/00/2000</div>
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                    </select>
+                    <div class="calendario-content">
+                        <div class="clock" id="clock">00:00:00</div>
+                        <div class="fecha" id="fecha">00/00/2000</div>
+                    </div>
                 </section>
                 <script>
+                    const translations = {
+                        en: {
+                            projects: "Projects",
+                            mods: "Mods",
+                            trash: "Trash",
+                            studies: "Studies",
+                            description: "Hi! I love Computer Science and I enjoy developing and designing web pages using HTML, CSS and JS, and I'm currently learning Python and Java.",
+                            skills: "Skills",
+                            search: "Type to search..."
+                        },
+                        es: {
+                            projects: "Proyectos",
+                            mods: "Mods",
+                            trash: "Papelera",
+                            studies: "Estudios",
+                            description: "¡Hola! Me encanta la Informática y disfruto desarrollando y diseñando páginas web usando HTML, CSS y JS, y actualmente estoy aprendiendo Python y Java.",
+                            skills: "Competencias",
+                            search: "Escribe para buscar..."
+                        }
+                    };
+
+                    function changeLanguage(lang) {
+                        document.querySelectorAll('[data-translate]').forEach(element => {
+                            const key = element.getAttribute('data-translate');
+                            if (translations[lang][key]) {
+                                element.textContent = translations[lang][key];
+                            }
+                        });
+                    }
+
                     function updateClockAndDate() {
                         const now = new Date();
                         

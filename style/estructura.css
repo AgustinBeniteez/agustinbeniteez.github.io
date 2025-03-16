@@ -178,15 +178,41 @@ section img{
   margin: auto;
 }
 .calendario {
-  background-color: transparent;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  align-content: flex-end;
-  margin-right: 20px;
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.calendario-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.language-selector {
+    background-color: #333333;
+    border: 1px solid var(--color-blanco);
+    color: var(--color-blanco);
+    padding: 2px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+  
+.language-selector:hover {
+    background-color: #555555;
+  }
+
+@media screen and (max-width: 768px) {
+    .language-selector {
+        display: none;
+    }
 }
 
 #footer {
