@@ -4,62 +4,506 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/estructura.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <title>Spotify</title>
     <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
+        :root {
+            --color-spotify-green: #1db954;
+            --color-spotify-green-hover: #1ed760;
+            --color-background-gradient-start: rgba(164, 62, 50, 1);
+            --color-background-gradient-end: rgba(29, 22, 28, 1);
+            --color-text-primary: white;
+            --color-text-secondary: #b3b3b3;
+            --color-background-sidebar: rgba(0, 0, 0, 0.8);
+            --color-background-card: rgba(24, 24, 24, 0.7);
+            --color-background-card-hover: rgba(40, 40, 40, 0.7);
+            --color-background-playbar: rgba(24, 24, 24, 0.9);
+            --color-overlay-light: rgba(255, 255, 255, 0.1);
+            --color-overlay-medium: rgba(255, 255, 255, 0.3);
+            --color-shadow: rgba(0, 0, 0, 0.3);
+            --color-shadow-dark: rgba(0, 0, 0, 0.5);
+        }
+        
+        body {
+            font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(
                 180deg,
-                rgba(164, 62, 50, 1) 0%,
-                rgba(29, 22, 28, 1) 43.00000071525574%,
-                rgba(29, 22, 28, 1) 100%
+                var(--color-background-gradient-start) 0%,
+                var(--color-background-gradient-end) 43.00000071525574%,
+                var(--color-background-gradient-end) 100%
             );
+            color: var(--color-text-primary);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
         }
-        h3 {
-                color: white;
-                margin:10px 10% 10px 10%;
-            }
-            .artistas {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-                padding: 20px;
-            }
-            .artista-card {
-                background: rgba(0, 0, 0, 0.3);
-                border-radius: 8px;
-                padding: 15px;
-                text-align: center;
-                transition: background-color 0.3s;
-                cursor: pointer;
-            }
-            .artista-card:hover {
-                background: rgba(0, 0, 0, 0.5);
-            }
-            .artista-card img {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                margin-bottom: 10px;
-            }
-            .artista-card h4 {
-                color: white;
-                margin: 0;
-                font-size: 1.2em;
-            }
 
+        /* Custom Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-shadow);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-spotify-green);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-spotify-green-hover);
+        }
+
+        /* Firefox scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-spotify-green) var(--color-shadow);
+        }
+        .spotify-container {
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: var(--color-background-sidebar);
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            margin-bottom: 30px;
+            padding: 0 12px;
+        }
+
+        .logo img {
+            width: 130px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            color: var(--color-text-secondary);
+            transition: color 0.2s;
+        }
+
+        .nav-item:hover {
+            color: var(--color-text-primary);
+        }
+
+        .nav-item.active {
+            background-color: var(--color-overlay-light);
+            color: var(--color-text-primary);
+        }
+
+        .nav-item i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px 30px;
+            overflow-y: auto;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 30px;
+            object-fit: cover;
+            box-shadow: 0 8px 24px var(--color-shadow-dark);
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-type {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .profile-name {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 0 0 15px 0;
+            line-height: 1.1;
+        }
+
+        .profile-bio {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--color-text-secondary);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+        }
+
+        .artistas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .artista-card {
+            background: var(--color-background-card);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .artista-card:hover {
+            background: var(--color-background-card-hover);
+            transform: translateY(-5px);
+        }
+
+        .artista-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            object-fit: cover;
+            box-shadow: 0 8px 24px var(--color-shadow);
+        }
+
+        .artista-card h4 {
+            color: var(--color-text-primary);
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .artista-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .playlists-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .playlist-card {
+            background: var(--color-background-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+
+        .playlist-card:hover {
+            background: var(--color-background-card-hover);
+        }
+
+        .now-playing-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            background-color: var(--color-background-playbar);
+            border-top: 1px solid var(--color-overlay-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            z-index: 100;
+        }
+
+        .player-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 722px;
+            width: 40%;
+        }
+
+        .control-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        .control-button {
+            background: transparent;
+            border: none;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            padding: 0;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .control-button:hover {
+            color: var(--color-text-primary);
+        }
+
+        .control-button.play-pause {
+            font-size: 32px;
+            margin: 0 16px;
+            color: var(--color-text-primary);
+        }
+
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 8px;
+        }
+
+        .time {
+            font-size: 11px;
+            color: var(--color-text-secondary);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .progress-container {
+            flex: 1;
+            height: 4px;
+            background-color: var(--color-overlay-medium);
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--color-spotify-green);
+            border-radius: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+        }
+
+        .progress-container:hover .progress-handle {
+            display: block;
+        }
+
+        .progress-handle {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-text-primary);
+            border-radius: 50%;
+            left: 30%;
+            margin-left: -6px;
+        }
+
+        .volume-controls {
+            display: flex;
+            align-items: center;
+            width: 125px;
+            margin-left: 20px;
+        }
+
+        .volume-icon {
+            color: var(--color-text-secondary);
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .volume-bar {
+            flex: 1;
+            height: 4px;
+            background-color: var(--color-overlay-medium);
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .volume-level {
+            height: 100%;
+            background-color: var(--color-spotify-green);
+            border-radius: 2px;
+            width: 65%;
+        }
+
+        @media (max-width: 768px) {
+            .spotify-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                padding: 20px 15px 100px 15px;
+            }
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-pic {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .profile-name {
+                font-size: 2.5rem;
+            }
+            .playlists-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="spotify">
-        <img src="/src/spotify-perfil.webp" alt="spotify-perfil" width="70%" style="padding: 10px 10% 10px 10%;">
-        <h3>Artistas mas escuchados</h3>
-        <div class="artistas">
-            
+    <div class="spotify-container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="/src/spotify.webp" alt="Spotify Logo">
+            </div>
+            <div class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-search"></i>
+                <span>Buscar</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-book-open"></i>
+                <span>Tu Biblioteca</span>
+            </div>
+            <div class="nav-item" style="margin-top: 20px;">
+                <i class="fas fa-plus-square"></i>
+                <span>Crear playlist</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Canciones que te gustan</span>
+            </div>
         </div>
 
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1RXl79541nGG757viSjz0u?utm_source=generator&theme=0" width="500px" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0e1CKKCDX94OvUk79Zlr9D?utm_source=generator" width="500px" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0tE4ZIWJXVhemSpNNTUxOg?utm_source=generator" width="500px" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </body>
+        <div class="main-content">
+            <div class="profile-header">
+                <img src="/assets/icons/foto-perfil-agus.webp" alt="Perfil" class="profile-pic">
+                <div class="profile-info">
+                    <span class="profile-type">PERFIL</span>
+                    <h1 class="profile-name">Agustín Benítez</h1>
+                    <p class="profile-bio">Apasionado por la música y el desarrollo web. Estos son mis artistas y playlists favoritas.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Artistas más escuchados</h2>
+            <div class="artistas">
+                <div class="artista-card">
+                    <img src="https://i.scdn.co/image/ab6761610000e5ebc7e6bd9e65eab62a53355576" alt="Linkin Park">
+                    <h4>Linkin Park</h4>
+                    <p>Rock Alternativo</p>
+                </div>
+                <div class="artista-card">
+                    <img src="https://i.scdn.co/image/ab6761610000e5eb274df4dfcb960867eccedfb5" alt="Twenty One Pilots">
+                    <h4>Twenty One Pilots</h4>
+                    <p>Rock Alternativo</p>
+                </div>
+                <div class="artista-card">
+                    <img src="https://i.scdn.co/image/ab6761610000e5eb6872414f0e8384ca856e2ec8" alt="Aitana">
+                    <h4>Aitana</h4>
+                    <p>Pop</p>
+                </div>
+                <div class="artista-card">
+                    <img src="https://i.scdn.co/image/ab67616d00001e028e865103b2a85b0eef40c549" alt="Samurai">
+                    <h4>Samurai</h4>
+                    <p>Rock</p>
+                </div>
+
+            </div>
+
+            <h2 class="section-title">Mis playlists favoritas</h2>
+            <div class="playlists-container">
+                <div class="playlist-card">
+                    <iframe style="border-radius:12px; width:100%; height:352px;" src="https://open.spotify.com/embed/playlist/1RXl79541nGG757viSjz0u?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="playlist-card">
+                    <iframe style="border-radius:12px; width:100%; height:352px;" src="https://open.spotify.com/embed/album/0e1CKKCDX94OvUk79Zlr9D?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="playlist-card">
+                    <iframe style="border-radius:12px; width:100%; height:352px;" src="https://open.spotify.com/embed/playlist/0tE4ZIWJXVhemSpNNTUxOg?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="now-playing-bar">
+                <div style="display: flex; align-items: center;">
+                    <img src="https://i.scdn.co/image/ab67616d0000b273b11a5489e8cb11dd22b930a0" alt="Now Playing" style="width: 56px; height: 56px; margin-right: 14px;">
+                    <div>
+                        <div style="font-size: 0.9rem; font-weight: 500;">The Emptiness Machine</div>
+                        <div style="font-size: 0.8rem; color: #b3b3b3;">Linkin Park</div>
+                    </div>
+                </div>
+                
+                <div class="player-controls">
+                    <div class="control-buttons">
+                        <button class="control-button">
+                            <i class="fas fa-random"></i>
+                        </button>
+                        <button class="control-button">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button class="control-button play-pause">
+                            <i class="fas fa-play-circle"></i>
+                        </button>
+                        <button class="control-button">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                        <button class="control-button">
+                            <i class="fas fa-redo-alt"></i>
+                        </button>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="time">0:33</div>
+                        <div class="progress-container">
+                            <div class="progress"></div>
+                            <div class="progress-handle"></div>
+                        </div>
+                        <div class="time">-2:36</div>
+                    </div>
+                </div>
+                
+                <div class="volume-controls">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                    <div class="volume-bar">
+                        <div class="volume-level"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
