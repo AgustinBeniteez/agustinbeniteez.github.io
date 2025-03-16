@@ -186,6 +186,25 @@ document.querySelector('.custom-button').addEventListener('click', function() {
     startMenu.classList.toggle('active');
 });
 
+// Add event listener for search input
+document.querySelector('.start-menu-search').addEventListener('input', function() {
+    const searchQuery = this.value.toLowerCase();
+    const menuItems = document.querySelectorAll('.start-menu-item');
+    
+    menuItems.forEach(item => {
+        const appName = item.querySelector('p').textContent.toLowerCase();
+        if (appName.includes(searchQuery)) {
+            item.style.display = 'flex';
+            // If the app name starts with the query, move it to the top
+            if (appName.startsWith(searchQuery)) {
+                item.parentNode.prepend(item);
+            }
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+
 document.addEventListener('click', function(event) {
     const startMenu = document.getElementById('startMenu');
     const windowsButton = document.querySelector('.custom-button');
