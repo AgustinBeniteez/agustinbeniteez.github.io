@@ -101,6 +101,17 @@
                     </div>
                 </section>
                 <script>
+                    // Detect browser language and set initial language
+                    function detectAndSetLanguage() {
+                        const browserLang = navigator.language.toLowerCase();
+                        const lang = browserLang.startsWith('es') ? 'es' : 'en';
+                        document.getElementById('languageSelector').value = lang;
+                        changeLanguage(lang);
+                    }
+
+                    // Call language detection when page loads
+                    window.addEventListener('DOMContentLoaded', detectAndSetLanguage);
+
                     const translations = {
                         en: {
                             projects: "Projects",
