@@ -13,6 +13,20 @@
         "https://raw.githubusercontent.com/LauraaCastro/LauraaCastro.github.io/refs/heads/main/src/diseño-website-lau.png",
         "/data/slider-projects/laura-profolio-2.png"
       ]
+    },    
+    {
+      "image": "/data/slider-projects/laux_game_presentacion.png",
+      "title": "LAUX GAME whith HTML, CSS and JS",
+      "description": "Juego roguelike en pixelart desarrollado con HTML, CSS y JavaScript",
+      "extendedDescription": "Un juego roguelike con estética pixelart que demuestra las capacidades de desarrollo web moderno. Implementado con HTML5 Canvas para los gráficos, CSS para la interfaz y JavaScript para la lógica del juego. Presenta mecánicas roguelike clásicas con un toque único.",
+      "projectUrl": "https://agustinbeniteez.github.io/LAUX-Game-roguelike/",
+      "sourceCodeUrl": "https://github.com/AgustinBeniteez/LAUX-Game-roguelike",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["game", "pixelart", "roguelike"],
+      "gallery": [
+        "/data/slider-projects/laux_gameplay.png",
+        "/data/slider-projects/laux_selector.png"
+      ]
     },
     {
       "image": "/data/slider-projects/ModernDecorMODS.png",
