@@ -15,7 +15,7 @@
       ]
     },    
     {
-      "image": "/data/slider-projects/laux_game_presentacion.png",
+      "image": "/data/slider-projects/laux_game_presentacion.gif",
       "title": "LAUX GAME whith HTML, CSS and JS",
       "description": "Juego roguelike en pixelart desarrollado con HTML, CSS y JavaScript",
       "extendedDescription": "Un juego roguelike con estética pixelart que demuestra las capacidades de desarrollo web moderno. Implementado con HTML5 Canvas para los gráficos, CSS para la interfaz y JavaScript para la lógica del juego. Presenta mecánicas roguelike clásicas con un toque único.",
