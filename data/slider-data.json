@@ -11,7 +11,7 @@
       "tags": ["portfolio", "web-design"],
       "gallery": [
         "https://raw.githubusercontent.com/LauraaCastro/LauraaCastro.github.io/refs/heads/main/src/diseño-website-lau.png",
-        "/data/slider-projects/laura-profolio-2.png"
+        "/data/slider-projects/laura-profolio-min.png"
       ]
     },    
     {
@@ -29,6 +29,20 @@
       ]
     },
     {
+      "image": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/preview-extension.webp",
+      "title": "Chrome Extension",
+      "description": "A powerful Chrome extension that enhances browsing productivity",
+      "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
+      "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
+      "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["extension"],
+      "gallery": [
+        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/favs.webp",
+        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/light&dark.webp"
+      ]
+    },
+    {
       "image": "/data/slider-projects/ModernDecorMODS.png",
       "title": "Modern Decor MODs",
       "description": "Mods for Minecraft modern home decoration",
@@ -40,20 +54,6 @@
       "gallery": [
         "/data/slider-projects/ModernDecorMODS.png",
         "/data/slider-projects/ModernDecorMODS-2.png"
-      ]
-    },
-    {
-      "image": "/data/slider-projects/image-project-extension.webp",
-      "title": "Chrome Extension Development",
-      "description": "A powerful Chrome extension that enhances browsing productivity",
-      "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
-      "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
-      "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
-      "technologies": ["html5", "css3", "js"],
-      "tags": ["extension"],
-      "gallery": [
-        "/data/slider-projects/image-project-extension.webp",
-        "/data/slider-projects/image-project-extension-2.webp"
       ]
     },
     {
