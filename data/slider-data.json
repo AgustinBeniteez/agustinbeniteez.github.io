@@ -1,6 +1,19 @@
 {
   "slides": [
     {
+      "image": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/preview-extension.webp",
+      "title": "Custom Browser Main Page | Extension",
+      "description": "A powerful Chrome extension that enhances browsing productivity",
+      "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
+      "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
+      "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["extension", "web site", "Chrome & Firefox", "Free", "open source"],
+      "gallery": [
+        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/favs.webp",
+        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/light&dark.webp"
+      ]
+    },{
       "image": "/data/slider-projects/laura-profolio-min.png",
       "title": "Portfolio Makeup & Nails Artist",
       "description": "Modern and responsive portfolio website design",
@@ -26,20 +39,6 @@
       "gallery": [
         "/data/slider-projects/laux_gameplay.png",
         "/data/slider-projects/laux_selector.png"
-      ]
-    },
-    {
-      "image": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/preview-extension.webp",
-      "title": "Chrome Extension",
-      "description": "A powerful Chrome extension that enhances browsing productivity",
-      "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
-      "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
-      "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
-      "technologies": ["html5", "css3", "js"],
-      "tags": ["extension"],
-      "gallery": [
-        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/favs.webp",
-        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/light&dark.webp"
       ]
     },
     {
