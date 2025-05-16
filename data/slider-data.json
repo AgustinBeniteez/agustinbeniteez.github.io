@@ -13,7 +13,22 @@
         "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/favs.webp",
         "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/light&dark.webp"
       ]
-    },{
+    },
+    {
+      "image": "/data/slider-projects/previewMelody.png",
+      "title": "Melody Reproductor 🎵",
+      "description": "Melody Music Player",
+      "extendedDescription": "Proyecto de clase de desarrollo web. Un reproductor de música interactivo con funcionalidades avanzadas. Utiliza HTML, CSS y JavaScript para crear una experiencia de usuario atractiva y dinámica. Permite la reproducción de música, control de volumen, navegación de canciones y una interfaz de usuario intuitiva.",
+      "projectUrl": "https://melody-topaz.vercel.app",
+      "sourceCodeUrl": "https://github.com/AgustinBeniteez/melody",
+      "technologies": ["html5", "css3","js"],
+      "tags": ["Reproductor", "Musica" , "ui-design"],
+      "gallery": [
+        "/data/slider-projects/previewMelodyAlbum.png",
+        "/data/slider-projects/previewMelodyThemes.png"
+      ]
+    },
+    {
       "image": "/data/slider-projects/laura-profolio-min.png",
       "title": "Portfolio Makeup & Nails Artist",
       "description": "Modern and responsive portfolio website design",
