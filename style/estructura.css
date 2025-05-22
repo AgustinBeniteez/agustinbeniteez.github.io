@@ -285,6 +285,9 @@ section img{
     grid-area: 6 / 1 / 7 / 2;
   }
   .item:nth-child(13) {
+    grid-area: 6 / 1 / 5 / 2;
+  }  
+  .item:nth-child(14) {
     grid-area: 1 / 9 / 1 / 9;
   }  
 #navegador {

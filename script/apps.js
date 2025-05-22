@@ -69,6 +69,9 @@ class Application {
         if (this.url) {
             const iframe = document.createElement('iframe');
             iframe.src = this.url;
+            if (this.name === 'Melody') {
+                iframe.style.zoom = '0.6';
+            }
             content.appendChild(iframe);
         } else {
             content.innerHTML = `<div style="padding: 20px;">Content for ${this.name}</div>`;
@@ -204,7 +207,8 @@ const apps = {
     estudios: new Application('Estudios', '/assets/icons/folder-estudios.svg', 'apps/estudios.html'),
     projects: new Application('Projects', '/assets/icons/folder-projects.svg', 'apps/projects.html'),
     mods: new Application('Mods', '/assets/icons/folder-mods.svg', 'apps/mods.html'),
-    trash: new Application('Trash', '/src/trash.webp', 'apps/trash.html')
+    trash: new Application('Trash', '/src/trash.webp', 'apps/trash.html'),
+    melody: new Application('Melody', '/assets/icons/melody-logo.svg', 'https://melody-topaz.vercel.app/pages/main-page.html')
 };
 
 // Function to open browser window
