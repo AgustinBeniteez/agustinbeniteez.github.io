@@ -1,6 +1,12 @@
 {
   "minecraft": [
     {
+      "image": "https://media.forgecdn.net/avatars/thumbnails/1344/677/256/256/638873992020570939.png",
+      "title": "Indexer",
+      "description": "Indexer is a mod that helps you organize and manage your items. This automation system allows you to filter and automatically distribute the contents of your Chests / Containers, eliminating the need to manually sort your resources",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/indexer"
+    },
+    {
       "image": "https://media.forgecdn.net/avatars/thumbnails/1190/893/256/256/638765654876934850_animated.gif",
       "title": "Makeup | Aesthetics Decor",
       "description": "A Minecraft mod that adds beautiful decorative items and furniture to enhance your builds.",
