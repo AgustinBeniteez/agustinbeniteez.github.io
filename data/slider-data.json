@@ -29,6 +29,34 @@
       ]
     },
     {
+      "image": "/data/slider-projects/wikimodATK.png",
+      "title": "Wiki Mods ATK",
+      "description": "Mods for Minecraft & Sims4 by Agustin benitez all Info",
+      "extendedDescription": "Detailed information about mods by Agustin Benitez - ALL INFO CRAFT, ITEMS, IMGs.",
+      "projectUrl": "https://agustinbeniteez.github.io/Wikimods/",
+      "sourceCodeUrl": "https://github.com/AgustinBeniteez/Wikimods",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["gaming", "mods"],
+      "gallery": [
+        "/data/slider-projects/wikimodATK.png",
+        "/data/slider-projects/wikimodATK.png"
+      ]
+    },
+    {
+      "image": "/data/slider-projects/webEnmaManualidades.png",
+      "title": "Enma Manualidades",
+      "description": "Website Shop oline",
+      "extendedDescription": "Web site html & css.",
+      "projectUrl": "https://enmamanualidades.vercel.app",
+      "sourceCodeUrl": "https://github.com/AgustinBeniteez/enma-manualidades-public-repository",
+      "technologies": ["node","sql","html5", "css3", "js"],
+      "tags": ["e-commerce", "shop"],
+      "gallery": [
+        "/data/slider-projects/webEnmaManualidades.png",
+        "/data/slider-projects/webEnmaManualidades.png"
+      ]
+    },
+    {
       "image": "/data/slider-projects/laura-profolio-min.png",
       "title": "Portfolio Makeup & Nails Artist",
       "description": "Modern and responsive portfolio website design",
@@ -54,34 +82,6 @@
       "gallery": [
         "/data/slider-projects/laux_gameplay.png",
         "/data/slider-projects/laux_selector.png"
-      ]
-    },
-    {
-      "image": "/data/slider-projects/ModernDecorMODS.png",
-      "title": "Modern Decor MODs",
-      "description": "Mods for Minecraft modern home decoration",
-      "extendedDescription": "A comprehensive e-commerce solution for modern home decoration products. Built with React and Node.js, it includes features like user authentication, shopping cart functionality, secure payment processing, and order management. The platform offers a seamless shopping experience with responsive design.",
-      "projectUrl": "https://agustinbeniteez.github.io/Modern-Decor-mods/",
-      "sourceCodeUrl": "https://github.com/AgustinBeniteez/Modern-Decor-mods",
-      "technologies": ["html5", "css3", "js"],
-      "tags": ["gaming", "mods"],
-      "gallery": [
-        "/data/slider-projects/ModernDecorMODS.png",
-        "/data/slider-projects/ModernDecorMODS-2.png"
-      ]
-    },
-    {
-      "image": "/data/slider-projects/EnmaManualidades.webp",
-      "title": "Enma Manualidades",
-      "description": "Website Shop oline",
-      "extendedDescription": "Web site html & css.",
-      "projectUrl": "https://enmamanualidades.github.io/",
-      "sourceCodeUrl": "https://github.com/EnmaManualidades/enmamanualidades.github.io",
-      "technologies": ["html5", "css3", "js"],
-      "tags": ["e-commerce", "shop"],
-      "gallery": [
-        "/data/slider-projects/EnmaManualidades.webp",
-        "/data/slider-projects/EnmaManualidades.webp"
       ]
     },
     {

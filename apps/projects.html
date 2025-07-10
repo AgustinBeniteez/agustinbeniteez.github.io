@@ -68,8 +68,23 @@
             checkbox.type = 'checkbox';
             checkbox.value = value;
             
-            const icon = document.createElement('i');
-            icon.className = `fa-brands fa-${value}`;
+            let iconElement;
+            
+            // Usar SVG para node y SQL, Font Awesome para el resto
+            if (value.toLowerCase() === 'node') {
+                iconElement = document.createElement('img');
+                iconElement.src = '../assets/icons/node.svg';
+                iconElement.className = 'tech-filter-icon';
+                iconElement.alt = 'Node.js';
+            } else if (value.toLowerCase() === 'sql') {
+                iconElement = document.createElement('img');
+                iconElement.src = '../assets/icons/sql.svg';
+                iconElement.className = 'tech-filter-icon';
+                iconElement.alt = 'SQL';
+            } else {
+                iconElement = document.createElement('i');
+                iconElement.className = `fa-brands fa-${value}`;
+            }
             
             checkbox.addEventListener('change', () => {
                 if (checkbox.checked) {
@@ -81,7 +96,7 @@
             });
 
             label.appendChild(checkbox);
-            label.appendChild(icon);
+            label.appendChild(iconElement);
             label.appendChild(document.createTextNode(value));
             return label;
         }
@@ -128,9 +143,15 @@
                         </div>
                         <img src="${project.image}" alt="${project.title}" class="project-image">
                         <div class="project-technologies">
-                            ${project.technologies ? project.technologies.map(tech => `
-                                <i class="fa-brands fa-${tech} fa-2x" title="${tech}"></i>
-                            `).join('') : ''}
+                            ${project.technologies ? project.technologies.map(tech => {
+                                if (tech.toLowerCase() === 'node') {
+                                    return `<img src="../assets/icons/node.svg" class="tech-filter-icon" alt="Node.js" title="Node.js" style="width: 32px; height: 32px;">`;
+                                } else if (tech.toLowerCase() === 'sql') {
+                                    return `<img src="../assets/icons/sql.svg" class="tech-filter-icon" alt="SQL" title="SQL" style="width: 32px; height: 32px;">`;
+                                } else {
+                                    return `<i class="fa-brands fa-${tech} fa-2x" title="${tech}"></i>`;
+                                }
+                            }).join('') : ''}
                         </div>
                         <div class="project-tags">
                             ${project.tags ? project.tags.map(tag => `

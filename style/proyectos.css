@@ -415,6 +415,12 @@ body {
     font-size: 16px;
 }
 
+.tech-filter-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -422,6 +428,204 @@ body {
     margin: 15px 0;
 }
 
+.project-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px;
+    background-color: var(--color-bg-tag);
+    border-radius: 8px;
+    color: var(--color-text-primary);
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.project-tag:hover {
+    background-color: var(--color-bg-tag-hover);
+}
+.project-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.scroll-to-info {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 10px var(--color-shadow-secondary);
+}
+
+.scroll-to-info.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-to-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px var(--color-shadow-tertiary);
+}
+
+@media (max-width: 1024px) {
+    body {
+        flex-direction: column;
+    }
+
+    .projects-nav {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+    }
+
+    .filters-section {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .filter-options {
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .project-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .project-item {
+        flex-shrink: 0;
+    }
+
+    .project-content {
+        height: auto;
+        padding: 20px;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-header h1 {
+        font-size: 28px;
+    }
+
+    .project-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project-link {
+        text-align: center;
+    }
+
+    .project-item img {
+        width: 220px;
+        height: 130px;
+    }
+}
+
+.filters-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: var(--color-bg-tertiary);
+    border-radius: 8px;
+    width: 85%;
+}
+
+.filters-section h3 {
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--color-bg-filter);
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.filter-item:hover {
+    background-color: var(--color-bg-filter-hover);
+}
+
+.filter-item input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.filter-item i {
+    font-size: 16px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tag {
+    padding: 4px 12px;
+    background-color: var(--color-bg-filter);
+    color: var(--color-text-secondary);
+    border-radius: 12px;
+    font-size: 14px;
+}
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.project-technologies i {
+    color: var(--accent-color);
+}
+
+.project-technologies .tech-filter-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
 .project-tag {
     display: inline-block;
     padding: 6px 12px;

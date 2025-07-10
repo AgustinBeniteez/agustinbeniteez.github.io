@@ -21,9 +21,18 @@ function createFilterOption(tech, container, activeFilters) {
     const option = document.createElement('div');
     option.className = 'filter-option';
     
-    const icon = document.createElement('i');
-    icon.className = `fa-brands fa-${tech}`;
-    option.appendChild(icon);
+    // Usar iconos SVG para node y sql, Font Awesome para el resto
+    if (tech === 'node' || tech === 'SQL') {
+        const icon = document.createElement('img');
+        icon.src = `/assets/icons/${tech.toLowerCase()}.svg`;
+        icon.alt = tech;
+        icon.className = 'tech-filter-icon';
+        option.appendChild(icon);
+    } else {
+        const icon = document.createElement('i');
+        icon.className = `fa-brands fa-${tech}`;
+        option.appendChild(icon);
+    }
     
     const text = document.createElement('span');
     text.textContent = tech;
