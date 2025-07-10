@@ -206,7 +206,7 @@ const apps = {
     figma: new Application('Figma', '/src/figma.webp', 'apps/figma.html'),
     estudios: new Application('Estudios', '/assets/icons/folder-estudios.svg', 'apps/estudios.html'),
     projects: new Application('Projects', '/assets/icons/folder-projects.svg', 'apps/projects.html'),
-    mods: new Application('Mods', '/assets/icons/folder-mods.svg', 'apps/mods.html'),
+    mods: new Application('Mods', '/assets/icons/folder-mods.svg', 'Wikimods/minecraft.html'),
     trash: new Application('Trash', '/src/trash.webp', 'apps/trash.html'),
     melody: new Application('Melody', '/assets/icons/melody-logo.svg', 'https://melody-topaz.vercel.app/pages/main-page.html')
 };
