@@ -1,17 +1,31 @@
 {
   "slides": [
     {
-      "image": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/preview-extension.webp",
-      "title": "Custom Browser Main Page | Extension",
-      "description": "A powerful Chrome extension that enhances browsing productivity",
-      "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
-      "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
-      "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
-      "technologies": ["html5", "css3", "js"],
-      "tags": ["extension", "web site", "Chrome & Firefox", "Free", "open source"],
+      "image": "/data/slider-projects/valorantdle-banner.png",
+      "title": "Valorantdle | WebGame",
+      "description": "Juego de adivinanzas basado en Valorant con múltiples modos de juego",
+      "extendedDescription": "Valorantdle es un juego web interactivo basado en el popular videojuego Valorant. Ofrece múltiples modos de juego como adivinar skins, encontrar agentes, identificar habilidades, reconocer sonidos de skins, adivinar jugadores profesionales del circuito VCT y el clásico juego del ahorcado con temática de Valorant.",
+      "projectUrl": "https://valorantdle-game.vercel.app",
+      "sourceCodeUrl": "https://github.com/AgustinBeniteez/valorantdle",
+      "technologies": ["node","html5", "css3", "js"],
+      "tags": ["game", "valorantdle", "web-game"],
       "gallery": [
-        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/favs.webp",
-        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/light&dark.webp"
+        "/src/Valorantdle-gallery1.png",
+        "/src/Valorantdle-gallery2.png"
+      ]
+    },
+    {
+      "image": "/data/slider-projects/webEnmaManualidades.png",
+      "title": "Enma Manualidades",
+      "description": "Website Shop oline",
+      "extendedDescription": "Web site html & css.",
+      "projectUrl": "https://enmamanualidades.vercel.app",
+      "sourceCodeUrl": "https://github.com/AgustinBeniteez/enma-manualidades-public-repository",
+      "technologies": ["node","sql","html5", "css3", "js"],
+      "tags": ["e-commerce", "shop"],
+      "gallery": [
+        "/src/EnmaManualidades-web.png",
+        "/src/EnmaManualidades-admin.png"
       ]
     },
     {
@@ -43,20 +57,6 @@
       ]
     },
     {
-      "image": "/data/slider-projects/webEnmaManualidades.png",
-      "title": "Enma Manualidades",
-      "description": "Website Shop oline",
-      "extendedDescription": "Web site html & css.",
-      "projectUrl": "https://enmamanualidades.vercel.app",
-      "sourceCodeUrl": "https://github.com/AgustinBeniteez/enma-manualidades-public-repository",
-      "technologies": ["node","sql","html5", "css3", "js"],
-      "tags": ["e-commerce", "shop"],
-      "gallery": [
-        "/data/slider-projects/webEnmaManualidades.png",
-        "/data/slider-projects/webEnmaManualidades.png"
-      ]
-    },
-    {
       "image": "/data/slider-projects/laura-profolio-min.png",
       "title": "Portfolio Makeup & Nails Artist",
       "description": "Modern and responsive portfolio website design",
@@ -68,6 +68,20 @@
       "gallery": [
         "https://raw.githubusercontent.com/LauraaCastro/LauraaCastro.github.io/refs/heads/main/src/diseño-website-lau.png",
         "/data/slider-projects/laura-profolio-min.png"
+      ]
+    },
+    {
+      "image": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/preview-extension.webp",
+      "title": "Custom Browser Main Page | Extension",
+      "description": "A powerful Chrome extension that enhances browsing productivity",
+      "extendedDescription": "This Chrome extension project showcases advanced JavaScript development and browser API integration. It features real-time data processing, custom user settings, and seamless browser integration. The extension helps users manage their browsing experience with features like tab management, bookmark organization, and custom shortcuts.",
+      "projectUrl": "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/",
+      "sourceCodeUrl": "https://github.com/agustinbeniteez/Custom-Browser-Main-Page",
+      "technologies": ["html5", "css3", "js"],
+      "tags": ["extension", "web site", "Chrome & Firefox", "Free", "open source"],
+      "gallery": [
+        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/favs.webp",
+        "https://agustinbeniteez.github.io/Custom-Browser-Main-Page/src/light&dark.webp"
       ]
     },
     {
@@ -94,8 +108,7 @@
       "technologies": ["html5", "css3", "js"],
       "tags": ["library", "ui-design"],
       "gallery": [
-        "/data/slider-projects/ElementsCssDaj (AD).png",
-        "/data/slider-projects/ElementsCssDaj-2.png"
+        "/data/slider-projects/ElementsCssDaj (AD).png"
       ]
     },
     {
@@ -108,8 +121,7 @@
       "technologies": ["html5", "css3" ,"js"],
       "tags": ["editor", "development"],
       "gallery": [
-        "/data/slider-projects/EditorDAJsocial.png",
-        "/data/slider-projects/EditorDAJsocial-2.png"
+        "/data/slider-projects/EditorDAJsocial.png"
       ]
     }
   ]
