@@ -152,10 +152,11 @@ section {
     border-radius: 8px;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
-/* Aplicar efectos hover solo a las apps (excluyendo el footer) */
-section.item:not(#footer):hover {
+/* Aplicar efectos hover solo a las apps (excluyendo el footer y noanimacion) */
+section.item:not(#footer):not(#noanimacion):hover {
     transform: scale(1.05);
     background-color: var(--color-overlay-claro);
     backdrop-filter: blur(10px);
@@ -165,7 +166,7 @@ section.item:not(#footer):hover {
 }
 
 /* Efecto de brillo sutil en hover */
-section.item:not(#footer)::before {
+section.item:not(#footer):not(#noanimacion):before {
     content: '';
     position: absolute;
     top: 0;
@@ -272,9 +273,29 @@ section img{
     -webkit-text-fill-color: transparent;
     background-clip: text;
     border: 0px solid transparent;
-    width: 100px;
+    width: 60px;
     font: 2em sans-serif;
     cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 8px;
+    padding: 8px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.custom-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: brightness(1.1);
+    box-shadow: 0 4px 16px rgba(170,119,186,0.3);
+}
+
+.custom-button:active {
+    transform: scale(0.98);
 }
 
   .item:nth-child(1) {
@@ -534,6 +555,7 @@ section img{
     flex-direction: column;
     box-shadow: 0 4px 12px var(--color-sombra);
     animation: appAppear 0.3s ease-out;
+    z-index: 1000;
 }
 
 @media screen and (max-width: 768px) {
@@ -601,7 +623,7 @@ section img{
 @media screen and (max-width: 1600px) {
 
   #fondo img {
-    width: 55%;
+    width: 50%;
   }
 
   .container {
@@ -613,14 +635,27 @@ section img{
   }
 }
 
-@media screen and (max-width: 780px) {
-.container{
-  gap: 1px;
-}
-#fondo img{
-  width: 90%;
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: 0.5fr 1.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  }
+
+  section img {
+    width: 8vh;
+  }
+
+  #fondo img {
+    width: 65%;
+  }
 }
 
+@media screen and (max-width: 780px) {
+#fondo img{
+  width: 80%;
+}
+section img {
+  width: 2vh;
+}
 
 }
 
@@ -689,7 +724,7 @@ section img{
   }
 
   #fondo img {
-    width: 55%;
+    width: 50%;
   }
 
   .container {
@@ -704,9 +739,21 @@ section img{
 @media screen and (max-width: 780px) {
 .container{
   gap: 1px;
+  grid-template-columns: 0.4fr 0fr 0fr 0fr 0fr 0.4fr 0.4fr 0.4fr 0.4fr;
 }
 #fondo img{
   width: 90%;
+}
+
+section {
+    justify-content: center
+}
+section img{
+    margin: 10px ;
+}
+
+section.item:not(#footer) p {
+    font-size: 0.8rem;
 }
 
 }
@@ -742,37 +789,6 @@ section img{
         overflow-y: auto;
     }
     
-    /* Close button for start menu on mobile */
-    .start-menu::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 40px;
-        background: var(--color-fondo-menu);
-        z-index: 10000;
-        border-bottom: 1px solid var(--color-borde-menu);
-    }
-    
-    .start-menu::after {
-        content: '×';
-        position: fixed;
-        top: 0;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        font-size: 24px;
-        color: var(--color-blanco);
-        background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        z-index: 10001;
-        cursor: pointer;
-    }
 }
 .start-menu {
   font: 1.3em arial;
