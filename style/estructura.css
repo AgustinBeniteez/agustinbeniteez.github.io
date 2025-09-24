@@ -1,34 +1,10 @@
+/* Importar variables de colores centralizadas */
+@import url('colores.css');
+
 *{
     margin: 0;
     padding: 0;
   }
-
-:root {
-  --color-primario: #1D1D1D;
-  --color-secundario: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
-  --color-terciario: #151515;
-  --color-blanco: #FFFFFF;
-  --color-negro: #000000;
-  --color-gris-claro: #f1f1f1;
-  --color-gris-medio: #ddd;
-  --color-gris-hover: #e0e0e0;
-  --color-gris-texto: #666;
-  --color-azul: #4a90e2;
-  --color-fondo-navegador: #fff;
-  --color-sombra: rgba(0,0,0,0.2);
-  --color-fondo-controles: #f0f0f0;
-  --color-texto-oscuro: #333;
-  --color-boton-minimizar: #ffbd2e;
-  --color-boton-maximizar: #28c940;
-  --color-boton-cerrar: #ff5f57;
-  --color-boton-cerrar-hover: #ff6666;
-  --color-overlay-claro: rgba(255, 255, 255, 0.1);
-  --color-overlay-medio: rgba(255, 255, 255, 0.2);
-  --color-fondo-menu: rgba(23, 23, 23, 0.85);
-  --color-borde-menu: rgba(255, 255, 255, 0.1);
-  --color-fondo-footer: rgba(21, 21, 21, 0.5);
-  --color-tooltip: rgba(0, 0, 0, 0.7);
-}
 
 .tab-bar {
     display: flex;

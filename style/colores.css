@@ -1,0 +1,77 @@
+/* ===================================
+   VARIABLES DE COLORES CENTRALIZADAS
+   ===================================
+   Este archivo contiene todas las variables CSS de colores
+   utilizadas en el proyecto para mantener consistencia
+   y facilitar el mantenimiento.
+*/
+
+:root {
+  /* ===== COLORES BASE ===== */
+  --color-primario: #1D1D1D;
+  --color-secundario: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+  --color-terciario: #151515;
+  --color-blanco: #FFFFFF;
+  --color-negro: #000000;
+
+  /* ===== COLORES DE FONDO ===== */
+  --color-bg-primary: #0d1117;
+  --color-bg-secondary: #161b22;
+  --color-bg-tertiary: #21262d;
+  --color-bg-hover: #2d333b;
+  --color-bg-active: #c251a6;
+  --color-bg-filter: #30363d;
+  --color-bg-filter-hover: #3c444d;
+  --color-bg-tag: #2a2a2a;
+  --color-bg-tag-hover: #3a3a3a;
+  --color-fondo-navegador: #fff;
+  --color-fondo-controles: #f0f0f0;
+  --color-fondo-menu: rgba(23, 23, 23, 0.85);
+  --color-fondo-footer: rgba(21, 21, 21, 0.5);
+
+  /* ===== COLORES DE TEXTO ===== */
+  --color-text-primary: white;
+  --color-text-secondary: #c9d1d9;
+  --color-text-tertiary: #8b949e;
+  --color-texto-oscuro: #333;
+
+  /* ===== COLORES DE GRISES ===== */
+  --color-gris-claro: #f1f1f1;
+  --color-gris-medio: #ddd;
+  --color-gris-hover: #e0e0e0;
+  --color-gris-texto: #666;
+
+  /* ===== COLORES DE BORDES ===== */
+  --color-border: #30363d;
+  --color-checkbox-border: #aaaaaa;
+  --color-borde-menu: rgba(255, 255, 255, 0.1);
+
+  /* ===== COLORES DE ACENTO ===== */
+  --color-accent-primary: #ff3366;
+  --color-accent-secondary: #ff6b6b;
+  --color-accent-green: #2ea043;
+  --color-azul: #4a90e2;
+
+  /* ===== COLORES DE BOTONES ===== */
+  --color-boton-minimizar: #ffbd2e;
+  --color-boton-maximizar: #28c940;
+  --color-boton-cerrar: #ff5f57;
+  --color-boton-cerrar-hover: #ff6666;
+
+  /* ===== GRADIENTES ===== */
+  --gradient-primary: linear-gradient(45deg, var(--color-accent-primary), var(--color-accent-secondary));
+
+  /* ===== COLORES DE SOMBRA ===== */
+  --color-sombra: rgba(0,0,0,0.2);
+  --color-shadow-primary: rgba(0, 0, 0, 0.1);
+  --color-shadow-secondary: rgba(0, 0, 0, 0.2);
+  --color-shadow-tertiary: rgba(0, 0, 0, 0.3);
+  --color-accent-shadow: rgba(255, 51, 102, 0.2);
+
+  /* ===== COLORES DE OVERLAY ===== */
+  --color-overlay-claro: rgba(255, 255, 255, 0.1);
+  --color-overlay-medio: rgba(255, 255, 255, 0.2);
+
+  /* ===== COLORES DE TOOLTIP ===== */
+  --color-tooltip: rgba(0, 0, 0, 0.7);
+}

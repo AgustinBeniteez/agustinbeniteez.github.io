@@ -1,38 +1,5 @@
-:root {
-    /* Base colors */
-    --color-bg-primary: #0d1117;
-    --color-bg-secondary: #161b22;
-    --color-bg-tertiary: #21262d;
-    --color-bg-hover: #2d333b;
-    --color-bg-active: #c251a6;
-    --color-bg-filter: #30363d;
-    --color-bg-filter-hover: #3c444d;
-    --color-bg-tag: #2a2a2a;
-    --color-bg-tag-hover: #3a3a3a;
-    
-    /* Text colors */
-    --color-text-primary: white;
-    --color-text-secondary: #c9d1d9;
-    --color-text-tertiary: #8b949e;
-    
-    /* Border colors */
-    --color-border: #30363d;
-    --color-checkbox-border: #aaaaaa;
-    
-    /* Accent colors */
-    --color-accent-primary: #ff3366;
-    --color-accent-secondary: #ff6b6b;
-    --color-accent-green: #2ea043;
-    
-    /* Gradient */
-    --gradient-primary: linear-gradient(45deg, var(--color-accent-primary), var(--color-accent-secondary));
-    
-    /* Shadow colors */
-    --color-shadow-primary: rgba(0, 0, 0, 0.1);
-    --color-shadow-secondary: rgba(0, 0, 0, 0.2);
-    --color-shadow-tertiary: rgba(0, 0, 0, 0.3);
-    --color-accent-shadow: rgba(255, 51, 102, 0.2);
-}
+/* Importar variables de colores centralizadas */
+@import url('colores.css');
 
 body {
     font-family: Arial, sans-serif;
