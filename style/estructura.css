@@ -144,11 +144,74 @@ article {
 section {
     height: 100%;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Animaciones estilo Windows 11 para las apps */
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Aplicar efectos hover solo a las apps (excluyendo el footer) */
+section.item:not(#footer):hover {
+    transform: scale(1.05);
+    background-color: var(--color-overlay-claro);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px var(--color-shadow-secondary);
+    border: 1px solid var(--color-overlay-medio);
+}
+
+/* Efecto de brillo sutil en hover */
+section.item:not(#footer)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--color-overlay-claro), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+section.item:not(#footer):hover::before {
+    left: 100%;
+}
+
+/* Animación para las imágenes de las apps */
+section.item:not(#footer) img {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    position: relative;
+}
+
+section.item:not(#footer):hover img {
+    transform: translateY(-2px);
+    filter: brightness(1.1) drop-shadow(0 4px 8px var(--color-shadow-tertiary));
+}
+
+/* Animación para el texto de las apps */
+section.item:not(#footer) p {
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    position: relative;
+}
+
+section.item:not(#footer):hover p {
+    color: var(--color-text-primary);
+    text-shadow: 0 2px 4px var(--color-shadow-primary);
+    transform: translateY(-1px);
+}
+
+/* Efecto de presión al hacer clic */
+section.item:not(#footer):active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
 section img{
   width: 10vh;
   margin: auto;
@@ -211,7 +274,9 @@ section img{
     border: 0px solid transparent;
     width: 100px;
     font: 2em sans-serif;
+    cursor: pointer;
 }
+
   .item:nth-child(1) {
     grid-area: 1 / 9 / 2 / 10;
   }
@@ -383,16 +448,76 @@ section img{
 .nav-title-minimized {
     background-color: var(--color-overlay-claro);
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     white-space: nowrap;
     max-width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* Animaciones estilo Windows 11 */
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Efecto de brillo sutil en hover */
+.nav-title-minimized::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--color-overlay-claro), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+    border-radius: 8px;
 }
 
 .nav-title-minimized:hover {
-    background: linear-gradient(302deg, rgba(170,119,186,1) 0%, rgba(194,109,80,1) 100%);
+    transform: scale(1.05);
+    background-color: var(--color-overlay-claro);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px var(--color-shadow-secondary);
+    border: 1px solid var(--color-overlay-medio);
+}
+
+.nav-title-minimized:hover::before {
+    left: 100%;
+}
+
+/* Animación para las imágenes dentro del nav-title-minimized */
+.nav-title-minimized img {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    position: relative;
+}
+
+.nav-title-minimized:hover img {
+    transform: translateY(-2px);
+    filter: brightness(1.1) drop-shadow(0 4px 8px var(--color-shadow-tertiary));
+}
+
+/* Animación para el texto dentro del nav-title-minimized */
+.nav-title-minimized span {
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    position: relative;
+}
+
+.nav-title-minimized:hover span {
+    color: var(--color-text-primary);
+    text-shadow: 0 2px 4px var(--color-shadow-primary);
+    transform: translateY(-1px);
+}
+
+/* Efecto de presión al hacer clic */
+.nav-title-minimized:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
 }
 
 .browser-window {
@@ -652,7 +777,7 @@ section img{
 .start-menu {
   font: 1.3em arial;
   position: fixed;
-  bottom: 50px;
+  bottom: 70px;
   left: 10px;
   width: 60vh;
   height: 600px;
@@ -812,7 +937,6 @@ section img{
     }
 }
 
-
 @media screen and (max-width: 768px) {
     .window-header {
         padding: 12px !important;
@@ -823,9 +947,10 @@ section img{
         overflow-y: auto;
     }
 }
+
 .start-menu {
   position: fixed;
-  bottom: 50px;
+  bottom: 70px;
   left: 10px;
   width: 60vh;
   height: 600px;
@@ -914,7 +1039,6 @@ section img{
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
-
     text-overflow: ellipsis;
     max-width: 100%;
 }
