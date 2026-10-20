@@ -92,6 +92,14 @@ export class App implements OnInit {
     }
   }
 
+  scrollToTrailer(): void {
+    this.sound.playChime();
+    const el = document.getElementById('arch-trailer-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
   @HostListener('window:mousemove', ['$event'])
   onMouseMove(e: MouseEvent): void {
     const normX = (e.clientX / window.innerWidth) * 2 - 1;

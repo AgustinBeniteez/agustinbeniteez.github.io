@@ -1,5 +1,23 @@
 @import 'tailwindcss';
 
+/* Custom font: ArchFont from arch-game */
+@font-face {
+  font-family: 'ArchFont';
+  src: url('./assets/fonts/ArchFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom font: Bitmgothic from arch-game */
+@font-face {
+  font-family: 'Bitmgothic';
+  src: url('./assets/fonts/Bitmgothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Custom scrollbars with craft aesthetic */
 ::-webkit-scrollbar {
   width: 8px;

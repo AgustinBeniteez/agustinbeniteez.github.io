@@ -17,7 +17,7 @@
         class="mode-switch-tab" 
         [class.active]="portfolioMode() === 'game'"
         (click)="setPortfolioMode('game')">
-        <i class="fa-solid fa-gamepad text-fuchsia-400"></i>
+        <i class="fa-solid fa-gamepad text-purple-400"></i>
         <span>Desarrollo Juegos</span>
       </button>
 
@@ -57,7 +57,7 @@
             <span class="prop-shortcut">V</span>
           </div>
           <div class="prop-item" (click)="setPortfolioMode('game')">
-            <i class="fa-solid fa-gamepad text-fuchsia-400"></i>
+            <i class="fa-solid fa-gamepad text-purple-400"></i>
             <span>Game Creator</span>
             <span class="prop-shortcut">H</span>
           </div>
@@ -535,30 +535,35 @@
         <div class="game-studio-top-badge">
           <span class="pulse-emerald-dot"></span>
           <span class="game-badge-text">INDIE GAME STUDIO • AGUSTÍN BENÍTEZ</span>
-          <span class="game-engine-chip">3D ACTION RPG</span>
+          <span class="game-engine-chip">ROGUELITE SURVIVOR 3D</span>
         </div>
 
         <!-- ======================================================== -->
-        <!-- TITLE: AGUS THE KING PRODUCTIONS (Image 3 Style Logo)    -->
-        <!-- Uses atkLogo.png for the crown placed above KING!        -->
+        <!-- TITLE: AGUS THE KING PRODUCTIONS (Pixel Art Logo)        -->
+        <!-- Uses ArchFont.ttf and atkCrownExact.png (Image 1 Style)  -->
         <!-- ======================================================== -->
         <div class="atk-branding-logo-box">
-          <div class="atk-title-grid">
-            <div class="atk-line-top">
-              <span class="atk-word-agus">AGUS</span>
-            </div>
-            
-            <div class="atk-line-middle">
-              <span class="atk-word-the">THE</span>
-              
-              <div class="atk-king-crown-container">
+          <div class="atk-logo-lockup">
+            <!-- TOP ROW: [AGUS & THE] + [KING & CROWN] -->
+            <div class="atk-lockup-top">
+              <!-- Left Stack: AGUS on top of THE -->
+              <div class="atk-sub-column">
+                <span class="atk-word-agus">AGUS</span>
+                <span class="atk-word-the">THE</span>
+              </div>
+
+              <!-- Right Stack: Giant KING with Crown over G -->
+              <div class="atk-king-column">
+                <img 
+                  src="assets/images/atkLogo.png" 
+                  alt="Corona ATK" 
+                  class="atk-floating-crown-img">
                 <span class="atk-word-king">KING</span>
-                <!-- The Crown from atkLogo.png placed on top-right of KING! -->
-                <img src="assets/images/atkLogo.png" alt="Corona ATK" class="atk-floating-crown-img">
               </div>
             </div>
 
-            <div class="atk-line-bottom">
+            <!-- BOTTOM ROW: PRODUCTIONS Centered -->
+            <div class="atk-lockup-bottom">
               <span class="atk-word-productions">PRODUCTIONS</span>
             </div>
           </div>
@@ -566,126 +571,129 @@
           <div class="atk-author-pill">
             <span class="author-name">AGUSTÍN BENÍTEZ</span>
             <span class="author-sep">•</span>
-            <span class="author-role">GAME DIRECTOR & 3D DEVELOPER</span>
+            <span class="author-role">GAME DIRECTOR & LEAD DEVELOPER</span>
           </div>
         </div>
 
         <!-- ======================================================== -->
-        <!-- MAIN GAME SHOWCASE: Portada de Arch (portadavideo.png)   -->
+        <!-- CINEMATIC GAME SHOWCASE: MORGANA SPLASH ART & REAL LORE  -->
         <!-- ======================================================== -->
-        <div class="arch-origins-main-showcase">
-          <div class="arch-showcase-artboard">
-            <div class="showcase-top-status-bar">
-              <div class="showcase-status-left">
-                <span class="status-star">★</span>
+        <div class="cinematic-game-showcase">
+          <!-- Ambient Atmospheric Lighting & Vignette -->
+          <div class="cinematic-ambient-glow"></div>
+          <div class="cinematic-particle-dust"></div>
+
+          <!-- LAYER 1 (z-index: 1): Giant Display Depth Typography behind character -->
+          <div class="cinematic-backdrop-typography" aria-hidden="true">
+            <span class="backdrop-kicker">Origins of a king</span>
+            <h2 class="backdrop-giant-title">Arch</h2>
+            <div class="backdrop-subtitle-row">
+              <span class="backdrop-year">• 202? •</span>
+            </div>
+          </div>
+
+          <!-- LAYER 2 (z-index: 2): Morgana Splash Art (Cutout Character Sitting at Tavern) -->
+          <div class="cinematic-character-layer">
+            <img 
+              src="assets/images/morganaSplashArt.png" 
+              alt="Morgana - Arch: Origins of a king" 
+              class="morgana-splash-img"
+              onerror="this.src='assets/images/king.webp'">
+            <!-- Bottom smooth gradient blend -->
+            <div class="character-bottom-gradient"></div>
+          </div>
+
+          <!-- LAYER 3 (z-index: 3): Interactive Floating UI & Open 3D Cover -->
+          <div class="cinematic-stage-ui">
+            <!-- Left Wing: Status, Real Title, CTAs & Features -->
+            <div class="stage-wing-left">
+              <div class="cinematic-status-pill">
+                <span class="status-live-dot"></span>
                 <span>PROYECTO PRINCIPAL EN DESARROLLO</span>
-              </div>
-              <div class="showcase-status-right">
-                <span class="version-badge">ALPHA V0.8.2</span>
-                <span class="engine-tag">3D ACTION RPG</span>
-              </div>
-            </div>
-
-            <div class="arch-showcase-grid">
-              <!-- LEFT COLUMN: The Real Portada Poster (portadavideo.png) -->
-              <div class="arch-poster-column" (click)="openProject(featuredGame())">
-                <div class="poster-frame-wrapper">
-                  <img 
-                    src="assets/images/portadavideo.png" 
-                    alt="Portada Oficial Arch Origins of Kings" 
-                    class="arch-cover-poster-img"
-                    onerror="this.src='assets/images/king.webp'">
-
-                  <div class="poster-hover-overlay">
-                    <span class="poster-play-pill">
-                      <i class="fa-solid fa-play"></i>
-                      <span>Abrir Dossier (Img 4)</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="poster-meta-footer">
-                  <i class="fa-solid fa-film text-fuchsia-400"></i>
-                  <span>PORTADA OFICIAL: ARCH ORIGINS OF KINGS</span>
-                </div>
+                <span class="status-ver-badge">DEV V0.2.1</span>
               </div>
 
-              <!-- RIGHT COLUMN: Story, Lore, Mechanics & CTAs -->
-              <div class="arch-details-column">
-                <h2 class="arch-game-title">
-                  Proyecto Arch Origins of Kings
-                </h2>
-                <h3 class="arch-game-subtitle">
-                  Videojuego de Acción, Aventura & RPG Táctico 3D
-                </h3>
-
-                <p class="arch-game-pitch">
-                  Despierta el linaje real. Reclama el reino. Un viaje de acción táctica en tiempo real a través de ruinas vivientes, combates intensos contra bestias colosales y una historia impulsada por artefactos de poder ancestrales perdidos.
+              <div class="stage-title-group">
+                <h3 class="stage-game-name">Arch: Origins of a king</h3>
+                <p class="stage-genre-line">
+                  <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i>
+                  <span>Roguelite Survivor & Acción 3D Isométrico</span>
                 </p>
+              </div>
 
-                <!-- 4 Mechanics Feature Cards -->
-                <div class="game-mechanics-grid">
-                  <div class="mech-card">
-                    <div class="mech-icon-box text-amber-400">
-                      <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div>
-                      <h4 class="mech-title">Combate Táctico 3D</h4>
-                      <p class="mech-desc">Parry con temporización exacta, rodaduras de esquiva y combos de espada.</p>
-                    </div>
-                  </div>
+              <!-- CTA Buttons Row -->
+              <div class="stage-cta-actions">
+                <button class="stage-btn-dossier" (click)="scrollToTrailer()">
+                  <span class="btn-play-icon"><i class="fa-solid fa-play"></i></span>
+                  <span class="btn-text">VER AVANCES</span>
+                  <i class="fa-solid fa-arrow-down btn-arrow"></i>
+                </button>
 
-                  <div class="mech-card">
-                    <div class="mech-icon-box text-fuchsia-400">
-                      <i class="fa-solid fa-crown"></i>
-                    </div>
-                    <div>
-                      <h4 class="mech-title">Linaje Real Ancestral</h4>
-                      <p class="mech-desc">Desbloquea sellos de la corona para imbuir ataques con fuego, rayo o éter.</p>
-                    </div>
-                  </div>
+                <a [href]="featuredGame().githubUrl" target="_blank" rel="noopener noreferrer" class="stage-btn-repo">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Repositorio</span>
+                </a>
+              </div>
 
-                  <div class="mech-card">
-                    <div class="mech-icon-box text-cyan-400">
-                      <i class="fa-solid fa-cube"></i>
-                    </div>
-                    <div>
-                      <h4 class="mech-title">Mundo Tridimensional</h4>
-                      <p class="mech-desc">Mazmorras góticas, templos colosales y jefes desafiantes con IA reactiva.</p>
-                    </div>
-                  </div>
+              <!-- Real Gameplay Features Chips -->
+              <div class="stage-feature-chips">
+                <span class="feat-chip"><i class="fa-solid fa-shield-halved text-amber-400"></i> Arturo (Antimagia)</span>
+                <span class="feat-chip"><i class="fa-solid fa-moon text-purple-400"></i> Morgana (Magia Oscura)</span>
+                <span class="feat-chip"><i class="fa-brands fa-steam text-cyan-400"></i> Co-op Steamworks P2P</span>
+                <span class="feat-chip"><i class="fa-solid fa-cube text-emerald-400"></i> Java 17 & libGDX 3D</span>
+              </div>
+            </div>
 
-                  <div class="mech-card">
-                    <div class="mech-icon-box text-emerald-400">
-                      <i class="fa-solid fa-music"></i>
-                    </div>
-                    <div>
-                      <h4 class="mech-title">Banda Sonora Adaptativa</h4>
-                      <p class="mech-desc">Música dinámica que reacciona a la tensión del combate y la exploración.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- CTA Row -->
-                <div class="game-cta-actions-row">
-                  <button class="open-full-dossier-btn" (click)="openProject(featuredGame())">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span>Abrir Dossier de Producción (Img 4)</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </button>
-
-                  <a [href]="featuredGame().githubUrl" target="_blank" rel="noopener noreferrer" class="game-repo-btn">
-                    <i class="fa-brands fa-github"></i>
-                    <span>Ver Repositorio</span>
-                  </a>
-                </div>
-
-                <div class="game-dev-status-indicator">
-                  <span class="pulse-emerald-dot"></span>
-                  <span>En desarrollo activo • Modelado 3D, Físicas & Combate</span>
+            <!-- Right Wing: Clean Open 3D Cover PNG (No card, no background, open in bottom right) -->
+            <div class="stage-wing-right">
+              <div class="stage-direct-cover-wrap" (click)="scrollToTrailer()" title="Click para ver Avances">
+                <img 
+                  src="assets/images/portadavideo.png" 
+                  alt="Portada Oficial Arch: Origins of a king" 
+                  class="stage-direct-cover-png"
+                  onerror="this.src='assets/images/king.webp'">
+                <div class="cover-hover-pill">
+                  <i class="fa-solid fa-play text-purple-400"></i>
+                  <span>Ver Avances</span>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- SINOPSIS DEL JUEGO & AVANCES EN VÍDEO (YouTube)          -->
+        <!-- ======================================================== -->
+        <div id="arch-trailer-section" class="arch-trailer-showcase-container">
+          <!-- Game Lore & Summary Banner placed below showcase to not block anything -->
+          <div class="arch-game-summary-banner">
+            <div class="summary-banner-tag">
+              <i class="fa-solid fa-book-sparkles text-amber-400"></i>
+              <span>SINOPSIS DEL JUEGO</span>
+            </div>
+            <p class="summary-banner-text">
+              Supervivencia y acción 3D con cámara isométrica ambientada en magia artúrica. Encarna a Arturo con su mandoble de antimagia o a Morgana con sus rayos oscuros y grimorios arcanos para repeler hordas masivas en solitario o cooperativo Steamworks.
+            </p>
+          </div>
+
+          <div class="trailer-header-bar">
+            <div class="trailer-title-group">
+              <span class="trailer-pulse-dot"></span>
+              <h3 class="trailer-section-heading">AVANCES OFICIALES DE GAMEPLAY</h3>
+            </div>
+            <span class="trailer-badge">YOUTUBE 4K • STEAM 202?</span>
+          </div>
+
+          <div class="trailer-video-frame-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/3jb6Oxrzqnc?si=oRfi3E447srb7UZ0" 
+              title="Arch: Origins of a king - Avances de Gameplay" 
+              class="trailer-iframe"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
