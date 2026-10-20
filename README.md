@@ -1,112 +1,67 @@
-# Agustín Benítez | Portfolio con Temática Windows 💻
+# 👑 Portfolio Cuaderno de Campo • Agustín Benítez (Agus The King)
 
-¡Bienvenid@ a mi portafolio personal! Este proyecto simula un **sistema operativo Windows** completamente funcional en el navegador, donde cada aplicación es una página HTML independiente que se abre en ventanas simuladas.
-
-## 🌟 Características Principales
-
-### Interfaz de Sistema Operativo
-- **Escritorio Windows**: Interfaz que simula el escritorio de Windows con iconos de aplicaciones
-- **Barra de tareas**: Incluye botón de inicio con logo de Microsoft, aplicaciones minimizadas y área de notificaciones
-- **Reloj y fecha**: Muestra la hora actual y fecha en tiempo real
-- **Selector de idioma**: Soporte para español e inglés con detección automática del idioma del navegador
-
-### 📱 Sistema de Aplicaciones
-Cada aplicación se ejecuta en **ventanas independientes** con las siguientes funcionalidades:
--  **Ventanas redimensionables y arrastrables**
--  **Controles de ventana**: Minimizar, maximizar y cerrar
--  **Gestión en barra de tareas**: Las aplicaciones minimizadas aparecen en la barra inferior
--  **Enfoque de ventanas**: Click para traer ventanas al frente
-
-
-## 🛠️ Tecnologías Utilizadas
-
-### Frontend
-- **HTML5**: Estructura semántica y accesible
-- **CSS3**: Estilos modernos con gradientes y animaciones
-- **JavaScript ES6+**: Funcionalidad interactiva y gestión de ventanas
-- **Font Awesome**: Iconografía profesional
-
-### Características Técnicas
-- **Responsive Design**: Adaptable a diferentes dispositivos
-- **PWA Ready**: Optimizado para aplicaciones web progresivas
-- **SEO Optimizado**: Meta tags para redes sociales (Open Graph, Twitter Cards)
-- **Internacionalización**: Soporte multiidioma (ES/EN)
-
-## 📂 Estructura del Proyecto
-
-```
-📦 agustinbeniteez.github.io/
-├── 📄 index.html                 # Página principal (escritorio Windows)
-├── 📁 apps/                      # Aplicaciones del sistema
-│   ├── 📄 projects.html         # Galería de proyectos
-│   ├── 📄 spotify.html          # Perfil musical
-│   ├── 📄 figma.html            # Diseños UI/UX
-│   ├── 📄 estudios.html         # Información académica
-│   ├── 📄 browser.html          # Navegador personalizado
-│   ├── 📄 extensiones.html      # Extensiones desarrolladas
-│   └── 📄 trash.html            # Papelera
-├── 📁 script/                    # Lógica JavaScript
-│   ├── ⚙️ apps.js               # Sistema de ventanas y aplicaciones
-│   ├── 📄 projects.js           # Gestión de proyectos
-│   └── 📄 slider.js             # Carrusel de imágenes
-├── 📁 style/                     # Hojas de estilo
-│   ├── 📄 estructura.css        # Estilos base del sistema
-│   └── 📄 proyectos.css         # Estilos específicos de proyectos
-├── 📁 data/                      # Datos JSON
-│   ├── 📋 slider-data.json      # Información de proyectos
-│   └── 📁 slider-projects/       # Imágenes de proyectos
-├── 📁 assets/                    # Recursos estáticos
-│   └── 📁 icons/                # Iconos SVG personalizados
-└── 📁 src/                       # Imágenes y recursos adicionales
-```
-
-## 🎯 Funcionalidades Destacadas
-
-### 🖱️ Sistema de Ventanas Avanzado
-```javascript
-class Application {
-    // Cada aplicación es una clase independiente
-    // Gestión completa de ventanas: crear, minimizar, maximizar, cerrar
-    // Arrastrar y redimensionar ventanas
-    // Integración con barra de tareas
-}
-```
-
-### 🌍 Internacionalización
-- **Detección automática** del idioma del navegador
-- **Cambio dinámico** entre español e inglés
-- **Persistencia** de preferencias de idioma
-
-### 📱 Diseño Responsivo
-- **Mobile-first approach**
-- **Breakpoints optimizados** para diferentes dispositivos
-- **Touch-friendly** para dispositivos táctiles
-
-
-## 👨‍💻 Sobre el Desarrollador
-
-**Agustín Benítez** - Desarrollador Web especializado en:
-- 🌐 **Desarrollo Web**: HTML5, CSS3, JavaScript
-- 🖥️ **Backend**: Node.js, Python, Java
-- 🗄️ **Bases de Datos**: SQL, MySQL
-- 🎨 **Diseño**: Figma, UI/UX
-- 🔧 **Herramientas**: Git, GitHub, VS Code
-
-## 📞 Contacto
-
-- 🌐 **Portfolio**: [agustinbeniteez.github.io](https://agustinbeniteez.github.io)
-- 💼 **LinkedIn**: [Agustín Benítez](https://linkedin.com/in/agustin-benitez)
-- 📧 **GitHub**: [@AgustinBeniteez](https://github.com/AgustinBeniteez)
+Bienvenido al repositorio del nuevo portfolio interactivo de **Agustín Benítez**. 
+Diseñado con una estética artesanal de **cuaderno de campo / scrapbook y mesa de trabajo interactiva**, combinando la faceta de **Desarrollador Web** con la de **Creador Indie de Videojuegos**.
 
 ---
 
-⭐ **¡Dale una estrella si te gusta el proyecto!** ⭐
+## 🎨 Concepto Visual & Características
 
-<div align="center">
+- **Mesa de Trabajo & Cuaderno de Campo (Scrapbook)**:
+  - Textura de escritorio con materiales de diseño: café humeante interactivo, brújula que sigue el cursor, lápiz 2B de boceto, borrador "Shiro" y sellos postales.
+  - Páginas de cuaderno con costura central, líneas de mapa topográfico y cinta adhesiva washi tape.
+- **Protagonista Standee Recortable**:
+  - Figura troquelada en relieve con peana y líneas de corte del protagonista de tu videojuego: **"Arch Origins Of A King"**.
+- **Pantalla de Detalle de Proyectos (Estilo Anime / Img 4)**:
+  - Al interactuar con el videojuego o cualquiera de los folios web (*Valorantdle*, *Custom Browser Extension*, *Enma Manualidades*, *Melody*, *Wiki Mods ATK*), se abre una ventana modal cinematográfica:
+    - **Izquierda**: Año, Título en tipografía de impacto, botones de acción (Jugar / Demo / GitHub).
+    - **Centro**: Ilustración / recorte del personaje destacando sobre el marco superior.
+    - **Derecha**: Sinopsis, características clave, chips de stack tecnológico y firma de Director / Creador.
+- **Sistema de Presets de Boceto**:
+  - Ilustraciones vectoriales en SVG con estilo de trazo a lápiz desenfadado (stick / draft) para saber exactamente qué elemento va en cada posición antes de que coloques tus artes y sprites finales.
 
-[![Ver Proyecto](https://img.shields.io/badge/_Ver_Proyecto-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://agustinbeniteez.github.io)
-[![Dar Estrella](https://img.shields.io/badge/⭐_Dar_Estrella-FFD700?style=for-the-badge&logo=github&logoColor=black)](https://github.com/AgustinBeniteez/agustinbeniteez.github.io)
+---
 
-</div>
+## 🛠️ Stack Tecnológico
 
-*Desarrollado con ❤️ por Agustín Benítez*
+- **Framework**: [Angular 21](https://angular.dev/) (Standalone Components, Signals & Control Flow `@if` / `@for`)
+- **Estilos**: [Tailwind CSS v4](https://tailwindcss.com/) + CSS Modules artesanales
+- **Tipografías**: Google Fonts (*Patrick Hand*, *Space Grotesk*, *JetBrains Mono*)
+- **Efectos de Sonido**: Web Audio API nativo (efectos de paso de página de papel y chimes sin archivos pesados)
+- **Iconos**: FontAwesome 6
+
+---
+
+## 🚀 Comandos de Desarrollo
+
+### 1. Iniciar servidor local de desarrollo:
+```bash
+npm start
+```
+Abre tu navegador en `http://localhost:4200` para ver la web con recarga en vivo en tiempo real.
+
+### 2. Compilar para producción:
+```bash
+npm run build
+```
+Genera la versión optimizada en la carpeta `dist/portfolio/browser/`.
+
+### 3. Despliegue automático en GitHub Pages:
+Se incluye un workflow configurado en `.github/workflows/deploy.yml`. Al hacer push a las ramas `main` o `NuevoPorfolio`, GitHub Actions compilará y publicará la web automáticamente.
+
+---
+
+## 🖼️ Cómo Sustituir los Presets por tus Imágenes Finales
+
+1. Guarda tus sprites o ilustraciones en `public/assets/` (por ejemplo: `public/assets/arch-origins-hero.png`).
+2. Abre el archivo de datos: [`src/app/data/portfolio.data.ts`](src/app/data/portfolio.data.ts).
+3. Añade la ruta de tu imagen en el proyecto deseado:
+   ```typescript
+   image: 'assets/arch-origins-hero.png'
+   ```
+4. ¡El componente mostrará automáticamente tu arte con el mismo efecto de recorte flotante!
+
+---
+
+## 📦 Historial & Versión Anterior
+La versión anterior del portfolio (con estilo de escritorio de sistema operativo Windows) se encuentra respaldada de forma segura en la carpeta `/legacy-os`.

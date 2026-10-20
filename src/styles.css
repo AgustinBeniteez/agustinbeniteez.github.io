@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+
+/* Custom scrollbars with craft aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #251b14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b553e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #927556;
+}
+
+html {
+  scroll-behavior: smooth;
+}

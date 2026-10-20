@@ -1,0 +1,78 @@
+.doodle-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.size-sm {
+  max-width: 120px;
+}
+
+.size-md {
+  max-width: 240px;
+  width: 100%;
+}
+
+.size-lg {
+  max-width: 320px;
+  width: 100%;
+}
+
+.size-hero {
+  max-width: 420px;
+  width: 100%;
+}
+
+.doodle-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.standee-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  filter: drop-shadow(0 12px 16px rgba(44, 36, 30, 0.18));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+
+.standee-wrapper:hover {
+  transform: translateY(-6px) scale(1.02) rotate(-1deg);
+  filter: drop-shadow(0 18px 24px rgba(44, 36, 30, 0.25));
+}
+
+.avatar-wrapper {
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease;
+}
+
+.avatar-wrapper:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.preset-card-sketch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.stationery-prop {
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: grab;
+}
+
+.stationery-prop:hover {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.sketch-custom-caption {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.9rem;
+  color: #786c5f;
+  margin-top: 4px;
+}

@@ -1,0 +1,1296 @@
+/* ===================================================
+   BLUEPRINT DESIGN UNIVERSE (Continuous Blue Cutting Mat)
+   =================================================== */
+.blueprint-universe {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #1d4ed8;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  background-attachment: fixed;
+  color: #f8fafc;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Global Blueprint Background Overlay */
+.blueprint-grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fabric Lighting Ripple overlay (Image 1 Studio Lighting) */
+.fabric-shadow-overlay {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 80% 15%, rgba(255, 255, 255, 0.16) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 85%, rgba(0, 0, 0, 0.3) 0%, transparent 65%),
+    linear-gradient(135deg, transparent 40%, rgba(0, 0, 0, 0.15) 75%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Top Coordinate Ruler Marks */
+.blueprint-ruler-top {
+  position: fixed;
+  top: 0;
+  left: 30px;
+  right: 0;
+  height: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  z-index: 2;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.blueprint-ruler-left {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  z-index: 2;
+  border-right: 1px dashed rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+/* ===================================================
+   1. HERO CANVAS SECTION (Figma Blueprint Style • Image 1)
+   =================================================== */
+.hero-canvas-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 6rem 1.5rem;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Floating Properties Menu (Image 1 Top Right) */
+.floating-props-menu {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  z-index: 30;
+}
+
+.prop-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.prop-item:hover,
+.prop-item.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.prop-shortcut {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+/* ===================================================
+   CENTER BOUNDING BOX & TITLE: "AGUSTIN BENITEZ"
+   =================================================== */
+.selection-bounding-box {
+  position: relative;
+  width: 90%;
+  max-width: 980px;
+  border: 3.5px solid #84cc16;
+  border-radius: 4px;
+  padding: 3rem 2.5rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(132, 204, 22, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: transform 0.15s ease-out;
+}
+
+/* Neon Lime Resize Handles (Image 1) */
+.resize-handle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #84cc16;
+  border: 2.5px solid #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.handle-tl { top: -10px; left: -10px; cursor: nwse-resize; }
+.handle-tr { top: -10px; right: -10px; cursor: nesw-resize; }
+.handle-bl { bottom: -10px; left: -10px; cursor: nesw-resize; }
+.handle-br { bottom: -10px; right: -10px; cursor: nwse-resize; }
+
+/* Corner Tag: 2026 Edition (Image 1 Bottom Left of selection) */
+.tag-edition {
+  position: absolute;
+  bottom: -22px;
+  left: 20px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1.5px solid #334155;
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  z-index: 25;
+}
+
+.edition-badge {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.edition-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.edition-arrow {
+  width: 20px;
+  height: 20px;
+  background: #3b82f6;
+  color: #ffffff;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Corner Tag: UI / UX Code (Image 2 Top Handle) */
+.tag-purple {
+  position: absolute;
+  top: -26px;
+  right: 60px;
+  background: #a855f7;
+  border: 2px solid #c084fc;
+  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+}
+
+.tag-purple-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+/* ===================================================
+   GIANT IMPACT TITLE: "AGUSTIN BENITEZ"
+   =================================================== */
+.giant-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 0.88;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.giant-word {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3.8rem, 10.5vw, 9.8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0 14px 22px rgba(15, 23, 42, 0.45));
+}
+
+.giant-word .letter {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.giant-word .letter:hover {
+  transform: translateY(-12px) scale(1.08);
+  color: #bef264;
+}
+
+/* "PORTFOLIO" in Small (as explicitly asked!) */
+.small-portfolio-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-chip {
+  background: #bef264;
+  color: #14532d;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px rgba(190, 242, 100, 0.35);
+}
+
+.dev-role-chip {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f1f5f9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+/* Multiplayer Live Cursors (Image 1 Style) */
+.multiplayer-cursor {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: none;
+  z-index: 35;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cursor-orange {
+  bottom: -18px;
+  right: 140px;
+}
+
+.cursor-cyan {
+  top: -20px;
+  left: 90px;
+}
+
+.cursor-name-tag {
+  background: #f97316;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
+  white-space: nowrap;
+}
+
+.cursor-name-tag.cyan-tag {
+  background: #0284c7;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.4);
+}
+
+/* Floating Figma Toolbar (Image 1 Bottom) */
+.figma-bottom-toolbar {
+  position: absolute;
+  bottom: 2rem;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.35rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+  z-index: 30;
+}
+
+.tool-btn {
+  background: none;
+  border: none;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 8px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.tool-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.5);
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 0.2rem;
+}
+
+.code-tool {
+  width: auto;
+  padding: 0 0.6rem;
+  gap: 0.4rem;
+}
+
+.dev-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: #22c55e;
+  color: #052e16;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+/* Scroll Down Prompt */
+.scroll-down-hint {
+  position: absolute;
+  bottom: 5.5rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scroll-down-hint:hover {
+  color: #bef264;
+  transform: translateY(2px);
+}
+
+/* ===================================================
+   2. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues)
+   =================================================== */
+.asymmetric-workbench {
+  position: relative;
+  z-index: 10;
+  padding: 1.5rem 2rem 8rem 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Floating Studio Navigation Bar */
+.workbench-floating-nav {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  flex-wrap: wrap;
+}
+
+.nav-left-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+.zoom-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.workbench-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.wb-tab-btn {
+  background: none;
+  border: 1px solid transparent;
+  color: #cbd5e1;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wb-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.wb-tab-btn.active {
+  background: #2563eb;
+  border-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-icon-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f1f5f9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.social-icon-btn:hover {
+  background: #3b82f6;
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   ASYMMETRICAL STUDIO STAGE GRID:
+   Left: Featured Arch Origins Card
+   Right: Other Projects & Specs
+   =================================================== */
+.workbench-stage-grid {
+  display: grid;
+  grid-template-columns: minmax(520px, 1.25fr) minmax(380px, 1fr);
+  gap: 2.75rem;
+  align-items: start;
+}
+
+/* ===================================================
+   [LEFT ZONE]: ARCH ORIGINS OF KINGS DEDICATED CARD
+   (Styled like Title Bounding Box with Handles!)
+   =================================================== */
+.workbench-left-column {
+  position: relative;
+}
+
+.arch-origins-featured-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(16px);
+  border: 3.5px solid #84cc16; /* Neon Lime Green Selection like Title! */
+  border-radius: 6px;
+  padding: 3rem 2.25rem 2.5rem 2.25rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(132, 204, 22, 0.25);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.arch-origins-featured-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 
+    0 35px 75px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(132, 204, 22, 0.4);
+  border-color: #bef264;
+}
+
+/* Lime Green Resize Handles on 4 corners (Image 1 & 2 Title style) */
+.card-selection-handle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #84cc16;
+  border: 2.5px solid #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+.card-selection-handle.handle-tl { top: -9px; left: -9px; }
+.card-selection-handle.handle-tr { top: -9px; right: -9px; }
+.card-selection-handle.handle-bl { bottom: -9px; left: -9px; }
+.card-selection-handle.handle-br { bottom: -9px; right: -9px; }
+
+/* Frame Identifier Tag (Figma Top Bar) */
+.card-frame-badge {
+  position: absolute;
+  top: -18px;
+  left: 24px;
+  background: #84cc16;
+  color: #14532d;
+  border: 1.5px solid #ffffff;
+  border-radius: 4px;
+  padding: 0.2rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 15;
+}
+
+.frame-tag-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.frame-dim {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+/* Top Corner Alpha Pill */
+.card-corner-alpha {
+  position: absolute;
+  top: -16px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 15;
+}
+
+.alpha-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: #f59e0b;
+  color: #ffffff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
+}
+
+.badge-star-pulse {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #fef08a;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #f59e0b;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+/* Card Content Body: Split Layout with Art in Middle and Info beside it */
+.arch-card-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+/* IN THE MIDDLE / LEFT: Standee Character Art Box */
+.arch-image-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.standee-artboard-frame {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.arch-origins-featured-card:hover .standee-artboard-frame {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #84cc16;
+}
+
+.artboard-doodle-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fef3c7;
+  border: 1px dashed #d97706;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #92400e;
+  margin-top: 0.6rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.sketch-spec-ruler {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #64748b;
+  margin-top: 0.75rem;
+}
+
+.sketch-spec-ruler .divider {
+  color: #334155;
+}
+
+/* BESIDE IT ("AL LADO"): Title, Lore, Tags, CTA */
+.arch-info-zone {
+  display: flex;
+  flex-direction: column;
+}
+
+.arch-main-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.arch-subtitle {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #fbbf24;
+  margin: 0.35rem 0 0.85rem 0;
+}
+
+.arch-desc-paragraph {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0 0 1.25rem 0;
+}
+
+.arch-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.arch-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+}
+
+.arch-action-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.open-dossier-glow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f59e0b;
+  color: #0f172a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.85rem 1.65rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+  transition: all 0.2s ease;
+}
+
+.open-dossier-glow-btn:hover {
+  background: #fbbf24;
+  transform: translateX(4px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
+}
+
+.dev-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.pulse-emerald-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+/* Multiplayer Cursor on Card */
+.card-multiplayer-cursor {
+  position: absolute;
+  bottom: -15px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.cursor-tag-lime {
+  background: #84cc16;
+  color: #14532d;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(132, 204, 22, 0.4);
+  white-space: nowrap;
+}
+
+/* ===================================================
+   [RIGHT & BOTTOM-RIGHT ZONE]: OTHER PROJECTS (Asymmetrical)
+   =================================================== */
+.workbench-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.right-column-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px dashed rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.6rem;
+}
+
+.heading-comment {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #bfdbfe;
+  letter-spacing: 0.05em;
+}
+
+.heading-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+/* Staggered Cards Grid */
+.other-projects-staggered-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual Artboard Cards placed directly on Blue Grid */
+.asymmetric-project-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  padding: 1.35rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Organic Asymmetrical Tilts (Image 1 & 2 Blueprint Feel) */
+.card-tilt-left {
+  transform: rotate(-0.8deg);
+}
+
+.card-tilt-right {
+  transform: rotate(1deg);
+}
+
+.asymmetric-project-card:hover {
+  transform: rotate(0deg) translateY(-8px) scale(1.02);
+  border-color: #38bdf8;
+  box-shadow: 
+    0 22px 45px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(56, 189, 248, 0.3);
+  z-index: 20;
+}
+
+/* Vector Corner Pins on hover */
+.card-corner-pins .pin {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #38bdf8;
+  border-radius: 1px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.asymmetric-project-card:hover .card-corner-pins .pin {
+  opacity: 1;
+}
+
+.pin-tl { top: -4px; left: -4px; }
+.pin-tr { top: -4px; right: -4px; }
+.pin-bl { bottom: -4px; left: -4px; }
+.pin-br { bottom: -4px; right: -4px; }
+
+.asym-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.asym-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.asym-year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.asym-thumbnail-sketch {
+  display: flex;
+  justify-content: center;
+  background: #090d16;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.asym-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.3rem 0;
+}
+
+.asym-card-tagline {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: #94a3b8;
+  margin: 0 0 0.85rem 0;
+  flex-grow: 1;
+}
+
+.asym-tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.tech-pill {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.asym-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+  padding-top: 0.65rem;
+  margin-top: auto;
+}
+
+.view-dossier-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.stamp-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #64748b;
+}
+
+/* ===================================================
+   DEVELOPER PROFILE & SPECS SHEET (Bottom Right)
+   =================================================== */
+.profile-spec-sheet-wrapper {
+  position: relative;
+  margin-top: 1rem;
+}
+
+/* Masking Tape stickers */
+.sheet-masking-tape {
+  position: absolute;
+  width: 90px;
+  height: 24px;
+  background: rgba(254, 243, 199, 0.85);
+  border: 1px dashed #d97706;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
+.tape-top-left {
+  top: -12px;
+  left: 20px;
+  transform: rotate(-5deg);
+}
+
+.tape-top-right {
+  top: -12px;
+  right: 20px;
+  transform: rotate(4deg);
+}
+
+.profile-spec-card {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.spec-card-header {
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spec-title-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.spec-chip-cyan {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.spec-filename {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.spec-location {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+.spec-card-body {
+  padding: 1.75rem;
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.spec-avatar-box {
+  flex-shrink: 0;
+}
+
+.spec-details-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-dev-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+}
+
+.spec-dev-alias {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #f59e0b;
+  margin: 0.15rem 0 0.6rem 0;
+}
+
+.spec-dev-bio {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: 0 0 1rem 0;
+}
+
+.spec-skills-cloud {
+  margin-bottom: 1.25rem;
+}
+
+.skills-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #38bdf8;
+}
+
+.spec-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.social-sheet-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  padding: 0.35rem 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.social-sheet-btn:hover {
+  background: #2563eb;
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* Standalone Full About View */
+.workbench-about-full-view {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ===================================================
+   RESPONSIVE LAYOUT
+   =================================================== */
+@media (max-width: 1100px) {
+  .workbench-stage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-props-menu {
+    display: none;
+  }
+
+  .blueprint-ruler-left {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-canvas-section {
+    padding: 2rem 1rem 5rem 1rem;
+  }
+
+  .selection-bounding-box {
+    padding: 2rem 1rem;
+  }
+
+  .arch-card-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .arch-image-zone {
+    margin-bottom: 1rem;
+  }
+
+  .arch-features-list {
+    align-items: center;
+  }
+
+  .arch-action-footer {
+    justify-content: center;
+  }
+
+  .spec-card-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills-list {
+    justify-content: center;
+  }
+
+  .spec-links-row {
+    justify-content: center;
+  }
+
+  .workbench-floating-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .workbench-tabs {
+    justify-content: center;
+  }
+}

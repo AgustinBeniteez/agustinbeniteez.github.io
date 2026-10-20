@@ -1,0 +1,205 @@
+<div class="modal-backdrop" (click)="closeModal()">
+  <!-- Modal Window Container (inspired by Image 4) -->
+  <div class="modal-card" (click)="$event.stopPropagation()">
+    <!-- Top Navigation Header (Image 4 style: All Movie | Movie List | Trailer Movie) -->
+    <header class="modal-header">
+      <nav class="modal-nav">
+        <button 
+          class="nav-tab-btn" 
+          [class.active]="activeTab === 'overview'" 
+          (click)="setTab('overview')">
+          Visión General
+        </button>
+        <button 
+          class="nav-tab-btn" 
+          [class.active]="activeTab === 'lore'" 
+          (click)="setTab('lore')">
+          {{ project.category === 'game' ? 'Historia & Mecánicas' : 'Detalles & Arquitectura' }}
+        </button>
+        <button 
+          class="nav-tab-btn" 
+          [class.active]="activeTab === 'tech'" 
+          (click)="setTab('tech')">
+          Stack & Especificaciones
+        </button>
+        <button 
+          class="nav-tab-btn" 
+          [class.active]="activeTab === 'sketch'" 
+          (click)="setTab('sketch')">
+          Boceto Preset & Assets
+        </button>
+      </nav>
+
+      <button class="close-btn" (click)="closeModal()" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="modal-body">
+      <!-- Left Column: Title, Year, Action Buttons -->
+      <div class="left-col">
+        <div class="year-badge">{{ project.year }}</div>
+        <h1 class="project-title">{{ project.title }}</h1>
+        <p class="project-subtitle">{{ project.subtitle }}</p>
+
+        <!-- Tagline / Pitch -->
+        <blockquote class="tagline-quote">
+          “{{ project.tagline }}”
+        </blockquote>
+
+        <!-- Action Buttons (Play / Github / Live) -->
+        <div class="actions-group">
+          @if (project.projectUrl && project.projectUrl !== '#') {
+            <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <i class="fa-solid fa-play"></i>
+              <span>{{ project.category === 'game' ? 'Jugar / Probar' : 'Ver Proyecto Live' }}</span>
+            </a>
+          }
+
+          @if (project.githubUrl) {
+            <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <i class="fa-brands fa-github"></i>
+              <span>Repositorio</span>
+            </a>
+          }
+
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>{{ project.status }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Column: Character / Asset Standee Cutout (Popping out like Image 4) -->
+      <div class="center-col">
+        <div class="cutout-wrapper">
+          @switch (project.sketchType) {
+            @case ('king-game') {
+              <app-doodle-sketch type="king-hero" size="hero"></app-doodle-sketch>
+            }
+            @case ('valorantdle') {
+              <app-doodle-sketch type="valorantdle" size="lg"></app-doodle-sketch>
+            }
+            @case ('extension') {
+              <app-doodle-sketch type="extension" size="lg"></app-doodle-sketch>
+            }
+            @case ('enma-shop') {
+              <app-doodle-sketch type="enma-shop" size="lg"></app-doodle-sketch>
+            }
+            @case ('melody') {
+              <app-doodle-sketch type="melody" size="lg"></app-doodle-sketch>
+            }
+            @case ('wikimods') {
+              <app-doodle-sketch type="wikimods" size="lg"></app-doodle-sketch>
+            }
+          }
+
+          <!-- Floating Preset Hint -->
+          <div class="preset-tag-hint">
+            <i class="fa-solid fa-pencil"></i>
+            <span>Preset de dibujo provisional • Listo para sustituir con tu arte</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Synopsis, Features, Specs & Director Metadata -->
+      <div class="right-col">
+        @switch (activeTab) {
+          @case ('overview') {
+            <div class="tab-pane">
+              <h3 class="pane-heading">Sinopsis del Proyecto</h3>
+              <p class="description-text">{{ project.description }}</p>
+
+              <h4 class="subheading">Puntos Clave:</h4>
+              <ul class="features-list">
+                @for (feat of project.features.slice(0, 3); track feat) {
+                  <li>
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>{{ feat }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+
+          @case ('lore') {
+            <div class="tab-pane">
+              <h3 class="pane-heading">{{ project.category === 'game' ? 'Lore & Universo Narrativo' : 'Arquitectura & Flujo' }}</h3>
+              <p class="description-text leading-relaxed">{{ project.loreOrDetails }}</p>
+
+              <h4 class="subheading">Todas las Características:</h4>
+              <ul class="features-list">
+                @for (feat of project.features; track feat) {
+                  <li>
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>{{ feat }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+
+          @case ('tech') {
+            <div class="tab-pane">
+              <h3 class="pane-heading">Stack Tecnológico & Herramientas</h3>
+              <p class="description-text">Tecnologías seleccionadas para maximizar rendimiento y experiencia:</p>
+
+              <div class="tech-chips-grid">
+                @for (tech of project.technologies; track tech) {
+                  <div class="tech-chip">
+                    <i class="fa-solid fa-cube"></i>
+                    <span>{{ tech }}</span>
+                  </div>
+                }
+              </div>
+
+              <div class="tech-spec-box">
+                <div class="spec-row">
+                  <span class="spec-label">Categoría:</span>
+                  <span class="spec-value capitalize">{{ project.category }}</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">Versión / Estado:</span>
+                  <span class="spec-value">{{ project.status }}</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">Sello de Archivo:</span>
+                  <span class="spec-value">{{ project.stampText }}</span>
+                </div>
+              </div>
+            </div>
+          }
+
+          @case ('sketch') {
+            <div class="tab-pane">
+              <h3 class="pane-heading">Panel de Preset & Reemplazo</h3>
+              <div class="preset-instructions-card">
+                <p class="font-bold text-amber-900 mb-2">
+                  <i class="fa-solid fa-circle-info mr-1"></i> ¿Cómo sustituir este preset por tu imagen definitiva?
+                </p>
+                <ol class="text-xs space-y-1.5 text-stone-700 list-decimal list-inside">
+                  <li>Coloca tu imagen o sprite en la carpeta <code class="bg-stone-200 px-1 py-0.5 rounded text-stone-800">public/assets/</code></li>
+                  <li>Abre el archivo <code class="bg-stone-200 px-1 py-0.5 rounded text-stone-800">src/app/data/portfolio.data.ts</code></li>
+                  <li>Añade la propiedad <code class="bg-stone-200 px-1 py-0.5 rounded text-stone-800">image: 'assets/tu-personaje.png'</code> al proyecto</li>
+                  <li>¡Y listo! El recorte central mostrará tu ilustración automáticamente con el mismo efecto flotante.</li>
+                </ol>
+              </div>
+            </div>
+          }
+        }
+
+        <!-- Director / Role Footer (Image 4 inspired footer: DIRECTOR: Makoto Shinkai) -->
+        <footer class="director-footer">
+          <div class="director-info">
+            <span class="director-label">DESARROLLADOR & CREADOR:</span>
+            <span class="director-name">{{ project.role }}</span>
+          </div>
+          <div class="seal-badge">
+            <span class="seal-text">{{ project.stampText }}</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

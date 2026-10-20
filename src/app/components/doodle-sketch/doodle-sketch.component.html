@@ -1,0 +1,336 @@
+<div class="doodle-container" [class]="'size-' + size">
+  @switch (type) {
+    @case ('king-hero') {
+      <!-- Arch Origins Of A King: Hero Standee Cutout (inspired by Image 2 & 4) -->
+      <div class="standee-wrapper">
+        <svg viewBox="0 0 320 380" class="doodle-svg drop-shadow-md">
+          <!-- Standee fold outline / die-cut border -->
+          <path d="M 60,350 L 50,330 C 40,280 40,160 55,100 C 65,50 110,20 160,20 C 210,20 255,50 265,100 C 280,160 280,280 270,330 L 260,350 Z" 
+                fill="#ffffff" stroke="#2c241e" stroke-width="3" stroke-dasharray="6,4" stroke-linecap="round"/>
+          
+          <!-- Cutout scissors hint -->
+          <text x="35" y="180" font-family="'Patrick Hand', cursive" font-size="12" fill="#786c5f" transform="rotate(-90 35,180)">✂ CORTAR AQUÍ</text>
+
+          <!-- Little Wooden Base / Stand (like in Image 2) -->
+          <polygon points="90,365 230,365 240,350 80,350" fill="#e8dcc4" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+          <path d="M 120,350 L 120,365 M 160,350 L 160,365 M 200,350 L 200,365" stroke="#a4937a" stroke-width="1.5" />
+
+          <!-- Character: The Hero / King (Hand-drawn doodle sketch) -->
+          <!-- Cloak flapping -->
+          <path d="M 120,150 Q 80,220 95,290 Q 120,305 140,295 Q 115,220 135,170 Z" fill="#fde68a" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+          <path d="M 200,150 Q 240,220 225,290 Q 200,305 180,295 Q 205,220 185,170 Z" fill="#fde68a" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+
+          <!-- Legs & Boots -->
+          <path d="M 135,270 L 130,320 L 110,325 L 110,342 L 145,342 L 148,320 L 145,270" fill="#fed7aa" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+          <path d="M 175,270 L 180,320 L 200,325 L 200,342 L 165,342 L 162,320 L 165,270" fill="#fed7aa" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+          <!-- Boot laces sketch -->
+          <path d="M 120,328 L 138,328 M 120,334 L 138,334" stroke="#2c241e" stroke-width="2" />
+          <path d="M 172,328 L 190,328 M 172,334 L 190,334" stroke="#2c241e" stroke-width="2" />
+
+          <!-- Body / Tunic -->
+          <path d="M 125,160 Q 160,150 195,160 L 190,270 Q 160,280 130,270 Z" fill="#bae6fd" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+          <!-- Belt with royal buckle -->
+          <rect x="122" y="235" width="76" height="14" rx="2" fill="#78350f" stroke="#2c241e" stroke-width="2" />
+          <rect x="152" y="232" width="16" height="20" rx="3" fill="#facc15" stroke="#2c241e" stroke-width="2" />
+
+          <!-- Wooden Practice Sword -->
+          <g transform="rotate(25 210 200)">
+            <!-- Hilt & guard -->
+            <rect x="200" y="240" width="8" height="25" rx="2" fill="#92400e" stroke="#2c241e" stroke-width="2" />
+            <rect x="190" y="234" width="28" height="6" rx="2" fill="#f59e0b" stroke="#2c241e" stroke-width="2" />
+            <!-- Blade with wooden woodgrain sketch -->
+            <path d="M 198,234 L 198,130 L 204,115 L 210,130 L 210,234 Z" fill="#fef08a" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+            <path d="M 204,130 L 204,225" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,2" />
+          </g>
+
+          <!-- Head & Face -->
+          <circle cx="160" cy="115" r="38" fill="#ffedd5" stroke="#2c241e" stroke-width="2.5" />
+          <!-- Hair tufts -->
+          <path d="M 130,95 Q 120,120 128,135 Q 135,105 145,95 Q 155,85 170,90 Q 185,92 192,105 Q 198,125 190,135" fill="#f97316" stroke="#2c241e" stroke-width="2" stroke-linejoin="round" />
+          
+          <!-- Eyes & Mischievous Smirk (Doodle style) -->
+          <circle cx="148" cy="118" r="3.5" fill="#2c241e" />
+          <circle cx="172" cy="118" r="3.5" fill="#2c241e" />
+          <!-- Eyebrows -->
+          <path d="M 142,108 L 154,112 M 178,112 L 166,108" stroke="#2c241e" stroke-width="2.5" stroke-linecap="round" />
+          <!-- Smirk & cute cheek blush -->
+          <path d="M 152,132 Q 160,138 170,130" fill="none" stroke="#2c241e" stroke-width="2.5" stroke-linecap="round" />
+          <circle cx="140" cy="126" r="4" fill="#fda4af" opacity="0.7" />
+          <circle cx="180" cy="126" r="4" fill="#fda4af" opacity="0.7" />
+
+          <!-- Crooked Crown on head! -->
+          <g transform="rotate(-8 160 70)">
+            <polygon points="135,82 142,50 152,65 160,45 168,65 178,50 185,82" fill="#fbbf24" stroke="#2c241e" stroke-width="2.5" stroke-linejoin="round" />
+            <!-- Crown jewels doodles -->
+            <circle cx="148" cy="74" r="2.5" fill="#ef4444" stroke="#2c241e" stroke-width="1" />
+            <circle cx="160" cy="74" r="3" fill="#3b82f6" stroke="#2c241e" stroke-width="1" />
+            <circle cx="172" cy="74" r="2.5" fill="#10b981" stroke="#2c241e" stroke-width="1" />
+          </g>
+
+          <!-- Little hands -->
+          <circle cx="120" cy="210" r="10" fill="#ffedd5" stroke="#2c241e" stroke-width="2" />
+          <circle cx="204" cy="225" r="10" fill="#ffedd5" stroke="#2c241e" stroke-width="2" />
+
+          <!-- Preset Marker Banner -->
+          <rect x="50" y="340" width="220" height="26" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2" />
+          <text x="160" y="357" font-family="'Patrick Hand', cursive" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">
+            👑 PRESET: PROTAGONISTA DE ARCH ORIGINS
+          </text>
+        </svg>
+      </div>
+    }
+
+    @case ('dev-avatar') {
+      <!-- Agustín Benítez Dev Portrait Sketch -->
+      <div class="avatar-wrapper">
+        <svg viewBox="0 0 200 240" class="doodle-svg">
+          <!-- Polaroid / Photo Card Frame with Tape -->
+          <rect x="15" y="15" width="170" height="210" rx="4" fill="#ffffff" stroke="#2c241e" stroke-width="2" />
+          <rect x="25" y="25" width="150" height="150" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" />
+
+          <!-- Dev sketch portrait -->
+          <!-- Body / Hoodie with code brackets -->
+          <path d="M 50,175 Q 100,165 150,175 L 155,175 L 45,175 Z" fill="#64748b" stroke="#2c241e" stroke-width="2" />
+          <path d="M 70,165 Q 100,180 130,165" fill="#f1f5f9" stroke="#2c241e" stroke-width="2" />
+          <text x="100" y="174" font-family="'JetBrains Mono', monospace" font-size="10" fill="#3b82f6" text-anchor="middle">&lt;DEV/&gt;</text>
+
+          <!-- Head -->
+          <circle cx="100" cy="105" r="34" fill="#ffedd5" stroke="#2c241e" stroke-width="2.5" />
+          <!-- Glasses -->
+          <rect x="76" y="98" width="20" height="15" rx="3" fill="#e0f2fe" fill-opacity="0.6" stroke="#1e293b" stroke-width="2" />
+          <rect x="104" y="98" width="20" height="15" rx="3" fill="#e0f2fe" fill-opacity="0.6" stroke="#1e293b" stroke-width="2" />
+          <line x1="96" y1="105" x2="104" y2="105" stroke="#1e293b" stroke-width="2" />
+          <!-- Pupils -->
+          <circle cx="86" cy="105" r="2.5" fill="#0f172a" />
+          <circle cx="114" cy="105" r="2.5" fill="#0f172a" />
+          <!-- Smile -->
+          <path d="M 92,123 Q 100,130 108,123" fill="none" stroke="#2c241e" stroke-width="2" stroke-linecap="round" />
+
+          <!-- Backwards Cap -->
+          <path d="M 66,95 Q 100,70 134,95 L 140,98 Q 100,85 62,98 Z" fill="#3b82f6" stroke="#2c241e" stroke-width="2" />
+          <ellipse cx="60" cy="99" rx="10" ry="4" fill="#1d4ed8" stroke="#2c241e" stroke-width="1.5" transform="rotate(-15 60 99)" />
+
+          <!-- Pencil behind ear -->
+          <rect x="125" y="85" width="22" height="4" rx="1" fill="#eab308" stroke="#2c241e" stroke-width="1.5" transform="rotate(-30 125 85)" />
+          <polygon points="147,72 153,69 149,76" fill="#1e293b" />
+
+          <!-- Polaroid label -->
+          <text x="100" y="200" font-family="'Patrick Hand', cursive" font-size="14" font-weight="bold" fill="#334155" text-anchor="middle">
+            Agustín B. • Dev ID #01
+          </text>
+        </svg>
+      </div>
+    }
+
+    @case ('valorantdle') {
+      <!-- Valorantdle Sketch Preset -->
+      <div class="preset-card-sketch">
+        <svg viewBox="0 0 240 160" class="doodle-svg">
+          <rect x="5" y="5" width="230" height="150" rx="8" fill="#fff1f2" stroke="#e11d48" stroke-width="2" stroke-dasharray="5,3" />
+          <!-- Tactical crosshair -->
+          <circle cx="120" cy="70" r="32" fill="none" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4,2" />
+          <circle cx="120" cy="70" r="16" fill="none" stroke="#e11d48" stroke-width="2" />
+          <line x1="120" y1="28" x2="120" y2="112" stroke="#e11d48" stroke-width="2" />
+          <line x1="78" y1="70" x2="162" y2="70" stroke="#e11d48" stroke-width="2" />
+          
+          <!-- Mystery silhouette -->
+          <path d="M 112,85 C 112,65 128,65 128,85 Z" fill="#be123c" />
+          <circle cx="120" cy="62" r="7" fill="#be123c" />
+          <text x="120" y="65" font-family="'Patrick Hand', cursive" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">?</text>
+
+          <!-- Guessing tiles -->
+          <rect x="35" y="115" width="28" height="24" rx="4" fill="#86efac" stroke="#16a34a" stroke-width="1.5" />
+          <rect x="70" y="115" width="28" height="24" rx="4" fill="#fde047" stroke="#ca8a04" stroke-width="1.5" />
+          <rect x="105" y="115" width="28" height="24" rx="4" fill="#fca5a5" stroke="#dc2626" stroke-width="1.5" />
+          <rect x="140" y="115" width="28" height="24" rx="4" fill="#86efac" stroke="#16a34a" stroke-width="1.5" />
+          <rect x="175" y="115" width="28" height="24" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5" />
+
+          <text x="120" y="24" font-family="'Patrick Hand', cursive" font-size="12" font-weight="bold" fill="#9f1239" text-anchor="middle">
+            [ PRESET: WEB GAME TRIVIA SKETCH ]
+          </text>
+        </svg>
+      </div>
+    }
+
+    @case ('extension') {
+      <!-- Custom Extension Sketch Preset -->
+      <div class="preset-card-sketch">
+        <svg viewBox="0 0 240 160" class="doodle-svg">
+          <rect x="5" y="5" width="230" height="150" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3" />
+          <!-- Browser header bar -->
+          <rect x="15" y="18" width="210" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" />
+          <circle cx="28" cy="29" r="3" fill="#ef4444" />
+          <circle cx="38" cy="29" r="3" fill="#eab308" />
+          <circle cx="48" cy="29" r="3" fill="#22c55e" />
+          <rect x="62" y="22" width="110" height="14" rx="3" fill="#ffffff" stroke="#93c5fd" stroke-width="1" />
+          <text x="70" y="32" font-family="'JetBrains Mono', monospace" font-size="8" fill="#64748b">https://new-tab</text>
+          
+          <!-- Extension widgets -->
+          <rect x="25" y="52" width="90" height="42" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" />
+          <text x="70" y="72" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="bold" fill="#1e40af" text-anchor="middle">12:45</text>
+          <text x="70" y="86" font-family="'Patrick Hand', cursive" font-size="10" fill="#64748b" text-anchor="middle">Buenos días, Agus</text>
+
+          <rect x="125" y="52" width="90" height="42" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" />
+          <circle cx="145" cy="73" r="10" fill="#fef08a" stroke="#ca8a04" stroke-width="1" />
+          <text x="175" y="77" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="bold" fill="#0f172a">24°C</text>
+
+          <!-- Shortcuts -->
+          <circle cx="45" cy="118" r="12" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" />
+          <circle cx="78" cy="118" r="12" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" />
+          <circle cx="111" cy="118" r="12" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" />
+          <circle cx="144" cy="118" r="12" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" />
+          <circle cx="177" cy="118" r="12" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" />
+
+          <text x="120" y="148" font-family="'Patrick Hand', cursive" font-size="11" fill="#1e40af" text-anchor="middle">
+            [ PRESET: DASHBOARD BROWSER EXTENSION ]
+          </text>
+        </svg>
+      </div>
+    }
+
+    @case ('enma-shop') {
+      <!-- Enma Manualidades Sketch Preset -->
+      <div class="preset-card-sketch">
+        <svg viewBox="0 0 240 160" class="doodle-svg">
+          <rect x="5" y="5" width="230" height="150" rx="8" fill="#fdf2f8" stroke="#db2777" stroke-width="2" stroke-dasharray="5,3" />
+          <!-- Craft Shopping bag doodle -->
+          <path d="M 85,55 C 85,35 155,35 155,55 L 165,125 L 75,125 Z" fill="#fbcfe8" stroke="#be185d" stroke-width="2" stroke-linejoin="round" />
+          <path d="M 100,55 C 100,42 140,42 140,55" fill="none" stroke="#9d174d" stroke-width="2.5" />
+          
+          <!-- Scissors doodle -->
+          <circle cx="65" cy="75" r="7" fill="none" stroke="#be185d" stroke-width="2" />
+          <circle cx="65" cy="95" r="7" fill="none" stroke="#be185d" stroke-width="2" />
+          <line x1="72" y1="78" x2="105" y2="102" stroke="#be185d" stroke-width="2" />
+          <line x1="72" y1="92" x2="105" y2="68" stroke="#be185d" stroke-width="2" />
+
+          <!-- Button doodle -->
+          <circle cx="120" cy="85" r="12" fill="#f472b6" stroke="#831843" stroke-width="2" />
+          <circle cx="116" cy="82" r="1.5" fill="#ffffff" />
+          <circle cx="124" cy="82" r="1.5" fill="#ffffff" />
+          <circle cx="116" cy="88" r="1.5" fill="#ffffff" />
+          <circle cx="124" cy="88" r="1.5" fill="#ffffff" />
+
+          <!-- Price tag -->
+          <polygon points="140,78 175,78 190,92 155,92" fill="#fecdd3" stroke="#e11d48" stroke-width="1.5" />
+          <text x="162" y="88" font-family="'JetBrains Mono', monospace" font-size="8" fill="#9f1239">SHOP</text>
+
+          <text x="120" y="146" font-family="'Patrick Hand', cursive" font-size="11" fill="#9d174d" text-anchor="middle">
+            [ PRESET: E-COMMERCE MANUALIDADES ]
+          </text>
+        </svg>
+      </div>
+    }
+
+    @case ('melody') {
+      <!-- Melody Music Player Sketch Preset -->
+      <div class="preset-card-sketch">
+        <svg viewBox="0 0 240 160" class="doodle-svg">
+          <rect x="5" y="5" width="230" height="150" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5,3" />
+          <!-- Retro cassette tape -->
+          <rect x="40" y="30" width="160" height="85" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="2" />
+          <rect x="65" y="45" width="110" height="45" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5" />
+          <!-- Wheels -->
+          <circle cx="90" cy="67" r="12" fill="#ddd6fe" stroke="#5b21b6" stroke-width="2" />
+          <circle cx="150" cy="67" r="12" fill="#ddd6fe" stroke="#5b21b6" stroke-width="2" />
+          <line x1="90" y1="79" x2="150" y2="79" stroke="#6d28d9" stroke-width="2" />
+
+          <!-- Musical notes floating -->
+          <text x="30" y="45" font-family="'Patrick Hand', cursive" font-size="22" fill="#7c3aed">♪</text>
+          <text x="200" y="50" font-family="'Patrick Hand', cursive" font-size="26" fill="#a855f7">♫</text>
+          <text x="195" y="105" font-family="'Patrick Hand', cursive" font-size="18" fill="#6366f1">♩</text>
+
+          <!-- Play button bar -->
+          <rect x="70" y="125" width="100" height="8" rx="4" fill="#c4b5fd" />
+          <circle cx="110" cy="129" r="8" fill="#7c3aed" />
+
+          <text x="120" y="150" font-family="'Patrick Hand', cursive" font-size="11" fill="#5b21b6" text-anchor="middle">
+            [ PRESET: REPRODUCTOR MUSICAL ]
+          </text>
+        </svg>
+      </div>
+    }
+
+    @case ('wikimods') {
+      <!-- Wiki Mods ATK Sketch Preset -->
+      <div class="preset-card-sketch">
+        <svg viewBox="0 0 240 160" class="doodle-svg">
+          <rect x="5" y="5" width="230" height="150" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" stroke-dasharray="5,3" />
+          <!-- Isometric Minecraft Block doodle -->
+          <polygon points="120,35 155,50 120,65 85,50" fill="#a7f3d0" stroke="#047857" stroke-width="2" />
+          <polygon points="85,50 120,65 120,105 85,90" fill="#6ee7b7" stroke="#047857" stroke-width="2" />
+          <polygon points="120,65 155,50 155,90 120,105" fill="#34d399" stroke="#047857" stroke-width="2" />
+          <!-- Grass top texture -->
+          <line x1="95" y1="58" x2="95" y2="65" stroke="#065f46" stroke-width="1.5" />
+          <line x1="110" y1="62" x2="110" y2="70" stroke="#065f46" stroke-width="1.5" />
+          <line x1="135" y1="60" x2="135" y2="67" stroke="#065f46" stroke-width="1.5" />
+
+          <!-- Pickaxe doodle -->
+          <g transform="rotate(35 160 55)">
+            <rect x="156" y="30" width="6" height="55" rx="2" fill="#78350f" stroke="#2c241e" stroke-width="1.5" />
+            <path d="M 142,32 Q 160,20 178,32" fill="none" stroke="#0284c7" stroke-width="5" stroke-linecap="round" />
+          </g>
+
+          <!-- Plumbob (Sims) doodle -->
+          <polygon points="65,45 74,60 65,75 56,60" fill="#22c55e" stroke="#15803d" stroke-width="1.5" />
+
+          <text x="120" y="142" font-family="'Patrick Hand', cursive" font-size="11" fill="#047857" text-anchor="middle">
+            [ PRESET: WIKI DE MODS MINECRAFT & SIMS ]
+          </text>
+        </svg>
+      </div>
+    }
+
+    @case ('compass') {
+      <!-- Vintage Compass (Image 2 stationery) -->
+      <div class="stationery-prop">
+        <svg viewBox="0 0 100 100" class="doodle-svg w-20 h-20">
+          <circle cx="50" cy="50" r="44" fill="#fef3c7" stroke="#78350f" stroke-width="3" />
+          <circle cx="50" cy="50" r="38" fill="#fffbeb" stroke="#b45309" stroke-width="1.5" stroke-dasharray="3,2" />
+          <text x="50" y="22" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">N</text>
+          <text x="82" y="53" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">E</text>
+          <text x="50" y="85" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">S</text>
+          <text x="18" y="53" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">W</text>
+          <!-- Needle -->
+          <polygon points="50,18 55,50 45,50" fill="#dc2626" stroke="#991b1b" stroke-width="1" />
+          <polygon points="50,82 55,50 45,50" fill="#475569" stroke="#1e293b" stroke-width="1" />
+          <circle cx="50" cy="50" r="4" fill="#fbbf24" stroke="#78350f" stroke-width="1.5" />
+          <circle cx="50" cy="6" r="5" fill="none" stroke="#78350f" stroke-width="2" />
+        </svg>
+      </div>
+    }
+
+    @case ('shiro-eraser') {
+      <!-- Shiro Eraser (from Image 2) -->
+      <div class="stationery-prop">
+        <svg viewBox="0 0 120 70" class="doodle-svg w-28 h-16">
+          <rect x="5" y="10" width="110" height="50" rx="4" fill="#ffffff" stroke="#334155" stroke-width="2" />
+          <rect x="25" y="10" width="70" height="50" fill="#2563eb" stroke="#1e40af" stroke-width="1.5" />
+          <text x="60" y="28" font-family="'Space Grotesk', sans-serif" font-size="6" font-weight="bold" fill="#93c5fd" text-anchor="middle">PLASTIC ERASER</text>
+          <text x="60" y="44" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">SHIRO</text>
+          <text x="60" y="55" font-family="'Space Grotesk', sans-serif" font-size="6" fill="#bfdbfe" text-anchor="middle">DEV CAT • 2026</text>
+        </svg>
+      </div>
+    }
+
+    @case ('coffee-cup') {
+      <!-- Coffee Mug with Steam -->
+      <div class="stationery-prop">
+        <svg viewBox="0 0 100 100" class="doodle-svg w-20 h-20">
+          <!-- Steam paths -->
+          <path d="M 40,25 Q 35,15 42,5" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,2" />
+          <path d="M 52,22 Q 58,12 50,2" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,2" />
+          <!-- Mug Body -->
+          <ellipse cx="48" cy="50" rx="30" ry="30" fill="#fef3c7" stroke="#78350f" stroke-width="2.5" />
+          <ellipse cx="48" cy="50" rx="22" ry="22" fill="#451a03" stroke="#291102" stroke-width="1.5" />
+          <ellipse cx="45" cy="46" rx="15" ry="10" fill="#78350f" opacity="0.4" />
+          <!-- Handle -->
+          <path d="M 78,42 C 92,42 92,58 78,58" fill="none" stroke="#78350f" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </div>
+    }
+  }
+
+  @if (showLabel && customLabel) {
+    <div class="sketch-custom-caption">{{ customLabel }}</div>
+  }
+</div>
