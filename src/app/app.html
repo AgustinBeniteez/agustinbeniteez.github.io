@@ -19,19 +19,19 @@
   <section class="hero-canvas-section">
     <!-- Floating Figma Properties Menu (Top Right • Image 1) -->
     <div class="floating-props-menu">
-      <div class="prop-item active" (click)="setTab('web')">
+      <div class="prop-item active" (click)="scrollToSection('canvas-workbench'); setTab('web')">
         <i class="fa-solid fa-code text-cyan-400"></i>
         <span>Web Development</span>
         <span class="prop-shortcut">V</span>
       </div>
-      <div class="prop-item" (click)="setTab('game')">
+      <div class="prop-item" (click)="scrollToSection('canvas-workbench'); setTab('game')">
         <i class="fa-solid fa-gamepad text-amber-400"></i>
         <span>Game Creator</span>
         <span class="prop-shortcut">H</span>
       </div>
-      <div class="prop-item" (click)="setTab('about')">
+      <div class="prop-item" (click)="scrollToSection('about-intro')">
         <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i>
-        <span>Interactive UI</span>
+        <span>Sobre Mí / Specs</span>
         <span class="prop-shortcut">K</span>
       </div>
     </div>
@@ -146,14 +146,153 @@
     </div>
 
     <!-- Scroll Down Prompt -->
-    <button class="scroll-down-hint" (click)="scrollToSection('canvas-workbench')">
-      <span>Explorar Tablón de Proyectos</span>
+    <button class="scroll-down-hint" (click)="scrollToSection('about-intro')">
+      <span>Conoce a Agustín • Presentación</span>
       <i class="fa-solid fa-chevron-down animate-bounce"></i>
     </button>
   </section>
 
   <!-- ======================================================== -->
-  <!-- 2. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues!) -->
+  <!-- 2. PRESENTATION / ABOUT ME SECTION (With Real Photo!)    -->
+  <!-- Placed BEFORE projects, on the continuous blue grid      -->
+  <!-- ======================================================== -->
+  <section class="presentation-section" id="about-intro">
+    <div class="presentation-artboard-card">
+      <!-- Figma Style Selection Corner Handles -->
+      <span class="card-selection-handle handle-tl"></span>
+      <span class="card-selection-handle handle-tr"></span>
+      <span class="card-selection-handle handle-bl"></span>
+      <span class="card-selection-handle handle-br"></span>
+
+      <!-- Frame Header Tag -->
+      <div class="presentation-frame-badge">
+        <span class="frame-tag-text"># FRAME 00: PRESENTACION_AGUSTIN</span>
+        <span class="frame-dim">1180 × 520</span>
+      </div>
+
+      <div class="presentation-grid">
+        <!-- LEFT COLUMN: Agustín's Photo in Polaroid Frame -->
+        <div class="presentation-photo-col">
+          <div class="photo-polaroid-frame">
+            <!-- Masking Tape strip on top of photo -->
+            <div class="polaroid-masking-tape"></div>
+
+            <div class="photo-img-wrapper">
+              <img 
+                src="assets/images/foto-perfil-agus.webp" 
+                alt="Agustín Benítez" 
+                class="dev-real-photo"
+                onerror="this.src='assets/images/agustheking.webp'">
+              
+              <!-- Crown Sticker -->
+              <span class="photo-crown-badge" title="Agus The King">👑</span>
+            </div>
+
+            <!-- Polaroid Bottom Caption -->
+            <div class="polaroid-caption">
+              <h3 class="caption-name">{{ profile.name }}</h3>
+              <span class="caption-alias">"{{ profile.alias }}"</span>
+            </div>
+          </div>
+
+          <!-- Quick Status & Location Badges -->
+          <div class="photo-meta-tags">
+            <span class="status-available-chip">
+              <span class="pulse-emerald-dot"></span>
+              <span>Disponible para proyectos</span>
+            </span>
+            <span class="location-chip">
+              <i class="fa-solid fa-location-dot text-rose-500"></i>
+              <span>{{ profile.location }}</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Bio, Presentation, Credentials, CTA -->
+        <div class="presentation-content-col">
+          <div class="intro-greeting-badge">
+            <span class="sparkle-icon">✦</span>
+            <span>DESARROLLADOR & CREADOR INDIE</span>
+          </div>
+
+          <h2 class="intro-title">
+            ¡Hola! Soy <span class="highlight-name">Agustín Benítez</span>
+          </h2>
+          <p class="intro-subtitle">
+            {{ profile.title }} • {{ profile.subtitle }}
+          </p>
+
+          <p class="intro-paragraph">
+            Soy desarrollador web apasionado por crear experiencias digitales interactivas que combinen código limpio, dinamismo y una identidad visual propia con <strong>Angular</strong> y <strong>Tailwind CSS</strong>.
+          </p>
+
+          <p class="intro-paragraph">
+            Paralelamente, estoy desarrollando mi propio videojuego indie: <strong>Proyecto Arch Origins of Kings</strong>, fusionando combate táctico en tiempo real en un mundo 3D, misterios de linaje real y dirección de arte inmersiva.
+          </p>
+
+          <!-- Highlights & Credentials Counters -->
+          <div class="intro-stats-row">
+            <div class="stat-box">
+              <span class="stat-number">+3</span>
+              <span class="stat-label">Años creando proyectos</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">DAW</span>
+              <span class="stat-label">Téc. Sup. Aplicaciones Web</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">SMR</span>
+              <span class="stat-label">Téc. Sistemas & Redes</span>
+            </div>
+            <div class="stat-box stat-highlight">
+              <span class="stat-number">3D</span>
+              <span class="stat-label">Game Dev & Assets</span>
+            </div>
+          </div>
+
+          <!-- Stack Tags -->
+          <div class="intro-skills-row">
+            <span class="skills-prefix">Stack:</span>
+            <span class="intro-skill-pill">Angular</span>
+            <span class="intro-skill-pill">TypeScript</span>
+            <span class="intro-skill-pill">Tailwind CSS</span>
+            <span class="intro-skill-pill">HTML5 & CSS3</span>
+            <span class="intro-skill-pill">Motores 3D</span>
+            <span class="intro-skill-pill">WebAudio</span>
+            <span class="intro-skill-pill">Node.js</span>
+            <span class="intro-skill-pill">Git</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="intro-cta-row">
+            <button class="cta-scroll-projects-btn" (click)="scrollToSection('canvas-workbench')">
+              <i class="fa-solid fa-gamepad"></i>
+              <span>Ver Mis Proyectos & Videojuego</span>
+              <i class="fa-solid fa-arrow-down ml-1 animate-bounce"></i>
+            </button>
+
+            <a [href]="profile.socials[0].url" target="_blank" rel="noopener noreferrer" class="intro-social-btn" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+
+            <a [href]="profile.socials[1].url" target="_blank" rel="noopener noreferrer" class="intro-social-btn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a [href]="profile.socials[2].url" class="intro-social-btn" title="Contacto Directo">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contacto</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 3. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues!) -->
   <!-- ======================================================== -->
   <section class="asymmetric-workbench" id="canvas-workbench">
     <!-- Floating Figma Studio Navigation & Filters -->
@@ -189,8 +328,7 @@
 
         <button 
           class="wb-tab-btn" 
-          [class.active]="activeTab() === 'about'" 
-          (click)="setTab('about')">
+          (click)="scrollToSection('about-intro')">
           <span>👤 Sobre Mí</span>
         </button>
       </div>
@@ -268,7 +406,7 @@
                   Proyecto Arch Origins of Kings
                 </h2>
                 <h3 class="arch-subtitle">
-                  Videojuego Indie de Acción & Aventura 2D
+                  Videojuego Indie de Acción & Aventura 3D
                 </h3>
 
                 <!-- Lore / Pitch Snippet -->
@@ -287,12 +425,12 @@
                     <span>Secretos ancestrales del linaje real prohibido</span>
                   </div>
                   <div class="arch-feat-item">
-                    <i class="fa-solid fa-pen-nib text-cyan-400"></i>
-                    <span>Arte conceptual y sprites dibujados a mano</span>
+                    <i class="fa-solid fa-cube text-cyan-400"></i>
+                    <span>Mundo tridimensional, modelado y assets 3D</span>
                   </div>
                   <div class="arch-feat-item">
-                    <i class="fa-solid fa-code text-lime-400"></i>
-                    <span>Motor custom 2D con físicas y colisiones precisas</span>
+                    <i class="fa-solid fa-code text-pink-400"></i>
+                    <span>Físicas, colisiones y mecánicas 3D en tiempo real</span>
                   </div>
                 </div>
 
@@ -315,9 +453,9 @@
             <!-- Multiplayer Live Cursor pinned on card -->
             <div class="card-multiplayer-cursor">
               <svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#84cc16" stroke="#ffffff" stroke-width="1.5" />
+                <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#ec4899" stroke="#ffffff" stroke-width="1.5" />
               </svg>
-              <span class="cursor-tag-lime">Agustín (Game Director)</span>
+              <span class="cursor-tag-magenta">Agustín (Game Director)</span>
             </div>
           </article>
         </div>
@@ -401,114 +539,6 @@
                 </div>
               </article>
             }
-          </div>
-
-          <!-- ======================================================== -->
-          <!-- DEVELOPER PROFILE & SPECS SHEET (About Me on Bottom Right) -->
-          <!-- ======================================================== -->
-          @if (activeTab() === 'all' || activeTab() === 'about') {
-            <div class="profile-spec-sheet-wrapper">
-              <!-- Masking Tape strips holding the sheet -->
-              <div class="sheet-masking-tape tape-top-left"></div>
-              <div class="sheet-masking-tape tape-top-right"></div>
-
-              <div class="profile-spec-card">
-                <div class="spec-card-header">
-                  <div class="spec-title-left">
-                    <span class="spec-chip-cyan">COMPONENT SPEC</span>
-                    <span class="spec-filename">agustin_benitez.config.ts</span>
-                  </div>
-                  <span class="spec-location"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i>{{ profile.location }}</span>
-                </div>
-
-                <div class="spec-card-body">
-                  <div class="spec-avatar-box">
-                    <app-doodle-sketch type="dev-avatar" size="sm"></app-doodle-sketch>
-                  </div>
-
-                  <div class="spec-details-box">
-                    <h3 class="spec-dev-name">{{ profile.name }}</h3>
-                    <p class="spec-dev-alias">{{ profile.alias }} • {{ profile.title }}</p>
-                    <p class="spec-dev-bio">{{ profile.bio }}</p>
-
-                    <!-- Tech Matrix -->
-                    <div class="spec-skills-cloud">
-                      <span class="skills-label">✦ Stack Principal:</span>
-                      <div class="skills-list">
-                        @for (cat of skillCategories; track cat.name) {
-                          @for (s of cat.skills; track s.name) {
-                            <span class="skill-tag">
-                              <span class="tag-dot"></span>
-                              {{ s.name }}
-                            </span>
-                          }
-                        }
-                      </div>
-                    </div>
-
-                    <!-- Connect Links -->
-                    <div class="spec-links-row">
-                      @for (s of profile.socials; track s.name) {
-                        <a [href]="s.url" target="_blank" rel="noopener noreferrer" class="social-sheet-btn">
-                          <i [class]="s.icon"></i>
-                          <span>{{ s.label }}</span>
-                        </a>
-                      }
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
-        </div>
-      }
-
-      <!-- Standalone About Tab View (if only 'about' is clicked) -->
-      @if (activeTab() === 'about') {
-        <div class="workbench-about-full-view">
-          <div class="profile-spec-sheet-wrapper">
-            <div class="sheet-masking-tape tape-top-left"></div>
-            <div class="sheet-masking-tape tape-top-right"></div>
-
-            <div class="profile-spec-card">
-              <div class="spec-card-header">
-                <span class="spec-chip-cyan">FULL SPEC SHEET: AGUSTÍN BENÍTEZ</span>
-                <span class="spec-location">{{ profile.location }}</span>
-              </div>
-              <div class="spec-card-body">
-                <div class="spec-avatar-box">
-                  <app-doodle-sketch type="dev-avatar" size="md"></app-doodle-sketch>
-                </div>
-                <div class="spec-details-box">
-                  <h3 class="spec-dev-name">{{ profile.name }}</h3>
-                  <p class="spec-dev-alias">{{ profile.alias }} • {{ profile.title }}</p>
-                  <p class="spec-dev-bio">{{ profile.bio }}</p>
-
-                  <div class="spec-skills-cloud">
-                    <span class="skills-label">✦ Todas las Tecnologías & Herramientas:</span>
-                    <div class="skills-list">
-                      @for (cat of skillCategories; track cat.name) {
-                        @for (s of cat.skills; track s.name) {
-                          <span class="skill-tag">
-                            <span class="tag-dot"></span>
-                            {{ s.name }} ({{ s.level }})
-                          </span>
-                        }
-                      }
-                    </div>
-                  </div>
-
-                  <div class="spec-links-row">
-                    @for (s of profile.socials; track s.name) {
-                      <a [href]="s.url" target="_blank" rel="noopener noreferrer" class="social-sheet-btn">
-                        <i [class]="s.icon"></i>
-                        <span>{{ s.label }}</span>
-                      </a>
-                    }
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       }

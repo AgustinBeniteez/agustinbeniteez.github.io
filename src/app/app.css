@@ -144,12 +144,12 @@
   position: relative;
   width: 90%;
   max-width: 980px;
-  border: 3.5px solid #84cc16;
+  border: 3.5px solid #ec4899; /* Electric Neon Magenta Selection */
   border-radius: 4px;
   padding: 3rem 2.5rem;
   box-shadow: 
     0 25px 60px rgba(0, 0, 0, 0.35),
-    0 0 30px rgba(132, 204, 22, 0.25);
+    0 0 35px rgba(236, 72, 153, 0.35);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,12 +158,12 @@
   transition: transform 0.15s ease-out;
 }
 
-/* Neon Lime Resize Handles (Image 1) */
+/* Neon Magenta Resize Handles (Image 1) */
 .resize-handle {
   position: absolute;
   width: 18px;
   height: 18px;
-  background: #84cc16;
+  background: #ec4899;
   border: 2.5px solid #ffffff;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -274,7 +274,7 @@
 
 .giant-word .letter:hover {
   transform: translateY(-12px) scale(1.08);
-  color: #bef264;
+  color: #f472b6;
 }
 
 /* "PORTFOLIO" in Small (as explicitly asked!) */
@@ -288,15 +288,15 @@
 }
 
 .portfolio-chip {
-  background: #bef264;
-  color: #14532d;
+  background: #ec4899;
+  color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.85rem;
   font-weight: 900;
   letter-spacing: 0.15em;
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
-  box-shadow: 0 4px 10px rgba(190, 242, 100, 0.35);
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.45);
 }
 
 .dev-role-chip {
@@ -432,12 +432,369 @@
 }
 
 .scroll-down-hint:hover {
-  color: #bef264;
+  color: #f472b6;
   transform: translateY(2px);
 }
 
 /* ===================================================
-   2. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues)
+   2. PRESENTATION / ABOUT ME SECTION (With Real Photo)
+   =================================================== */
+.presentation-section {
+  position: relative;
+  z-index: 10;
+  padding: 1rem 2rem 5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.presentation-artboard-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(16px);
+  border: 3px solid #38bdf8;
+  border-radius: 8px;
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(56, 189, 248, 0.2);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.presentation-artboard-card:hover {
+  border-color: #67e8f9;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    0 0 45px rgba(56, 189, 248, 0.35);
+}
+
+.presentation-frame-badge {
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  background: #38bdf8;
+  color: #082f49;
+  border: 1.5px solid #ffffff;
+  border-radius: 4px;
+  padding: 0.2rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 15;
+}
+
+.presentation-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Photo Polaroid Column */
+.presentation-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.photo-polaroid-frame {
+  position: relative;
+  background: #ffffff;
+  padding: 0.85rem 0.85rem 1.4rem 0.85rem;
+  border-radius: 4px;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2.5deg);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 270px;
+}
+
+.photo-polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.polaroid-masking-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 90px;
+  height: 24px;
+  background: rgba(254, 243, 199, 0.9);
+  border: 1px dashed #d97706;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.photo-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #0f172a;
+}
+
+.dev-real-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-polaroid-frame:hover .dev-real-photo {
+  transform: scale(1.05);
+}
+
+.photo-crown-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  border: 1px solid #fbbf24;
+}
+
+.polaroid-caption {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.caption-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+}
+
+.caption-alias {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d97706;
+}
+
+.photo-meta-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 270px;
+}
+
+.status-available-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+}
+
+.location-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 6px;
+}
+
+/* Presentation Content Column */
+.presentation-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-greeting-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+}
+
+.intro-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.highlight-name {
+  color: #f472b6;
+  text-shadow: 0 0 25px rgba(244, 114, 182, 0.45);
+}
+
+.intro-subtitle {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #fbbf24;
+  margin: 0.35rem 0 1rem 0;
+}
+
+.intro-paragraph {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0 0 1rem 0;
+}
+
+.intro-paragraph strong {
+  color: #ffffff;
+}
+
+/* Stat Box Row */
+.intro-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #38bdf8;
+}
+
+.stat-box.stat-highlight .stat-number {
+  color: #f59e0b;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Skills Cloud */
+.intro-skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 2rem;
+}
+
+.skills-prefix {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.intro-skill-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+}
+
+/* CTA Row */
+.intro-cta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.cta-scroll-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #2563eb;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.85rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.45);
+  transition: all 0.2s ease;
+}
+
+.cta-scroll-projects-btn:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+}
+
+.intro-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.intro-social-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   3. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues)
    =================================================== */
 .asymmetric-workbench {
   position: relative;
@@ -570,12 +927,12 @@
   position: relative;
   background: rgba(15, 23, 42, 0.94);
   backdrop-filter: blur(16px);
-  border: 3.5px solid #84cc16; /* Neon Lime Green Selection like Title! */
+  border: 3.5px solid #ec4899; /* Electric Neon Magenta Selection */
   border-radius: 6px;
   padding: 3rem 2.25rem 2.5rem 2.25rem;
   box-shadow: 
     0 25px 60px rgba(0, 0, 0, 0.5),
-    0 0 35px rgba(132, 204, 22, 0.25);
+    0 0 35px rgba(236, 72, 153, 0.35);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -584,16 +941,16 @@
   transform: translateY(-6px) scale(1.01);
   box-shadow: 
     0 35px 75px rgba(0, 0, 0, 0.6),
-    0 0 50px rgba(132, 204, 22, 0.4);
-  border-color: #bef264;
+    0 0 50px rgba(236, 72, 153, 0.5);
+  border-color: #f472b6;
 }
 
-/* Lime Green Resize Handles on 4 corners (Image 1 & 2 Title style) */
+/* Neon Magenta Resize Handles on 4 corners (Image 1 & 2 Title style) */
 .card-selection-handle {
   position: absolute;
   width: 16px;
   height: 16px;
-  background: #84cc16;
+  background: #ec4899;
   border: 2.5px solid #ffffff;
   border-radius: 2px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
@@ -610,8 +967,8 @@
   position: absolute;
   top: -18px;
   left: 24px;
-  background: #84cc16;
-  color: #14532d;
+  background: #ec4899;
+  color: #ffffff;
   border: 1.5px solid #ffffff;
   border-radius: 4px;
   padding: 0.2rem 0.65rem;
@@ -698,7 +1055,7 @@
 
 .arch-origins-featured-card:hover .standee-artboard-frame {
   background: rgba(255, 255, 255, 0.08);
-  border-color: #84cc16;
+  border-color: #ec4899;
 }
 
 .artboard-doodle-hint {
@@ -841,15 +1198,15 @@
   z-index: 25;
 }
 
-.cursor-tag-lime {
-  background: #84cc16;
-  color: #14532d;
+.cursor-tag-magenta {
+  background: #ec4899;
+  color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.72rem;
   font-weight: 800;
   padding: 0.18rem 0.55rem;
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(132, 204, 22, 0.4);
+  box-shadow: 0 4px 10px rgba(236, 72, 153, 0.4);
   white-space: nowrap;
 }
 
@@ -1243,6 +1600,29 @@
 
   .blueprint-ruler-left {
     display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .presentation-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .presentation-photo-col {
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-greeting-badge {
+    margin: 0 auto 0.75rem auto;
+  }
+
+  .intro-skills-row {
+    justify-content: center;
+  }
+
+  .intro-cta-row {
+    justify-content: center;
   }
 }
 

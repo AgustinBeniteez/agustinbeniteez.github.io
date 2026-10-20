@@ -19,13 +19,13 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
     {
       name: 'linkedin',
       label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/agustin-benitez-44044b2b2/',
+      url: 'https://www.linkedin.com/in/agustin-benitez-lopez/',
       icon: 'fa-brands fa-linkedin'
     },
     {
       name: 'email',
       label: 'Contacto Directo',
-      url: 'mailto:contacto@agustinbenitez.dev',
+      url: 'mailto:adivinanzas1991@gmail.com',
       icon: 'fa-solid fa-envelope'
     }
   ],
@@ -59,9 +59,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     name: 'Game Dev & Lógica',
     icon: 'fa-solid fa-gamepad',
     skills: [
-      { name: 'Game Design', level: 'Mecánicas y bucle' },
-      { name: 'Pixel Art & Concept', level: 'Bocetos y sprites' },
-      { name: 'Canvas / Motores 2D', level: 'Renderizado interactivo' },
+      { name: 'Game Design & 3D', level: 'Mecánicas y bucle' },
+      { name: 'Modelado 3D & Concept', level: 'Assets y diseño' },
+      { name: 'Motores 3D / WebGL', level: 'Renderizado interactivo' },
       { name: 'WebAudio API', level: 'SFX & Música' },
       { name: 'State Management', level: 'Física y entidades' }
     ]
@@ -83,27 +83,27 @@ export const PROJECTS_DATA: Project[] = [
   {
     id: 'arch-origins-of-a-king',
     title: 'Proyecto Arch Origins of Kings',
-    subtitle: 'Arch Origins Of A King • Videojuego de Acción & RPG 2D',
+    subtitle: 'Arch Origins Of A King • Videojuego de Acción & RPG 3D',
     year: '2026',
     category: 'game',
     featured: true,
     badge: '★ PROYECTO PRINCIPAL • INDIE GAME',
     stampText: 'INDIE LAB 2026',
     tagline: 'Despierta el linaje real. Reclama el reino. Un viaje de acción táctica y secretos ancestrales.',
-    description: 'Videojuego indie de acción y rol en 2D actualmente en desarrollo activo. El jugador encarna a un joven aspirante en un mundo fracturado lleno de ruinas vivientes, combates dinámicos contra bestias colosales y una historia impulsada por artefactos reales perdidos.',
+    description: 'Videojuego indie de acción y rol en 3D actualmente en desarrollo activo. El jugador encarna a un joven aspirante en un mundo fracturado lleno de ruinas vivientes, combates dinámicos contra bestias colosales y una historia impulsada por artefactos reales perdidos.',
     loreOrDetails: 'Las antiguas leyendas hablan de una corona tallada en mineral estelar que concedía el don del mando sobre los vientos del reino. Cuando la dinastía colapsó, los fragmentos quedaron dispersos entre templos olvidados. En "Arch Origins of Kings", deberás recorrer bosques densos, fortalezas en ruinas y criptas arcanas desentrañando la verdad tras el linaje prohibido mientras perfeccionas tus técnicas de esgrima y artes elementales.',
     features: [
       'Sistema de combate en tiempo real con parry, rodaduras, golpes pesados y combos de espada.',
       'Árbol de talentos dinámico: desbloquea sellos de la realeza para imbuir tus ataques con fuego, rayo o éter.',
-      'Estilo visual nostálgico con animaciones cuidadas frame a frame y estética de cuaderno de aventurero.',
+      'Mundo tridimensional inmersivo con diseño de niveles atmosférico y estética medieval cuidada.',
       'Diseño de niveles no lineal con secretos, atajos, jefes desafiantes y lore fragmentado por el entorno.',
       'Banda sonora original atmosférica adaptativa al ritmo del combate y la exploración.'
     ],
     technologies: [
-      'TypeScript',
-      'Canvas 2D / WebGL',
+      'TypeScript / C#',
+      'Motores 3D / WebGL',
       'Game Design',
-      'Pixel Art & Concept Art',
+      'Modelado 3D & Concept Art',
       'Web Audio Synthesis',
       'Angular Integration'
     ],
