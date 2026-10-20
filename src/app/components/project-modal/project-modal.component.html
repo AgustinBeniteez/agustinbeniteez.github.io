@@ -26,7 +26,7 @@
           class="nav-tab-btn" 
           [class.active]="activeTab === 'sketch'" 
           (click)="setTab('sketch')">
-          Boceto Preset & Assets
+          Capturas & Galería
         </button>
       </nav>
 
@@ -71,34 +71,24 @@
         </div>
       </div>
 
-      <!-- Center Column: Character / Asset Standee Cutout (Popping out like Image 4) -->
+      <!-- Center Column: Real Project Screenshot & Artwork Showcase -->
       <div class="center-col">
-        <div class="cutout-wrapper">
-          @switch (project.sketchType) {
-            @case ('king-game') {
-              <app-doodle-sketch type="king-hero" size="hero"></app-doodle-sketch>
-            }
-            @case ('valorantdle') {
-              <app-doodle-sketch type="valorantdle" size="lg"></app-doodle-sketch>
-            }
-            @case ('extension') {
+        <div class="modal-project-img-container">
+          @if (project.image) {
+            <div class="modal-project-img-frame">
+              <img [src]="project.image" [alt]="project.title" class="modal-project-main-image">
+              <div class="img-frame-glass-reflection"></div>
+            </div>
+          } @else {
+            <div class="cutout-wrapper">
               <app-doodle-sketch type="extension" size="lg"></app-doodle-sketch>
-            }
-            @case ('enma-shop') {
-              <app-doodle-sketch type="enma-shop" size="lg"></app-doodle-sketch>
-            }
-            @case ('melody') {
-              <app-doodle-sketch type="melody" size="lg"></app-doodle-sketch>
-            }
-            @case ('wikimods') {
-              <app-doodle-sketch type="wikimods" size="lg"></app-doodle-sketch>
-            }
+            </div>
           }
 
-          <!-- Floating Preset Hint -->
+          <!-- Floating Stamp / Platform Badge -->
           <div class="preset-tag-hint">
-            <i class="fa-solid fa-pencil"></i>
-            <span>Preset de dibujo provisional • Listo para sustituir con tu arte</span>
+            <i class="fa-solid fa-layer-group"></i>
+            <span>{{ project.badge }} • {{ project.stampText }}</span>
           </div>
         </div>
       </div>
@@ -173,17 +163,20 @@
 
           @case ('sketch') {
             <div class="tab-pane">
-              <h3 class="pane-heading">Panel de Preset & Reemplazo</h3>
-              <div class="preset-instructions-card">
-                <p class="font-bold text-amber-900 mb-2">
-                  <i class="fa-solid fa-circle-info mr-1"></i> ¿Cómo sustituir este preset por tu imagen definitiva?
-                </p>
-                <ol class="text-xs space-y-1.5 text-stone-700 list-decimal list-inside">
-                  <li>Coloca tu imagen o sprite en la carpeta <code class="bg-stone-200 px-1 py-0.5 rounded text-stone-800">public/assets/</code></li>
-                  <li>Abre el archivo <code class="bg-stone-200 px-1 py-0.5 rounded text-stone-800">src/app/data/portfolio.data.ts</code></li>
-                  <li>Añade la propiedad <code class="bg-stone-200 px-1 py-0.5 rounded text-stone-800">image: 'assets/tu-personaje.png'</code> al proyecto</li>
-                  <li>¡Y listo! El recorte central mostrará tu ilustración automáticamente con el mismo efecto flotante.</li>
-                </ol>
+              <h3 class="pane-heading">Galería & Capturas de Pantalla</h3>
+              <div class="gallery-preview-block">
+                @if (project.image) {
+                  <div class="gallery-primary-view">
+                    <img [src]="project.image" [alt]="project.title" class="gallery-expanded-img">
+                  </div>
+                }
+                @if (project.gallery && project.gallery.length > 0) {
+                  <div class="gallery-extra-thumbnails">
+                    @for (pic of project.gallery; track pic) {
+                      <img [src]="pic" [alt]="project.title" class="gallery-thumb-item">
+                    }
+                  </div>
+                }
               </div>
             </div>
           }

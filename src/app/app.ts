@@ -1,14 +1,13 @@
 import { Component, computed, signal, HostListener, OnInit } from '@angular/core';
 import { DEVELOPER_PROFILE, EDUCATION_DATA, PROJECTS_DATA, SKILL_CATEGORIES } from './data/portfolio.data';
 import { Project } from './models/project.model';
-import { DoodleSketchComponent } from './components/doodle-sketch/doodle-sketch.component';
 import { ProjectModalComponent } from './components/project-modal/project-modal.component';
 import { SoundService } from './services/sound.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DoodleSketchComponent, ProjectModalComponent],
+  imports: [ProjectModalComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -22,7 +21,7 @@ export class App implements OnInit {
   // State Signals
   readonly portfolioMode = signal<'web' | 'game'>('web');
   readonly selectedProject = signal<Project | null>(null);
-  readonly activeTab = signal<'all' | 'game' | 'web' | 'about'>('all');
+  readonly activeTab = signal<'all' | 'game' | 'web' | 'tools' | 'about'>('all');
   
   // Interactive Mouse Parallax & Title Overflow Animation
   readonly mouseX = signal<number>(0);
@@ -38,23 +37,24 @@ export class App implements OnInit {
     // Initial setup
   }
 
-  // Filtered projects based on active tab
-  readonly filteredProjects = computed(() => {
+  // Web Projects (Only web projects, tools and extensions - game is exclusive to Modo Juegos)
+  readonly webProjects = computed(() => {
     const tab = this.activeTab();
-    if (tab === 'all') return this.allProjects;
-    if (tab === 'game') return this.allProjects.filter(p => p.category === 'game');
-    if (tab === 'web') return this.allProjects.filter(p => p.category === 'web' || p.category === 'extension' || p.category === 'tool');
-    return this.allProjects;
+    const allWeb = this.allProjects.filter(p => p.id !== 'arch-origins-of-a-king');
+    if (tab === 'all') return allWeb;
+    if (tab === 'web') return allWeb.filter(p => p.category === 'web');
+    if (tab === 'tools') return allWeb.filter(p => p.category === 'extension' || p.category === 'tool');
+    return allWeb;
   });
 
-  // Featured Game Project ("Arch Origins Of A King")
+  // Featured Game Project ("Arch Origins Of A King") - Used exclusively in Game Mode
   readonly featuredGame = computed(() => {
     return this.allProjects.find(p => p.id === 'arch-origins-of-a-king') || this.allProjects[0];
   });
 
-  // Other Projects
+  // Backward-compatible alias for template
   readonly otherProjects = computed(() => {
-    return this.filteredProjects().filter(p => p.id !== 'arch-origins-of-a-king');
+    return this.webProjects();
   });
 
   // Navigation & Project Modal
@@ -74,7 +74,7 @@ export class App implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  setTab(tab: 'all' | 'game' | 'web' | 'about'): void {
+  setTab(tab: 'all' | 'game' | 'web' | 'tools' | 'about'): void {
     this.sound.playChime();
     this.activeTab.set(tab);
   }

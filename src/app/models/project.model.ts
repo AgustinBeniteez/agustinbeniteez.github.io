@@ -17,7 +17,9 @@ export interface Project {
   projectUrl?: string;
   githubUrl?: string;
   demoUrl?: string;
-  sketchType: 'king-game' | 'valorantdle' | 'extension' | 'enma-shop' | 'melody' | 'wikimods';
+  image?: string;
+  gallery?: string[];
+  sketchType?: string;
   color: {
     accent: string;
     bgBadge: string;
