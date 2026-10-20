@@ -54,3 +54,14 @@ export interface DeveloperProfile {
     period: string;
   }[];
 }
+
+export interface EducationItem {
+  id: string;
+  title: string;
+  degreeType: string;
+  center: string;
+  periodOrStatus: string;
+  image: string;
+  centerUrl: string;
+  badge: string;
+}

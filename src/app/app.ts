@@ -1,5 +1,5 @@
 import { Component, computed, signal, HostListener, OnInit } from '@angular/core';
-import { DEVELOPER_PROFILE, PROJECTS_DATA, SKILL_CATEGORIES } from './data/portfolio.data';
+import { DEVELOPER_PROFILE, EDUCATION_DATA, PROJECTS_DATA, SKILL_CATEGORIES } from './data/portfolio.data';
 import { Project } from './models/project.model';
 import { DoodleSketchComponent } from './components/doodle-sketch/doodle-sketch.component';
 import { ProjectModalComponent } from './components/project-modal/project-modal.component';
@@ -17,6 +17,7 @@ export class App implements OnInit {
   readonly profile = DEVELOPER_PROFILE;
   readonly allProjects = PROJECTS_DATA;
   readonly skillCategories = SKILL_CATEGORIES;
+  readonly educationList = EDUCATION_DATA;
 
   // State Signals
   readonly selectedProject = signal<Project | null>(null);

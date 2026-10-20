@@ -1,4 +1,4 @@
-import { DeveloperProfile, Project, SkillCategory } from '../models/project.model';
+import { DeveloperProfile, EducationItem, Project, SkillCategory } from '../models/project.model';
 
 export const DEVELOPER_PROFILE: DeveloperProfile = {
   name: 'Agustín Benítez',
@@ -33,11 +33,11 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
     {
       title: 'Técnico Superior en Desarrollo de Aplicaciones Web (DAW)',
       center: 'IES Fernando Aguilar Quignón',
-      period: '2023 - 2025'
+      period: 'Actualidad'
     },
     {
       title: 'Técnico en Sistemas Microinformáticos y Redes (SMR)',
-      center: 'IES Huerta del Rosario',
+      center: 'IES Pablo Ruiz Picasso',
       period: '2021 - 2023'
     }
   ]
@@ -280,5 +280,38 @@ export const PROJECTS_DATA: Project[] = [
       border: '#059669'
     },
     rotationDeg: 1.8
+  }
+];
+
+export const EDUCATION_DATA: EducationItem[] = [
+  {
+    id: 'eso',
+    title: 'ESO',
+    degreeType: 'Educación Secundaria Obligatoria',
+    center: 'IES Huerta del Rosario',
+    periodOrStatus: 'Graduado',
+    image: 'assets/images/IESHuertaRosario.webp',
+    centerUrl: 'https://www.ieshuertadelrosario.com',
+    badge: 'EDUCACIÓN SECUNDARIA'
+  },
+  {
+    id: 'smir',
+    title: 'GRADO MEDIO SMIR',
+    degreeType: 'Sistemas Microinformáticos y Redes',
+    center: 'IES PABLO RUIZ PICASSO',
+    periodOrStatus: '2021 - 2023',
+    image: 'assets/images/IESPRpicasso.webp',
+    centerUrl: 'https://www.iespicasso.com',
+    badge: 'CICLO FORMATIVO MEDIO'
+  },
+  {
+    id: 'daw',
+    title: 'GRADO SUPERIOR DAW',
+    degreeType: 'Desarrollo de Aplicaciones Web',
+    center: 'IES FERNANDO AGUILAR QUIGNON',
+    periodOrStatus: 'Actualidad',
+    image: 'assets/images/IESFernandoAguilarQuignon.webp',
+    centerUrl: 'https://iesfernandoaguilar.es/',
+    badge: 'CICLO FORMATIVO SUPERIOR'
   }
 ];

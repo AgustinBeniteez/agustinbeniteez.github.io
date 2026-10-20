@@ -271,6 +271,11 @@
               <i class="fa-solid fa-arrow-down ml-1 animate-bounce"></i>
             </button>
 
+            <button class="intro-social-btn" (click)="scrollToSection('formacion-academica')">
+              <i class="fa-solid fa-graduation-cap text-pink-400"></i>
+              <span>Ver Formación</span>
+            </button>
+
             <a [href]="profile.socials[0].url" target="_blank" rel="noopener noreferrer" class="intro-social-btn" title="GitHub">
               <i class="fa-brands fa-github"></i>
               <span>GitHub</span>
@@ -292,7 +297,62 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- 3. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues!) -->
+  <!-- 3. FORMACIÓN ACADÉMICA (Exact Cards with Institute Photos)-->
+  <!-- ======================================================== -->
+  <section class="education-section" id="formacion-academica">
+    <div class="education-artboard-card">
+      <!-- Figma Style Selection Corner Handles -->
+      <span class="card-selection-handle handle-tl"></span>
+      <span class="card-selection-handle handle-tr"></span>
+      <span class="card-selection-handle handle-bl"></span>
+      <span class="card-selection-handle handle-br"></span>
+
+      <!-- Frame Header Tag -->
+      <div class="education-frame-badge">
+        <span class="frame-tag-text"># FRAME 01: FORMACION_ACADEMICA</span>
+        <span class="frame-dim">1240 × 520</span>
+      </div>
+
+      <!-- Section Title & Subtitle -->
+      <div class="education-header-block">
+        <span class="edu-badge-tag">✦ TRAYECTORIA ACADÉMICA</span>
+        <h2 class="education-main-heading">Formación Académica</h2>
+        <p class="education-sub-heading">Titulaciones oficiales cursadas en centros educativos públicos de Andalucía</p>
+      </div>
+
+      <!-- The 3 Cards Grid (Exact design from user screenshot) -->
+      <div class="education-cards-grid">
+        @for (item of educationList; track item.id) {
+          <article class="academic-card">
+            <!-- Image with institute banner and graduate photo overlay -->
+            <div class="academic-card-img-wrapper">
+              <img [src]="item.image" [alt]="item.title" class="academic-banner-img">
+              <div class="academic-img-gradient"></div>
+              <span class="academic-status-pill">{{ item.periodOrStatus }}</span>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="academic-card-body">
+              <span class="academic-degree-badge">{{ item.badge }}</span>
+              <h3 class="academic-card-title">{{ item.title }}</h3>
+              <p class="academic-card-center">{{ item.center }}</p>
+
+              <!-- Web del Centro Button with signature gradient -->
+              <div class="academic-action-row">
+                <a [href]="item.centerUrl" target="_blank" rel="noopener noreferrer" class="web-centro-gradient-btn">
+                  <span>Web del Centro</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 4. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues!) -->
   <!-- ======================================================== -->
   <section class="asymmetric-workbench" id="canvas-workbench">
     <!-- Floating Figma Studio Navigation & Filters -->
@@ -324,6 +384,12 @@
           [class.active]="activeTab() === 'web'" 
           (click)="setTab('web')">
           <span>🌐 Web & Apps</span>
+        </button>
+
+        <button 
+          class="wb-tab-btn" 
+          (click)="scrollToSection('formacion-academica')">
+          <span>🎓 Formación</span>
         </button>
 
         <button 
