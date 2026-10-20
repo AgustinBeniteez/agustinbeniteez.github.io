@@ -20,6 +20,7 @@ export class App implements OnInit {
   readonly educationList = EDUCATION_DATA;
 
   // State Signals
+  readonly portfolioMode = signal<'web' | 'game'>('web');
   readonly selectedProject = signal<Project | null>(null);
   readonly activeTab = signal<'all' | 'game' | 'web' | 'about'>('all');
   
@@ -65,6 +66,12 @@ export class App implements OnInit {
   closeProject(): void {
     this.sound.playPaperFlip();
     this.selectedProject.set(null);
+  }
+
+  setPortfolioMode(mode: 'web' | 'game'): void {
+    this.sound.playPaperFlip();
+    this.portfolioMode.set(mode);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   setTab(tab: 'all' | 'game' | 'web' | 'about'): void {

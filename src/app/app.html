@@ -1,616 +1,705 @@
-<div class="blueprint-universe">
+<div class="portfolio-universe" [class.mode-game-active]="portfolioMode() === 'game'">
+  
   <!-- ======================================================== -->
-  <!-- GLOBAL BLUEPRINT GRID & LIGHTING (Continuous on whole page)-->
+  <!-- 0. TOP FLOATING DUAL-MODE NAV (DESARROLLO WEB | DESARROLLO JUEGOS) -->
   <!-- ======================================================== -->
-  <div class="blueprint-grid-bg"></div>
-  <div class="fabric-shadow-overlay"></div>
-
-  <!-- Coordinate Ruler Marks (Top & Left Blueprint Edge) -->
-  <div class="blueprint-ruler-top">
-    <span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span><span>1100</span><span>1200</span><span>1300</span><span>1400</span><span>1500</span>
-  </div>
-  <div class="blueprint-ruler-left">
-    <span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span>
-  </div>
-
-  <!-- ======================================================== -->
-  <!-- 1. HERO DESIGN CANVAS (Figma / Blueprint Style • Image 1)-->
-  <!-- ======================================================== -->
-  <section class="hero-canvas-section">
-    <!-- Floating Figma Properties Menu (Top Right • Image 1) -->
-    <div class="floating-props-menu">
-      <div class="prop-item active" (click)="scrollToSection('canvas-workbench'); setTab('web')">
+  <header class="portfolio-top-mode-nav">
+    <div class="mode-switch-pill-container">
+      <button 
+        class="mode-switch-tab" 
+        [class.active]="portfolioMode() === 'web'"
+        (click)="setPortfolioMode('web')">
         <i class="fa-solid fa-code text-cyan-400"></i>
-        <span>Web Development</span>
-        <span class="prop-shortcut">V</span>
-      </div>
-      <div class="prop-item" (click)="scrollToSection('canvas-workbench'); setTab('game')">
-        <i class="fa-solid fa-gamepad text-amber-400"></i>
-        <span>Game Creator</span>
-        <span class="prop-shortcut">H</span>
-      </div>
-      <div class="prop-item" (click)="scrollToSection('about-intro')">
-        <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i>
-        <span>Sobre Mí / Specs</span>
-        <span class="prop-shortcut">K</span>
-      </div>
-    </div>
+        <span>Desarrollo Web</span>
+      </button>
 
+      <button 
+        class="mode-switch-tab" 
+        [class.active]="portfolioMode() === 'game'"
+        (click)="setPortfolioMode('game')">
+        <i class="fa-solid fa-gamepad text-fuchsia-400"></i>
+        <span>Desarrollo Juegos</span>
+      </button>
+
+      <!-- Active Indicator -->
+      <span class="mode-slider-indicator" [class.is-game]="portfolioMode() === 'game'"></span>
+    </div>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- CAMERA VIEWPORT SLIDER (Pan horizontally like a camera!)  -->
+  <!-- ======================================================== -->
+  <div class="camera-slider-track" [style.transform]="portfolioMode() === 'game' ? 'translateX(-50%)' : 'translateX(0%)'">
+    
     <!-- ======================================================== -->
-    <!-- CENTER BOUNDING BOX & TITLE: "AGUSTIN BENITEZ"           -->
-    <!-- (Animated breaking through the selection box on scroll)  -->
+    <!-- WORLD 1: DESARROLLO WEB (The Cutting Mat Blueprint World) -->
     <!-- ======================================================== -->
-    <div class="selection-bounding-box"
-         [style.transform]="'rotate(-3deg) translate3d(' + (mouseX() * 12) + 'px, ' + (mouseY() * 8) + 'px, 0)'">
-      
-      <!-- Lime Green Selection Anchor Handles on 4 corners -->
-      <span class="resize-handle handle-tl"></span>
-      <span class="resize-handle handle-tr"></span>
-      <span class="resize-handle handle-bl"></span>
-      <span class="resize-handle handle-br"></span>
+    <div class="world-panel world-web-panel">
+      <!-- Blueprint grid background for Web World -->
+      <div class="blueprint-grid-bg"></div>
+      <div class="fabric-shadow-overlay"></div>
 
-      <!-- Top-left tag: 2026 Edition -->
-      <div class="corner-tag tag-edition">
-        <span class="edition-badge">2026 Edition</span>
-        <div class="edition-tools">
-          <i class="fa-solid fa-face-smile"></i>
-          <i class="fa-solid fa-at"></i>
-          <i class="fa-solid fa-image"></i>
-          <span class="edition-arrow">↑</span>
-        </div>
+      <!-- Coordinate Ruler Marks (Top & Left Blueprint Edge) -->
+      <div class="blueprint-ruler-top">
+        <span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span><span>1100</span><span>1200</span><span>1300</span><span>1400</span><span>1500</span>
+      </div>
+      <div class="blueprint-ruler-left">
+        <span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span>
       </div>
 
-      <!-- Top-right tag: UI/UX & Web Dev (Image 2 handle) -->
-      <div class="corner-tag tag-purple">
-        <span class="handle-box-purple"></span>
-        <span class="tag-purple-text">UI / UX • CODE</span>
-      </div>
-
-      <!-- ======================================================== -->
-      <!-- GIANT IMPACT NAME: "AGUSTIN BENITEZ"                     -->
-      <!-- (Animates & breaks through the bounding box on scroll!)  -->
-      <!-- ======================================================== -->
-      <div class="giant-name-container"
-           [style.transform]="'translate3d(' + (scrollY() * 0.15) + 'px, ' + (scrollY() * -0.08) + 'px, 0)'">
-        
-        <!-- Big Bold Title Line 1 -->
-        <h1 class="giant-word word-agustin">
-          <span class="letter">A</span>
-          <span class="letter">G</span>
-          <span class="letter">U</span>
-          <span class="letter">S</span>
-          <span class="letter">T</span>
-          <span class="letter">I</span>
-          <span class="letter">N</span>
-        </h1>
-
-        <!-- Big Bold Title Line 2 -->
-        <h1 class="giant-word word-benitez">
-          <span class="letter">B</span>
-          <span class="letter">E</span>
-          <span class="letter">N</span>
-          <span class="letter">I</span>
-          <span class="letter">T</span>
-          <span class="letter">E</span>
-          <span class="letter">Z</span>
-        </h1>
-      </div>
-
-      <!-- "PORTFOLIO" in small (as explicitly requested!) -->
-      <div class="small-portfolio-badge">
-        <span class="portfolio-chip">PORTFOLIO</span>
-        <span class="dev-role-chip">WEB DEVELOPER & INDIE GAME CREATOR</span>
-      </div>
-
-      <!-- Designer Multiplayer Cursor (Image 1 Orange Arrow) -->
-      <div class="multiplayer-cursor cursor-orange"
-           [style.transform]="'translate3d(' + (mouseX() * 20) + 'px, ' + (mouseY() * 15) + 'px, 0)'">
-        <svg class="cursor-pointer-svg" viewBox="0 0 24 24" width="22" height="22">
-          <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#f97316" stroke="#ffffff" stroke-width="1.5" />
-        </svg>
-        <span class="cursor-name-tag">Agustín Benítez</span>
-      </div>
-
-      <!-- Secondary Multiplayer Cursor (Cyan Game Dev) -->
-      <div class="multiplayer-cursor cursor-cyan"
-           [style.transform]="'translate3d(' + (mouseX() * -15) + 'px, ' + (mouseY() * -12) + 'px, 0)'">
-        <svg class="cursor-pointer-svg" viewBox="0 0 24 24" width="22" height="22">
-          <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5" />
-        </svg>
-        <span class="cursor-name-tag cyan-tag">Arch Origins (Juego)</span>
-      </div>
-    </div>
-
-    <!-- Floating Figma Design Toolbar (Bottom of Canvas • Image 1) -->
-    <div class="figma-bottom-toolbar">
-      <button class="tool-btn" [class.active]="activeTool() === 'cursor'" (click)="setTool('cursor')" title="Select Tool">
-        <i class="fa-solid fa-arrow-pointer"></i>
-      </button>
-      <button class="tool-btn" [class.active]="activeTool() === 'frame'" (click)="setTool('frame')" title="Frame Tool">
-        <i class="fa-solid fa-hashtag"></i>
-      </button>
-      <button class="tool-btn" [class.active]="activeTool() === 'pen'" (click)="setTool('pen')" title="Pen Tool">
-        <i class="fa-solid fa-pen-nib"></i>
-      </button>
-      <button class="tool-btn" [class.active]="activeTool() === 'text'" (click)="setTool('text')" title="Text Tool">
-        <i class="fa-solid fa-font"></i>
-      </button>
-      <button class="tool-btn" [class.active]="activeTool() === 'hand'" (click)="setTool('hand')" title="Hand Tool">
-        <i class="fa-solid fa-hand"></i>
-      </button>
-      <div class="toolbar-divider"></div>
-      <button class="tool-btn code-tool" [class.active]="activeTool() === 'code'" (click)="setTool('code')" title="Dev Mode">
-        <i class="fa-solid fa-code"></i>
-        <span class="dev-pill">DEV</span>
-      </button>
-    </div>
-
-    <!-- Scroll Down Prompt -->
-    <button class="scroll-down-hint" (click)="scrollToSection('about-intro')">
-      <span>Conoce a Agustín • Presentación</span>
-      <i class="fa-solid fa-chevron-down animate-bounce"></i>
-    </button>
-  </section>
-
-  <!-- ======================================================== -->
-  <!-- 2. PRESENTATION / ABOUT ME SECTION (With Real Photo!)    -->
-  <!-- Placed BEFORE projects, on the continuous blue grid      -->
-  <!-- ======================================================== -->
-  <section class="presentation-section" id="about-intro">
-    <div class="presentation-artboard-card">
-      <!-- Figma Style Selection Corner Handles -->
-      <span class="card-selection-handle handle-tl"></span>
-      <span class="card-selection-handle handle-tr"></span>
-      <span class="card-selection-handle handle-bl"></span>
-      <span class="card-selection-handle handle-br"></span>
-
-      <!-- Frame Header Tag -->
-      <div class="presentation-frame-badge">
-        <span class="frame-tag-text"># FRAME 00: PRESENTACION_AGUSTIN</span>
-        <span class="frame-dim">1180 × 520</span>
-      </div>
-
-      <div class="presentation-grid">
-        <!-- LEFT COLUMN: Agustín's Photo in Polaroid Frame -->
-        <div class="presentation-photo-col">
-          <div class="photo-polaroid-frame">
-            <!-- Masking Tape strip on top of photo -->
-            <div class="polaroid-masking-tape"></div>
-
-            <div class="photo-img-wrapper">
-              <img 
-                src="assets/images/foto-perfil-agus.webp" 
-                alt="Agustín Benítez" 
-                class="dev-real-photo"
-                onerror="this.src='assets/images/agustheking.webp'">
-              
-              <!-- Crown Sticker -->
-              <span class="photo-crown-badge" title="Agus The King">👑</span>
-            </div>
-
-            <!-- Polaroid Bottom Caption -->
-            <div class="polaroid-caption">
-              <h3 class="caption-name">{{ profile.name }}</h3>
-              <span class="caption-alias">"{{ profile.alias }}"</span>
-            </div>
+      <!-- 1. HERO DESIGN CANVAS (Figma / Blueprint Style • Image 1)-->
+      <section class="hero-canvas-section">
+        <!-- Floating Figma Properties Menu (Top Right • Image 1) -->
+        <div class="floating-props-menu">
+          <div class="prop-item active" (click)="scrollToSection('canvas-workbench'); setTab('web')">
+            <i class="fa-solid fa-code text-cyan-400"></i>
+            <span>Web Development</span>
+            <span class="prop-shortcut">V</span>
           </div>
-
-          <!-- Quick Status & Location Badges -->
-          <div class="photo-meta-tags">
-            <span class="status-available-chip">
-              <span class="pulse-emerald-dot"></span>
-              <span>Disponible para proyectos</span>
-            </span>
-            <span class="location-chip">
-              <i class="fa-solid fa-location-dot text-rose-500"></i>
-              <span>{{ profile.location }}</span>
-            </span>
+          <div class="prop-item" (click)="setPortfolioMode('game')">
+            <i class="fa-solid fa-gamepad text-fuchsia-400"></i>
+            <span>Game Creator</span>
+            <span class="prop-shortcut">H</span>
+          </div>
+          <div class="prop-item" (click)="scrollToSection('about-intro')">
+            <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i>
+            <span>Sobre Mí / Specs</span>
+            <span class="prop-shortcut">K</span>
           </div>
         </div>
 
-        <!-- RIGHT COLUMN: Bio, Presentation, Credentials, CTA -->
-        <div class="presentation-content-col">
-          <div class="intro-greeting-badge">
-            <span class="sparkle-icon">✦</span>
-            <span>DESARROLLADOR & CREADOR INDIE</span>
-          </div>
+        <!-- Center Bounding Box & Title: AGUSTIN BENITEZ -->
+        <div class="selection-bounding-box"
+             [style.transform]="'rotate(-3deg) translate3d(' + (mouseX() * 12) + 'px, ' + (mouseY() * 8) + 'px, 0)'">
+          
+          <span class="resize-handle handle-tl"></span>
+          <span class="resize-handle handle-tr"></span>
+          <span class="resize-handle handle-bl"></span>
+          <span class="resize-handle handle-br"></span>
 
-          <h2 class="intro-title">
-            ¡Hola! Soy <span class="highlight-name">Agustín Benítez</span>
-          </h2>
-          <p class="intro-subtitle">
-            {{ profile.title }} • {{ profile.subtitle }}
-          </p>
-
-          <p class="intro-paragraph">
-            Soy desarrollador web apasionado por crear experiencias digitales interactivas que combinen código limpio, dinamismo y una identidad visual propia con <strong>Angular</strong> y <strong>Tailwind CSS</strong>.
-          </p>
-
-          <p class="intro-paragraph">
-            Paralelamente, estoy desarrollando mi propio videojuego indie: <strong>Proyecto Arch Origins of Kings</strong>, fusionando combate táctico en tiempo real en un mundo 3D, misterios de linaje real y dirección de arte inmersiva.
-          </p>
-
-          <!-- Highlights & Credentials Counters -->
-          <div class="intro-stats-row">
-            <div class="stat-box">
-              <span class="stat-number">+3</span>
-              <span class="stat-label">Años creando proyectos</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-number">DAW</span>
-              <span class="stat-label">Téc. Sup. Aplicaciones Web</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-number">SMR</span>
-              <span class="stat-label">Téc. Sistemas & Redes</span>
-            </div>
-            <div class="stat-box stat-highlight">
-              <span class="stat-number">3D</span>
-              <span class="stat-label">Game Dev & Assets</span>
+          <!-- Top-left tag: 2026 Edition -->
+          <div class="corner-tag tag-edition">
+            <span class="edition-badge">2026 Edition</span>
+            <div class="edition-tools">
+              <i class="fa-solid fa-face-smile"></i>
+              <i class="fa-solid fa-at"></i>
+              <i class="fa-solid fa-image"></i>
+              <span class="edition-arrow">↑</span>
             </div>
           </div>
 
-          <!-- Stack Tags -->
-          <div class="intro-skills-row">
-            <span class="skills-prefix">Stack:</span>
-            <span class="intro-skill-pill">Angular</span>
-            <span class="intro-skill-pill">TypeScript</span>
-            <span class="intro-skill-pill">Tailwind CSS</span>
-            <span class="intro-skill-pill">HTML5 & CSS3</span>
-            <span class="intro-skill-pill">Motores 3D</span>
-            <span class="intro-skill-pill">WebAudio</span>
-            <span class="intro-skill-pill">Node.js</span>
-            <span class="intro-skill-pill">Git</span>
+          <!-- Top-right tag: UI/UX & Web Dev -->
+          <div class="corner-tag tag-purple">
+            <span class="handle-box-purple"></span>
+            <span class="tag-purple-text">UI / UX • CODE</span>
           </div>
 
-          <!-- Action Buttons -->
-          <div class="intro-cta-row">
-            <button class="cta-scroll-projects-btn" (click)="scrollToSection('canvas-workbench')">
-              <i class="fa-solid fa-gamepad"></i>
-              <span>Ver Mis Proyectos & Videojuego</span>
-              <i class="fa-solid fa-arrow-down ml-1 animate-bounce"></i>
-            </button>
+          <!-- Giant Impact Name -->
+          <div class="giant-name-container"
+               [style.transform]="'translate3d(' + (scrollY() * 0.15) + 'px, ' + (scrollY() * -0.08) + 'px, 0)'">
+            <h1 class="giant-word word-agustin">
+              <span class="letter">A</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span><span class="letter">T</span><span class="letter">I</span><span class="letter">N</span>
+            </h1>
+            <h1 class="giant-word word-benitez">
+              <span class="letter">B</span><span class="letter">E</span><span class="letter">N</span><span class="letter">I</span><span class="letter">T</span><span class="letter">E</span><span class="letter">Z</span>
+            </h1>
+          </div>
 
-            <button class="intro-social-btn" (click)="scrollToSection('formacion-academica')">
-              <i class="fa-solid fa-graduation-cap text-pink-400"></i>
-              <span>Ver Formación</span>
-            </button>
+          <!-- "PORTFOLIO" in small (Magenta Theme) -->
+          <div class="small-portfolio-badge">
+            <span class="portfolio-chip">PORTFOLIO</span>
+            <span class="dev-role-chip">WEB DEVELOPER & INDIE GAME CREATOR</span>
+          </div>
 
-            <a [href]="profile.socials[0].url" target="_blank" rel="noopener noreferrer" class="intro-social-btn" title="GitHub">
-              <i class="fa-brands fa-github"></i>
-              <span>GitHub</span>
-            </a>
+          <!-- Live Multiplayer Cursors -->
+          <div class="multiplayer-cursor cursor-orange"
+               [style.transform]="'translate3d(' + (mouseX() * 20) + 'px, ' + (mouseY() * 15) + 'px, 0)'">
+            <svg class="cursor-pointer-svg" viewBox="0 0 24 24" width="22" height="22">
+              <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#f97316" stroke="#ffffff" stroke-width="1.5" />
+            </svg>
+            <span class="cursor-name-tag">Agustín Benítez</span>
+          </div>
 
-            <a [href]="profile.socials[1].url" target="_blank" rel="noopener noreferrer" class="intro-social-btn" title="LinkedIn">
-              <i class="fa-brands fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
-
-            <a [href]="profile.socials[2].url" class="intro-social-btn" title="Contacto Directo">
-              <i class="fa-solid fa-envelope"></i>
-              <span>Contacto</span>
-            </a>
+          <div class="multiplayer-cursor cursor-cyan"
+               [style.transform]="'translate3d(' + (mouseX() * -15) + 'px, ' + (mouseY() * -12) + 'px, 0)'">
+            <svg class="cursor-pointer-svg" viewBox="0 0 24 24" width="22" height="22">
+              <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5" />
+            </svg>
+            <span class="cursor-name-tag cyan-tag">Arch Origins (Juego)</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ======================================================== -->
-  <!-- 3. FORMACIÓN ACADÉMICA (Exact Cards with Institute Photos)-->
-  <!-- ======================================================== -->
-  <section class="education-section" id="formacion-academica">
-    <div class="education-artboard-card">
-      <!-- Figma Style Selection Corner Handles -->
-      <span class="card-selection-handle handle-tl"></span>
-      <span class="card-selection-handle handle-tr"></span>
-      <span class="card-selection-handle handle-bl"></span>
-      <span class="card-selection-handle handle-br"></span>
+        <!-- Floating Figma Design Toolbar -->
+        <div class="figma-bottom-toolbar">
+          <button class="tool-btn" [class.active]="activeTool() === 'cursor'" (click)="setTool('cursor')" title="Select Tool">
+            <i class="fa-solid fa-arrow-pointer"></i>
+          </button>
+          <button class="tool-btn" [class.active]="activeTool() === 'frame'" (click)="setTool('frame')" title="Frame Tool">
+            <i class="fa-solid fa-hashtag"></i>
+          </button>
+          <button class="tool-btn" [class.active]="activeTool() === 'pen'" (click)="setTool('pen')" title="Pen Tool">
+            <i class="fa-solid fa-pen-nib"></i>
+          </button>
+          <button class="tool-btn" [class.active]="activeTool() === 'text'" (click)="setTool('text')" title="Text Tool">
+            <i class="fa-solid fa-font"></i>
+          </button>
+          <button class="tool-btn" [class.active]="activeTool() === 'hand'" (click)="setTool('hand')" title="Hand Tool">
+            <i class="fa-solid fa-hand"></i>
+          </button>
+          <div class="toolbar-divider"></div>
+          <button class="tool-btn code-tool" [class.active]="activeTool() === 'code'" (click)="setTool('code')" title="Dev Mode">
+            <i class="fa-solid fa-code"></i>
+            <span class="dev-pill">DEV</span>
+          </button>
+        </div>
 
-      <!-- Frame Header Tag -->
-      <div class="education-frame-badge">
-        <span class="frame-tag-text"># FRAME 01: FORMACION_ACADEMICA</span>
-        <span class="frame-dim">1240 × 520</span>
-      </div>
+        <!-- Scroll Down Prompt -->
+        <button class="scroll-down-hint" (click)="scrollToSection('about-intro')">
+          <span>Conoce a Agustín • Presentación</span>
+          <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </button>
+      </section>
 
-      <!-- Section Title & Subtitle -->
-      <div class="education-header-block">
-        <span class="edu-badge-tag">✦ TRAYECTORIA ACADÉMICA</span>
-        <h2 class="education-main-heading">Formación Académica</h2>
-        <p class="education-sub-heading">Titulaciones oficiales cursadas en centros educativos públicos de Andalucía</p>
-      </div>
+      <!-- 2. PRESENTATION / ABOUT ME SECTION (With Real Photo!) -->
+      <section class="presentation-section" id="about-intro">
+        <div class="presentation-artboard-card">
+          <span class="card-selection-handle handle-tl"></span>
+          <span class="card-selection-handle handle-tr"></span>
+          <span class="card-selection-handle handle-bl"></span>
+          <span class="card-selection-handle handle-br"></span>
 
-      <!-- The 3 Cards Grid (Exact design from user screenshot) -->
-      <div class="education-cards-grid">
-        @for (item of educationList; track item.id) {
-          <article class="academic-card">
-            <!-- Image with institute banner and graduate photo overlay -->
-            <div class="academic-card-img-wrapper">
-              <img [src]="item.image" [alt]="item.title" class="academic-banner-img">
-              <div class="academic-img-gradient"></div>
-              <span class="academic-status-pill">{{ item.periodOrStatus }}</span>
+          <div class="presentation-frame-badge">
+            <span class="frame-tag-text"># FRAME 00: PRESENTACION_AGUSTIN</span>
+            <span class="frame-dim">1180 × 520</span>
+          </div>
+
+          <div class="presentation-grid">
+            <!-- Left: Photo in Polaroid Frame -->
+            <div class="presentation-photo-col">
+              <div class="photo-polaroid-frame">
+                <div class="polaroid-masking-tape"></div>
+                <div class="photo-img-wrapper">
+                  <img 
+                    src="assets/images/foto-perfil-agus.webp" 
+                    alt="Agustín Benítez" 
+                    class="dev-real-photo"
+                    onerror="this.src='assets/images/agustheking.webp'">
+                  <span class="photo-crown-badge" title="Agus The King">👑</span>
+                </div>
+                <div class="polaroid-caption">
+                  <h3 class="caption-name">{{ profile.name }}</h3>
+                  <span class="caption-alias">"{{ profile.alias }}"</span>
+                </div>
+              </div>
+
+              <div class="photo-meta-tags">
+                <span class="status-available-chip">
+                  <span class="pulse-emerald-dot"></span>
+                  <span>Disponible para proyectos</span>
+                </span>
+                <span class="location-chip">
+                  <i class="fa-solid fa-location-dot text-rose-500"></i>
+                  <span>{{ profile.location }}</span>
+                </span>
+              </div>
             </div>
 
-            <!-- Card Content Body -->
-            <div class="academic-card-body">
-              <span class="academic-degree-badge">{{ item.badge }}</span>
-              <h3 class="academic-card-title">{{ item.title }}</h3>
-              <p class="academic-card-center">{{ item.center }}</p>
+            <!-- Right: Bio, Highlights, Actions -->
+            <div class="presentation-content-col">
+              <div class="intro-greeting-badge">
+                <span class="sparkle-icon">✦</span>
+                <span>DESARROLLADOR & CREADOR INDIE</span>
+              </div>
 
-              <!-- Web del Centro Button with signature gradient -->
-              <div class="academic-action-row">
-                <a [href]="item.centerUrl" target="_blank" rel="noopener noreferrer" class="web-centro-gradient-btn">
-                  <span>Web del Centro</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+              <h2 class="intro-title">
+                ¡Hola! Soy <span class="highlight-name">Agustín Benítez</span>
+              </h2>
+              <p class="intro-subtitle">
+                {{ profile.title }} • {{ profile.subtitle }}
+              </p>
+
+              <p class="intro-paragraph">
+                Soy desarrollador web apasionado por crear experiencias digitales interactivas que combinen código limpio, dinamismo y una identidad visual propia con <strong>Angular</strong> y <strong>Tailwind CSS</strong>.
+              </p>
+
+              <p class="intro-paragraph">
+                Paralelamente, estoy desarrollando mi propio videojuego indie: <strong>Proyecto Arch Origins of Kings</strong>, fusionando combate táctico en tiempo real en un mundo 3D, misterios de linaje real y dirección de arte inmersiva.
+              </p>
+
+              <!-- Highlights & Credentials Counters -->
+              <div class="intro-stats-row">
+                <div class="stat-box">
+                  <span class="stat-number">+3</span>
+                  <span class="stat-label">Años creando proyectos</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">DAW</span>
+                  <span class="stat-label">Téc. Sup. Aplicaciones Web</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">SMR</span>
+                  <span class="stat-label">Téc. Sistemas & Redes</span>
+                </div>
+                <div class="stat-box stat-highlight">
+                  <span class="stat-number">3D</span>
+                  <span class="stat-label">Game Dev & Assets</span>
+                </div>
+              </div>
+
+              <!-- Stack Tags -->
+              <div class="intro-skills-row">
+                <span class="skills-prefix">Stack:</span>
+                <span class="intro-skill-pill">Angular</span>
+                <span class="intro-skill-pill">TypeScript</span>
+                <span class="intro-skill-pill">Tailwind CSS</span>
+                <span class="intro-skill-pill">HTML5 & CSS3</span>
+                <span class="intro-skill-pill">Motores 3D</span>
+                <span class="intro-skill-pill">WebAudio</span>
+                <span class="intro-skill-pill">Node.js</span>
+                <span class="intro-skill-pill">Git</span>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="intro-cta-row">
+                <button class="cta-scroll-projects-btn" (click)="scrollToSection('canvas-workbench')">
+                  <i class="fa-solid fa-laptop-code"></i>
+                  <span>Ver Mis Proyectos Web</span>
+                  <i class="fa-solid fa-arrow-down ml-1 animate-bounce"></i>
+                </button>
+
+                <button class="intro-social-btn" (click)="setPortfolioMode('game')">
+                  <i class="fa-solid fa-gamepad text-fuchsia-400"></i>
+                  <span>Ir a Modo Juegos 3D</span>
+                </button>
+
+                <button class="intro-social-btn" (click)="scrollToSection('formacion-academica')">
+                  <i class="fa-solid fa-graduation-cap text-pink-400"></i>
+                  <span>Formación</span>
+                </button>
+
+                <a [href]="profile.socials[0].url" target="_blank" rel="noopener noreferrer" class="intro-social-btn" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+
+                <a [href]="profile.socials[1].url" target="_blank" rel="noopener noreferrer" class="intro-social-btn" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+
+                <a [href]="profile.socials[2].url" class="intro-social-btn" title="Contacto Directo">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>Contacto</span>
                 </a>
               </div>
             </div>
-          </article>
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================== -->
-  <!-- 4. ASYMMETRICAL WORKBENCH SECTION (Blue Grid Continues!) -->
-  <!-- ======================================================== -->
-  <section class="asymmetric-workbench" id="canvas-workbench">
-    <!-- Floating Figma Studio Navigation & Filters -->
-    <div class="workbench-floating-nav">
-      <div class="nav-left-pill">
-        <span class="status-pulse-dot"></span>
-        <span class="font-mono text-xs text-sky-200">CANVAS: DESK_01 / AGUSTIN_PROYECTOS</span>
-        <span class="zoom-chip">100%</span>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="workbench-tabs">
-        <button 
-          class="wb-tab-btn" 
-          [class.active]="activeTab() === 'all'" 
-          (click)="setTab('all')">
-          <span>✦ Todos</span>
-        </button>
-
-        <button 
-          class="wb-tab-btn" 
-          [class.active]="activeTab() === 'game'" 
-          (click)="setTab('game')">
-          <span>👑 Arch Origins</span>
-        </button>
-
-        <button 
-          class="wb-tab-btn" 
-          [class.active]="activeTab() === 'web'" 
-          (click)="setTab('web')">
-          <span>🌐 Web & Apps</span>
-        </button>
-
-        <button 
-          class="wb-tab-btn" 
-          (click)="scrollToSection('formacion-academica')">
-          <span>🎓 Formación</span>
-        </button>
-
-        <button 
-          class="wb-tab-btn" 
-          (click)="scrollToSection('about-intro')">
-          <span>👤 Sobre Mí</span>
-        </button>
-      </div>
-
-      <div class="nav-right-actions">
-        <a [href]="profile.socials[0].url" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a [href]="profile.socials[1].url" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- ======================================================== -->
-    <!-- ASYMMETRICAL STUDIO STAGE:                               -->
-    <!-- Left: Dedicated Arch Origins Card (Title-card style)     -->
-    <!-- Right / Bottom-Right: Other Projects & Spec Card         -->
-    <!-- ======================================================== -->
-    <div class="workbench-stage-grid">
-      
-      <!-- ======================================================== -->
-      <!-- [LEFT ZONE]: PROYECTO ARCH ORIGINS OF KINGS DEDICATED CARD -->
-      <!-- (Styled like the title bounding box with handles!)       -->
-      <!-- ======================================================== -->
-      @if (activeTab() === 'all' || activeTab() === 'game') {
-        <div class="workbench-left-column">
-          <article class="arch-origins-featured-card" (click)="openProject(featuredGame())">
-            <!-- Lime Green Selection Anchor Handles on 4 corners (like Title) -->
-            <span class="card-selection-handle handle-tl"></span>
-            <span class="card-selection-handle handle-tr"></span>
-            <span class="card-selection-handle handle-bl"></span>
-            <span class="card-selection-handle handle-br"></span>
-
-            <!-- Figma Frame Identifier Tag -->
-            <div class="card-frame-badge">
-              <span class="frame-tag-text"># FRAME: PROYECTO_ARCH_ORIGINS</span>
-              <span class="frame-dim">1280 × 720</span>
-            </div>
-
-            <!-- Top Corner Badge: Alpha Tag -->
-            <div class="card-corner-alpha">
-              <span class="alpha-pill">ALPHA V0.8.2</span>
-              <span class="badge-star-pulse">★ PROYECTO PRINCIPAL</span>
-            </div>
-
-            <!-- Card Content Body: Image in Middle + Title beside it -->
-            <div class="arch-card-layout">
-              <!-- IN THE MIDDLE / LEFT: Image / Standee Sketch Preset -->
-              <div class="arch-image-zone">
-                <div class="standee-artboard-frame">
-                  <!-- Standee Preset Doodle Sketch -->
-                  <app-doodle-sketch type="king-hero" size="lg"></app-doodle-sketch>
-                  
-                  <div class="artboard-doodle-hint">
-                    <i class="fa-solid fa-expand text-amber-500"></i>
-                    <span>Clic para ver Dossier Completo (Img 4)</span>
-                  </div>
-                </div>
-
-                <!-- Measurement ruler / coordinate sticker under image -->
-                <div class="sketch-spec-ruler">
-                  <span>W: 320px</span>
-                  <span class="divider">•</span>
-                  <span>SPRITE: PROTAGONISTA</span>
-                  <span class="divider">•</span>
-                  <span>FRAME A FRAME</span>
-                </div>
-              </div>
-
-              <!-- BESIDE IT ("AL LADO"): Title, Lore, Tags, CTA Button -->
-              <div class="arch-info-zone">
-                <!-- Title & Subtitle -->
-                <h2 class="arch-main-title">
-                  Proyecto Arch Origins of Kings
-                </h2>
-                <h3 class="arch-subtitle">
-                  Videojuego Indie de Acción & Aventura 3D
-                </h3>
-
-                <!-- Lore / Pitch Snippet -->
-                <p class="arch-desc-paragraph">
-                  {{ featuredGame().description }}
-                </p>
-
-                <!-- Feature Badges Cloud -->
-                <div class="arch-features-list">
-                  <div class="arch-feat-item">
-                    <i class="fa-solid fa-shield-halved text-amber-400"></i>
-                    <span>Combate en tiempo real con parry, rodaduras y combos</span>
-                  </div>
-                  <div class="arch-feat-item">
-                    <i class="fa-solid fa-crown text-amber-400"></i>
-                    <span>Secretos ancestrales del linaje real prohibido</span>
-                  </div>
-                  <div class="arch-feat-item">
-                    <i class="fa-solid fa-cube text-cyan-400"></i>
-                    <span>Mundo tridimensional, modelado y assets 3D</span>
-                  </div>
-                  <div class="arch-feat-item">
-                    <i class="fa-solid fa-code text-pink-400"></i>
-                    <span>Físicas, colisiones y mecánicas 3D en tiempo real</span>
-                  </div>
-                </div>
-
-                <!-- Interactive CTA Button & Status -->
-                <div class="arch-action-footer">
-                  <button class="open-dossier-glow-btn" (click)="$event.stopPropagation(); openProject(featuredGame())">
-                    <i class="fa-solid fa-gamepad"></i>
-                    <span>Abrir Dossier & Galería (Img 4)</span>
-                    <i class="fa-solid fa-arrow-right ml-1"></i>
-                  </button>
-
-                  <div class="dev-status-pill">
-                    <span class="pulse-emerald-dot"></span>
-                    <span>En desarrollo activo</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Multiplayer Live Cursor pinned on card -->
-            <div class="card-multiplayer-cursor">
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#ec4899" stroke="#ffffff" stroke-width="1.5" />
-              </svg>
-              <span class="cursor-tag-magenta">Agustín (Game Director)</span>
-            </div>
-          </article>
+          </div>
         </div>
-      }
+      </section>
 
-      <!-- ======================================================== -->
-      <!-- [RIGHT & BOTTOM-RIGHT ZONE]: OTHER PROJECTS (Asymmetrical) -->
-      <!-- ======================================================== -->
-      @if (activeTab() !== 'about') {
-        <div class="workbench-right-column">
-          <!-- Section Heading Note on Blue Grid -->
-          <div class="right-column-heading">
-            <span class="heading-comment">// OTROS PROYECTOS WEB & HERRAMIENTAS INTERACTIVAS</span>
-            <span class="heading-count">{{ otherProjects().length }} Trabajos</span>
+      <!-- 3. FORMACIÓN ACADÉMICA (Exact Cards with Institute Photos) -->
+      <section class="education-section" id="formacion-academica">
+        <div class="education-artboard-card">
+          <span class="card-selection-handle handle-tl"></span>
+          <span class="card-selection-handle handle-tr"></span>
+          <span class="card-selection-handle handle-bl"></span>
+          <span class="card-selection-handle handle-br"></span>
+
+          <div class="education-frame-badge">
+            <span class="frame-tag-text"># FRAME 01: FORMACION_ACADEMICA</span>
+            <span class="frame-dim">1240 × 520</span>
           </div>
 
-          <!-- Staggered Cards Grid -->
-          <div class="other-projects-staggered-grid">
-            @for (proj of otherProjects(); track proj.id; let i = $index) {
-              <article 
-                class="asymmetric-project-card" 
-                [class.card-tilt-left]="i % 2 === 0"
-                [class.card-tilt-right]="i % 2 !== 0"
-                (click)="openProject(proj)">
-                
-                <!-- Vector Selection corners on card hover -->
-                <div class="card-corner-pins">
-                  <span class="pin pin-tl"></span>
-                  <span class="pin pin-tr"></span>
-                  <span class="pin pin-bl"></span>
-                  <span class="pin pin-br"></span>
+          <div class="education-header-block">
+            <span class="edu-badge-tag">✦ TRAYECTORIA ACADÉMICA</span>
+            <h2 class="education-main-heading">Formación Académica</h2>
+            <p class="education-sub-heading">Titulaciones oficiales cursadas en centros educativos públicos de Andalucía</p>
+          </div>
+
+          <div class="education-cards-grid">
+            @for (item of educationList; track item.id) {
+              <article class="academic-card">
+                <div class="academic-card-img-wrapper">
+                  <img [src]="item.image" [alt]="item.title" class="academic-banner-img">
+                  <div class="academic-img-gradient"></div>
+                  <span class="academic-status-pill">{{ item.periodOrStatus }}</span>
                 </div>
 
-                <!-- Top Meta Bar -->
-                <div class="asym-card-meta">
-                  <span class="asym-badge" [style.backgroundColor]="proj.color.bgBadge" [style.color]="proj.color.textBadge">
-                    {{ proj.badge }}
-                  </span>
-                  <span class="asym-year">{{ proj.year }}</span>
-                </div>
+                <div class="academic-card-body">
+                  <span class="academic-degree-badge">{{ item.badge }}</span>
+                  <h3 class="academic-card-title">{{ item.title }}</h3>
+                  <p class="academic-card-center">{{ item.center }}</p>
 
-                <!-- Preset Sketch in Middle of Project Card -->
-                <div class="asym-thumbnail-sketch">
-                  @switch (proj.sketchType) {
-                    @case ('valorantdle') {
-                      <app-doodle-sketch type="valorantdle" size="sm"></app-doodle-sketch>
-                    }
-                    @case ('extension') {
-                      <app-doodle-sketch type="extension" size="sm"></app-doodle-sketch>
-                    }
-                    @case ('enma-shop') {
-                      <app-doodle-sketch type="enma-shop" size="sm"></app-doodle-sketch>
-                    }
-                    @case ('melody') {
-                      <app-doodle-sketch type="melody" size="sm"></app-doodle-sketch>
-                    }
-                    @case ('wikimods') {
-                      <app-doodle-sketch type="wikimods" size="sm"></app-doodle-sketch>
-                    }
-                  }
-                </div>
-
-                <!-- Project Title & Tagline -->
-                <h4 class="asym-card-title">{{ proj.title }}</h4>
-                <p class="asym-card-tagline">{{ proj.tagline }}</p>
-
-                <!-- Tech Tags -->
-                <div class="asym-tech-chips">
-                  @for (t of proj.technologies.slice(0, 3); track t) {
-                    <span class="tech-pill">{{ t }}</span>
-                  }
-                </div>
-
-                <!-- Card Footer Action -->
-                <div class="asym-card-footer">
-                  <span class="view-dossier-link">
-                    <span>Ver Detalles (Img 4)</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                  <span class="stamp-chip">{{ proj.stampText }}</span>
+                  <div class="academic-action-row">
+                    <a [href]="item.centerUrl" target="_blank" rel="noopener noreferrer" class="web-centro-gradient-btn">
+                      <span>Web del Centro</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                    </a>
+                  </div>
                 </div>
               </article>
             }
           </div>
         </div>
-      }
+      </section>
 
+      <!-- 4. ASYMMETRICAL WORKBENCH SECTION (Web Projects on Blue Grid) -->
+      <section class="asymmetric-workbench" id="canvas-workbench">
+        <div class="workbench-floating-nav">
+          <div class="nav-left-pill">
+            <span class="status-pulse-dot"></span>
+            <span class="font-mono text-xs text-sky-200">CANVAS: DESK_01 / AGUSTIN_PROYECTOS</span>
+            <span class="zoom-chip">100%</span>
+          </div>
+
+          <div class="workbench-tabs">
+            <button class="wb-tab-btn" [class.active]="activeTab() === 'all'" (click)="setTab('all')">
+              <span>✦ Todos</span>
+            </button>
+            <button class="wb-tab-btn" (click)="setPortfolioMode('game')">
+              <span>👑 Arch Origins (Juego)</span>
+            </button>
+            <button class="wb-tab-btn" [class.active]="activeTab() === 'web'" (click)="setTab('web')">
+              <span>🌐 Web & Apps</span>
+            </button>
+            <button class="wb-tab-btn" (click)="scrollToSection('formacion-academica')">
+              <span>🎓 Formación</span>
+            </button>
+            <button class="wb-tab-btn" (click)="scrollToSection('about-intro')">
+              <span>👤 Sobre Mí</span>
+            </button>
+          </div>
+
+          <div class="nav-right-actions">
+            <a [href]="profile.socials[0].url" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a [href]="profile.socials[1].url" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="workbench-stage-grid">
+          <!-- Left: Quick Arch Origins Teaser -->
+          <div class="workbench-left-column">
+            <article class="arch-origins-featured-card" (click)="setPortfolioMode('game')">
+              <span class="card-selection-handle handle-tl"></span>
+              <span class="card-selection-handle handle-tr"></span>
+              <span class="card-selection-handle handle-bl"></span>
+              <span class="card-selection-handle handle-br"></span>
+
+              <div class="card-frame-badge">
+                <span class="frame-tag-text"># GAME: ARCH_ORIGINS</span>
+                <span class="frame-dim">3D RPG</span>
+              </div>
+
+              <div class="card-corner-alpha">
+                <span class="alpha-pill">ALPHA V0.8.2</span>
+                <span class="badge-star-pulse">★ MODO JUEGOS</span>
+              </div>
+
+              <div class="arch-card-layout">
+                <div class="arch-image-zone">
+                  <div class="standee-artboard-frame">
+                    <img src="assets/images/portadavideo.png" alt="Arch Origins Portada" class="web-teaser-poster-img">
+                    <div class="artboard-doodle-hint">
+                      <i class="fa-solid fa-gamepad text-fuchsia-400"></i>
+                      <span>Clic para entrar a Modo Juegos</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="arch-info-zone">
+                  <h2 class="arch-main-title">Proyecto Arch Origins of Kings</h2>
+                  <h3 class="arch-subtitle">Videojuego Indie de Acción & Aventura 3D</h3>
+                  <p class="arch-desc-paragraph">{{ featuredGame().description }}</p>
+
+                  <div class="arch-features-list">
+                    <div class="arch-feat-item">
+                      <i class="fa-solid fa-shield-halved text-amber-400"></i>
+                      <span>Combate en tiempo real con parry, rodaduras y combos</span>
+                    </div>
+                    <div class="arch-feat-item">
+                      <i class="fa-solid fa-crown text-amber-400"></i>
+                      <span>Secretos ancestrales del linaje real prohibido</span>
+                    </div>
+                    <div class="arch-feat-item">
+                      <i class="fa-solid fa-cube text-cyan-400"></i>
+                      <span>Mundo tridimensional, modelado y assets 3D</span>
+                    </div>
+                  </div>
+
+                  <div class="arch-action-footer">
+                    <button class="open-dossier-glow-btn" (click)="$event.stopPropagation(); setPortfolioMode('game')">
+                      <i class="fa-solid fa-gamepad"></i>
+                      <span>Explorar Modo Videojuegos 3D</span>
+                      <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-multiplayer-cursor">
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#ec4899" stroke="#ffffff" stroke-width="1.5" />
+                </svg>
+                <span class="cursor-tag-magenta">Agustín (Game Director)</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right: Staggered Other Web Projects -->
+          <div class="workbench-right-column">
+            <div class="right-column-heading">
+              <span class="heading-comment">// PROYECTOS WEB & HERRAMIENTAS INTERACTIVAS</span>
+              <span class="heading-count">{{ otherProjects().length }} Trabajos</span>
+            </div>
+
+            <div class="other-projects-staggered-grid">
+              @for (proj of otherProjects(); track proj.id; let i = $index) {
+                <article 
+                  class="asymmetric-project-card" 
+                  [class.card-tilt-left]="i % 2 === 0"
+                  [class.card-tilt-right]="i % 2 !== 0"
+                  (click)="openProject(proj)">
+                  
+                  <div class="card-corner-pins">
+                    <span class="pin pin-tl"></span>
+                    <span class="pin pin-tr"></span>
+                    <span class="pin pin-bl"></span>
+                    <span class="pin pin-br"></span>
+                  </div>
+
+                  <div class="asym-card-meta">
+                    <span class="asym-badge" [style.backgroundColor]="proj.color.bgBadge" [style.color]="proj.color.textBadge">
+                      {{ proj.badge }}
+                    </span>
+                    <span class="asym-year">{{ proj.year }}</span>
+                  </div>
+
+                  <div class="asym-thumbnail-sketch">
+                    @switch (proj.sketchType) {
+                      @case ('valorantdle') {
+                        <app-doodle-sketch type="valorantdle" size="sm"></app-doodle-sketch>
+                      }
+                      @case ('extension') {
+                        <app-doodle-sketch type="extension" size="sm"></app-doodle-sketch>
+                      }
+                      @case ('enma-shop') {
+                        <app-doodle-sketch type="enma-shop" size="sm"></app-doodle-sketch>
+                      }
+                      @case ('melody') {
+                        <app-doodle-sketch type="melody" size="sm"></app-doodle-sketch>
+                      }
+                      @case ('wikimods') {
+                        <app-doodle-sketch type="wikimods" size="sm"></app-doodle-sketch>
+                      }
+                    }
+                  </div>
+
+                  <h4 class="asym-card-title">{{ proj.title }}</h4>
+                  <p class="asym-card-tagline">{{ proj.tagline }}</p>
+
+                  <div class="asym-tech-chips">
+                    @for (t of proj.technologies.slice(0, 3); track t) {
+                      <span class="tech-pill">{{ t }}</span>
+                    }
+                  </div>
+
+                  <div class="asym-card-footer">
+                    <span class="view-dossier-link">
+                      <span>Ver Detalles (Img 4)</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+                    <span class="stamp-chip">{{ proj.stampText }}</span>
+                  </div>
+                </article>
+              }
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+
+    <!-- ======================================================== -->
+    <!-- WORLD 2: DESARROLLO JUEGOS (Dark Studio • Image 3 Title + Portada) -->
+    <!-- ======================================================== -->
+    <div class="world-panel world-game-panel">
+      <!-- Dark Studio Grid & Atmosphere -->
+      <div class="game-studio-grid-bg"></div>
+      <div class="game-ambient-spotlight"></div>
+
+      <section class="game-studio-hero-section">
+        <!-- Floating Game Studio Top Header -->
+        <div class="game-studio-top-badge">
+          <span class="pulse-emerald-dot"></span>
+          <span class="game-badge-text">INDIE GAME STUDIO • AGUSTÍN BENÍTEZ</span>
+          <span class="game-engine-chip">3D ACTION RPG</span>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- TITLE: AGUS THE KING PRODUCTIONS (Image 3 Style Logo)    -->
+        <!-- Uses atkLogo.png for the crown placed above KING!        -->
+        <!-- ======================================================== -->
+        <div class="atk-branding-logo-box">
+          <div class="atk-title-grid">
+            <div class="atk-line-top">
+              <span class="atk-word-agus">AGUS</span>
+            </div>
+            
+            <div class="atk-line-middle">
+              <span class="atk-word-the">THE</span>
+              
+              <div class="atk-king-crown-container">
+                <span class="atk-word-king">KING</span>
+                <!-- The Crown from atkLogo.png placed on top-right of KING! -->
+                <img src="assets/images/atkLogo.png" alt="Corona ATK" class="atk-floating-crown-img">
+              </div>
+            </div>
+
+            <div class="atk-line-bottom">
+              <span class="atk-word-productions">PRODUCTIONS</span>
+            </div>
+          </div>
+
+          <div class="atk-author-pill">
+            <span class="author-name">AGUSTÍN BENÍTEZ</span>
+            <span class="author-sep">•</span>
+            <span class="author-role">GAME DIRECTOR & 3D DEVELOPER</span>
+          </div>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- MAIN GAME SHOWCASE: Portada de Arch (portadavideo.png)   -->
+        <!-- ======================================================== -->
+        <div class="arch-origins-main-showcase">
+          <div class="arch-showcase-artboard">
+            <div class="showcase-top-status-bar">
+              <div class="showcase-status-left">
+                <span class="status-star">★</span>
+                <span>PROYECTO PRINCIPAL EN DESARROLLO</span>
+              </div>
+              <div class="showcase-status-right">
+                <span class="version-badge">ALPHA V0.8.2</span>
+                <span class="engine-tag">3D ACTION RPG</span>
+              </div>
+            </div>
+
+            <div class="arch-showcase-grid">
+              <!-- LEFT COLUMN: The Real Portada Poster (portadavideo.png) -->
+              <div class="arch-poster-column" (click)="openProject(featuredGame())">
+                <div class="poster-frame-wrapper">
+                  <img 
+                    src="assets/images/portadavideo.png" 
+                    alt="Portada Oficial Arch Origins of Kings" 
+                    class="arch-cover-poster-img"
+                    onerror="this.src='assets/images/king.webp'">
+
+                  <div class="poster-hover-overlay">
+                    <span class="poster-play-pill">
+                      <i class="fa-solid fa-play"></i>
+                      <span>Abrir Dossier (Img 4)</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="poster-meta-footer">
+                  <i class="fa-solid fa-film text-fuchsia-400"></i>
+                  <span>PORTADA OFICIAL: ARCH ORIGINS OF KINGS</span>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: Story, Lore, Mechanics & CTAs -->
+              <div class="arch-details-column">
+                <h2 class="arch-game-title">
+                  Proyecto Arch Origins of Kings
+                </h2>
+                <h3 class="arch-game-subtitle">
+                  Videojuego de Acción, Aventura & RPG Táctico 3D
+                </h3>
+
+                <p class="arch-game-pitch">
+                  Despierta el linaje real. Reclama el reino. Un viaje de acción táctica en tiempo real a través de ruinas vivientes, combates intensos contra bestias colosales y una historia impulsada por artefactos de poder ancestrales perdidos.
+                </p>
+
+                <!-- 4 Mechanics Feature Cards -->
+                <div class="game-mechanics-grid">
+                  <div class="mech-card">
+                    <div class="mech-icon-box text-amber-400">
+                      <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                      <h4 class="mech-title">Combate Táctico 3D</h4>
+                      <p class="mech-desc">Parry con temporización exacta, rodaduras de esquiva y combos de espada.</p>
+                    </div>
+                  </div>
+
+                  <div class="mech-card">
+                    <div class="mech-icon-box text-fuchsia-400">
+                      <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div>
+                      <h4 class="mech-title">Linaje Real Ancestral</h4>
+                      <p class="mech-desc">Desbloquea sellos de la corona para imbuir ataques con fuego, rayo o éter.</p>
+                    </div>
+                  </div>
+
+                  <div class="mech-card">
+                    <div class="mech-icon-box text-cyan-400">
+                      <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div>
+                      <h4 class="mech-title">Mundo Tridimensional</h4>
+                      <p class="mech-desc">Mazmorras góticas, templos colosales y jefes desafiantes con IA reactiva.</p>
+                    </div>
+                  </div>
+
+                  <div class="mech-card">
+                    <div class="mech-icon-box text-emerald-400">
+                      <i class="fa-solid fa-music"></i>
+                    </div>
+                    <div>
+                      <h4 class="mech-title">Banda Sonora Adaptativa</h4>
+                      <p class="mech-desc">Música dinámica que reacciona a la tensión del combate y la exploración.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CTA Row -->
+                <div class="game-cta-actions-row">
+                  <button class="open-full-dossier-btn" (click)="openProject(featuredGame())">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Abrir Dossier de Producción (Img 4)</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+
+                  <a [href]="featuredGame().githubUrl" target="_blank" rel="noopener noreferrer" class="game-repo-btn">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Ver Repositorio</span>
+                  </a>
+                </div>
+
+                <div class="game-dev-status-indicator">
+                  <span class="pulse-emerald-dot"></span>
+                  <span>En desarrollo activo • Modelado 3D, Físicas & Combate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back to Web Mode Navigation Footer -->
+        <div class="switch-to-web-footer">
+          <button class="back-to-web-btn" (click)="setPortfolioMode('web')">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Volver a Desarrollo Web & Portfolio</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+  </div>
 
   <!-- ======================================================== -->
   <!-- PROJECT DETAIL SHOWCASE MODAL (Beloved Image 4 Layout)    -->
