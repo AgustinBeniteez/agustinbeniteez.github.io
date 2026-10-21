@@ -1,198 +1,444 @@
 <div class="modal-backdrop" (click)="closeModal()">
-  <!-- Modal Window Container (inspired by Image 4) -->
-  <div class="modal-card" (click)="$event.stopPropagation()">
-    <!-- Top Navigation Header (Image 4 style: All Movie | Movie List | Trailer Movie) -->
+  <!-- Modal Window Container: Figma Artboard Style -->
+  <div 
+    class="modal-card" 
+    [style.--proj-accent]="project.color.accent"
+    [style.--proj-border]="project.color.border"
+    [style.--proj-bg-badge]="project.color.bgBadge"
+    [style.--proj-text-badge]="project.color.textBadge"
+    (click)="$event.stopPropagation()">
+    
+    <!-- Figma Selection Handles on 4 Corners -->
+    <span class="card-selection-handle handle-tl"></span>
+    <span class="card-selection-handle handle-tr"></span>
+    <span class="card-selection-handle handle-bl"></span>
+    <span class="card-selection-handle handle-br"></span>
+
+    <!-- Figma Floating Frame Badge (Top Edge) -->
+    <div class="modal-frame-badge">
+      <span class="frame-tag-icon"><i class="fa-solid fa-layer-group"></i></span>
+      <span class="frame-tag-text"># FRAME: {{ project.title.toUpperCase() }}</span>
+      <span class="frame-dim">1180 × 680 • FIGMA INSPECT</span>
+    </div>
+
+    <!-- Top Navigation Header (Figma / IDE Style) -->
     <header class="modal-header">
-      <nav class="modal-nav">
+      <!-- Window Controls (Mac Style Traffic Lights) + Badge -->
+      <div class="window-decor-group">
+        <div class="window-dots-row">
+          <button class="window-dot dot-close" (click)="closeModal()" title="Cerrar modal"></button>
+          <span class="window-dot dot-min"></span>
+          <span class="window-dot dot-expand"></span>
+        </div>
+        <div class="project-pill-badge" [style.backgroundColor]="project.color.bgBadge" [style.color]="project.color.textBadge">
+          <i class="fa-solid fa-shapes mr-1"></i>
+          <span>{{ project.badge }}</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs (Pill style) -->
+      <nav class="modal-nav-tabs">
         <button 
           class="nav-tab-btn" 
           [class.active]="activeTab === 'overview'" 
           (click)="setTab('overview')">
-          Visión General
+          <i class="fa-solid fa-compass"></i>
+          <span>Visión General</span>
         </button>
         <button 
           class="nav-tab-btn" 
           [class.active]="activeTab === 'lore'" 
           (click)="setTab('lore')">
-          {{ project.category === 'game' ? 'Historia & Mecánicas' : 'Detalles & Arquitectura' }}
+          <i class="fa-solid fa-diagram-project"></i>
+          <span>{{ project.category === 'game' ? 'Historia & Mecánicas' : 'Detalles & Arquitectura' }}</span>
         </button>
         <button 
           class="nav-tab-btn" 
           [class.active]="activeTab === 'tech'" 
           (click)="setTab('tech')">
-          Stack & Especificaciones
+          <i class="fa-solid fa-code"></i>
+          <span>Stack & Specs</span>
         </button>
         <button 
           class="nav-tab-btn" 
           [class.active]="activeTab === 'sketch'" 
           (click)="setTab('sketch')">
-          Capturas & Galería
+          <i class="fa-solid fa-images"></i>
+          <span>Capturas ({{ galleryImages.length }})</span>
         </button>
       </nav>
 
-      <button class="close-btn" (click)="closeModal()" aria-label="Cerrar modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <!-- Right Actions (Dev Mode Pill & Close Button) -->
+      <div class="header-right-actions">
+        <div class="dev-mode-pill">
+          <i class="fa-solid fa-code-branch"></i>
+          <span>DEV MODE</span>
+        </div>
+        <button class="modal-close-btn" (click)="closeModal()" aria-label="Cerrar modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
     </header>
 
-    <!-- Main Content Grid -->
-    <div class="modal-body">
-      <!-- Left Column: Title, Year, Action Buttons -->
-      <div class="left-col">
-        <div class="year-badge">{{ project.year }}</div>
-        <h1 class="project-title">{{ project.title }}</h1>
-        <p class="project-subtitle">{{ project.subtitle }}</p>
+    <!-- Main Content Body -->
+    <div class="modal-body-scroll">
+      @switch (activeTab) {
+        
+        <!-- ============================================== -->
+        <!-- TAB 1: VISIÓN GENERAL (Hero Split 2-Column)     -->
+        <!-- ============================================== -->
+        @case ('overview') {
+          <div class="tab-pane-overview">
+            
+            <!-- Left Column: Specs, Pitch, Actions -->
+            <div class="overview-left-col">
+              
+              <!-- Meta Row: Year, Category & Live Status -->
+              <div class="overview-meta-row">
+                <span class="meta-tag year-tag">
+                  <i class="fa-regular fa-calendar mr-1"></i> {{ project.year }}
+                </span>
+                <span class="meta-tag category-tag capitalize">
+                  {{ project.category }}
+                </span>
+                <div class="status-live-chip">
+                  <span class="status-pulse-dot"></span>
+                  <span>{{ project.status }}</span>
+                </div>
+              </div>
 
-        <!-- Tagline / Pitch -->
-        <blockquote class="tagline-quote">
-          “{{ project.tagline }}”
-        </blockquote>
+              <!-- Main Title & Subtitle -->
+              <h1 class="overview-title">{{ project.title }}</h1>
+              <p class="overview-subtitle">{{ project.subtitle }}</p>
 
-        <!-- Action Buttons (Play / Github / Live) -->
-        <div class="actions-group">
-          @if (project.projectUrl && project.projectUrl !== '#') {
-            <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer" class="btn-primary">
-              <i class="fa-solid fa-play"></i>
-              <span>{{ project.category === 'game' ? 'Jugar / Probar' : 'Ver Proyecto Live' }}</span>
-            </a>
-          }
+              <!-- Tagline Pitch Quote Callout -->
+              <div class="overview-tagline-callout">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="tagline-text">“{{ project.tagline }}”</p>
+              </div>
 
-          @if (project.githubUrl) {
-            <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <i class="fa-brands fa-github"></i>
-              <span>Repositorio</span>
-            </a>
-          }
+              <!-- Synopsis Description -->
+              <div class="overview-description-box">
+                <h4 class="box-heading">
+                  <i class="fa-solid fa-align-left mr-1.5 text-cyan-400"></i> Sinopsis del Proyecto
+                </h4>
+                <p class="description-text">{{ project.description }}</p>
+              </div>
 
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            <span>{{ project.status }}</span>
-          </div>
-        </div>
-      </div>
+              <!-- Key Highlights / Puntos Clave -->
+              <div class="overview-highlights-box">
+                <h4 class="box-heading">
+                  <i class="fa-solid fa-sparkles mr-1.5 text-amber-400"></i> Puntos Clave de Diseño & Desarrollo:
+                </h4>
+                <ul class="highlights-list">
+                  @for (feat of project.features.slice(0, 3); track feat) {
+                    <li>
+                      <i class="fa-solid fa-circle-check check-icon"></i>
+                      <span>{{ feat }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
 
-      <!-- Center Column: Real Project Screenshot & Artwork Showcase -->
-      <div class="center-col">
-        <div class="modal-project-img-container">
-          @if (project.image) {
-            <div class="modal-project-img-frame">
-              <img [src]="project.image" [alt]="project.title" class="modal-project-main-image">
-              <div class="img-frame-glass-reflection"></div>
-            </div>
-          } @else {
-            <div class="cutout-wrapper">
-              <app-doodle-sketch type="extension" size="lg"></app-doodle-sketch>
-            </div>
-          }
-
-          <!-- Floating Stamp / Platform Badge -->
-          <div class="preset-tag-hint">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>{{ project.badge }} • {{ project.stampText }}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column: Synopsis, Features, Specs & Director Metadata -->
-      <div class="right-col">
-        @switch (activeTab) {
-          @case ('overview') {
-            <div class="tab-pane">
-              <h3 class="pane-heading">Sinopsis del Proyecto</h3>
-              <p class="description-text">{{ project.description }}</p>
-
-              <h4 class="subheading">Puntos Clave:</h4>
-              <ul class="features-list">
-                @for (feat of project.features.slice(0, 3); track feat) {
-                  <li>
-                    <i class="fa-solid fa-check-circle"></i>
-                    <span>{{ feat }}</span>
-                  </li>
+              <!-- Action CTA Buttons -->
+              <div class="overview-actions-row">
+                @if (project.projectUrl && project.projectUrl !== '#') {
+                  <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer" class="btn-primary-action">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>{{ project.category === 'game' ? 'Jugar / Probar' : 'Ver Proyecto Live' }}</span>
+                  </a>
                 }
-              </ul>
-            </div>
-          }
-
-          @case ('lore') {
-            <div class="tab-pane">
-              <h3 class="pane-heading">{{ project.category === 'game' ? 'Lore & Universo Narrativo' : 'Arquitectura & Flujo' }}</h3>
-              <p class="description-text leading-relaxed">{{ project.loreOrDetails }}</p>
-
-              <h4 class="subheading">Todas las Características:</h4>
-              <ul class="features-list">
-                @for (feat of project.features; track feat) {
-                  <li>
-                    <i class="fa-solid fa-sparkles"></i>
-                    <span>{{ feat }}</span>
-                  </li>
-                }
-              </ul>
-            </div>
-          }
-
-          @case ('tech') {
-            <div class="tab-pane">
-              <h3 class="pane-heading">Stack Tecnológico & Herramientas</h3>
-              <p class="description-text">Tecnologías seleccionadas para maximizar rendimiento y experiencia:</p>
-
-              <div class="tech-chips-grid">
-                @for (tech of project.technologies; track tech) {
-                  <div class="tech-chip">
-                    <i class="fa-solid fa-cube"></i>
-                    <span>{{ tech }}</span>
-                  </div>
+                @if (project.githubUrl) {
+                  <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn-secondary-action">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Repositorio</span>
+                  </a>
                 }
               </div>
 
-              <div class="tech-spec-box">
-                <div class="spec-row">
-                  <span class="spec-label">Categoría:</span>
-                  <span class="spec-value capitalize">{{ project.category }}</span>
+              <!-- Author / Creator Footer Bar -->
+              <div class="overview-author-bar">
+                <div class="author-info">
+                  <span class="author-label">DESARROLLADOR & CREADOR:</span>
+                  <span class="author-name">{{ project.role }}</span>
                 </div>
-                <div class="spec-row">
-                  <span class="spec-label">Versión / Estado:</span>
-                  <span class="spec-value">{{ project.status }}</span>
-                </div>
-                <div class="spec-row">
-                  <span class="spec-label">Sello de Archivo:</span>
-                  <span class="spec-value">{{ project.stampText }}</span>
+                <div class="stamp-verified-seal">
+                  <span>{{ project.stampText }}</span>
                 </div>
               </div>
-            </div>
-          }
 
-          @case ('sketch') {
-            <div class="tab-pane">
-              <h3 class="pane-heading">Galería & Capturas de Pantalla</h3>
-              <div class="gallery-preview-block">
-                @if (project.image) {
-                  <div class="gallery-primary-view">
-                    <img [src]="project.image" [alt]="project.title" class="gallery-expanded-img">
+            </div>
+
+            <!-- Right Column: Visual Artboard / Browser Mockup -->
+            <div class="overview-right-col">
+              
+              <!-- Browser Mockup Window Frame -->
+              <div class="browser-mockup-frame">
+                <!-- Browser Bar -->
+                <div class="browser-top-bar">
+                  <div class="browser-dots">
+                    <span></span><span></span><span></span>
                   </div>
-                }
-                @if (project.gallery && project.gallery.length > 0) {
-                  <div class="gallery-extra-thumbnails">
-                    @for (pic of project.gallery; track pic) {
-                      <img [src]="pic" [alt]="project.title" class="gallery-thumb-item">
+                  <div class="browser-url-pill">
+                    <i class="fa-solid fa-lock text-emerald-400 text-xs mr-1.5"></i>
+                    <span class="url-text">{{ project.projectUrl || ('agustinbenitez.dev/' + project.id) }}</span>
+                  </div>
+                  <span class="browser-badge-chip">
+                    <i class="fa-solid fa-desktop mr-1"></i> VIEWPORT
+                  </span>
+                </div>
+
+                <!-- Browser Screen -->
+                <div class="browser-viewport" (click)="setTab('sketch')" title="Haz clic para ver en pantalla completa">
+                  @if (selectedImage || project.image) {
+                    <img [src]="selectedImage || project.image" [alt]="project.title" class="mockup-img">
+                  } @else {
+                    <div class="mockup-fallback-box">
+                      <app-doodle-sketch type="extension" size="lg"></app-doodle-sketch>
+                    </div>
+                  }
+                  <div class="browser-hover-overlay">
+                    <span class="overlay-badge">
+                      <i class="fa-solid fa-expand mr-1.5"></i> Abrir en Galería
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Gallery Thumbnails Strip (Quick Switcher) -->
+              @if (galleryImages.length > 1) {
+                <div class="mini-gallery-strip">
+                  <div class="mini-gallery-label">
+                    <i class="fa-solid fa-photo-film mr-1 text-cyan-400"></i>
+                    <span>Capturas disponibles ({{ galleryImages.length }}):</span>
+                  </div>
+                  <div class="mini-thumbs-row">
+                    @for (img of galleryImages; track img; let i = $index) {
+                      <button 
+                        class="mini-thumb-btn" 
+                        [class.active]="selectedImage === img" 
+                        (click)="selectImage(img)"
+                        [title]="'Ver captura ' + (i + 1)">
+                        <img [src]="img" [alt]="project.title">
+                      </button>
                     }
                   </div>
+                </div>
+              }
+
+              <!-- Platform Badge Tag Hint -->
+              <div class="platform-badge-tag">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>{{ project.badge }} • {{ project.stampText }}</span>
+              </div>
+
+            </div>
+
+          </div>
+        }
+
+        <!-- ============================================== -->
+        <!-- TAB 2: DETALLES & ARQUITECTURA / LORE          -->
+        <!-- ============================================== -->
+        @case ('lore') {
+          <div class="tab-pane-lore">
+            
+            <!-- Architecture & Concept Narrative Card -->
+            <div class="lore-section-card narrative-card">
+              <div class="card-header-row">
+                <div class="card-header-badge">
+                  <i class="fa-solid fa-sitemap mr-1.5 text-cyan-400"></i>
+                  <span>ARQUITECTURA & CONCEPTO</span>
+                </div>
+                <span class="card-header-sub">DISEÑO DE SISTEMAS</span>
+              </div>
+              <h2 class="card-main-title">
+                {{ project.category === 'game' ? 'Universo Narrativo, Sistemas & Mecánicas de Juego' : 'Arquitectura Técnica, Flujo del Sistema & Decisiones de Diseño' }}
+              </h2>
+              <p class="narrative-body-text">{{ project.loreOrDetails }}</p>
+            </div>
+
+            <!-- Features Mosaic Grid -->
+            <div class="lore-section-card features-card">
+              <div class="card-header-row">
+                <div class="card-header-badge">
+                  <i class="fa-solid fa-sparkles mr-1.5 text-amber-400"></i>
+                  <span>ESPECIFICACIONES DEL PROYECTO</span>
+                </div>
+                <span class="card-header-sub">{{ project.features.length }} CARACTERÍSTICAS</span>
+              </div>
+              <h3 class="card-sub-title">Desglose de Funcionalidades Implementadas</h3>
+
+              <div class="features-mosaic-grid">
+                @for (feat of project.features; track feat; let idx = $index) {
+                  <div class="feature-item-card">
+                    <span class="feature-index">0{{ idx + 1 }}</span>
+                    <div class="feature-content-wrapper">
+                      <i class="fa-solid fa-bolt feature-icon"></i>
+                      <p class="feature-text">{{ feat }}</p>
+                    </div>
+                  </div>
                 }
               </div>
             </div>
-          }
+
+          </div>
         }
 
-        <!-- Director / Role Footer (Image 4 inspired footer: DIRECTOR: Makoto Shinkai) -->
-        <footer class="director-footer">
-          <div class="director-info">
-            <span class="director-label">DESARROLLADOR & CREADOR:</span>
-            <span class="director-name">{{ project.role }}</span>
+        <!-- ============================================== -->
+        <!-- TAB 3: STACK & SPECS (Figma Dev Mode Inspector)-->
+        <!-- ============================================== -->
+        @case ('tech') {
+          <div class="tab-pane-tech">
+            
+            <!-- Left Side: Tech Chips Grid -->
+            <div class="tech-left-col">
+              <div class="tech-card-wrapper">
+                <div class="card-header-row">
+                  <div class="card-header-badge">
+                    <i class="fa-solid fa-cubes mr-1.5 text-cyan-400"></i>
+                    <span>STACK TECNOLÓGICO</span>
+                  </div>
+                  <span class="card-header-sub">{{ project.technologies.length }} HERRAMIENTAS</span>
+                </div>
+                <h2 class="card-main-title">Tecnologías & Herramientas Implementadas</h2>
+                <p class="tech-intro-text">
+                  Stack seleccionado estratégicamente para garantizar máximo rendimiento, accesibilidad y experiencia de usuario fluida:
+                </p>
+
+                <div class="tech-chips-mosaic">
+                  @for (tech of project.technologies; track tech) {
+                    <div class="tech-pill-chip">
+                      <i class="fa-solid fa-cube chip-icon"></i>
+                      <span class="chip-name">{{ tech }}</span>
+                    </div>
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Figma Dev Mode Inspector Panel -->
+            <div class="tech-right-col">
+              <div class="figma-inspector-panel">
+                <div class="inspector-header">
+                  <div class="inspector-header-left">
+                    <i class="fa-solid fa-sliders text-cyan-400 mr-2"></i>
+                    <span class="inspector-title">FIGMA PROPERTIES INSPECTOR</span>
+                  </div>
+                  <span class="dev-badge-tag">DEV MODE</span>
+                </div>
+
+                <div class="inspector-table">
+                  <div class="inspect-row">
+                    <span class="inspect-key">Nombre:</span>
+                    <span class="inspect-val font-semibold text-white">{{ project.title }}</span>
+                  </div>
+                  <div class="inspect-row">
+                    <span class="inspect-key">ID Componente:</span>
+                    <span class="inspect-val font-mono text-cyan-300">#{{ project.id }}</span>
+                  </div>
+                  <div class="inspect-row">
+                    <span class="inspect-key">Categoría:</span>
+                    <span class="inspect-val capitalize">{{ project.category }}</span>
+                  </div>
+                  <div class="inspect-row">
+                    <span class="inspect-key">Año / Edición:</span>
+                    <span class="inspect-val">{{ project.year }}</span>
+                  </div>
+                  <div class="inspect-row">
+                    <span class="inspect-key">Estado:</span>
+                    <span class="inspect-val text-emerald-400 font-semibold">{{ project.status }}</span>
+                  </div>
+                  <div class="inspect-row">
+                    <span class="inspect-key">Rol / Autoría:</span>
+                    <span class="inspect-val">{{ project.role }}</span>
+                  </div>
+                  <div class="inspect-row">
+                    <span class="inspect-key">Sello de Archivo:</span>
+                    <span class="inspect-val text-amber-300 font-mono font-bold">{{ project.stampText }}</span>
+                  </div>
+                  @if (project.projectUrl) {
+                    <div class="inspect-row">
+                      <span class="inspect-key">URL Producción:</span>
+                      <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer" class="inspect-link truncate font-mono text-xs">
+                        {{ project.projectUrl }}
+                        <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                      </a>
+                    </div>
+                  }
+                  @if (project.githubUrl) {
+                    <div class="inspect-row">
+                      <span class="inspect-key">Repositorio:</span>
+                      <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="inspect-link truncate font-mono text-xs">
+                        {{ project.githubUrl }}
+                        <i class="fa-brands fa-github ml-1"></i>
+                      </a>
+                    </div>
+                  }
+                </div>
+
+                <div class="inspector-footer-box">
+                  <div class="footer-spec-tag">
+                    <i class="fa-solid fa-check text-emerald-400 mr-1"></i>
+                    <span>Producción Optimizada & Semántica 100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div class="seal-badge">
-            <span class="seal-text">{{ project.stampText }}</span>
+        }
+
+        <!-- ============================================== -->
+        <!-- TAB 4: CAPTURAS & GALERÍA                      -->
+        <!-- ============================================== -->
+        @case ('sketch') {
+          <div class="tab-pane-gallery">
+            
+            <!-- Gallery Top Bar -->
+            <div class="gallery-control-bar">
+              <div class="gallery-info-left">
+                <span class="gallery-bar-badge">
+                  <i class="fa-solid fa-images mr-1.5 text-cyan-400"></i>
+                  <span>VISUALIZADOR DE ASSETS & CAPTURAS</span>
+                </span>
+                <span class="gallery-active-title">{{ project.title }}</span>
+              </div>
+              <div class="gallery-counter-pill">
+                <span>{{ galleryImages.indexOf(selectedImage) + 1 }} de {{ galleryImages.length }}</span>
+              </div>
+            </div>
+
+            <!-- Hero Main Image Stage -->
+            <div class="gallery-main-stage">
+              <div class="gallery-image-wrapper">
+                <img [src]="selectedImage || project.image" [alt]="project.title" class="gallery-hero-image">
+                <div class="gallery-image-reflection"></div>
+              </div>
+            </div>
+
+            <!-- Interactive Carousel Thumbnails Strip -->
+            @if (galleryImages.length > 1) {
+              <div class="gallery-thumbnails-strip">
+                @for (pic of galleryImages; track pic; let i = $index) {
+                  <button 
+                    class="gallery-thumb-card" 
+                    [class.active]="selectedImage === pic" 
+                    (click)="selectImage(pic)">
+                    <img [src]="pic" [alt]="project.title + ' vista ' + (i + 1)">
+                    <div class="thumb-info-overlay">
+                      <span class="thumb-seq">0{{ i + 1 }}</span>
+                    </div>
+                  </button>
+                }
+              </div>
+            }
+
           </div>
-        </footer>
-      </div>
+        }
+
+      }
     </div>
+
   </div>
 </div>

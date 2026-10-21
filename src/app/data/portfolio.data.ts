@@ -116,6 +116,13 @@ export const PROJECTS_DATA: Project[] = [
     githubUrl: 'https://github.com/AgustinBeniteez',
     demoUrl: '#',
     image: 'assets/images/portadavideo.png',
+    gallery: [
+      'assets/images/portadavideo.png',
+      'assets/images/morganaSplashArt.png',
+      'assets/images/projects/laux_gameplay.png',
+      'assets/images/projects/laux_selector.png',
+      'assets/images/projects/laux_game_presentacion.gif'
+    ],
     sketchType: 'king-game',
     color: {
       accent: '#f59e0b',
@@ -150,7 +157,9 @@ export const PROJECTS_DATA: Project[] = [
     githubUrl: 'https://github.com/AgustinBeniteez/valorantdle',
     image: 'assets/images/projects/valorantdle-banner.png',
     gallery: [
-      'assets/images/projects/valorantdle-banner.png'
+      'assets/images/projects/valorantdle-banner.png',
+      'assets/images/Valorantdle-gallery1.png',
+      'assets/images/Valorantdle-gallery2.png'
     ],
     sketchType: 'valorantdle',
     color: {
@@ -218,6 +227,11 @@ export const PROJECTS_DATA: Project[] = [
     projectUrl: 'https://enmamanualidades.vercel.app',
     githubUrl: 'https://github.com/AgustinBeniteez/enma-manualidades-public-repository',
     image: 'assets/images/projects/webEnmaManualidades.png',
+    gallery: [
+      'assets/images/projects/webEnmaManualidades.png',
+      'assets/images/EnmaManualidades-web.png',
+      'assets/images/EnmaManualidades-admin.png'
+    ],
     sketchType: 'enma-shop',
     color: {
       accent: '#ec4899',
@@ -321,6 +335,10 @@ export const PROJECTS_DATA: Project[] = [
     projectUrl: 'https://elementscssdaj.github.io/',
     githubUrl: 'https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io',
     image: 'assets/images/projects/elementscssdaj.png',
+    gallery: [
+      'assets/images/projects/elementscssdaj.png',
+      'assets/images/projects/ElementsCssDaj (AD).png'
+    ],
     sketchType: 'elements',
     color: {
       accent: '#0ea5e9',
