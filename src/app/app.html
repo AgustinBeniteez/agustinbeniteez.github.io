@@ -69,8 +69,7 @@
         </div>
 
         <!-- Center Bounding Box & Title: AGUSTIN BENITEZ -->
-        <div class="selection-bounding-box"
-             [style.transform]="'rotate(-3deg) translate3d(' + (mouseX() * 12) + 'px, ' + (mouseY() * 8) + 'px, 0)'">
+        <div class="selection-bounding-box">
           
           <span class="resize-handle handle-tl"></span>
           <span class="resize-handle handle-tr"></span>
@@ -95,8 +94,7 @@
           </div>
 
           <!-- Giant Impact Name -->
-          <div class="giant-name-container"
-               [style.transform]="'translate3d(' + (scrollY() * 0.15) + 'px, ' + (scrollY() * -0.08) + 'px, 0)'">
+          <div class="giant-name-container">
             <h1 class="giant-word word-agustin">
               <span class="letter">A</span><span class="letter">G</span><span class="letter">U</span><span class="letter">S</span><span class="letter">T</span><span class="letter">I</span><span class="letter">N</span>
             </h1>
@@ -112,16 +110,14 @@
           </div>
 
           <!-- Live Multiplayer Cursors -->
-          <div class="multiplayer-cursor cursor-orange"
-               [style.transform]="'translate3d(' + (mouseX() * 20) + 'px, ' + (mouseY() * 15) + 'px, 0)'">
+          <div class="multiplayer-cursor cursor-orange">
             <svg class="cursor-pointer-svg" viewBox="0 0 24 24" width="22" height="22">
               <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#f97316" stroke="#ffffff" stroke-width="1.5" />
             </svg>
             <span class="cursor-name-tag">Agustín Benítez</span>
           </div>
 
-          <div class="multiplayer-cursor cursor-cyan"
-               [style.transform]="'translate3d(' + (mouseX() * -15) + 'px, ' + (mouseY() * -12) + 'px, 0)'">
+          <div class="multiplayer-cursor cursor-cyan">
             <svg class="cursor-pointer-svg" viewBox="0 0 24 24" width="22" height="22">
               <path d="M 3,2 L 11,21 L 14,14 L 21,11 Z" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5" />
             </svg>
@@ -180,7 +176,7 @@
                 <div class="polaroid-masking-tape"></div>
                 <div class="photo-img-wrapper">
                   <img 
-                    src="assets/images/foto-perfil-agus.webp" 
+                    src="assets/images/foto-perfil-agus.webp" width="300" height="330" decoding="async" fetchpriority="high" 
                     alt="Agustín Benítez" 
                     class="dev-real-photo"
                     onerror="this.src='assets/images/agustheking.webp'">
@@ -356,7 +352,7 @@
             @for (item of educationList; track item.id) {
               <article class="academic-card">
                 <div class="academic-card-img-wrapper">
-                  <img [src]="item.image" [alt]="item.title" class="academic-banner-img">
+                  <img [src]="item.image" [alt]="item.title" class="academic-banner-img" width="400" height="200" loading="lazy" decoding="async">
                   <div class="academic-img-gradient"></div>
                   <span class="academic-status-pill">{{ item.periodOrStatus }}</span>
                 </div>
@@ -453,7 +449,7 @@
 
                 <!-- Real Project Thumbnail Image (From public/assets/images/projects/) -->
                 <div class="asym-thumbnail-img-box">
-                  <img [src]="proj.image" [alt]="proj.title" class="asym-project-thumb-img" loading="lazy">
+                  <img [src]="proj.image" [alt]="proj.title" class="asym-project-thumb-img" width="360" height="180" loading="lazy" decoding="async">
                   <div class="thumb-hover-overlay">
                     <span class="thumb-view-badge">
                       <i class="fa-solid fa-expand mr-1"></i> Ver Detalles
@@ -517,7 +513,7 @@
               <!-- Right Stack: Giant KING with Crown over G -->
               <div class="atk-king-column">
                 <img 
-                  src="assets/images/atkLogo.png" 
+                  src="assets/images/atkLogo.png" width="48" height="48" loading="lazy" decoding="async" 
                   alt="Corona ATK" 
                   class="atk-floating-crown-img">
                 <span class="atk-word-king">KING</span>
@@ -557,7 +553,7 @@
           <!-- LAYER 2 (z-index: 2): Morgana Splash Art (Cutout Character Sitting at Tavern) -->
           <div class="cinematic-character-layer">
             <img 
-              src="assets/images/morganaSplashArt.png" 
+              src="assets/images/morganaSplashArt.webp" width="360" height="420" loading="lazy" decoding="async" 
               alt="Morgana - Arch: Origins of a king" 
               class="morgana-splash-img"
               onerror="this.src='assets/images/king.webp'">
@@ -610,7 +606,7 @@
             <div class="stage-wing-right">
               <div class="stage-direct-cover-wrap" (click)="scrollToTrailer()" title="Click para ver Avances">
                 <img 
-                  src="assets/images/portadavideo.png" 
+                  src="assets/images/portadavideo.webp" width="640" height="360" loading="lazy" decoding="async" 
                   alt="Portada Oficial Arch: Origins of a king" 
                   class="stage-direct-cover-png"
                   onerror="this.src='assets/images/king.webp'">
@@ -647,15 +643,23 @@
           </div>
 
           <div class="trailer-video-frame-wrapper">
-            <iframe 
-              src="https://www.youtube.com/embed/3jb6Oxrzqnc?si=oRfi3E447srb7UZ0" 
-              title="Arch: Origins of a king - Avances de Gameplay" 
-              class="trailer-iframe"
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
-            </iframe>
+            @if (portfolioMode() === 'game') {
+              <iframe 
+                loading="lazy"
+                src="https://www.youtube.com/embed/3jb6Oxrzqnc?si=oRfi3E447srb7UZ0" 
+                title="Arch: Origins of a king - Avances de Gameplay" 
+                class="trailer-iframe"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+              </iframe>
+            } @else {
+              <div class="trailer-lazy-placeholder">
+                <i class="fa-solid fa-play text-purple-400"></i>
+                <span>Carga del Tráiler en Modo Videojuegos</span>
+              </div>
+            }
           </div>
         </div>
 
