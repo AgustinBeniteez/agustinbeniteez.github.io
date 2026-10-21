@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-doodle-sketch',
   standalone: true,
   templateUrl: './doodle-sketch.component.html',
-  styleUrls: ['./doodle-sketch.component.css']
+  styleUrls: ['./doodle-sketch.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DoodleSketchComponent {
   @Input() type: 'king-hero' | 'dev-avatar' | 'valorantdle' | 'extension' | 'enma-shop' | 'melody' | 'wikimods' | 'coffee-cup' | 'compass' | 'shiro-eraser' = 'king-hero';

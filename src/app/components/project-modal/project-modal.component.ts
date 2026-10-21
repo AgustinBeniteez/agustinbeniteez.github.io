@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, HostListener, OnInit, OnChanges, SimpleChanges, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, HostListener, OnInit, OnChanges, SimpleChanges, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Project } from '../../models/project.model';
 import { SoundService } from '../../services/sound.service';
 import { DoodleSketchComponent } from '../doodle-sketch/doodle-sketch.component';
@@ -8,7 +8,8 @@ import { DoodleSketchComponent } from '../doodle-sketch/doodle-sketch.component'
   standalone: true,
   imports: [DoodleSketchComponent],
   templateUrl: './project-modal.component.html',
-  styleUrls: ['./project-modal.component.css']
+  styleUrls: ['./project-modal.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectModalComponent implements OnInit, OnChanges {
   @Input({ required: true }) project!: Project;

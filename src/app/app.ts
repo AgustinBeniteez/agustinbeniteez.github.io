@@ -1,4 +1,4 @@
-import { Component, computed, signal, HostListener, OnInit } from '@angular/core';
+import { Component, computed, signal, OnInit, OnDestroy, inject, NgZone, ChangeDetectionStrategy } from '@angular/core';
 import { DEVELOPER_PROFILE, EDUCATION_DATA, PROJECTS_DATA, SKILL_CATEGORIES } from './data/portfolio.data';
 import { Project } from './models/project.model';
 import { ProjectModalComponent } from './components/project-modal/project-modal.component';
@@ -9,9 +9,10 @@ import { SoundService } from './services/sound.service';
   standalone: true,
   imports: [ProjectModalComponent],
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  styleUrls: ['./app.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App implements OnInit {
+export class App implements OnInit, OnDestroy {
   // Data
   readonly profile = DEVELOPER_PROFILE;
   readonly allProjects = PROJECTS_DATA;
@@ -22,19 +23,60 @@ export class App implements OnInit {
   readonly portfolioMode = signal<'web' | 'game'>('web');
   readonly selectedProject = signal<Project | null>(null);
   readonly activeTab = signal<'all' | 'game' | 'web' | 'tools' | 'about'>('all');
-  
-  // Interactive Mouse Parallax & Title Overflow Animation
-  readonly mouseX = signal<number>(0);
-  readonly mouseY = signal<number>(0);
-  readonly scrollY = signal<number>(0);
 
   // Active Tool in Figma Toolbar
   readonly activeTool = signal<'cursor' | 'frame' | 'pen' | 'text' | 'hand' | 'code'>('cursor');
 
-  constructor(public sound: SoundService) {}
+  public sound = inject(SoundService);
+  private ngZone = inject(NgZone);
+
+  private cleanupListeners?: () => void;
 
   ngOnInit(): void {
-    // Initial setup
+    // Parallax mouse and scroll running outside Angular zone
+    // to prevent triggering Change Detection and Layout Thrashing on high-frequency events
+    this.ngZone.runOutsideAngular(() => {
+      let mouseFrameId: number | null = null;
+      let scrollFrameId: number | null = null;
+      let targetX = 0;
+      let targetY = 0;
+      const root = document.documentElement;
+
+      const handleMove = (e: MouseEvent) => {
+        targetX = (e.clientX / window.innerWidth) * 2 - 1;
+        targetY = (e.clientY / window.innerHeight) * 2 - 1;
+        if (mouseFrameId === null) {
+          mouseFrameId = requestAnimationFrame(() => {
+            root.style.setProperty('--mouse-x', targetX.toFixed(3));
+            root.style.setProperty('--mouse-y', targetY.toFixed(3));
+            mouseFrameId = null;
+          });
+        }
+      };
+
+      const handleScroll = () => {
+        if (scrollFrameId === null) {
+          scrollFrameId = requestAnimationFrame(() => {
+            root.style.setProperty('--scroll-y', window.scrollY.toFixed(1));
+            scrollFrameId = null;
+          });
+        }
+      };
+
+      window.addEventListener('mousemove', handleMove, { passive: true });
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      this.cleanupListeners = () => {
+        window.removeEventListener('mousemove', handleMove);
+        window.removeEventListener('scroll', handleScroll);
+        if (mouseFrameId !== null) cancelAnimationFrame(mouseFrameId);
+        if (scrollFrameId !== null) cancelAnimationFrame(scrollFrameId);
+      };
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.cleanupListeners?.();
   }
 
   // Web Projects (Only web projects, tools and extensions - game is exclusive to Modo Juegos)
@@ -98,18 +140,5 @@ export class App implements OnInit {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  }
-
-  @HostListener('window:mousemove', ['$event'])
-  onMouseMove(e: MouseEvent): void {
-    const normX = (e.clientX / window.innerWidth) * 2 - 1;
-    const normY = (e.clientY / window.innerHeight) * 2 - 1;
-    this.mouseX.set(normX);
-    this.mouseY.set(normY);
-  }
-
-  @HostListener('window:scroll')
-  onScroll(): void {
-    this.scrollY.set(window.scrollY);
   }
 }

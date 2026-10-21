@@ -12,3 +12,6 @@ yarn-error.log*
 # OS Files
 Thumbs.db
 .DS_Store
+
+# Media Archive (High-res uncompressed originals & raw media)
+media_archive/

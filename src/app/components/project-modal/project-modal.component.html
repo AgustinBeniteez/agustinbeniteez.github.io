@@ -57,7 +57,10 @@
                 <img 
                   [src]="selectedImage || project.image" 
                   [alt]="project.title" 
-                  class="cover-image-img">
+                  class="cover-image-img"
+                  width="700"
+                  height="400"
+                  decoding="async">
               } @else {
                 <div class="cover-image-fallback">
                   <app-doodle-sketch type="extension" size="lg"></app-doodle-sketch>
@@ -375,7 +378,7 @@
                   <!-- Active Image Showcase Stage -->
                   <div class="gallery-active-stage">
                     <div class="gallery-active-frame">
-                      <img [src]="selectedImage || project.image" [alt]="project.title" class="gallery-stage-img">
+                      <img [src]="selectedImage || project.image" [alt]="project.title" class="gallery-stage-img" width="800" height="450" decoding="async">
                     </div>
                     <div class="gallery-stage-caption">
                       <span class="gallery-counter">
@@ -401,7 +404,7 @@
                             [class.active]="selectedImage === pic" 
                             (click)="selectImage(pic)"
                             [title]="'Ver captura ' + (i + 1)">
-                            <img [src]="pic" [alt]="project.title + ' miniatura ' + (i + 1)">
+                            <img [src]="pic" [alt]="project.title + ' miniatura ' + (i + 1)" width="120" height="80" loading="lazy" decoding="async">
                             <span class="thumb-index-tag">0{{ i + 1 }}</span>
                           </button>
                         }

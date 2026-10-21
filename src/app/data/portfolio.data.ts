@@ -116,12 +116,12 @@ export const PROJECTS_DATA: Project[] = [
     projectUrl: 'https://github.com/AgustinBeniteez',
     githubUrl: 'https://github.com/AgustinBeniteez',
     demoUrl: '#',
-    image: 'assets/images/portadavideo.png',
+    image: 'assets/images/portadavideo.webp',
     gallery: [
-      'assets/images/portadavideo.png',
-      'assets/images/morganaSplashArt.png',
-      'assets/images/projects/laux_gameplay.png',
-      'assets/images/projects/laux_selector.png',
+      'assets/images/portadavideo.webp',
+      'assets/images/morganaSplashArt.webp',
+      'assets/images/projects/laux_gameplay.webp',
+      'assets/images/projects/laux_selector.webp',
       'assets/images/projects/laux_game_presentacion.gif'
     ],
     sketchType: 'king-game',
@@ -156,11 +156,11 @@ export const PROJECTS_DATA: Project[] = [
     status: 'Publicado y Jugable',
     projectUrl: 'https://valorantdle-game.vercel.app',
     githubUrl: 'https://github.com/AgustinBeniteez/valorantdle',
-    image: 'assets/images/projects/valorantdle-banner.png',
+    image: 'assets/images/projects/valorantdle-banner.webp',
     gallery: [
-      'assets/images/projects/valorantdle-banner.png',
-      'assets/images/Valorantdle-gallery1.png',
-      'assets/images/Valorantdle-gallery2.png'
+      'assets/images/projects/valorantdle-banner.webp',
+      'assets/images/Valorantdle-gallery1.webp',
+      'assets/images/Valorantdle-gallery2.webp'
     ],
     sketchType: 'valorantdle',
     color: {
@@ -227,11 +227,11 @@ export const PROJECTS_DATA: Project[] = [
     status: 'Proyecto Desplegado',
     projectUrl: 'https://enmamanualidades.vercel.app',
     githubUrl: 'https://github.com/AgustinBeniteez/enma-manualidades-public-repository',
-    image: 'assets/images/projects/webEnmaManualidades.png',
+    image: 'assets/images/projects/webEnmaManualidades.webp',
     gallery: [
-      'assets/images/projects/webEnmaManualidades.png',
-      'assets/images/EnmaManualidades-web.png',
-      'assets/images/EnmaManualidades-admin.png'
+      'assets/images/projects/webEnmaManualidades.webp',
+      'assets/images/EnmaManualidades-web.webp',
+      'assets/images/EnmaManualidades-admin.webp'
     ],
     sketchType: 'enma-shop',
     color: {
@@ -265,10 +265,10 @@ export const PROJECTS_DATA: Project[] = [
     status: 'Completado & Demo en Línea',
     projectUrl: 'https://melody-topaz.vercel.app',
     githubUrl: 'https://github.com/AgustinBeniteez/melody',
-    image: 'assets/images/projects/previewMelody.png',
+    image: 'assets/images/projects/previewMelody.webp',
     gallery: [
-      'assets/images/projects/previewMelodyAlbum.png',
-      'assets/images/projects/previewMelodyThemes.png'
+      'assets/images/projects/previewMelodyAlbum.webp',
+      'assets/images/projects/previewMelodyThemes.webp'
     ],
     sketchType: 'melody',
     color: {
@@ -302,7 +302,7 @@ export const PROJECTS_DATA: Project[] = [
     status: 'Activo con Actualizaciones Periódicas',
     projectUrl: 'https://agustinbeniteez.github.io/Wikimods/',
     githubUrl: 'https://github.com/AgustinBeniteez',
-    image: 'assets/images/projects/wikimodATK.png',
+    image: 'assets/images/projects/wikimodATK.webp',
     sketchType: 'wikimods',
     color: {
       accent: '#10b981',
@@ -335,10 +335,10 @@ export const PROJECTS_DATA: Project[] = [
     status: 'Publicado & Repositorio Abierto',
     projectUrl: 'https://elementscssdaj.github.io/',
     githubUrl: 'https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io',
-    image: 'assets/images/projects/elementscssdaj.png',
+    image: 'assets/images/projects/elementscssdaj.webp',
     gallery: [
-      'assets/images/projects/elementscssdaj.png',
-      'assets/images/projects/ElementsCssDaj (AD).png'
+      'assets/images/projects/elementscssdaj.webp',
+      'assets/images/projects/ElementsCssDaj (AD).webp'
     ],
     sketchType: 'elements',
     color: {
@@ -372,7 +372,7 @@ export const PROJECTS_DATA: Project[] = [
     status: 'En Línea & Funcional',
     projectUrl: 'https://elementscssdaj.github.io/editor/editor.html',
     githubUrl: 'https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io/tree/main/editor',
-    image: 'assets/images/projects/EditorDAJsocial.png',
+    image: 'assets/images/projects/EditorDAJsocial.webp',
     sketchType: 'editor',
     color: {
       accent: '#6366f1',
@@ -405,7 +405,7 @@ export const PROJECTS_DATA: Project[] = [
     status: 'Desplegado en Producción',
     projectUrl: 'https://lauraacastro.github.io/',
     githubUrl: 'https://github.com/LauraaCastro/LauraaCastro.github.io',
-    image: 'assets/images/projects/laura-profolio-min.png',
+    image: 'assets/images/projects/laura-profolio-min.webp',
     sketchType: 'laura',
     color: {
       accent: '#f43f5e',
