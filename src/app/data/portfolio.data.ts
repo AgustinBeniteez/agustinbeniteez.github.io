@@ -4,8 +4,8 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
   name: 'Agustín Benítez',
   alias: 'Agus The King',
   title: 'Web Developer & Indie Game Creator',
-  subtitle: 'Desarrollador Frontend • Creador de Experiencias Interactivas',
-  bio: 'Desarrollador web con pasión por el diseño interactivo y la creación de videojuegos. Me gusta transformar ideas en código limpio y mundos visuales con identidad propia, desde aplicaciones web funcionales hasta mi propio videojuego "Arch Origins Of A King".',
+  subtitle: 'Desarrollador Frontend & Backend',
+  bio: 'Desarrollador web y de software con pasión por la creación de videojuegos. Me gusta transformar ideas en código limpio, arquitecturas escalables y mundos visuales con identidad propia, desde aplicaciones web completas hasta mi propio videojuego "Arch: Origins of a King".',
   location: 'España (Andalucía / Cádiz)',
   experienceYears: '3+ años creando proyectos web',
   quote: '"El código es la estructura, el diseño es el alma y el videojuego es el viaje."',
@@ -50,7 +50,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: 'Angular', level: 'Framework principal' },
       { name: 'Tailwind CSS', level: 'Estilos modernos' },
-      { name: 'TypeScript / JS', level: 'Lógica avanzada' },
+      { name: 'JavaScript & TypeScript', level: 'Lógica avanzada' },
       { name: 'HTML5 & Semántica', level: 'Estructura web' },
       { name: 'CSS3 / Animaciones', level: 'UI / UX fluida' }
     ]
@@ -72,7 +72,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: 'Node.js', level: 'Servicios backend' },
       { name: 'SQL & Bases de datos', level: 'Consultas y esquemas' },
-      { name: 'Python & Java', level: 'POO y utilidades' },
+      { name: 'Java & Spring Boot', level: 'Desarrollo backend & APIs' },
+      { name: 'Python & Scripts', level: 'POO y utilidades' },
       { name: 'Git & GitHub', level: 'Control de versiones' },
       { name: 'Figma', level: 'Prototipado visual' }
     ]
@@ -93,7 +94,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Videojuego roguelite de supervivencia y acción 3D con cámara isométrica desarrollado en Java 17 y libGDX. El jugador se enfrenta a oleadas masivas de enemigos, monstruos de élite y jefes colosales, mejorando su arsenal, amuletos y personajes (como Arturo y Morgana) en partidas individuales offline o en multijugador cooperativo con Steamworks P2P.',
     loreOrDetails: 'Ambientado en un rico universo de fantasía y magia artúrica. El combate combina la fuerza física con la magia arcana: Arturo empuña espadas y mandobles imbuidos de antimagia, cortes de choque y auras de espada definitiva; mientras que Morgana canaliza magia oscura, rayos arcanos, prisiones de sombra y orbes oscuros mediante su grimorio y báculo mágico. El juego incluye un sistema profundo de progresión con árbol de talentos (Bloodweb), arsenal de armas mágicas, amuletos con sinergias y soporte completo para multijugador cooperativo con chat de voz e invitaciones en Steam.',
     features: [
-      'Roguelite Survivor 3D Isométrico: combate táctico contra hordas masivas de enemigos, criaturas de élite y jefes de fase con cámara isométrica.',
+      'Roguelite Survivor 3D Isométrico: acción y supervivencia roguelite contra hordas masivas de enemigos, criaturas de élite y jefes de fase con cámara isométrica.',
       'Personajes con Magia Artúrica Única: Arturo (antimagia, mandoble y cortes de choque) y Morgana (magia oscura, rayos arcanos, orbes y grimorio).',
       'Multijugador Cooperativo Steamworks: P2P funcional con creación/búsqueda de lobbies, sincronización en tiempo real y chat de voz.',
       'Progresión y Árbol de Talentos (Bloodweb): desbloqueo de perks, arsenal mágico, amuletos coleccionables y sinergias de combate.',

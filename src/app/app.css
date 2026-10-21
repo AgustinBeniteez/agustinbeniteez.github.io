@@ -838,14 +838,32 @@
 }
 
 .intro-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #f1f5f9;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
-  padding: 0.2rem 0.6rem;
-  border-radius: 5px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.intro-skill-pill:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.intro-skill-pill i {
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* CTA Row */
