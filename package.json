@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:gh-pages": "ng build --base-href ./",
-    "build:docs": "ng build --base-href ./ && powershell -Command \"if (Test-Path docs) { Remove-Item docs -Recurse -Force }; Copy-Item dist/portfolio/browser docs -Recurse -Force\""
+    "build:docs": "ng build --base-href ./ && powershell -Command \"if (Test-Path docs) { Remove-Item docs -Recurse -Force }; Copy-Item dist/portfolio/browser docs -Recurse -Force; Copy-Item docs/index.html docs/404.html; New-Item -ItemType File -Path docs/.nojekyll -Force\""
   },
   "private": true,
   "packageManager": "npm@10.9.2",
