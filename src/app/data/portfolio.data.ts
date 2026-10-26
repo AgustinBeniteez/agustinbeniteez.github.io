@@ -2,7 +2,7 @@ import { DeveloperProfile, EducationItem, Project, SkillCategory } from '../mode
 
 export const DEVELOPER_PROFILE: DeveloperProfile = {
   name: 'Agustín Benítez',
-  alias: 'Agus The King',
+  alias: 'AgusTheKing',
   title: 'Web Developer & Indie Game Creator',
   subtitle: 'Desarrollador Frontend & Backend',
   bio: 'Desarrollador web y de software con pasión por la creación de videojuegos. Me gusta transformar ideas en código limpio, arquitecturas escalables y mundos visuales con identidad propia, desde aplicaciones web completas hasta mi propio videojuego "Arch: Origins of a King".',
@@ -137,7 +137,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'anime-lover',
     title: 'AnimeLover',
     subtitle: 'Personal Anime & Manga Watchlist Platform',
-    year: '2024 - 2025',
+    year: '2024 - 2026',
     category: 'web',
     featured: false,
     badge: 'ANIME WATCHLIST & API',
