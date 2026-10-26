@@ -134,6 +134,41 @@ export const PROJECTS_DATA: Project[] = [
     rotationDeg: -1.8
   },
   {
+    id: 'anime-lover',
+    title: 'AnimeLover',
+    subtitle: 'Personal Anime & Manga Watchlist Platform',
+    year: '2024 - 2025',
+    category: 'web',
+    featured: false,
+    badge: 'ANIME WATCHLIST & API',
+    stampText: 'VERCEL LIVE',
+    tagline: 'Organiza, descubre y lleva el seguimiento de tus series de anime y manga favoritas.',
+    description: 'Plataforma web moderna y fluida para el seguimiento y gestión de series de anime y manga. Permite explorar portadas en alta resolución, consultar sinopsis y detalles técnicos, gestionar listas personales de visualización y descubrir nuevas recomendaciones.',
+    loreOrDetails: 'Diseñada con una interfaz moderna y cinematográfica centrada en la experiencia de usuario. Implementa navegación ágil, carga optimizada de multimedia, categorización por géneros y estados de seguimiento (viendo, completado, pendientes y favoritos).',
+    features: [
+      'Watchlist interactiva con gestión de estados (viendo, completado, pendiente y favoritos).',
+      'Catálogo visual con portadas en alta definición y fichas técnicas completas.',
+      'Buscador dinámico y filtrado instantáneo por categorías y temporadas.',
+      'Diseño responsive adaptado a cualquier dispositivo y tiempos de carga mínimos.'
+    ],
+    technologies: ['React / Next.js', 'Tailwind CSS', 'TypeScript', 'REST API', 'Vercel'],
+    role: 'Desarrollador Fullstack & Creador',
+    status: 'Desplegado en Producción (Vercel)',
+    projectUrl: 'https://anime-lover-list.vercel.app',
+    image: 'https://raw.githubusercontent.com/AgustinBeniteez/AgustinBeniteez/main/animeLover.png',
+    gallery: [
+      'https://raw.githubusercontent.com/AgustinBeniteez/AgustinBeniteez/main/animeLover.png'
+    ],
+    sketchType: 'animelover',
+    color: {
+      accent: '#f97316',
+      bgBadge: '#ffedd5',
+      textBadge: '#c2410c',
+      border: '#ea580c'
+    },
+    rotationDeg: -1.3
+  },
+  {
     id: 'valorantdle',
     title: 'Valorantdle',
     subtitle: 'Web Game de Adivinanzas para la Comunidad',
@@ -194,7 +229,7 @@ export const PROJECTS_DATA: Project[] = [
     status: 'Publicado en Vercel & Repositorio Abierto',
     projectUrl: 'https://custom-browser-main-page.vercel.app',
     githubUrl: 'https://github.com/AgustinBeniteez/Custom-Browser-Main-Page',
-    image: 'assets/images/projects/image-project-extension.webp',
+    image: 'https://raw.githubusercontent.com/AgustinBeniteez/AgustinBeniteez/main/customMainPage.png',
     sketchType: 'extension',
     color: {
       accent: '#3b82f6',
@@ -311,109 +346,6 @@ export const PROJECTS_DATA: Project[] = [
       border: '#059669'
     },
     rotationDeg: 1.8
-  },
-  {
-    id: 'elements-css-daj',
-    title: 'CSS Elements Library',
-    subtitle: 'Biblioteca de Componentes UI en CSS Puro',
-    year: '2024 - 2025',
-    category: 'web',
-    featured: false,
-    badge: 'CSS LIBRARY & UI',
-    stampText: 'UI SYSTEM',
-    tagline: 'Librería modular de componentes y elementos CSS modernos, accesibles y listos para usar.',
-    description: 'Colección completa de componentes y estilos reutilizables desarrollados en CSS puro. Incluye botones reactivos, tarjetas interactivas, barras de navegación, formularios y animaciones fluidas con diseño contemporáneo y soporte cross-browser.',
-    loreOrDetails: 'Desarrollada con la visión de agilizar la construcción de interfaces limpias sin sobrecargar dependencias de frameworks pesados. Cada elemento sigue principios estrictos de accesibilidad, modularidad y semántica HTML5.',
-    features: [
-      'Catálogo modular de más de 30 componentes listos para producción.',
-      'Sin dependencias externas: 100% CSS puro optimizado.',
-      'Paleta de diseño coherente con variables CSS customizables.',
-      'Documentación en vivo y playground interactivo integrado.'
-    ],
-    technologies: ['CSS3 Moderno', 'HTML5 Semántico', 'Diseño UI/UX', 'Animaciones CSS', 'Open Source'],
-    role: 'Diseñador UI & Desarrollador CSS',
-    status: 'Publicado & Repositorio Abierto',
-    projectUrl: 'https://elementscssdaj.github.io/',
-    githubUrl: 'https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io',
-    image: 'assets/images/projects/elementscssdaj.webp',
-    gallery: [
-      'assets/images/projects/elementscssdaj.webp',
-      'assets/images/projects/ElementsCssDaj (AD).webp'
-    ],
-    sketchType: 'elements',
-    color: {
-      accent: '#0ea5e9',
-      bgBadge: '#e0f2fe',
-      textBadge: '#0369a1',
-      border: '#0284c7'
-    },
-    rotationDeg: -1.4
-  },
-  {
-    id: 'editor-css-daj',
-    title: 'Editor Web DAJ',
-    subtitle: 'Entorno de Código Web en Vivo (HTML, CSS, JS)',
-    year: '2024 - 2025',
-    category: 'tool',
-    featured: false,
-    badge: 'HERRAMIENTA DEV',
-    stampText: 'LIVE COMPILER',
-    tagline: 'Escribe, depura y visualiza código HTML, CSS y JavaScript directamente en tu navegador.',
-    description: 'Editor web interactivo que permite escribir código frontend y previsualizar los resultados en tiempo real sin recargar la página. Diseñado para prototipado rápido de componentes, pruebas de snippets y experimentación con estilos.',
-    loreOrDetails: 'Construido con manipulación dinámica del DOM mediante iframe aislado (sandbox) para una ejecución segura del código del usuario. Incluye atajos de teclado, formateo básico y temas de contraste adaptables.',
-    features: [
-      'Compilación y renderizado reactivo instantáneo mientras escribes.',
-      'Panel dividido redimensionable para HTML, CSS, JS y vista previa.',
-      'Ejecución en sandbox seguro para aislar scripts.',
-      'Exportación y guardado local de snippets de trabajo.'
-    ],
-    technologies: ['JavaScript Vanilla', 'HTML5', 'CSS3 Moderno', 'Sandbox Iframe', 'DOM API'],
-    role: 'Desarrollador Frontend & Autor',
-    status: 'En Línea & Funcional',
-    projectUrl: 'https://elementscssdaj.github.io/editor/editor.html',
-    githubUrl: 'https://github.com/ElementsCssDAJ/ElementsCssDaj.github.io/tree/main/editor',
-    image: 'assets/images/projects/EditorDAJsocial.webp',
-    sketchType: 'editor',
-    color: {
-      accent: '#6366f1',
-      bgBadge: '#e0e7ff',
-      textBadge: '#3730a3',
-      border: '#4f46e5'
-    },
-    rotationDeg: 1.6
-  },
-  {
-    id: 'laura-portfolio',
-    title: 'Portfolio Laura Castro',
-    subtitle: 'Sitio Web para Makeup & Nails Artist',
-    year: '2024',
-    category: 'web',
-    featured: false,
-    badge: 'WEB DESIGN & CLIENT',
-    stampText: 'CLIENT VERIFIED',
-    tagline: 'Portfolio profesional moderno, visual y responsivo para artista de belleza y uñas.',
-    description: 'Diseño y desarrollo frontend para el portfolio profesional de Laura Castro. Enfocado en una estética limpia, elegante y visual que destaca galerías de trabajos, catálogo de servicios ofrecidos y enlaces directos de reserva.',
-    loreOrDetails: 'Diseñado bajo una dirección de arte minimalista con tipografías serif elegantes y tonos neutros, permitiendo que la fotografía de los trabajos de maquillaje y uñas sea la protagonista absoluta.',
-    features: [
-      'Galería fotográfica interactiva de alta resolución con vista ampliada.',
-      'Diseño completamente responsive optimizado para dispositivos móviles.',
-      'Microinteracciones suaves y transiciones de página fluidas.',
-      'Integración de enlaces de contacto directo a redes y mensajería.'
-    ],
-    technologies: ['HTML5', 'CSS3 Moderno', 'JavaScript', 'Diseño Responsive', 'GitHub Pages'],
-    role: 'Diseñador Web & Desarrollador Frontend',
-    status: 'Desplegado en Producción',
-    projectUrl: 'https://lauraacastro.github.io/',
-    githubUrl: 'https://github.com/LauraaCastro/LauraaCastro.github.io',
-    image: 'assets/images/projects/laura-profolio-min.webp',
-    sketchType: 'laura',
-    color: {
-      accent: '#f43f5e',
-      bgBadge: '#ffe4e6',
-      textBadge: '#9f1239',
-      border: '#e11d48'
-    },
-    rotationDeg: -1.2
   }
 ];
 
