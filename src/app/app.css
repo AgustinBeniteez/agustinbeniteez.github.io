@@ -2108,30 +2108,436 @@
   }
 }
 
+/* ===================================================
+   RESPONSIVE DESIGN: TABLETS & MOBILE (<= 768px)
+   =================================================== */
 @media (max-width: 768px) {
+  /* Rulers: hide coordinates on tablet/mobile */
+  .blueprint-ruler-top,
+  .blueprint-ruler-left {
+    display: none !important;
+  }
+
+  /* Top Navigation */
+  .portfolio-top-mode-nav {
+    top: 0.65rem;
+    width: calc(100% - 1.5rem);
+    max-width: 380px;
+  }
+
+  .mode-switch-pill-container {
+    padding: 0.25rem;
+    width: 100%;
+  }
+
+  .mode-switch-tab {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+    gap: 0.4rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .mode-slider-indicator {
+    top: 0.25rem;
+    left: 0.25rem;
+    width: calc(50% - 0.25rem);
+    height: calc(100% - 0.5rem);
+  }
+
+  /* HERO CANVAS SECTION */
   .hero-canvas-section {
-    padding: 2rem 1rem 5rem 1rem;
+    padding: 4.8rem 1rem 5.8rem 1rem;
+    min-height: 100vh;
+    overflow: hidden;
   }
 
   .selection-bounding-box {
-    padding: 2rem 1rem;
+    width: 95%;
+    max-width: 440px;
+    padding: 2.2rem 1rem 2rem 1rem;
+    transform: rotate(-1deg) !important;
+    border-width: 2.5px;
+  }
+
+  .resize-handle {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .handle-tl { top: -7px; left: -7px; }
+  .handle-tr { top: -7px; right: -7px; }
+  .handle-bl { bottom: -7px; left: -7px; }
+  .handle-br { bottom: -7px; right: -7px; }
+
+  /* Corner tags & Cursors: Clean separation without overlap */
+  .tag-purple {
+    top: -22px;
+    right: 10px;
+    padding: 0.2rem 0.55rem;
+    border-width: 1.5px;
+  }
+
+  .tag-purple-text {
+    font-size: 0.68rem;
+  }
+
+  .cursor-cyan {
+    top: -20px;
+    left: 10px;
+    transform: none !important;
+  }
+
+  .cursor-cyan svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cursor-cyan .cursor-name-tag {
+    font-size: 0.68rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .tag-edition {
+    bottom: -18px;
+    left: 10px;
+    padding: 0.25rem 0.6rem;
+    gap: 0.4rem;
+    border-width: 1px;
+  }
+
+  .edition-badge {
+    font-size: 0.72rem;
+  }
+
+  .edition-tools {
+    font-size: 0.7rem;
+    gap: 0.35rem;
+  }
+
+  .edition-arrow {
+    width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+  }
+
+  .cursor-orange {
+    bottom: -18px;
+    right: 10px;
+    transform: none !important;
+  }
+
+  .cursor-orange svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cursor-orange .cursor-name-tag {
+    font-size: 0.68rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  /* Giant Typography */
+  .giant-word {
+    font-size: clamp(2.4rem, 11vw, 3.6rem);
+    letter-spacing: -0.03em;
+  }
+
+  .giant-name-container {
+    transform: none !important;
+    line-height: 0.92;
+  }
+
+  /* Small Portfolio Badges */
+  .small-portfolio-badge {
+    margin-top: 1rem;
+    gap: 0.45rem;
+    justify-content: center;
+  }
+
+  .portfolio-chip {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  .dev-role-chip {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.65rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  /* Bottom Toolbar & Scroll Hint */
+  .scroll-down-hint {
+    bottom: 3.8rem;
+    font-size: 0.78rem;
+    gap: 0.4rem;
+  }
+
+  .figma-bottom-toolbar {
+    bottom: 1rem;
+    padding: 0.25rem 0.45rem;
+    gap: 0.25rem;
+    border-radius: 10px;
+  }
+
+  .tool-btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.82rem;
+    border-radius: 6px;
+  }
+
+  .code-tool {
+    padding: 0 0.5rem;
+    gap: 0.3rem;
+  }
+
+  .dev-pill {
+    font-size: 0.58rem;
+    padding: 0.08rem 0.25rem;
+  }
+
+  /* SECTION 2: PRESENTATION / ABOUT ME */
+  .presentation-section {
+    padding: 1rem 1rem 4rem 1rem;
+  }
+
+  .presentation-artboard-card {
+    padding: 2.25rem 1.15rem 1.75rem 1.15rem;
+    border-width: 2px;
+  }
+
+  .presentation-frame-badge {
+    top: -14px;
+    left: 14px;
+    font-size: 0.68rem;
+    padding: 0.15rem 0.55rem;
+  }
+
+  .presentation-frame-badge .frame-dim {
+    display: none;
+  }
+
+  .presentation-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .photo-polaroid-frame {
+    max-width: 230px;
+    transform: rotate(0deg);
+  }
+
+  .intro-title {
+    font-size: 1.85rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .intro-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .intro-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .stat-box {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .stat-number {
+    font-size: 1.35rem;
+  }
+
+  .intro-skills-row {
+    justify-content: center;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-skill-pill {
+    font-size: 0.74rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+  .intro-cta-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+  }
+
+  .cta-scroll-projects-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .intro-social-btn {
+    flex: 1 1 calc(50% - 0.4rem);
+    justify-content: center;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* SECTION 3: FORMACION ACADEMICA */
+  .education-section {
+    padding: 1rem 1rem 4rem 1rem;
+  }
+
+  .education-artboard-card {
+    padding: 2.25rem 1.15rem 1.75rem 1.15rem;
+    border-width: 2px;
+  }
+
+  .education-frame-badge {
+    top: -14px;
+    left: 14px;
+    font-size: 0.68rem;
+    padding: 0.15rem 0.55rem;
+  }
+
+  .education-frame-badge .frame-dim {
+    display: none;
+  }
+
+  .education-main-heading {
+    font-size: 1.85rem;
+  }
+
+  .education-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .academic-card-img-wrapper {
+    height: 160px;
+  }
+
+  .academic-card-body {
+    padding: 1.15rem;
+  }
+
+  /* SECTION 4: WORKBENCH */
+  .asymmetric-workbench {
+    padding: 1rem 1rem 6rem 1rem;
+  }
+
+  .workbench-floating-nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .nav-left-pill {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .workbench-tabs {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.25rem;
+  }
+
+  .wb-tab-btn {
+    flex: 1;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.76rem;
+    text-align: center;
+  }
+
+  .nav-right-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .workbench-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .arch-showcase-card {
+    padding: 1.5rem 1.15rem;
+    border-width: 2px;
+  }
+
+  .arch-frame-badge {
+    top: -13px;
+    left: 12px;
+    font-size: 0.65rem;
   }
 
   .arch-card-layout {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 1.5rem;
   }
 
-  .arch-image-zone {
-    margin-bottom: 1rem;
+  .arch-title-group .arch-title {
+    font-size: 1.65rem;
+  }
+
+  .arch-tagline-quote {
+    font-size: 0.88rem;
+    text-align: left;
   }
 
   .arch-features-list {
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .arch-action-footer {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .arch-btn-primary,
+  .arch-btn-secondary {
+    width: 100%;
     justify-content: center;
+  }
+
+  .web-projects-catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-img-banner-box {
+    height: 170px;
+  }
+
+  .card-project-body {
+    padding: 1.15rem;
+  }
+
+  .card-project-title {
+    font-size: 1.25rem;
+  }
+
+  .card-action-row {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .card-btn-inspect,
+  .card-btn-github {
+    flex: 1;
+    justify-content: center;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.8rem;
   }
 
   .spec-card-body {
@@ -2147,24 +2553,226 @@
     justify-content: center;
   }
 
-  .workbench-floating-nav {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .workbench-tabs {
-    justify-content: center;
-  }
-
   .workbench-catalog-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.65rem;
   }
 
-  .web-projects-catalog-grid {
+  /* WORLD 2: GAME STUDIO RESPONSIVE */
+  .game-studio-hero-section {
+    padding: 5rem 1rem 3rem 1rem;
+  }
+
+  .atk-word-agus {
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  }
+
+  .atk-word-the {
+    font-size: clamp(1.3rem, 3.8vw, 1.9rem);
+  }
+
+  .atk-word-king {
+    font-size: clamp(3rem, 9vw, 4.5rem);
+  }
+
+  .atk-floating-crown-img {
+    width: clamp(38px, 10vw, 55px);
+    top: -50%;
+    right: -15%;
+  }
+
+  .atk-word-productions {
+    font-size: clamp(1rem, 3.2vw, 1.5rem);
+  }
+
+  .atk-author-pill {
+    margin-top: 1.25rem;
+    padding: 0.25rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  .cinematic-game-showcase {
+    min-height: auto;
+    border-radius: 14px;
+  }
+
+  .cinematic-stage-ui {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
+
+  .stage-wing-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .stage-game-name {
+    font-size: 1.85rem;
+  }
+
+  .stage-logline {
+    font-size: 0.88rem;
+    text-align: left;
+  }
+
+  .stage-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.6rem;
+  }
+
+  .stage-btn-dossier,
+  .stage-btn-repo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stage-wing-right {
+    align-items: center;
+    width: 100%;
+  }
+
+  .stage-direct-cover-png {
+    width: 190px;
+  }
+
+  .backdrop-giant-title {
+    font-size: clamp(3.5rem, 15vw, 5rem);
+    letter-spacing: 0.05em;
+  }
+
+  .game-showcase-shelf {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN: EXTRA SMALL SCREENS (<= 480px)
+   =================================================== */
+@media (max-width: 480px) {
+  .portfolio-top-mode-nav {
+    top: 0.45rem;
+    width: calc(100% - 1rem);
+  }
+
+  .mode-switch-tab {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.74rem;
+  }
+
+  .hero-canvas-section {
+    padding: 4.5rem 0.65rem 5.5rem 0.65rem;
+  }
+
+  .selection-bounding-box {
+    width: 98%;
+    padding: 1.8rem 0.65rem 1.6rem 0.65rem;
+  }
+
+  .tag-purple {
+    top: -18px;
+    right: 4px;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .tag-purple-text {
+    font-size: 0.62rem;
+  }
+
+  .cursor-cyan {
+    top: -16px;
+    left: 4px;
+  }
+
+  .cursor-cyan .cursor-name-tag {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.35rem;
+  }
+
+  .tag-edition {
+    bottom: -15px;
+    left: 4px;
+    padding: 0.2rem 0.45rem;
+    gap: 0.3rem;
+  }
+
+  .edition-badge {
+    font-size: 0.66rem;
+  }
+
+  .edition-tools {
+    font-size: 0.64rem;
+    gap: 0.25rem;
+  }
+
+  .cursor-orange {
+    bottom: -15px;
+    right: 4px;
+  }
+
+  .cursor-orange .cursor-name-tag {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.35rem;
+  }
+
+  .giant-word {
+    font-size: clamp(2rem, 10.5vw, 2.75rem);
+  }
+
+  .figma-bottom-toolbar {
+    bottom: 0.65rem;
+    padding: 0.2rem 0.35rem;
+    gap: 0.2rem;
+  }
+
+  .tool-btn {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.75rem;
+  }
+
+  .scroll-down-hint {
+    bottom: 3.4rem;
+    font-size: 0.72rem;
+  }
+
+  .presentation-artboard-card,
+  .education-artboard-card,
+  .arch-showcase-card {
+    padding: 1.8rem 0.75rem 1.25rem 0.75rem;
+  }
+
+  .intro-title {
+    font-size: 1.55rem;
+  }
+
+  .intro-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .stat-box {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .stat-number {
+    font-size: 1.15rem;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+  }
+
+  .intro-social-btn {
+    flex: 1 1 100%;
+  }
+
+  .wb-tab-btn {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.35rem;
   }
 }
 

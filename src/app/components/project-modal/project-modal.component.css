@@ -928,3 +928,60 @@
   padding: 0.05rem 0.35rem;
   border-radius: 3px;
 }
+
+
+/* ===================================================
+   MODAL MOBILE RESPONSIVENESS (<= 640px)
+   =================================================== */
+@media (max-width: 640px) {
+  .modal-backdrop {
+    padding: 0.5rem;
+  }
+
+  .modal-card {
+    max-height: 96vh;
+    border-radius: 14px;
+    width: 100%;
+  }
+
+  .modal-split-grid {
+    padding: 1rem 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .btn-close-modal {
+    top: 0.65rem;
+    right: 0.65rem;
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .modal-project-title {
+    font-size: 1.45rem;
+  }
+
+  .modal-action-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .action-btn-primary,
+  .action-btn-github {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .content-nav-tabs {
+    gap: 0.25rem;
+    justify-content: center;
+  }
+
+  .nav-tab-pill {
+    font-size: 0.76rem;
+    padding: 0.35rem 0.55rem;
+  }
+
+  .right-content-card {
+    padding: 0.85rem;
+  }
+}
