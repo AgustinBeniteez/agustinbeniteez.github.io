@@ -1,0 +1,884 @@
+/* ===================================================
+   CURRICULUM VITAE MODAL & A4 FOLIO (IMAGE 2 + PORTFOLIO STYLE)
+   =================================================== */
+
+.cv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(5, 8, 18, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.25rem;
+  overflow-y: auto;
+  animation: cvFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cvFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cv-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: auto;
+  animation: cvSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cvSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===================================================
+   TOP MODAL TOOLBAR (NO PRINT)
+   =================================================== */
+.cv-modal-toolbar {
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+  gap: 1rem;
+}
+
+.cv-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.cv-doc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.cv-doc-badge i {
+  color: #ef4444;
+  font-size: 1.15rem;
+}
+
+.cv-folio-tag {
+  background: rgba(56, 189, 248, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.cv-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+}
+
+.cv-btn-primary {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45);
+}
+
+.cv-btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0369a1, #075985);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+}
+
+.cv-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cv-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  transform: translateY(-1.5px);
+}
+
+.cv-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.cv-btn-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cv-btn-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.cv-toolbar-tip {
+  background: rgba(14, 116, 144, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.78rem;
+  color: #bae6fd;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-toolbar-tip i {
+  color: #38bdf8;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ===================================================
+   FOLIO CONTAINER & PHYSICAL A4 DOCUMENT
+   =================================================== */
+.cv-preview-scroll-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fixed A4 Folio Dimensions: 210mm x 295mm (Strict 1-page fit) */
+.cv-folio-page {
+  box-sizing: border-box;
+  width: 210mm;
+  min-width: 210mm;
+  max-width: 210mm;
+  height: 295mm;
+  min-height: 295mm;
+  max-height: 295mm;
+  flex-shrink: 0;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-variant-ligatures: none !important;
+  -webkit-font-variant-ligatures: none !important;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  line-height: 1.35;
+  letter-spacing: 0 !important;
+}
+
+/* ===================================================
+   1. TOP HEADER BANNER (Top-Left Square Photo + Top-Right Info)
+   =================================================== */
+.folio-top-banner {
+  display: flex;
+  flex-direction: row;
+  width: 210mm;
+  box-sizing: border-box;
+  border-bottom: 2px solid #cbdde9;
+  flex-shrink: 0;
+}
+
+/* TOP-LEFT CORNER: exactly 66mm wide */
+.banner-left-corner {
+  width: 66mm;
+  min-width: 66mm;
+  max-width: 66mm;
+  flex-shrink: 0;
+  background: #edf4fa;
+  border-right: 1.5px solid #d2e2ee;
+  padding: 4mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Square Photo */
+.banner-avatar-wrap {
+  width: 48mm;
+  height: 48mm;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid #0284c7;
+  outline: 2px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.2);
+  background: #f1f5f9;
+  flex-shrink: 0;
+}
+
+.banner-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* TOP-RIGHT INFO: exactly 144mm wide */
+.banner-right-info {
+  width: 144mm;
+  min-width: 144mm;
+  max-width: 144mm;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #f0f6fa 0%, #ffffff 100%);
+  padding: 4mm 6mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.banner-meta-tag-line {
+  margin-bottom: 4px;
+}
+
+.banner-chip-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #0369a1;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  border-radius: 3px;
+  margin-right: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 13px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.banner-chip-status {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 13px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.pulse-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #10b981;
+  display: inline-block;
+  margin-right: 4px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.banner-candidate-name {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 21px;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.banner-candidate-role {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0284c7;
+  margin: 0 0 3px 0;
+  line-height: 15px;
+  letter-spacing: 0;
+}
+
+.banner-candidate-summary {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 10px;
+  color: #334155;
+  margin: 0;
+  line-height: 14px;
+}
+
+/* ===================================================
+   2. TWO-COLUMN SPLIT (66mm Left + 144mm Right = 210mm)
+   =================================================== */
+.folio-body-split {
+  display: flex;
+  flex-direction: row;
+  width: 210mm;
+  flex: 1;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* ===================================================
+   LEFT SIDEBAR: Tinted Blueprint Background (66mm)
+   =================================================== */
+.folio-left-sidebar {
+  width: 66mm;
+  min-width: 66mm;
+  max-width: 66mm;
+  flex-shrink: 0;
+  background: #edf4fa;
+  border-right: 1.5px solid #d2e2ee;
+  padding: 4mm 4.5mm;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.sidebar-block {
+  margin-bottom: 8px;
+}
+
+.section-title-wrap {
+  margin-bottom: 4px;
+}
+
+.sidebar-heading {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 14px;
+  letter-spacing: 0;
+  display: block;
+}
+
+.accent-bar-cyan {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #0284c7;
+  border-radius: 2px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+
+/* Contact items list */
+.contact-items-list {
+  display: block;
+}
+
+.contact-pill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.contact-pill-item:hover {
+  color: #0284c7;
+}
+
+.contact-icon-badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 6px;
+  box-sizing: border-box;
+}
+
+.contact-icon-badge svg {
+  width: 11px;
+  height: 11px;
+  display: block;
+}
+
+.contact-text {
+  display: inline-block;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+/* Skills */
+.skill-category-group {
+  margin-bottom: 5px;
+}
+
+.cat-label {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9px;
+  font-weight: 700;
+  color: #0369a1;
+  margin-bottom: 3px;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+
+.tech-pills-row {
+  display: block;
+  line-height: 20px;
+}
+
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  height: 13px;
+  padding: 0 5px;
+  margin: 1px 3px 2px 0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Education */
+.edu-item {
+  margin-bottom: 6px;
+}
+
+.edu-role {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 13px;
+  margin-bottom: 1px;
+}
+
+.edu-spec {
+  display: block;
+  font-size: 9px;
+  color: #334155;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+.edu-school {
+  display: block;
+  font-size: 8.5px;
+  color: #64748b;
+  line-height: 12px;
+}
+
+.edu-school em {
+  color: #0284c7;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Languages */
+.lang-line {
+  margin-bottom: 5px;
+}
+
+.lang-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lang-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 13px;
+}
+
+.lang-badge {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #0284c7;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 13px;
+  padding: 0 6px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Aptitudes */
+.aptitudes-list {
+  margin: 0;
+  padding-left: 12px;
+}
+
+.aptitudes-list li {
+  font-size: 9px;
+  color: #334155;
+  line-height: 13.5px;
+  margin-bottom: 2px;
+}
+
+/* ===================================================
+   RIGHT MAIN COLUMN: Clean White (144mm)
+   =================================================== */
+.folio-right-main {
+  width: 144mm;
+  min-width: 144mm;
+  max-width: 144mm;
+  flex-shrink: 0;
+  background: #ffffff;
+  padding: 4mm 6mm;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.main-block {
+  margin-bottom: 8px;
+}
+
+.main-heading {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 14px;
+  letter-spacing: 0;
+  display: block;
+}
+
+.accent-bar-navy {
+  display: block;
+  width: 28px;
+  height: 2.5px;
+  background: #0f172a;
+  border-radius: 2px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+
+.profile-text {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9.5px;
+  color: #334155;
+  margin: 0;
+  line-height: 13.5px;
+  text-align: justify;
+}
+
+/* Experience */
+.exp-card {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.exp-card:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.exp-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.exp-job-title {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 14px;
+}
+
+.exp-company-line {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #0284c7;
+  margin: 1px 0 0 0;
+  line-height: 13px;
+}
+
+.exp-company-line em {
+  font-weight: normal;
+  color: #64748b;
+  font-style: normal;
+}
+
+.exp-time-badge {
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+
+.exp-period {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 8px;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  height: 13px;
+  padding: 0 5px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.exp-loc {
+  display: block;
+  font-size: 8px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+.exp-bullets {
+  margin: 3px 0 4px 0;
+  padding-left: 12px;
+}
+
+.exp-bullets li {
+  font-size: 9px;
+  color: #334155;
+  line-height: 13px;
+  margin-bottom: 2px;
+}
+
+.exp-bullets strong {
+  color: #0f172a;
+}
+
+.exp-tags-row {
+  display: block;
+  line-height: 20px;
+  margin-top: 4px;
+}
+
+.exp-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  color: #0284c7;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  height: 13px;
+  padding: 0 5px;
+  margin: 1px 3px 2px 0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* ===================================================
+   PROYECTOS DESTACADOS: CARDS CON IMAGEN FULL WIDTH
+   =================================================== */
+.projects-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 6px;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.proj-card-full {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  padding: 4px 5px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.proj-card-full:hover {
+  border-color: #0284c7;
+  background: #f0f9ff;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.12);
+}
+
+.proj-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.proj-card-name {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 10px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 13px;
+}
+
+.proj-card-tech {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  height: 13px;
+  padding: 0 5px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+/* IMAGEN FULL WIDTH (86px) */
+.proj-card-img-wrap {
+  width: 100%;
+  height: 86px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  background: #0f172a;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+}
+
+.proj-card-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.proj-card-bottom {
+  display: block;
+}
+
+.proj-card-url {
+  display: inline-flex;
+  align-items: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #0369a1;
+  text-decoration: none;
+  line-height: 13px;
+}
+
+.proj-card-url svg {
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.proj-card-url:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+/* Footer */
+.folio-bottom-line {
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 8.5px;
+  color: #94a3b8;
+  line-height: 13px;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (PREVIEW SCREEN)
+   =================================================== */
+@media (max-width: 860px) {
+  .cv-modal-backdrop {
+    padding: 0.5rem;
+  }
+
+  .cv-modal-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .cv-toolbar-actions {
+    justify-content: flex-end;
+  }
+
+  .cv-preview-scroll-container {
+    justify-content: flex-start;
+    padding: 0.5rem;
+  }
+}

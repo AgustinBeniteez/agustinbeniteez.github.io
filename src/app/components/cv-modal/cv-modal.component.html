@@ -1,0 +1,491 @@
+<div class="cv-modal-backdrop" (click)="closeModal()">
+  
+  <div class="cv-modal-dialog" (click)="$event.stopPropagation()">
+    
+    <!-- TOP TOOLBAR (NO PRINT) -->
+    <header class="cv-modal-toolbar">
+      <div class="cv-toolbar-left">
+        <div class="cv-doc-badge">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>CV_Agustin_Benitez_Lopez.pdf</span>
+        </div>
+        <span class="cv-folio-tag">Formato Folio A4 (1 Página)</span>
+      </div>
+
+      <div class="cv-toolbar-actions">
+        <!-- Direct PDF File Download -->
+        <button 
+          type="button" 
+          class="cv-btn cv-btn-primary" 
+          [disabled]="isDownloading()"
+          (click)="downloadPdf()" 
+          title="Descargar archivo PDF directamente a tu equipo">
+          @if (isDownloading()) {
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            <span>Generando PDF...</span>
+          } @else {
+            <i class="fa-solid fa-download"></i>
+            <span>Descargar PDF</span>
+          }
+        </button>
+
+        <!-- Close Dialog -->
+        <button 
+          type="button" 
+          class="cv-btn cv-btn-close" 
+          (click)="closeModal()" 
+          title="Cerrar vista previa">
+          <i class="fa-solid fa-xmark"></i>
+          <span>Cerrar</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- PRINT HELPER NOTICE (NO PRINT) -->
+    <div class="cv-toolbar-tip">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>Pulsa en <strong>Descargar PDF</strong> para guardar el archivo <strong>CV_Agustin_Benitez_Lopez.pdf</strong> directamente en tu ordenador en 1 sola página perfecta.</span>
+    </div>
+
+    <!-- FOLIO PREVIEW WRAPPER -->
+    <div class="cv-preview-scroll-container">
+      
+      <!-- REAL A4 FOLIO SHEET (210mm x 295mm - Exactly 1 Page) -->
+      <article class="cv-folio-page" id="cv-printable-folio">
+        
+        <!-- ======================================================== -->
+        <!-- 1. TOP HEADER BANNER (Top-Left Square Photo + Top-Right Info) -->
+        <!-- ======================================================== -->
+        <header class="folio-top-banner">
+          
+          <!-- TOP-LEFT: Cuadrado ocupando la esquina izquierda (66mm) -->
+          <div class="banner-left-corner">
+            <div class="banner-avatar-wrap">
+              <img 
+                src="assets/images/agusPerfil.webp" 
+                alt="Agustín Benítez López" 
+                class="banner-avatar-img"
+                onerror="this.src='assets/images/foto-perfil-agus.webp'">
+            </div>
+          </div>
+
+          <!-- TOP-RIGHT: Texto movido a la derecha (144mm) -->
+          <div class="banner-right-info">
+            <div class="banner-meta-tag-line">
+              <span class="banner-chip-code"># DEV_AGUSTIN_2026</span>
+              <span class="banner-chip-status"><span class="pulse-dot"></span>DISPONIBLE</span>
+            </div>
+            <h1 class="banner-candidate-name">AGUSTÍN BENÍTEZ LÓPEZ</h1>
+            <p class="banner-candidate-role">DESARROLLADOR WEB & SOFTWARE • FRONTEND & BACKEND</p>
+            <p class="banner-candidate-summary">
+              Especializado en maquetación web semántica, desarrollo con Angular, TypeScript, lógica backend y soporte de sistemas microinformáticos.
+            </p>
+          </div>
+        </header>
+
+        <!-- ======================================================== -->
+        <!-- 2. TWO-COLUMN SPLIT (Left Tinted Sidebar + Right Clean Main) -->
+        <!-- ======================================================== -->
+        <div class="folio-body-split">
+          
+          <!-- LEFT SIDEBAR: Tinted Blueprint Background (66mm) -->
+          <aside class="folio-left-sidebar">
+            
+            <!-- CONTACTO -->
+            <section class="sidebar-block">
+              <div class="section-title-wrap">
+                <h2 class="sidebar-heading">CONTACTO</h2>
+                <span class="accent-bar-cyan"></span>
+              </div>
+
+              <div class="contact-items-list">
+                <!-- Teléfono -->
+                <a href="tel:+34643310689" class="contact-pill-item">
+                  <span class="contact-icon-badge">
+                    <svg width="11" height="11" viewBox="0 0 24 24">
+                      <path fill="#38bdf8" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+                    </svg>
+                  </span>
+                  <span class="contact-text">+34 643 31 06 89</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:adivinanzas1991@gmail.com" class="contact-pill-item">
+                  <span class="contact-icon-badge">
+                    <svg width="11" height="11" viewBox="0 0 24 24">
+                      <path fill="#38bdf8" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  </span>
+                  <span class="contact-text">adivinanzas1991@gmail.com</span>
+                </a>
+
+                <!-- Ubicación -->
+                <div class="contact-pill-item">
+                  <span class="contact-icon-badge">
+                    <svg width="11" height="11" viewBox="0 0 24 24">
+                      <path fill="#38bdf8" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+                    </svg>
+                  </span>
+                  <span class="contact-text">Chiclana de la Frontera, España</span>
+                </div>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/agustin-benitez-lopez/" target="_blank" rel="noopener" class="contact-pill-item">
+                  <span class="contact-icon-badge">
+                    <svg width="11" height="11" viewBox="0 0 24 24">
+                      <path fill="#38bdf8" d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 100-3.24 1.62 1.62 0 000 3.24M7.86 18.5V10.1H5.06v8.4h2.8z"/>
+                    </svg>
+                  </span>
+                  <span class="contact-text">in/agustin-benitez-lopez</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/AgustinBeniteez" target="_blank" rel="noopener" class="contact-pill-item">
+                  <span class="contact-icon-badge">
+                    <svg width="11" height="11" viewBox="0 0 24 24">
+                      <path fill="#38bdf8" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                  </span>
+                  <span class="contact-text">github.com/AgustinBeniteez</span>
+                </a>
+
+                <!-- Portafolio Web -->
+                <a href="https://agustinbeniteez.github.io" target="_blank" rel="noopener" class="contact-pill-item">
+                  <span class="contact-icon-badge">
+                    <svg width="11" height="11" viewBox="0 0 24 24">
+                      <path fill="#38bdf8" d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9h-3.18a15.7 15.7 0 00-1.23-5.26A8.02 8.02 0 0119.93 11zM12 4.07c.96 1.48 1.7 3.66 1.94 4.93H10.06C10.3 7.73 11.04 5.55 12 4.07zM4.07 13h3.18c.12 1.87.56 3.73 1.23 5.26A8.02 8.02 0 014.07 13zm3.18-2H4.07a8.02 8.02 0 014.41-5.26A15.7 15.7 0 007.25 11zM12 19.93c-.96-1.48-1.7-3.66-1.94-4.93h3.88c-.24 1.27-.98 3.45-1.94 4.93zm2.48-6.93H9.52c-.1-.63-.16-1.3-.16-2s.06-1.37.16-2h4.96c.1.63.16 1.3.16 2s-.06 1.37-.16 2zm1.04 5.26c.67-1.53 1.11-3.39 1.23-5.26h3.18a8.02 8.02 0 01-4.41 5.26z"/>
+                    </svg>
+                  </span>
+                  <span class="contact-text">agustinbeniteez.github.io</span>
+                </a>
+              </div>
+            </section>
+
+            <!-- HABILIDADES -->
+            <section class="sidebar-block">
+              <div class="section-title-wrap">
+                <h2 class="sidebar-heading">HABILIDADES</h2>
+                <span class="accent-bar-cyan"></span>
+              </div>
+
+              <div class="skill-category-group">
+                <span class="cat-label">Frontend & Web</span>
+                <div class="tech-pills-row">
+                  <span class="tech-pill">Angular</span>
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">JavaScript ES6+</span>
+                  <span class="tech-pill">HTML5</span>
+                  <span class="tech-pill">CSS3 / SASS</span>
+                  <span class="tech-pill">Tailwind</span>
+                  <span class="tech-pill">Bootstrap</span>
+                  <span class="tech-pill">Responsive UI</span>
+                </div>
+              </div>
+
+              <div class="skill-category-group">
+                <span class="cat-label">Backend & BBDD</span>
+                <div class="tech-pills-row">
+                  <span class="tech-pill">Node.js</span>
+                  <span class="tech-pill">Java / Spring Boot</span>
+                  <span class="tech-pill">REST APIs</span>
+                  <span class="tech-pill">MySQL</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                </div>
+              </div>
+
+              <div class="skill-category-group">
+                <span class="cat-label">Sistemas & Tools</span>
+                <div class="tech-pills-row">
+                  <span class="tech-pill">Git / GitHub</span>
+                  <span class="tech-pill">Linux & Windows</span>
+                  <span class="tech-pill">Reparación Hardware</span>
+                  <span class="tech-pill">Figma Prototipado</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- EDUCACIÓN -->
+            <section class="sidebar-block">
+              <div class="section-title-wrap">
+                <h2 class="sidebar-heading">EDUCACIÓN</h2>
+                <span class="accent-bar-cyan"></span>
+              </div>
+
+              <div class="edu-item">
+                <strong class="edu-role">Grado Superior DAW</strong>
+                <span class="edu-spec">Desarrollo Aplicaciones Web</span>
+                <span class="edu-school">IES Fernando Aguilar Quignón · <em>2023 - Act.</em></span>
+              </div>
+
+              <div class="edu-item">
+                <strong class="edu-role">Grado Medio SMR</strong>
+                <span class="edu-spec">Sistemas Microinformáticos y Redes</span>
+                <span class="edu-school">IES Pablo Ruiz Picasso · <em>Sept. 2022 – Jul. 2024</em></span>
+              </div>
+
+              <div class="edu-item">
+                <strong class="edu-role">Educación Secundaria (ESO)</strong>
+                <span class="edu-school">IES Huerta del Rosario · <em>Graduado</em></span>
+              </div>
+            </section>
+
+            <!-- IDIOMAS -->
+            <section class="sidebar-block">
+              <div class="section-title-wrap">
+                <h2 class="sidebar-heading">IDIOMAS</h2>
+                <span class="accent-bar-cyan"></span>
+              </div>
+
+              <div class="lang-line">
+                <div class="lang-top">
+                  <span class="lang-name">Español</span>
+                  <span class="lang-badge">Nativo</span>
+                </div>
+              </div>
+
+              <div class="lang-line">
+                <div class="lang-top">
+                  <span class="lang-name">Inglés</span>
+                  <span class="lang-badge">Competencia básica</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- APTITUDES -->
+            <section class="sidebar-block">
+              <div class="section-title-wrap">
+                <h2 class="sidebar-heading">APTITUDES</h2>
+                <span class="accent-bar-cyan"></span>
+              </div>
+
+              <ul class="aptitudes-list">
+                <li>Uso y flujo de trabajo con Git</li>
+                <li>Resolución metódica de problemas</li>
+                <li>Trabajo en equipo y adaptabilidad</li>
+                <li>Clean Code y buenas prácticas</li>
+                <li>Metodologías Ágiles (Scrum)</li>
+              </ul>
+            </section>
+
+          </aside>
+
+          <!-- RIGHT MAIN: Clean White Background (144mm) -->
+          <main class="folio-right-main">
+            
+            <!-- PERFIL PROFESIONAL -->
+            <section class="main-block">
+              <div class="section-title-wrap">
+                <h2 class="main-heading">PERFIL PROFESIONAL</h2>
+                <span class="accent-bar-navy"></span>
+              </div>
+              <p class="profile-text">
+                Desarrollador web con sólida formación técnica y experiencia práctica en desarrollo frontend/backend y soporte microinformático. Apasionado por la creación de soluciones eficientes, arquitecturas limpias y excelente experiencia de usuario. Proactivo, metódico y con rápida adaptabilidad en equipos colaborativos.
+              </p>
+            </section>
+
+            <!-- EXPERIENCIA LABORAL -->
+            <section class="main-block">
+              <div class="section-title-wrap">
+                <h2 class="main-heading">EXPERIENCIA LABORAL</h2>
+                <span class="accent-bar-navy"></span>
+              </div>
+
+              <!-- SoyDani.com -->
+              <article class="exp-card">
+                <div class="exp-header-row">
+                  <div>
+                    <h3 class="exp-job-title">Desarrollador Web Aprendiz en Prácticas</h3>
+                    <p class="exp-company-line">SoyDani.com · <em>Autónomo · Formación Profesional Dual</em></p>
+                  </div>
+                  <div class="exp-time-badge">
+                    <span class="exp-period">Feb. 2025 (1 mes)</span>
+                    <span class="exp-loc">Toledo · En remoto</span>
+                  </div>
+                </div>
+                <ul class="exp-bullets">
+                  <li>Maquetación de interfaces responsive aplicando <strong>HTML5</strong> semántico, <strong>CSS3 (Flexbox & Grid)</strong> y lógica interactiva con <strong>JavaScript</strong> y <strong>Bootstrap</strong>.</li>
+                  <li>Optimización visual, resolución ágil de bugs de maquetación y control de versiones con <strong>Git</strong>.</li>
+                </ul>
+                <div class="exp-tags-row">
+                  <span class="exp-chip">HTML5</span>
+                  <span class="exp-chip">CSS3</span>
+                  <span class="exp-chip">JavaScript</span>
+                  <span class="exp-chip">Bootstrap</span>
+                  <span class="exp-chip">Git</span>
+                </div>
+              </article>
+
+              <!-- DANIELEC COMPONENTES SL -->
+              <article class="exp-card">
+                <div class="exp-header-row">
+                  <div>
+                    <h3 class="exp-job-title">Auxiliar Administrativo & Soporte Técnico</h3>
+                    <p class="exp-company-line">DANIELEC COMPONENTES SL · <em>Contrato de prácticas</em></p>
+                  </div>
+                  <div class="exp-time-badge">
+                    <span class="exp-period">Mar. 2024 - Jun. 2024 (4 meses)</span>
+                    <span class="exp-loc">Chiclana de la Frontera · Presencial</span>
+                  </div>
+                </div>
+                <ul class="exp-bullets">
+                  <li><strong>Gestión integral de productos en web:</strong> catalogación, fichas técnicas y control de inventario y stock.</li>
+                  <li><strong>Mantenimiento y soporte técnico:</strong> diagnóstico de averías, montaje y sustitución de hardware en equipos microinformáticos.</li>
+                </ul>
+                <div class="exp-tags-row">
+                  <span class="exp-chip">Gestión Web</span>
+                  <span class="exp-chip">Reparación Hardware</span>
+                  <span class="exp-chip">Soporte Técnico</span>
+                  <span class="exp-chip">Microinformática</span>
+                </div>
+              </article>
+            </section>
+
+            <!-- PROYECTOS DESTACADOS -->
+            <section class="main-block">
+              <div class="section-title-wrap">
+                <h2 class="main-heading">PROYECTOS DESTACADOS</h2>
+                <span class="accent-bar-navy"></span>
+              </div>
+
+              <div class="projects-grid-2x2">
+                
+                <!-- 1. Custom Browser Main Page -->
+                <div class="proj-card-full">
+                  <div class="proj-card-top">
+                    <strong class="proj-card-name">Custom Browser Main Page</strong>
+                    <span class="proj-card-tech">Extensión Web</span>
+                  </div>
+                  <div class="proj-card-img-wrap">
+                    <img 
+                      src="assets/images/projects/customMainPage.png" 
+                      alt="Custom Browser Main Page" 
+                      class="proj-card-full-img"
+                      loading="lazy">
+                  </div>
+                  <div class="proj-card-bottom">
+                    <a 
+                      href="https://custom-browser-main-page.vercel.app" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="proj-card-url"
+                      title="Abrir Custom Browser Main Page">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                      </svg>
+                      <span>custom-browser-main-page.vercel.app</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 2. AnimeLover Platform -->
+                <div class="proj-card-full">
+                  <div class="proj-card-top">
+                    <strong class="proj-card-name">AnimeLover Platform</strong>
+                    <span class="proj-card-tech">Next.js · TS</span>
+                  </div>
+                  <div class="proj-card-img-wrap">
+                    <img 
+                      src="assets/images/projects/animeLover.png" 
+                      alt="AnimeLover Platform" 
+                      class="proj-card-full-img"
+                      loading="lazy">
+                  </div>
+                  <div class="proj-card-bottom">
+                    <a 
+                      href="https://anime-lover-list.vercel.app" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="proj-card-url"
+                      title="Abrir AnimeLover Platform">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                      </svg>
+                      <span>anime-lover-list.vercel.app</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 3. Valorantdle Web Game -->
+                <div class="proj-card-full">
+                  <div class="proj-card-top">
+                    <strong class="proj-card-name">Valorantdle Web Game</strong>
+                    <span class="proj-card-tech">JavaScript · HTML5</span>
+                  </div>
+                  <div class="proj-card-img-wrap">
+                    <img 
+                      src="assets/images/projects/valorantdle-banner.webp" 
+                      alt="Valorantdle Web Game" 
+                      class="proj-card-full-img"
+                      loading="lazy">
+                  </div>
+                  <div class="proj-card-bottom">
+                    <a 
+                      href="https://valorantdle-game.vercel.app" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="proj-card-url"
+                      title="Abrir Valorantdle Web Game">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                      </svg>
+                      <span>valorantdle-game.vercel.app</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 4. Enma Manualidades E-Commerce -->
+                <div class="proj-card-full">
+                  <div class="proj-card-top">
+                    <strong class="proj-card-name">Enma Manualidades</strong>
+                    <span class="proj-card-tech">Node.js · SQL</span>
+                  </div>
+                  <div class="proj-card-img-wrap">
+                    <img 
+                      src="assets/images/projects/webEnmaManualidades.webp" 
+                      alt="Enma Manualidades E-Commerce" 
+                      class="proj-card-full-img"
+                      loading="lazy">
+                  </div>
+                  <div class="proj-card-bottom">
+                    <a 
+                      href="https://enmamanualidades.vercel.app" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="proj-card-url"
+                      title="Abrir Enma Manualidades">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                      </svg>
+                      <span>enmamanualidades.vercel.app</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="folio-bottom-line">
+              <span>Currículum Vitae — Agustín Benítez López</span>
+              <span>Actualizado 2026 • Portafolio: https://agustinbeniteez.github.io</span>
+            </footer>
+
+          </main>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</div>

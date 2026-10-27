@@ -2,12 +2,13 @@ import { Component, computed, signal, OnInit, OnDestroy, inject, NgZone, ChangeD
 import { DEVELOPER_PROFILE, EDUCATION_DATA, PROJECTS_DATA, SKILL_CATEGORIES } from './data/portfolio.data';
 import { Project } from './models/project.model';
 import { ProjectModalComponent } from './components/project-modal/project-modal.component';
+import { CvModalComponent } from './components/cv-modal/cv-modal.component';
 import { SoundService } from './services/sound.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ProjectModalComponent],
+  imports: [ProjectModalComponent, CvModalComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -22,6 +23,7 @@ export class App implements OnInit, OnDestroy {
   // State Signals
   readonly portfolioMode = signal<'web' | 'game'>('web');
   readonly selectedProject = signal<Project | null>(null);
+  readonly isCvModalOpen = signal<boolean>(false);
   readonly activeTab = signal<'all' | 'game' | 'web' | 'tools' | 'about'>('all');
 
   // Active Tool in Figma Toolbar
@@ -108,6 +110,17 @@ export class App implements OnInit, OnDestroy {
   closeProject(): void {
     this.sound.playPaperFlip();
     this.selectedProject.set(null);
+  }
+
+  // Curriculum Vitae Modal
+  openCvModal(): void {
+    this.sound.playPaperFlip();
+    this.isCvModalOpen.set(true);
+  }
+
+  closeCvModal(): void {
+    this.sound.playPaperFlip();
+    this.isCvModalOpen.set(false);
   }
 
   setPortfolioMode(mode: 'web' | 'game'): void {

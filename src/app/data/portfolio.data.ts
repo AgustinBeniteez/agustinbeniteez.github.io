@@ -1,4 +1,4 @@
-import { DeveloperProfile, EducationItem, Project, SkillCategory } from '../models/project.model';
+import { DeveloperProfile, EducationItem, ExperienceItem, LanguageItem, Project, SkillCategory } from '../models/project.model';
 
 export const DEVELOPER_PROFILE: DeveloperProfile = {
   name: 'Agustín Benítez',
@@ -6,7 +6,7 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
   title: 'Web Developer & Indie Game Creator',
   subtitle: 'Desarrollador Frontend & Backend',
   bio: 'Desarrollador web y de software con pasión por la creación de videojuegos. Me gusta transformar ideas en código limpio, arquitecturas escalables y mundos visuales con identidad propia, desde aplicaciones web completas hasta mi propio videojuego "Arch: Origins of a King".',
-  location: 'España (Andalucía / Cádiz)',
+  location: 'Chiclana de la Frontera, España',
   experienceYears: '3+ años creando proyectos web',
   quote: '"El código es la estructura, el diseño es el alma y el videojuego es el viaje."',
   socials: [
@@ -38,7 +38,7 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
     {
       title: 'Técnico en Sistemas Microinformáticos y Redes (SMR)',
       center: 'IES Pablo Ruiz Picasso',
-      period: '2021 - 2023'
+      period: 'Sept. 2022 - Jul. 2024'
     }
   ]
 };
@@ -365,7 +365,7 @@ export const EDUCATION_DATA: EducationItem[] = [
     title: 'GRADO MEDIO SMIR',
     degreeType: 'Sistemas Microinformáticos y Redes',
     center: 'IES PABLO RUIZ PICASSO',
-    periodOrStatus: '2021 - 2023',
+    periodOrStatus: 'Sept. 2022 - Jul. 2024',
     image: 'assets/images/IESPRpicasso.webp',
     centerUrl: 'https://www.iespicasso.com',
     badge: 'CICLO FORMATIVO MEDIO'
@@ -379,5 +379,58 @@ export const EDUCATION_DATA: EducationItem[] = [
     image: 'assets/images/IESFernandoAguilarQuignon.webp',
     centerUrl: 'https://iesfernandoaguilar.es/',
     badge: 'CICLO FORMATIVO SUPERIOR'
+  }
+];
+
+
+export const EXPERIENCE_DATA: ExperienceItem[] = [
+  {
+    id: 'soydani',
+    role: 'Desarrollador Web Aprendiz en Prácticas',
+    company: 'SoyDani.com',
+    companyUrl: 'https://soydani.com',
+    employmentType: 'Autónomo · Formación Profesional Dual',
+    period: 'Feb. 2025 (1 mes)',
+    duration: '1 mes',
+    location: 'Toledo y alrededores, España',
+    workplaceType: 'Remoto',
+    description: 'Aprendiz en prácticas enfocado en desarrollo y maquetación web frontend, profundizando en HTML5 semántico, CSS3, JavaScript y Bootstrap con estándares modernos y diseño responsive.',
+    achievements: [
+      'Maquetación de interfaces web responsive aplicando HTML5 semántico y CSS Flexbox/Grid.',
+      'Implementación de componentes interactivos y dinámicos con JavaScript moderno y Bootstrap.',
+      'Optimización de estilos, resolución de incidencias de compatibilidad y control de versiones con Git.'
+    ],
+    skills: ['HTML5', 'CSS Flexbox', 'Bootstrap', 'JavaScript', 'Git', 'Responsive Design']
+  },
+  {
+    id: 'danielec',
+    role: 'Auxiliar Administrativo & Soporte Técnico',
+    company: 'DANIELEC COMPONENTES SL',
+    companyUrl: 'https://danielec.com',
+    employmentType: 'Contrato de prácticas',
+    period: 'Mar. 2024 - Jun. 2024',
+    duration: '4 meses',
+    location: 'Chiclana de la Frontera, España',
+    workplaceType: 'Presencial',
+    description: 'Prácticas profesionales orientadas a la administración digital, gestión de catálogo de producto en entorno web y soporte técnico de microinformática.',
+    achievements: [
+      'Gestión integral, catalogación y actualización de productos en la plataforma web de la empresa.',
+      'Diagnóstico, mantenimiento preventivo y reparación técnica de equipos informáticos y periféricos.',
+      'Control y conciliación de inventario, soporte a usuarios y tramitación administrativa informatizada.'
+    ],
+    skills: ['Gestión de productos en web', 'Reparación de equipos informáticos', 'Soporte técnico', 'Hardware', 'Windows / Ofimática']
+  }
+];
+
+export const LANGUAGES_DATA: LanguageItem[] = [
+  {
+    name: 'Español',
+    level: 'Nativo',
+    details: 'Competencia bilingüe o nativa'
+  },
+  {
+    name: 'Inglés',
+    level: 'Competencia básica',
+    details: 'Competencia básica'
   }
 ];

@@ -40,3 +40,93 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ===================================================
+   GLOBAL PRINT RULES: STRICTLY PRINT ONLY THE CV FOLIO
+   =================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0 !important;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 1. Completely hide the portfolio website and interactive elements */
+  .portfolio-universe,
+  .portfolio-top-mode-nav,
+  .top-nav-actions,
+  .camera-slider-track,
+  .world-panel,
+  .cv-modal-toolbar,
+  .cv-toolbar-tip,
+  app-project-modal,
+  .cv-modal-backdrop::before {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 2. Hide everything under body by default */
+  body > *:not(app-root) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 3. Display only app-cv-modal container */
+  app-cv-modal,
+  .cv-modal-backdrop,
+  .cv-modal-dialog,
+  .cv-preview-scroll-container {
+    display: block !important;
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    max-width: 210mm !important;
+    overflow: hidden !important;
+  }
+
+  /* 4. Display ONLY the single A4 Folio Sheet */
+  #cv-printable-folio {
+    display: flex !important;
+    flex-direction: column !important;
+    visibility: visible !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 210mm !important;
+    height: 295mm !important;
+    max-height: 295mm !important;
+    min-height: 295mm !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    z-index: 99999999 !important;
+  }
+
+  #cv-printable-folio * {
+    visibility: visible !important;
+  }
+}

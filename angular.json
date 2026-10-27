@@ -55,6 +55,11 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "allowedCommonJsDependencies": [
+              "html2pdf.js",
+              "html2canvas",
+              "jspdf"
             ]
           },
           "configurations": {

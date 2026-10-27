@@ -27,6 +27,21 @@
   </header>
 
   <!-- ======================================================== -->
+  <!-- TOP RIGHT ACTION: DESCARGAR CURRÍCULUM (FOLIO A4)        -->
+  <!-- ======================================================== -->
+  <aside class="top-nav-actions" aria-label="Descargar Currículum">
+    <button 
+      type="button" 
+      class="cv-download-nav-btn" 
+      (click)="openCvModal()" 
+      title="Ver y Descargar Currículum en PDF (Formato Folio A4)">
+      <i class="fa-solid fa-file-pdf"></i>
+      <span class="btn-text">Descargar Currículum</span>
+      <span class="cv-badge-folio">Folio A4</span>
+    </button>
+  </aside>
+
+  <!-- ======================================================== -->
   <!-- CAMERA VIEWPORT SLIDER (Pan horizontally like a camera!)  -->
   <!-- ======================================================== -->
   <div class="camera-slider-track" [style.transform]="portfolioMode() === 'game' ? 'translateX(-50%)' : 'translateX(0%)'">
@@ -161,7 +176,7 @@
                     src="assets/images/foto-perfil-agus.webp" width="300" height="330" decoding="async" fetchpriority="high" 
                     alt="Agustín Benítez" 
                     class="dev-real-photo"
-                    onerror="this.src='assets/images/agustheking.webp'">
+                    onerror="this.src='assets/images/agusPerfil.webp'">
                   <span class="photo-crown-badge" title="AgusTheKing">👑</span>
                 </div>
                 <div class="polaroid-caption">
@@ -284,6 +299,11 @@
                 <button class="intro-social-btn" (click)="setPortfolioMode('game')">
                   <i class="fa-solid fa-gamepad text-fuchsia-400"></i>
                   <span>Ir a Modo Juegos 3D</span>
+                </button>
+
+                <button class="intro-social-btn intro-cv-btn" (click)="openCvModal()" title="Ver y Descargar Currículum en PDF">
+                  <i class="fa-solid fa-file-pdf text-red-400"></i>
+                  <span>Descargar CV</span>
                 </button>
 
                 <button class="intro-social-btn" (click)="scrollToSection('formacion-academica')">
@@ -538,7 +558,7 @@
               src="assets/images/morganaSplashArt.webp" width="360" height="420" loading="lazy" decoding="async" 
               alt="Morgana - Arch: Origins of a king" 
               class="morgana-splash-img"
-              onerror="this.src='assets/images/king.webp'">
+              onerror="this.src='assets/images/agusPerfil.webp'">
             <!-- Bottom smooth gradient blend -->
             <div class="character-bottom-gradient"></div>
           </div>
@@ -591,7 +611,7 @@
                   src="assets/images/portadavideo.webp" width="640" height="360" loading="lazy" decoding="async" 
                   alt="Portada Oficial Arch: Origins of a king" 
                   class="stage-direct-cover-png"
-                  onerror="this.src='assets/images/king.webp'">
+                  onerror="this.src='assets/images/agusPerfil.webp'">
                 <div class="cover-hover-pill">
                   <i class="fa-solid fa-play text-purple-400"></i>
                   <span>Ver Avances</span>
@@ -660,6 +680,13 @@
   <!-- ======================================================== -->
   <!-- PROJECT DETAIL SHOWCASE MODAL (Beloved Image 4 Layout)    -->
   <!-- ======================================================== -->
+  <!-- ======================================================== -->
+  <!-- CURRICULUM VITAE FOLIO MODAL (Formato Folio A4 Oficial)  -->
+  <!-- ======================================================== -->
+  @if (isCvModalOpen()) {
+    <app-cv-modal (close)="closeCvModal()"></app-cv-modal>
+  }
+
   @if (selectedProject(); as activeProj) {
     <app-project-modal 
       [project]="activeProj" 

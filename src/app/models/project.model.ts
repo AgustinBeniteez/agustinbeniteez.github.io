@@ -67,3 +67,24 @@ export interface EducationItem {
   centerUrl: string;
   badge: string;
 }
+
+export interface ExperienceItem {
+  id: string;
+  role: string;
+  company: string;
+  companyUrl?: string;
+  employmentType: string;
+  period: string;
+  duration?: string;
+  location: string;
+  workplaceType: 'Remoto' | 'Presencial' | 'Híbrido';
+  description: string;
+  achievements?: string[];
+  skills: string[];
+}
+
+export interface LanguageItem {
+  name: string;
+  level: string;
+  details?: string;
+}
