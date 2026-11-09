@@ -33,7 +33,7 @@ export const DEVELOPER_PROFILE: DeveloperProfile = {
     {
       title: 'Técnico Superior en Desarrollo de Aplicaciones Web (DAW)',
       center: 'IES Fernando Aguilar Quignón',
-      period: 'Actualidad'
+      period: '2024 - Actualidad'
     },
     {
       title: 'Técnico en Sistemas Microinformáticos y Redes (SMR)',
